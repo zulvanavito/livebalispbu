@@ -54,51 +54,63 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
       : '';
 
     const html = `
-      <div style="position:relative; transform: translate(-50%, -100%); display:flex; flex-direction:column; align-items:center; cursor:pointer;">
-        <!-- Floating label pill -->
+      <div style="position:relative; width:0; height:0;">
         <div style="
-          background:#ffffff; 
-          color:#09090b; 
-          font-size:11px; 
-          font-weight:700; 
-          padding:3px 8px; 
-          border-radius:12px; 
-          border:2px solid ${isSelected ? '#000000' : color}; 
-          box-shadow:0 4px 12px rgba(0,0,0,0.15); 
-          white-space:nowrap; 
-          display:flex; 
-          align-items:center; 
-          gap:3px;
-          transform: ${isSelected ? 'scale(1.18)' : 'scale(1)'};
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          position:absolute;
+          bottom:0;
+          left:0;
+          transform:translate(-50%, 0);
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          cursor:pointer;
         ">
-          <span style="width:7px; height:7px; border-radius:50%; background:${color};"></span>
-          <span>${label}</span>
-          ${cctvBadge}
-        </div>
-
-        <!-- Pin Head & Needle -->
-        <div style="position:relative; width:30px; height:36px; margin-top:2px;">
-          <div class="${ringClass}" style="
-            position:absolute;
-            inset: -4px;
-            border-radius:50%;
-            background:${color};
-            opacity:0.35;
-          "></div>
-          <svg viewBox="0 0 24 30" width="30" height="36" fill="${color}">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 18 12 18s12-9 12-18c0-6.63-5.37-12-12-12zm0 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" />
-          </svg>
+          <!-- Floating label pill -->
           <div style="
-            position:absolute; 
-            top:7px; 
-            left:10px; 
-            width:10px; 
-            height:10px; 
-            border-radius:50%; 
-            background:#ffffff;
-            box-shadow:0 1px 3px rgba(0,0,0,0.5);
-          "></div>
+            background:#ffffff; 
+            color:#09090b; 
+            font-size:11px; 
+            font-weight:700; 
+            padding:3px 8px; 
+            border-radius:12px; 
+            border:2px solid ${isSelected ? '#000000' : color}; 
+            box-shadow:0 4px 12px rgba(0,0,0,0.15); 
+            white-space:nowrap; 
+            display:flex; 
+            align-items:center; 
+            gap:3px;
+            transform: ${isSelected ? 'scale(1.15)' : 'scale(1)'};
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom:2px;
+          ">
+            <span style="width:7px; height:7px; border-radius:50%; background:${color}; flex-shrink:0;"></span>
+            <span>${label}</span>
+            ${cctvBadge}
+          </div>
+
+          <!-- Pin Head & Needle -->
+          <div style="position:relative; width:28px; height:34px; display:flex; justify-content:center;">
+            <div class="${ringClass}" style="
+              position:absolute;
+              inset: -4px;
+              border-radius:50%;
+              background:${color};
+              opacity:0.35;
+            "></div>
+            <svg viewBox="0 0 24 30" width="28" height="34" fill="${color}" style="display:block;">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 18 12 18s12-9 12-18c0-6.63-5.37-12-12-12zm0 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" />
+            </svg>
+            <div style="
+              position:absolute; 
+              top:6px; 
+              left:9px; 
+              width:10px; 
+              height:10px; 
+              border-radius:50%; 
+              background:#ffffff;
+              box-shadow:0 1px 3px rgba(0,0,0,0.5);
+            "></div>
+          </div>
         </div>
       </div>
     `;
@@ -106,38 +118,48 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     return L.divIcon({
       html,
       className: 'custom-spbu-marker',
-      iconSize: [30, 42],
-      iconAnchor: [15, 42],
+      iconSize: [0, 0],
+      iconAnchor: [0, 0],
     });
   };
 
   // User current location marker
   const createUserLocationIcon = () => {
     const html = `
-      <div style="position:relative; width:24px; height:24px; transform:translate(-50%, -50%);">
+      <div style="position:relative; width:0; height:0;">
         <div style="
           position:absolute;
-          inset:-8px;
-          border-radius:50%;
-          background:#0284c7;
-          opacity:0.35;
-          animation: pulse-ring 2s infinite;
-        "></div>
-        <div style="
+          top:0;
+          left:0;
+          transform:translate(-50%, -50%);
           width:24px;
           height:24px;
-          border-radius:50%;
-          background:#0284c7;
-          border:3px solid #ffffff;
-          box-shadow:0 2px 8px rgba(0,0,0,0.4);
-        "></div>
+        ">
+          <div style="
+            position:absolute;
+            inset:-8px;
+            border-radius:50%;
+            background:#0284c7;
+            opacity:0.35;
+            animation: pulse-ring 2s infinite;
+          "></div>
+          <div style="
+            width:24px;
+            height:24px;
+            border-radius:50%;
+            background:#0284c7;
+            border:3px solid #ffffff;
+            box-shadow:0 2px 8px rgba(0,0,0,0.4);
+          "></div>
+        </div>
       </div>
     `;
 
     return L.divIcon({
       html,
       className: 'user-location-marker',
-      iconSize: [24, 24],
+      iconSize: [0, 0],
+      iconAnchor: [0, 0],
     });
   };
 
@@ -396,10 +418,10 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
             {/* Action buttons (Direct React handlers) */}
             <div className="mt-3 pt-2.5 border-t border-zinc-200 flex gap-2">
               <a
-                href={`https://www.google.com/maps/dir/?api=1&destination=${selectedSpbu.coordinates.lat},${selectedSpbu.coordinates.lng}`}
+                href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${selectedSpbu.name}, ${selectedSpbu.address}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Buka rute navigasi Google Maps"
+                title={`Buka rute navigasi ke ${selectedSpbu.name}`}
                 className="min-h-[44px] px-3.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 font-bold text-xs flex items-center justify-center gap-1.5 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer"
               >
                 <Navigation className="w-4 h-4 text-blue-600" />

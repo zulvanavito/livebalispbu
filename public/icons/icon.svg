@@ -1,58 +1,151 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="60%" stop-color="#0f0f12"/>
       <stop offset="100%" stop-color="#09090b"/>
     </linearGradient>
-    <linearGradient id="pumpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#10b981"/>
+
+    <!-- Balinese Gold Gradient -->
+    <linearGradient id="baliGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Emerald Fuel Gradient -->
+    <linearGradient id="fuelEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="50%" stop-color="#10b981"/>
       <stop offset="100%" stop-color="#059669"/>
     </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="12" result="blur" />
+
+    <!-- Live Crimson Pulse Gradient -->
+    <linearGradient id="crimsonPulse" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+
+    <!-- Subtle Glow Filters -->
+    <filter id="emeraldGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="pulseGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
   </defs>
 
-  <!-- Background rounded rectangle -->
-  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
-  <rect x="8" y="8" width="496" height="496" rx="104" fill="none" stroke="#27272a" stroke-width="4"/>
+  <!-- Squircle Base Canvas -->
+  <rect width="512" height="512" rx="116" fill="url(#bgGradient)"/>
+  <rect x="8" y="8" width="496" height="496" rx="108" fill="none" stroke="#27272a" stroke-width="4"/>
+  <rect x="16" y="16" width="480" height="480" rx="100" fill="none" stroke="#10b981" stroke-width="1.5" stroke-opacity="0.25"/>
 
-  <!-- Live Pulse Beacon Top Right -->
-  <circle cx="410" cy="102" r="28" fill="#ef4444" opacity="0.3" filter="url(#glow)"/>
-  <circle cx="410" cy="102" r="16" fill="#ef4444"/>
-  <circle cx="410" cy="102" r="7" fill="#ffffff"/>
-
-  <!-- Gas Pump Body -->
-  <g transform="translate(64, 76)">
-    <!-- Main Pump Housing -->
-    <rect x="76" y="80" width="180" height="250" rx="24" fill="#27272a" stroke="#3f3f46" stroke-width="8"/>
-    
-    <!-- Fuel Meter Screen -->
-    <rect x="106" y="116" width="120" height="74" rx="12" fill="#09090b" stroke="#10b981" stroke-width="4"/>
-    <!-- Digital meter readout bars -->
-    <rect x="122" y="136" width="60" height="8" rx="4" fill="#10b981"/>
-    <rect x="122" y="154" width="88" height="12" rx="4" fill="#34d399"/>
-    <circle cx="196" cy="140" r="4" fill="#10b981"/>
-
-    <!-- Pump Base Plate -->
-    <rect x="52" y="322" width="228" height="24" rx="10" fill="#3f3f46"/>
-
-    <!-- Fuel Hose & Nozzle -->
-    <!-- Hose -->
-    <path d="M 256 160 C 310 160, 316 260, 276 300 C 260 316, 230 316, 216 300" 
-          fill="none" stroke="#71717a" stroke-width="16" stroke-linecap="round"/>
-    
-    <!-- Nozzle Handle -->
-    <path d="M 284 120 L 256 160 L 244 150 L 268 112 Z" fill="#10b981"/>
-    <path d="M 284 120 L 306 96 L 316 106 L 294 130 Z" fill="#34d399"/>
-    <!-- Spout -->
-    <path d="M 306 96 L 324 82 L 320 74" fill="none" stroke="#e4e4e7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Radar / Broadcast Beacon Waves (Realtime Activity) -->
+  <g opacity="0.3" stroke="#10b981" fill="none" stroke-linecap="round">
+    <circle cx="256" cy="112" r="44" stroke-width="2.5" stroke-dasharray="14 10" />
+    <circle cx="256" cy="112" r="76" stroke-width="2" stroke-dasharray="20 12" />
+    <circle cx="256" cy="112" r="108" stroke-width="1.5" stroke-opacity="0.4" stroke-dasharray="28 16" />
   </g>
 
-  <!-- Brand Label Badge -->
-  <rect x="146" y="408" width="220" height="42" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="2"/>
-  <text x="256" y="435" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="2">
-    LIVE SPBU
-  </text>
+  <!-- Live Status Signal Pill (Top Right) -->
+  <g transform="translate(372, 54)">
+    <rect width="84" height="32" rx="16" fill="#09090b" stroke="#27272a" stroke-width="2"/>
+    <circle cx="20" cy="16" r="10" fill="#ef4444" opacity="0.35" filter="url(#pulseGlow)"/>
+    <circle cx="20" cy="16" r="5.5" fill="#ef4444"/>
+    <circle cx="20" cy="16" r="2.5" fill="#ffffff"/>
+    <text x="40" y="21" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="800" fill="#f4f4f5" letter-spacing="1.5">LIVE</text>
+  </g>
+
+  <!-- Balinese Candi Bentar (Left Split Gate) -->
+  <g fill="url(#baliGold)" opacity="0.95">
+    <!-- Base Platform Left -->
+    <path d="M 80 348 L 210 348 L 210 334 L 92 334 Z" />
+    <path d="M 96 334 L 206 334 L 206 320 L 108 320 Z" />
+
+    <!-- Gate Body Tier 1 -->
+    <path d="M 112 320 L 202 320 L 202 264 L 118 264 Z" />
+    <rect x="126" y="272" width="22" height="38" rx="4" fill="#09090b" opacity="0.35" />
+
+    <!-- Gate Body Tier 2 (Stepped) -->
+    <path d="M 122 264 L 202 264 L 202 212 L 132 212 Z" />
+    <rect x="138" y="220" width="18" height="34" rx="3" fill="#09090b" opacity="0.35" />
+
+    <!-- Gate Body Tier 3 -->
+    <path d="M 136 212 L 202 212 L 202 168 L 146 168 Z" />
+
+    <!-- Crown / Pinnacle (Puncak Candi Kiri) -->
+    <path d="M 150 168 L 202 168 L 202 124 L 176 124 L 202 96 L 202 82 L 168 124 Z" />
+  </g>
+
+  <!-- Balinese Candi Bentar (Right Split Gate - Symmetrical Mirror) -->
+  <g fill="url(#baliGold)" opacity="0.95">
+    <!-- Base Platform Right -->
+    <path d="M 432 348 L 302 348 L 302 334 L 420 334 Z" />
+    <path d="M 416 334 L 306 334 L 306 320 L 404 320 Z" />
+
+    <!-- Gate Body Tier 1 -->
+    <path d="M 400 320 L 310 320 L 310 264 L 394 264 Z" />
+    <rect x="364" y="272" width="22" height="38" rx="4" fill="#09090b" opacity="0.35" />
+
+    <!-- Gate Body Tier 2 (Stepped) -->
+    <path d="M 390 264 L 310 264 L 310 212 L 380 212 Z" />
+    <rect x="356" y="220" width="18" height="34" rx="3" fill="#09090b" opacity="0.35" />
+
+    <!-- Gate Body Tier 3 -->
+    <path d="M 376 212 L 310 212 L 310 168 L 366 168 Z" />
+
+    <!-- Crown / Pinnacle (Puncak Candi Kanan) -->
+    <path d="M 362 168 L 310 168 L 310 124 L 336 124 L 310 96 L 310 82 L 344 124 Z" />
+  </g>
+
+  <!-- Centerpiece: High-Tech Fuel Nozzle + Glowing Energy Droplet -->
+  <g transform="translate(0, 8)">
+    <!-- Central Aperture Pedestal -->
+    <rect x="222" y="324" width="68" height="24" rx="6" fill="#18181b" stroke="#27272a" stroke-width="3"/>
+
+    <!-- Fuel Dispenser Handle & Body -->
+    <!-- Flexible Braided Hose -->
+    <path d="M 230 330 C 218 310, 218 270, 240 250" 
+          fill="none" stroke="#52525b" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Nozzle Gun Body -->
+    <path d="M 240 254 L 274 218 L 288 232 L 254 268 Z" fill="url(#fuelEmerald)"/>
+    <path d="M 264 228 L 282 208 L 292 218 L 274 238 Z" fill="#34d399"/>
+
+    <!-- Nozzle Grip Trigger Ring -->
+    <path d="M 246 264 C 238 274, 252 284, 260 274" fill="none" stroke="#a1a1aa" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Spout (Pipa Nosel) -->
+    <path d="M 282 208 L 274 164 L 260 148" 
+          fill="none" stroke="#f4f4f5" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Glowing Fuel Energy Droplet (Tetesan BBM Aktif) -->
+    <g transform="translate(256, 114)" filter="url(#emeraldGlow)">
+      <!-- Droplet Shape -->
+      <path d="M 0 -22 C -14 0, -18 12, -18 20 C -18 32, -10 40, 0 40 C 10 40, 18 32, 18 20 C 18 12, 14 0, 0 -22 Z" 
+            fill="url(#fuelEmerald)"/>
+      <!-- Inner Specular Light -->
+      <ellipse cx="-4" cy="14" rx="5" ry="10" fill="#ffffff" opacity="0.65" transform="rotate(-18, -4, 14)"/>
+    </g>
+  </g>
+
+  <!-- Bottom Brand Typography Container -->
+  <g transform="translate(256, 424)">
+    <!-- Subtitle Pill -->
+    <rect x="-140" y="-32" width="280" height="48" rx="24" fill="#18181b" stroke="#27272a" stroke-width="2.5"/>
+    
+    <!-- Wordmark -->
+    <text y="-2" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+      <tspan font-size="21" font-weight="900" fill="#ffffff" letter-spacing="2">LIVE BALI </tspan>
+      <tspan font-size="21" font-weight="900" fill="#10b981" letter-spacing="2">SPBU</tspan>
+    </text>
+    
+    <text y="30" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="600" fill="#a1a1aa" letter-spacing="3.5">
+      LIVEBALI.MY.ID
+    </text>
+  </g>
 </svg>

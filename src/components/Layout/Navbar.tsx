@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Fuel, Navigation, RefreshCw, RotateCcw } from 'lucide-react';
+import { Navigation, RefreshCw, RotateCcw } from 'lucide-react';
+import { Logo } from '../Common/Logo';
 
 interface NavbarProps {
   onLocateUser: () => void;
@@ -28,24 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="bg-white border-b border-zinc-200 sticky top-0 z-40 px-4 py-2 sm:px-6">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
         {/* Brand / Logo */}
-        <div className="flex items-center space-x-3">
-          <div className="w-9 h-9 rounded-xl bg-black text-white flex items-center justify-center shadow-xs shrink-0">
-            <Fuel className="w-5 h-5 text-white" />
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <h1 className="font-bold text-black text-base sm:text-lg tracking-tight">
-                Live SPBU <span className="text-zinc-500 font-normal">Bali</span>
-              </h1>
-              <span className="hidden xs:inline-flex px-2 py-0.5 rounded-full text-[10px] font-semibold bg-zinc-100 text-zinc-700 border border-zinc-200">
-                Denpasar &amp; Badung
-              </span>
-            </div>
-            <p className="text-[11px] text-zinc-500 hidden sm:block">
-              Pantau antrean BBM &amp; CCTV ATCS lalu lintas secara realtime
-            </p>
-          </div>
-        </div>
+        <Logo size="md" />
 
         {/* Center: Integrated Live Crisis Stats (Removes redundant alert bar) */}
         {totalSPBU !== undefined && (

@@ -255,11 +255,11 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
           )}
 
           <a
-            href={`https://www.google.com/maps/dir/?api=1&destination=${spbu.coordinates.lat},${spbu.coordinates.lng}`}
+            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${spbu.name}, ${spbu.address}`)}`}
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            title="Buka rute navigasi Google Maps"
+            title={`Buka rute navigasi ke ${spbu.name}`}
             className="min-h-[38px] px-2.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-semibold flex items-center gap-1 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer whitespace-nowrap"
           >
             <Navigation className="w-3.5 h-3.5 text-blue-600" />

@@ -8,10 +8,10 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     id: 'spbu-sunset-road-1',
     code: '54.803.19',
     name: 'SPBU Pertamina Sunset Road (Kuta)',
-    address: 'Jl. Sunset Road No. 88, Kuta, Badung',
+    address: 'Jl. Sunset Road, Seminyak, Kuta, Badung',
     regency: 'Badung',
     district: 'Kuta',
-    coordinates: { lat: -8.7042, lng: 115.1785 },
+    coordinates: { lat: -8.6889, lng: 115.1714 },
     queueLevel: 'congested',
     estimatedWaitMinutes: 45,
     fuelStock: {
@@ -23,7 +23,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     cctv: {
       hasCCTV: true,
       sourceName: 'ATCS Dishub Bali',
-      locationName: 'Simpang Sunset Road - Imam Bonjol',
+      locationName: 'Simpang Sunset Road - Seminyak',
       streamUrl: 'https://atcs.denpasarkota.go.id/stream/A004TEUKUUMARPTZ1/',
       snapshotUrl: '/api/cctv-proxy?cam=sunset-dewisri',
       notes: 'Kamera mengarah ke simpang barat menghadap arus antrean masuk SPBU',
@@ -35,12 +35,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
   },
   {
     id: 'spbu-canggu-batubolong',
-    code: '54.803.31',
-    name: 'SPBU Pertamina Canggu (Batu Bolong)',
-    address: 'Jl. Pantai Batu Bolong, Canggu, Kuta Utara, Badung',
+    code: '54.803.13',
+    name: 'SPBU Pertamina Raya Canggu',
+    address: 'Jl. Raya Canggu, Kerobokan, Kuta Utara, Badung',
     regency: 'Badung',
     district: 'Kuta Utara',
-    coordinates: { lat: -8.6472, lng: 115.1423 },
+    coordinates: { lat: -8.6534, lng: 115.1632 },
     queueLevel: 'congested',
     estimatedWaitMinutes: 50,
     fuelStock: {
