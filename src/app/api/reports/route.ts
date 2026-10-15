@@ -34,6 +34,9 @@ export async function POST(request: NextRequest) {
     if (turnstileSecret.startsWith('1x00000000000000000000')) {
       // Pastikan token ada (dihasilkan oleh widget Turnstile test key atau test-token-pass)
       isHuman = Boolean(turnstileToken);
+    } else if (process.env.NODE_ENV === 'development' && turnstileToken === 'dev-bypass-token') {
+      // Bypass khusus environment lokal development
+      isHuman = true;
     } else if (turnstileToken) {
       try {
         const formData = new URLSearchParams();

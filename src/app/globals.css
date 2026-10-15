@@ -50,13 +50,13 @@ body {
   cursor: pointer !important;
 }
 
-.custom-spbu-marker * {
-  pointer-events: none;
+.custom-spbu-marker .marker-interactive-content {
+  pointer-events: auto !important;
+  cursor: pointer !important;
 }
 
-.custom-spbu-marker .cctv-click-trigger {
-  pointer-events: auto;
-  cursor: pointer;
+.custom-spbu-marker .marker-interactive-content * {
+  cursor: pointer !important;
 }
 
 /* Custom Marker Pulsing Animations */

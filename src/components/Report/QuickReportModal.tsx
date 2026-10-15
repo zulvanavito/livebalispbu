@@ -5,6 +5,7 @@ import { SPBUItem, QueueLevel, FuelStatus, UserReportSubmission } from '@/types/
 import { SPBUService } from '@/lib/spbu-service';
 import { X, Send, Fuel, CheckCircle2, AlertCircle, Clock } from 'lucide-react';
 import { TurnstileWidget } from '@/components/Common/TurnstileWidget';
+import { useToast } from '@/components/Common/Toast';
 
 interface QuickReportModalProps {
   spbu: SPBUItem | null;
@@ -17,12 +18,14 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
   onClose,
   onReportSuccess,
 }) => {
+  const { showToast } = useToast();
   const [queueLevel, setQueueLevel] = useState<QueueLevel>(spbu?.queueLevel || 'moderate');
   const [pertalite, setPertalite] = useState<FuelStatus>(spbu?.fuelStock.pertalite || 'available');
   const [pertamax, setPertamax] = useState<FuelStatus>(spbu?.fuelStock.pertamax || 'available');
   const [solar, setSolar] = useState<FuelStatus>(spbu?.fuelStock.solar || 'available');
   const [note, setNote] = useState<string>('');
   const [turnstileToken, setTurnstileToken] = useState<string>('');
+  const [formError, setFormError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [submittedSuccess, setSubmittedSuccess] = useState<boolean>(false);
 
@@ -41,6 +44,13 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setFormError(null);
+
+    if (!turnstileToken) {
+      setFormError('Verifikasi anti-bot belum selesai. Silakan centang atau selesaikan verifikasi di bawah terlebih dahulu.');
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -51,11 +61,12 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
         pertamax,
         solar,
         note: note.trim() || undefined,
-        turnstileToken: turnstileToken || undefined,
+        turnstileToken,
       };
 
       const updated = await SPBUService.submitReport(payload);
       setSubmittedSuccess(true);
+      showToast('success', 'Laporan berhasil dikirim! Terima kasih atas partisipasi Anda.');
       setTimeout(() => {
         onReportSuccess(updated);
         onClose();
@@ -63,8 +74,8 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
     } catch (err: unknown) {
       const message =
         err instanceof Error ? err.message : 'Gagal mengirim laporan. Silakan coba lagi.';
-      alert(message);
-      console.error(err);
+      setFormError(message);
+      console.error('Report submission error:', err);
       setIsSubmitting(false);
     }
   };
@@ -282,10 +293,26 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
             {/* Turnstile Anti-Bot Verification */}
             <div className="pt-2">
               <TurnstileWidget
-                onVerify={(token) => setTurnstileToken(token)}
+                onVerify={(token) => {
+                  setTurnstileToken(token);
+                  setFormError(null);
+                }}
                 onExpire={() => setTurnstileToken('')}
                 className="mb-3"
               />
+
+              {formError && (
+                <div
+                  role="alert"
+                  className="mb-3 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-start gap-2.5 animate-in fade-in zoom-in-95 duration-150"
+                >
+                  <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                  <div className="flex-1 min-w-0">
+                    <p className="font-bold text-rose-950">Perhatian:</p>
+                    <p className="text-[11px] text-rose-800 mt-0.5 leading-relaxed">{formError}</p>
+                  </div>
+                </div>
+              )}
 
               <div className="text-[11px] text-zinc-500 mb-3 flex items-center gap-1.5">
                 <AlertCircle className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
@@ -298,7 +325,11 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
                 className="w-full min-h-[48px] py-3 px-4 rounded-xl bg-black hover:bg-zinc-800 text-white font-bold flex items-center justify-center gap-2 shadow-sm transition-all disabled:opacity-50 focus-visible:ring-2 focus-visible:ring-black cursor-pointer"
               >
                 <Send className="w-4 h-4" />
-                {isSubmitting ? 'Mengirim Laporan...' : 'Kirim Laporan Sekarang'}
+                {isSubmitting
+                  ? 'Mengirim Laporan...'
+                  : !turnstileToken
+                  ? 'Verifikasi Anti-Bot Sebelum Kirim'
+                  : 'Kirim Laporan Sekarang'}
               </button>
             </div>
           </form>

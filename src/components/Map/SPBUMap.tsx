@@ -55,7 +55,7 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
 
     const html = `
       <div style="position:relative; width:0; height:0;">
-        <div style="
+        <div class="marker-interactive-content" style="
           position:absolute;
           bottom:0;
           left:0;
@@ -64,6 +64,7 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
           flex-direction:column;
           align-items:center;
           cursor:pointer;
+          pointer-events:auto !important;
         ">
           <!-- Floating label pill -->
           <div style="
@@ -82,14 +83,16 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
             transform: ${isSelected ? 'scale(1.15)' : 'scale(1)'};
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             margin-bottom:2px;
-          ">
+            cursor:pointer;
+            pointer-events:auto !important;
+          " title="${spbu.name} - Klik untuk lihat detail">
             <span style="width:7px; height:7px; border-radius:50%; background:${color}; flex-shrink:0;"></span>
             <span>${label}</span>
             ${cctvBadge}
           </div>
 
           <!-- Pin Head & Needle -->
-          <div style="position:relative; width:28px; height:34px; display:flex; justify-content:center;">
+          <div style="position:relative; width:28px; height:34px; display:flex; justify-content:center; cursor:pointer; pointer-events:auto !important;">
             <div class="${ringClass}" style="
               position:absolute;
               inset: -4px;

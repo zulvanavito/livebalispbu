@@ -13,6 +13,8 @@ import { QuickReportModal } from '@/components/Report/QuickReportModal';
 import { PWAInstallBanner } from '@/components/Common/PWAInstallBanner';
 import { Fuel } from 'lucide-react';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+import { ToastProvider, useToast } from '@/components/Common/Toast';
+import { ConfirmDialogProvider, useConfirmDialog } from '@/components/Common/ConfirmDialog';
 
 // Dynamic import Leaflet map with SSR disabled
 const DynamicSPBUMap = dynamic(
@@ -28,7 +30,9 @@ const DynamicSPBUMap = dynamic(
   }
 );
 
-export default function Home() {
+function LiveSPBUApp() {
+  const { showToast } = useToast();
+  const { confirmAction } = useConfirmDialog();
   const [spbus, setSpbus] = useState<SPBUItem[]>(INITIAL_SPBU_DATA);
   const [selectedSpbu, setSelectedSpbu] = useState<SPBUItem | null>(null);
   const [cctvModalSpbu, setCctvModalSpbu] = useState<SPBUItem | null>(null);
@@ -133,7 +137,7 @@ export default function Home() {
   // GPS User location
   const handleLocateUser = () => {
     if (!navigator.geolocation) {
-      alert('Browser kamu tidak mendukung akses lokasi GPS.');
+      showToast('error', 'Browser Anda tidak mendukung akses lokasi GPS.');
       return;
     }
 
@@ -148,22 +152,26 @@ export default function Home() {
         let nearest: SPBUItem | null = null;
         let minDist = Infinity;
 
-        spbus.forEach((spbu) => {
+        for (const spbu of spbus) {
           const d = Math.hypot(spbu.coordinates.lat - coords.lat, spbu.coordinates.lng - coords.lng);
           if (d < minDist) {
             minDist = d;
             nearest = spbu;
           }
-        });
+        }
 
         if (nearest) {
-          setSelectedSpbu(nearest);
+          const targetSpbu = nearest as SPBUItem;
+          setSelectedSpbu(targetSpbu);
+          showToast('success', `Lokasi GPS terdeteksi. Menampilkan ${targetSpbu.name}`);
+        } else {
+          showToast('info', 'Lokasi GPS Anda berhasil ditentukan.');
         }
       },
       (err) => {
         setIsLocating(false);
-        alert('Gagal mendeteksi lokasi GPS. Pastikan izin lokasi telah diaktifkan di browsermu.');
-        console.warn(err);
+        showToast('error', 'Gagal mendeteksi lokasi GPS. Pastikan izin lokasi telah diaktifkan di browser Anda.');
+        console.warn('Geolocation error:', err);
       },
       { timeout: 10000, enableHighAccuracy: true }
     );
@@ -172,19 +180,28 @@ export default function Home() {
   const handleUpvote = async (spbuId: string) => {
     try {
       await SPBUService.upvoteSPBU(spbuId);
+      showToast('success', 'Konfirmasi akurasi berhasil dikirim!');
     } catch (err: unknown) {
       if (err instanceof Error) {
-        alert(err.message);
+        showToast('error', err.message);
       }
     }
   };
 
   const handleResetData = () => {
-    if (confirm('Kembalikan semua data ke kondisi default awal?')) {
-      const reset = SPBUService.resetToDefault();
-      setSpbus(reset);
-      setSelectedSpbu(null);
-    }
+    confirmAction({
+      title: 'Reset Data ke Default?',
+      message: 'Apakah Anda yakin ingin mengembalikan seluruh status antrean dan stok SPBU ke kondisi default awal?',
+      confirmText: 'Ya, Reset Data',
+      cancelText: 'Batal',
+      isDestructive: true,
+      onConfirm: () => {
+        const reset = SPBUService.resetToDefault();
+        setSpbus(reset);
+        setSelectedSpbu(null);
+        showToast('info', 'Seluruh data SPBU berhasil dikembalikan ke status awal.');
+      },
+    });
   };
 
   return (
@@ -315,5 +332,15 @@ export default function Home() {
       {/* 7. PWA Mobile Home-Screen Install Prompt */}
       <PWAInstallBanner />
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <ToastProvider>
+      <ConfirmDialogProvider>
+        <LiveSPBUApp />
+      </ConfirmDialogProvider>
+    </ToastProvider>
   );
 }
