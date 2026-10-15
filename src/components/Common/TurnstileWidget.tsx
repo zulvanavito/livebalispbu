@@ -45,6 +45,7 @@ export const TurnstileWidget: React.FC<TurnstileWidgetProps> = ({
   const [isVerified, setIsVerified] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLocalhost, setIsLocalhost] = useState<boolean>(false);
+  const isBypassedRef = useRef<boolean>(false);
 
   // Store callbacks in refs to guarantee parent re-renders NEVER recreate or destroy the widget!
   const onVerifyRef = useRef(onVerify);
@@ -101,6 +102,7 @@ export const TurnstileWidget: React.FC<TurnstileWidgetProps> = ({
           onVerifyRef.current?.(token);
         },
         'error-callback': () => {
+          if (isBypassedRef.current) return;
           setIsVerifying(false);
           setIsVerified(false);
           setErrorMessage(
@@ -111,6 +113,7 @@ export const TurnstileWidget: React.FC<TurnstileWidgetProps> = ({
           onErrorRef.current?.();
         },
         'expired-callback': () => {
+          if (isBypassedRef.current) return;
           setIsVerified(false);
           setErrorMessage('Verifikasi kedaluwarsa. Silakan verifikasi ulang.');
           onExpireRef.current?.();
@@ -148,11 +151,13 @@ export const TurnstileWidget: React.FC<TurnstileWidgetProps> = ({
   }, [scriptLoaded, renderWidget]);
 
   const handleRetry = () => {
+    isBypassedRef.current = false;
     hasRenderedRef.current = false;
     renderWidget();
   };
 
   const handleDevBypass = () => {
+    isBypassedRef.current = true;
     setIsVerifying(false);
     setIsVerified(true);
     setErrorMessage(null);

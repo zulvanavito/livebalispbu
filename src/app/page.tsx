@@ -11,7 +11,7 @@ import { SPBUCard } from '@/components/SPBU/SPBUCard';
 import { CCTVPreviewModal } from '@/components/CCTV/CCTVPreviewModal';
 import { QuickReportModal } from '@/components/Report/QuickReportModal';
 import { PWAInstallBanner } from '@/components/Common/PWAInstallBanner';
-import { Fuel } from 'lucide-react';
+import { Fuel, Map, List } from 'lucide-react';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { ToastProvider, useToast } from '@/components/Common/Toast';
 import { ConfirmDialogProvider, useConfirmDialog } from '@/components/Common/ConfirmDialog';
@@ -32,7 +32,6 @@ const DynamicSPBUMap = dynamic(
 
 function LiveSPBUApp() {
   const { showToast } = useToast();
-  const { confirmAction } = useConfirmDialog();
   const [spbus, setSpbus] = useState<SPBUItem[]>(INITIAL_SPBU_DATA);
   const [selectedSpbu, setSelectedSpbu] = useState<SPBUItem | null>(null);
   const [cctvModalSpbu, setCctvModalSpbu] = useState<SPBUItem | null>(null);
@@ -188,22 +187,6 @@ function LiveSPBUApp() {
     }
   };
 
-  const handleResetData = () => {
-    confirmAction({
-      title: 'Reset Data ke Default?',
-      message: 'Apakah Anda yakin ingin mengembalikan seluruh status antrean dan stok SPBU ke kondisi default awal?',
-      confirmText: 'Ya, Reset Data',
-      cancelText: 'Batal',
-      isDestructive: true,
-      onConfirm: () => {
-        const reset = SPBUService.resetToDefault();
-        setSpbus(reset);
-        setSelectedSpbu(null);
-        showToast('info', 'Seluruh data SPBU berhasil dikembalikan ke status awal.');
-      },
-    });
-  };
-
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden bg-white text-zinc-900">
       {/* 1. Unified Header Navbar with live crisis stats */}
@@ -215,7 +198,6 @@ function LiveSPBUApp() {
         totalSPBU={stats.total}
         smoothCount={stats.smooth}
         congestedCount={stats.congested}
-        onResetData={handleResetData}
       />
 
       {/* 2. Streamlined Filter and Search Bar */}
@@ -331,6 +313,28 @@ function LiveSPBUApp() {
 
       {/* 7. PWA Mobile Home-Screen Install Prompt */}
       <PWAInstallBanner />
+
+      {/* 8. Mobile Floating Switcher Button (Always accessible at thumb level) */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30 md:hidden">
+        <button
+          type="button"
+          onClick={() => setViewMode(viewMode === 'map' ? 'list' : 'map')}
+          className="min-h-[46px] px-5 py-2.5 rounded-full bg-black text-white text-xs font-bold flex items-center gap-2 shadow-2xl border border-zinc-700 active:scale-95 transition-all cursor-pointer"
+          aria-label={viewMode === 'map' ? 'Buka tampilan daftar SPBU' : 'Buka tampilan peta'}
+        >
+          {viewMode === 'map' ? (
+            <>
+              <List className="w-4 h-4" />
+              <span>Daftar SPBU ({filteredSPBUs.length})</span>
+            </>
+          ) : (
+            <>
+              <Map className="w-4 h-4" />
+              <span>Lihat Peta</span>
+            </>
+          )}
+        </button>
+      </div>
     </div>
   );
 }

@@ -149,6 +149,12 @@ export const SPBUService = {
         pertamax: submission.pertamax,
         solar: submission.solar,
       },
+      latestNote: submission.note && submission.note.trim()
+        ? {
+            text: submission.note.trim(),
+            createdAt: new Date().toISOString(),
+          }
+        : current.latestNote,
       reportCount: (current.reportCount || 0) + 1,
       lastReportedAt: new Date().toISOString(),
     };
@@ -180,6 +186,9 @@ export const SPBUService = {
       const resJson = await response.json();
       if (resJson.data) {
         const mapped = mapRowToSPBUItem(resJson.data);
+        if (updatedItem.latestNote) {
+          mapped.latestNote = updatedItem.latestNote;
+        }
         list[index] = mapped;
         if (typeof window !== 'undefined') {
           localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(list));

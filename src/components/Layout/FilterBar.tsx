@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Search, Video, CheckCircle, X } from 'lucide-react';
+import { Search, Video, CheckCircle, X, Map, List } from 'lucide-react';
 
 interface FilterBarProps {
   searchQuery: string;
@@ -58,8 +58,41 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           )}
         </div>
 
-        {/* Filter Chips & View Mode Controls */}
-        <div className="flex items-center justify-between md:justify-end gap-1.5 sm:gap-2 overflow-x-auto pb-0.5 md:pb-0">
+        {/* Mobile View Switcher (Peta vs Daftar) - Prominent, full width, 100% accessible on phone */}
+        <div className="grid grid-cols-2 bg-zinc-100 p-1 rounded-xl border border-zinc-200 w-full md:hidden">
+          <button
+            type="button"
+            onClick={() => onViewModeChange('map')}
+            aria-label="Tampilan Peta Interaktif"
+            className={`min-h-[38px] py-1.5 text-xs rounded-lg font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+              viewMode === 'map'
+                ? 'bg-black text-white shadow-xs'
+                : 'text-zinc-600 hover:text-black'
+            }`}
+          >
+            <Map className="w-3.5 h-3.5" />
+            <span>Peta</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => onViewModeChange('list')}
+            aria-label={`Tampilan Daftar ${totalFiltered} SPBU`}
+            className={`min-h-[38px] py-1.5 text-xs rounded-lg font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+              viewMode === 'list'
+                ? 'bg-black text-white shadow-xs'
+                : 'text-zinc-600 hover:text-black'
+            }`}
+          >
+            <List className="w-3.5 h-3.5" />
+            <span>Daftar ({totalFiltered})</span>
+          </button>
+        </div>
+
+        {/* Filter Chips & Desktop View Mode Controls */}
+        <div 
+          className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 md:pb-0 w-full md:w-auto touch-pan-x" 
+          style={{ WebkitOverflowScrolling: 'touch', scrollbarWidth: 'none' }}
+        >
           {/* Regency selector */}
           <div className="flex bg-zinc-100 p-0.5 rounded-xl border border-zinc-200 shrink-0">
             {(['all', 'Denpasar', 'Badung'] as const).map((reg) => (
@@ -67,7 +100,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
                 key={reg}
                 type="button"
                 onClick={() => onRegencyChange(reg)}
-                className={`min-h-[34px] px-2.5 sm:px-3 py-1 text-xs rounded-lg font-medium transition-colors ${
+                className={`min-h-[34px] px-2.5 sm:px-3 py-1 text-xs rounded-lg font-medium transition-colors cursor-pointer ${
                   selectedRegency === reg
                     ? 'bg-black text-white font-bold shadow-xs'
                     : 'text-zinc-600 hover:text-black'
@@ -109,34 +142,6 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
             <span>Pertalite Siap</span>
           </button>
-
-          {/* View Mode Toggle (Map vs List) */}
-          <div className="flex bg-zinc-100 p-0.5 rounded-xl border border-zinc-200 shrink-0">
-            <button
-              type="button"
-              onClick={() => onViewModeChange('map')}
-              aria-label="Tampilan Peta Interaktif"
-              className={`min-h-[34px] px-2.5 sm:px-3 py-1 text-xs rounded-lg font-medium transition-colors ${
-                viewMode === 'map'
-                  ? 'bg-black text-white font-bold shadow-xs'
-                  : 'text-zinc-600 hover:text-black'
-              }`}
-            >
-              Peta
-            </button>
-            <button
-              type="button"
-              onClick={() => onViewModeChange('list')}
-              aria-label={`Tampilan Daftar ${totalFiltered} SPBU`}
-              className={`min-h-[34px] px-2.5 sm:px-3 py-1 text-xs rounded-lg font-medium transition-colors ${
-                viewMode === 'list'
-                  ? 'bg-black text-white font-bold shadow-xs'
-                  : 'text-zinc-600 hover:text-black'
-              }`}
-            >
-              Daftar ({totalFiltered})
-            </button>
-          </div>
         </div>
       </div>
     </div>

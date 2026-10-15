@@ -35,6 +35,10 @@ export interface SPBUItem {
   estimatedWaitMinutes: number; // in minutes
   fuelStock: FuelStock;
   cctv: CCTVInfo;
+  latestNote?: {
+    text: string;
+    createdAt: string;
+  };
   reportCount: number;
   upvotes: number;
   lastReportedAt: string; // ISO string
