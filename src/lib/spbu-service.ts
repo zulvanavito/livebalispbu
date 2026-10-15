@@ -58,11 +58,20 @@ export const SPBUService = {
       if (stored) {
         const parsed: SPBUItem[] = JSON.parse(stored);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          // Merge authoritative cctv stream metadata from INITIAL_SPBU_DATA
+          // Merge authoritative metadata (coordinates, code, address, regency, district, and cctv) from INITIAL_SPBU_DATA
           return parsed.map((item) => {
             const initial = INITIAL_SPBU_DATA.find((i) => i.id === item.id);
             if (initial) {
-              return { ...item, cctv: initial.cctv };
+              return {
+                ...item,
+                code: initial.code,
+                name: initial.name,
+                address: initial.address,
+                regency: initial.regency,
+                district: initial.district,
+                coordinates: initial.coordinates,
+                cctv: initial.cctv,
+              };
             }
             return item;
           });
@@ -81,7 +90,16 @@ export const SPBUService = {
             const item = mapRowToSPBUItem(row);
             const initial = INITIAL_SPBU_DATA.find((i) => i.id === item.id);
             if (initial) {
-              return { ...item, cctv: initial.cctv };
+              return {
+                ...item,
+                code: initial.code,
+                name: initial.name,
+                address: initial.address,
+                regency: initial.regency,
+                district: initial.district,
+                coordinates: initial.coordinates,
+                cctv: initial.cctv,
+              };
             }
             return item;
           });

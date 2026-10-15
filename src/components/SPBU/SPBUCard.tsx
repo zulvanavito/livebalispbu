@@ -245,10 +245,12 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
                 e.stopPropagation();
                 onOpenCCTV(spbu);
               }}
-              className="min-h-[38px] px-2.5 py-1.5 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 text-xs font-semibold flex items-center gap-1 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer whitespace-nowrap"
+              title={`Lihat siaran CCTV ${spbu.name}`}
+              aria-label={`Lihat siaran CCTV ${spbu.name}`}
+              className="min-h-[38px] px-2.5 py-1.5 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 text-xs font-semibold flex items-center gap-1.5 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer whitespace-nowrap shadow-xs"
             >
-              <Video className="w-3.5 h-3.5 text-red-600" />
-              <span>CCTV</span>
+              <Video className="w-3.5 h-3.5 text-red-600 shrink-0" />
+              <span>Lihat CCTV</span>
             </button>
           ) : (
             <span className="text-[10px] text-zinc-400 italic py-1 px-1">Tanpa CCTV</span>

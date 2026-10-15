@@ -11,7 +11,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     address: 'Jl. Sunset Road, Seminyak, Kuta, Badung',
     regency: 'Badung',
     district: 'Kuta',
-    coordinates: { lat: -8.6889, lng: 115.1714 },
+    coordinates: { lat: -8.68902, lng: 115.17178 },
     queueLevel: 'congested',
     estimatedWaitMinutes: 45,
     fuelStock: {
@@ -29,12 +29,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
   },
   {
     id: 'spbu-canggu-batubolong',
-    code: '54.803.13',
+    code: '54.803.21',
     name: 'SPBU Pertamina Raya Canggu',
     address: 'Jl. Raya Canggu, Kerobokan, Kuta Utara, Badung',
     regency: 'Badung',
     district: 'Kuta Utara',
-    coordinates: { lat: -8.6534, lng: 115.1632 },
+    coordinates: { lat: -8.64567, lng: 115.16048 },
     queueLevel: 'congested',
     estimatedWaitMinutes: 50,
     fuelStock: {
@@ -57,12 +57,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
   },
   {
     id: 'spbu-dewaruci-kuta',
-    code: '54.803.02',
-    name: 'SPBU Pertamina Simpang Siur (Dewa Ruci)',
-    address: 'Jl. Bypass Ngurah Rai No. 100, Kuta, Badung',
+    code: '54.803.31',
+    name: 'SPBU Pertamina Simpang Dewa Ruci',
+    address: 'Jl. Sunset Road No. 27, Kuta (Dewa Ruci), Badung',
     regency: 'Badung',
     district: 'Kuta',
-    coordinates: { lat: -8.7188, lng: 115.1832 },
+    coordinates: { lat: -8.71295, lng: 115.18591 },
     queueLevel: 'moderate',
     estimatedWaitMinutes: 20,
     fuelStock: {
@@ -80,12 +80,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
   },
   {
     id: 'spbu-jimbaran-bypass',
-    code: '54.803.11',
+    code: '54.803.07',
     name: 'SPBU Pertamina Jimbaran Bypass',
-    address: 'Jl. Bypass Ngurah Rai Jimbaran, Kuta Selatan, Badung',
+    address: 'Jl. By Pass Ngurah Rai No. 30X, Taman Griya, Jimbaran, Badung',
     regency: 'Badung',
     district: 'Kuta Selatan',
-    coordinates: { lat: -8.7865, lng: 115.1755 },
+    coordinates: { lat: -8.78410, lng: 115.18783 },
     queueLevel: 'smooth',
     estimatedWaitMinutes: 5,
     fuelStock: {
@@ -108,7 +108,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     address: 'Jl. Raya Kerobokan No. 72, Kerobokan Kelod, Kuta Utara, Badung',
     regency: 'Badung',
     district: 'Kuta Utara',
-    coordinates: { lat: -8.6738, lng: 115.1654 },
+    coordinates: { lat: -8.67365, lng: 115.17781 },
     queueLevel: 'moderate',
     estimatedWaitMinutes: 15,
     fuelStock: {
@@ -125,12 +125,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
   },
   {
     id: 'spbu-nusa-dua-bypass',
-    code: '54.803.08',
+    code: '54.803.27',
     name: 'SPBU Pertamina Nusa Dua Main Gate',
-    address: 'Jl. By Pass Ngurah Rai Benoa, Kuta Selatan, Badung',
+    address: 'Jl. By Pass Ngurah Rai, Benoa, Kuta Selatan, Badung',
     regency: 'Badung',
     district: 'Kuta Selatan',
-    coordinates: { lat: -8.7891, lng: 115.2154 },
+    coordinates: { lat: -8.79342, lng: 115.21523 },
     queueLevel: 'smooth',
     estimatedWaitMinutes: 8,
     fuelStock: {
@@ -153,7 +153,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     address: 'Jl. Raya Denpasar - Gilimanuk, Mengwi, Badung',
     regency: 'Badung',
     district: 'Mengwi',
-    coordinates: { lat: -8.5583, lng: 115.1729 },
+    coordinates: { lat: -8.54510, lng: 115.17120 },
     queueLevel: 'moderate',
     estimatedWaitMinutes: 18,
     fuelStock: {
@@ -175,12 +175,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
   // ==========================================
   {
     id: 'spbu-teuku-umar-barat',
-    code: '54.801.06',
+    code: '54.801.38',
     name: 'SPBU Pertamina Teuku Umar Barat (Marlboro)',
     address: 'Jl. Teuku Umar Barat No. 345, Denpasar Barat',
     regency: 'Denpasar',
     district: 'Denpasar Barat',
-    coordinates: { lat: -8.6795, lng: 115.1884 },
+    coordinates: { lat: -8.68028, lng: 115.19120 },
     queueLevel: 'congested',
     estimatedWaitMinutes: 40,
     fuelStock: {
@@ -204,12 +204,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
   },
   {
     id: 'spbu-sanur-bypass',
-    code: '54.801.12',
+    code: '54.801.06',
     name: 'SPBU Pertamina Sanur Bypass',
-    address: 'Jl. Bypass Ngurah Rai No. 240, Sanur Kauh, Denpasar Selatan',
+    address: 'Jl. Bypass Ngurah Rai No. 401, Sanur Kauh, Denpasar Selatan',
     regency: 'Denpasar',
     district: 'Denpasar Selatan',
-    coordinates: { lat: -8.6948, lng: 115.2536 },
+    coordinates: { lat: -8.69610, lng: 115.25320 },
     queueLevel: 'moderate',
     estimatedWaitMinutes: 20,
     fuelStock: {
@@ -227,12 +227,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
   },
   {
     id: 'spbu-gatot-subroto-timur',
-    code: '54.801.18',
+    code: '54.801.01',
     name: 'SPBU Pertamina Gatot Subroto Timur',
     address: 'Jl. Gatot Subroto Timur No. 120, Kesiman, Denpasar Timur',
     regency: 'Denpasar',
     district: 'Denpasar Timur',
-    coordinates: { lat: -8.6358, lng: 115.2415 },
+    coordinates: { lat: -8.63597, lng: 115.24149 },
     queueLevel: 'congested',
     estimatedWaitMinutes: 35,
     fuelStock: {
@@ -256,12 +256,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
   },
   {
     id: 'spbu-gatot-subroto-barat',
-    code: '54.801.25',
+    code: '54.801.44',
     name: 'SPBU Pertamina Gatot Subroto Barat',
     address: 'Jl. Gatot Subroto Barat No. 400, Padangsambian Kaja, Denpasar Barat',
     regency: 'Denpasar',
     district: 'Denpasar Barat',
-    coordinates: { lat: -8.6391, lng: 115.1923 },
+    coordinates: { lat: -8.63855, lng: 115.18528 },
     queueLevel: 'smooth',
     estimatedWaitMinutes: 10,
     fuelStock: {
@@ -285,12 +285,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
   },
   {
     id: 'spbu-diponegoro-denpasar',
-    code: '54.801.04',
+    code: '54.801.48',
     name: 'SPBU Pertamina Diponegoro (Pesanggaran)',
-    address: 'Jl. Diponegoro No. 182, Dauh Puri Klod, Denpasar Barat',
+    address: 'Jl. Diponegoro No. 66, Pedungan, Denpasar Selatan',
     regency: 'Denpasar',
-    district: 'Denpasar Barat',
-    coordinates: { lat: -8.6754, lng: 115.2152 },
+    district: 'Denpasar Selatan',
+    coordinates: { lat: -8.71453, lng: 115.21570 },
     queueLevel: 'moderate',
     estimatedWaitMinutes: 25,
     fuelStock: {
@@ -318,7 +318,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     address: 'Jl. PB Sudirman No. 15, Panjer, Denpasar Selatan',
     regency: 'Denpasar',
     district: 'Denpasar Selatan',
-    coordinates: { lat: -8.6749, lng: 115.2268 },
+    coordinates: { lat: -8.67323, lng: 115.21910 },
     queueLevel: 'smooth',
     estimatedWaitMinutes: 7,
     fuelStock: {
@@ -341,7 +341,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     address: 'Jl. Raya Sesetan No. 250, Sesetan, Denpasar Selatan',
     regency: 'Denpasar',
     district: 'Denpasar Selatan',
-    coordinates: { lat: -8.7012, lng: 115.2217 },
+    coordinates: { lat: -8.69964, lng: 115.21948 },
     queueLevel: 'empty',
     estimatedWaitMinutes: 0,
     fuelStock: {
@@ -364,7 +364,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     address: 'Jl. Imam Bonjol No. 380, Pemecutan Klod, Denpasar Barat',
     regency: 'Denpasar',
     district: 'Denpasar Barat',
-    coordinates: { lat: -8.6881, lng: 115.1953 },
+    coordinates: { lat: -8.69587, lng: 115.18712 },
     queueLevel: 'congested',
     estimatedWaitMinutes: 45,
     fuelStock: {
@@ -388,12 +388,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
   },
   {
     id: 'spbu-hayampen-wuruk',
-    code: '54.801.03',
+    code: '51.801.30',
     name: 'SPBU Pertamina Hayam Wuruk',
     address: 'Jl. Hayam Wuruk No. 154, Tanjung Bungkak, Denpasar Timur',
     regency: 'Denpasar',
     district: 'Denpasar Timur',
-    coordinates: { lat: -8.6657, lng: 115.2394 },
+    coordinates: { lat: -8.66640, lng: 115.24154 },
     queueLevel: 'moderate',
     estimatedWaitMinutes: 15,
     fuelStock: {

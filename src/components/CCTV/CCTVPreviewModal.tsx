@@ -75,6 +75,7 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({ spbu, onClos
         });
       });
 
+      let retryCount = 0;
       hls.on(Hls.Events.ERROR, (evt, data) => {
         if (data.details === Hls.ErrorDetails.BUFFER_STALLED_ERROR) {
           if (video.paused && !video.ended) {
@@ -84,6 +85,13 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({ spbu, onClos
         }
 
         if (data.fatal) {
+          retryCount++;
+          if (retryCount >= 2) {
+            setStreamError(true);
+            setViewMode('snapshot');
+            return;
+          }
+
           switch (data.type) {
             case Hls.ErrorTypes.NETWORK_ERROR:
               hls.startLoad();
@@ -224,6 +232,27 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({ spbu, onClos
             </button>
           </div>
         </div>
+
+        {/* Stream Error / Server Maintenance Notice */}
+        {streamError && (
+          <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 text-xs text-amber-900 flex items-center justify-between">
+            <div className="flex items-center gap-1.5 min-w-0">
+              <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
+              <span className="truncate">Siaran langsung ATCS Dishub sedang pemeliharaan server. Menampilkan snapshot lalu lintas.</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setStreamError(false);
+                setViewMode('stream');
+                setRefreshKey(Date.now());
+              }}
+              className="underline font-bold text-amber-950 ml-2 shrink-0 cursor-pointer"
+            >
+              Coba Video
+            </button>
+          </div>
+        )}
 
         {/* Video / Snapshot Viewport */}
         <div className="relative aspect-video w-full bg-black flex items-center justify-center overflow-hidden group">
