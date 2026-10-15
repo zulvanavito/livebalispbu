@@ -27,12 +27,14 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
   const userMarkerRef = useRef<L.Marker | null>(null);
 
   // Keep callback refs fresh
+  const spbusRef = useRef(spbus);
   const selectedSpbuRef = useRef(selectedSpbu);
   const onSelectSpbuRef = useRef(onSelectSpbu);
   const onOpenCCTVRef = useRef(onOpenCCTV);
   const onOpenReportRef = useRef(onOpenReport);
 
   useEffect(() => {
+    spbusRef.current = spbus;
     selectedSpbuRef.current = selectedSpbu;
     onSelectSpbuRef.current = onSelectSpbu;
     onOpenCCTVRef.current = onOpenCCTV;
@@ -195,11 +197,11 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
       : '';
 
     const cctvButton = spbu.cctv.hasCCTV
-      ? `<button type="button" class="spbu-popup-cctv-btn" data-spbu-id="${spbu.id}" style="
+      ? `<button type="button" class="spbu-popup-cctv-btn" data-spbu-id="${spbu.id}" title="Lihat siaran CCTV ${spbu.name}" style="
           flex:1; min-height:38px; padding:6px 10px; border-radius:10px; background:#dc2626; color:#ffffff; font-size:11px; font-weight:700; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:5px; box-shadow:0 1px 2px rgba(0,0,0,0.1); transition:opacity 0.15s;
         ">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-          CCTV
+          Lihat CCTV
         </button>`
       : '';
 
@@ -346,49 +348,61 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
       }
     });
 
-    // Delegate click events inside Leaflet popup
-    map.on('popupopen', (e) => {
-      const container = e.popup.getElement();
-      if (!container) return;
-
-      // Handle close button click inside popup
-      const closeBtn = container.querySelector('.leaflet-popup-close-button') as HTMLElement;
-      if (closeBtn) {
-        closeBtn.onclick = () => {
-          onSelectSpbuRef.current(null);
-        };
-      }
-
-      const cctvBtn = container.querySelector('.spbu-popup-cctv-btn') as HTMLElement;
-      if (cctvBtn) {
-        cctvBtn.onclick = (ev) => {
-          ev.stopPropagation();
-          const spbuId = cctvBtn.getAttribute('data-spbu-id');
-          const targetSpbu = spbus.find((s) => s.id === spbuId);
-          if (targetSpbu) {
-            onOpenCCTVRef.current(targetSpbu);
-          }
-        };
-      }
-
-      const reportBtn = container.querySelector('.spbu-popup-report-btn') as HTMLElement;
-      if (reportBtn) {
-        reportBtn.onclick = (ev) => {
-          ev.stopPropagation();
-          const spbuId = reportBtn.getAttribute('data-spbu-id');
-          const targetSpbu = spbus.find((s) => s.id === spbuId);
-          if (targetSpbu) {
-            onOpenReportRef.current(targetSpbu);
-          }
-        };
-      }
-    });
-
     mapInstanceRef.current = map;
 
     return () => {
       map.remove();
       mapInstanceRef.current = null;
+    };
+  }, []);
+
+  // 1b. Robust event delegation on the map container (capture phase)
+  // Guarantees clicks on CCTV, Report, and Close inside popups always trigger reliably
+  useEffect(() => {
+    const container = mapContainerRef.current;
+    if (!container) return;
+
+    const handleContainerClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+
+      // A. CCTV Button (either inside popup or directly on the pin badge)
+      const cctvTrigger = target.closest('.spbu-popup-cctv-btn, .cctv-click-trigger') as HTMLElement | null;
+      if (cctvTrigger) {
+        e.preventDefault();
+        e.stopPropagation();
+        const spbuId = cctvTrigger.getAttribute('data-spbu-id');
+        const targetSpbu = spbusRef.current.find((s) => s.id === spbuId);
+        if (targetSpbu && targetSpbu.cctv.hasCCTV) {
+          onOpenCCTVRef.current(targetSpbu);
+        }
+        return;
+      }
+
+      // B. Report Button inside popup
+      const reportTrigger = target.closest('.spbu-popup-report-btn') as HTMLElement | null;
+      if (reportTrigger) {
+        e.preventDefault();
+        e.stopPropagation();
+        const spbuId = reportTrigger.getAttribute('data-spbu-id');
+        const targetSpbu = spbusRef.current.find((s) => s.id === spbuId);
+        if (targetSpbu) {
+          onOpenReportRef.current(targetSpbu);
+        }
+        return;
+      }
+
+      // C. Close button inside popup
+      const closeTrigger = target.closest('.leaflet-popup-close-button') as HTMLElement | null;
+      if (closeTrigger) {
+        onSelectSpbuRef.current(null);
+        return;
+      }
+    };
+
+    container.addEventListener('click', handleContainerClick, true);
+    return () => {
+      container.removeEventListener('click', handleContainerClick, true);
     };
   }, []);
 

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Navigation, RefreshCw, RotateCcw } from 'lucide-react';
+import { Navigation, RefreshCw } from 'lucide-react';
 import { Logo } from '../Common/Logo';
 
 interface NavbarProps {
@@ -12,7 +12,6 @@ interface NavbarProps {
   totalSPBU?: number;
   smoothCount?: number;
   congestedCount?: number;
-  onResetData?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -23,7 +22,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   totalSPBU,
   smoothCount,
   congestedCount,
-  onResetData,
 }) => {
   return (
     <header className="bg-white border-b border-zinc-200 sticky top-0 z-40 px-4 py-2 sm:px-6">
@@ -49,18 +47,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Action Controls */}
         <div className="flex items-center space-x-1.5 sm:space-x-2">
-          {onResetData && (
-            <button
-              onClick={onResetData}
-              title="Kembalikan data ke kondisi awal"
-              aria-label="Reset data ke default"
-              className="min-h-[40px] px-2.5 py-1.5 text-zinc-500 hover:text-black hover:bg-zinc-100 rounded-xl text-xs font-medium flex items-center gap-1 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer"
-            >
-              <RotateCcw className="w-3.5 h-3.5" />
-              <span className="hidden xl:inline">Reset</span>
-            </button>
-          )}
-
           {/* Refresh Button */}
           <button
             onClick={onRefreshData}

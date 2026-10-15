@@ -3,12 +3,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Hls from 'hls.js';
 import { SPBUItem } from '@/types/spbu';
-import { X, RefreshCw, Video, AlertTriangle, MapPin, Camera, Play, Volume2, VolumeX, ShieldCheck } from 'lucide-react';
+import { X, RefreshCw, Video, AlertTriangle, MapPin, Camera, Play, Volume2, VolumeX, ShieldCheck, MessageSquare } from 'lucide-react';
 
 interface CCTVPreviewModalProps {
   spbu: SPBUItem | null;
   onClose: () => void;
 }
+
+const formatRelativeTime = (isoString?: string) => {
+  if (!isoString) return '';
+  const diffMs = Date.now() - new Date(isoString).getTime();
+  const diffMins = Math.max(1, Math.floor(diffMs / (60 * 1000)));
+  if (diffMins < 60) return `${diffMins} mnt lalu`;
+  const diffHours = Math.floor(diffMins / 60);
+  if (diffHours < 24) return `${diffHours} jam lalu`;
+  const diffDays = Math.floor(diffHours / 24);
+  return `${diffDays} hari lalu`;
+};
 
 export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({ spbu, onClose }) => {
   const [viewMode, setViewMode] = useState<'stream' | 'snapshot'>('stream');
@@ -75,6 +86,7 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({ spbu, onClos
         });
       });
 
+      let retryCount = 0;
       hls.on(Hls.Events.ERROR, (evt, data) => {
         if (data.details === Hls.ErrorDetails.BUFFER_STALLED_ERROR) {
           if (video.paused && !video.ended) {
@@ -84,6 +96,13 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({ spbu, onClos
         }
 
         if (data.fatal) {
+          retryCount++;
+          if (retryCount >= 2) {
+            setStreamError(true);
+            setViewMode('snapshot');
+            return;
+          }
+
           switch (data.type) {
             case Hls.ErrorTypes.NETWORK_ERROR:
               hls.startLoad();
@@ -225,6 +244,27 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({ spbu, onClos
           </div>
         </div>
 
+        {/* Stream Error / Server Maintenance Notice */}
+        {streamError && (
+          <div className="bg-amber-50 border-b border-amber-200 px-4 py-2 text-xs text-amber-900 flex items-center justify-between">
+            <div className="flex items-center gap-1.5 min-w-0">
+              <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
+              <span className="truncate">Siaran langsung ATCS Dishub sedang pemeliharaan server. Menampilkan snapshot lalu lintas.</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setStreamError(false);
+                setViewMode('stream');
+                setRefreshKey(Date.now());
+              }}
+              className="underline font-bold text-amber-950 ml-2 shrink-0 cursor-pointer"
+            >
+              Coba Video
+            </button>
+          </div>
+        )}
+
         {/* Video / Snapshot Viewport */}
         <div className="relative aspect-video w-full bg-black flex items-center justify-center overflow-hidden group">
           {viewMode === 'stream' && hasLiveStream && !streamError ? (
@@ -345,13 +385,20 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({ spbu, onClos
             </div>
           </div>
 
-          {/* Notes */}
-          {spbu.cctv.notes && (
-            <div className="p-2.5 rounded-lg bg-amber-50 border border-amber-200 text-xs text-amber-950 flex items-start gap-2">
-              <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-              <span>
-                <strong>Titik Pantau Kamera:</strong> {spbu.cctv.notes}
-              </span>
+          {/* Dynamic Citizen Note (Tampil otomatis hanya jika ada laporan warga terkini) */}
+          {spbu.latestNote?.text && (
+            <div className="p-3 rounded-xl bg-zinc-50 border border-zinc-200 text-xs text-zinc-900 flex items-start gap-2.5">
+              <MessageSquare className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1.5 font-semibold text-[11px] text-zinc-600 mb-0.5">
+                  <span>Catatan Warga Terkini</span>
+                  <span>•</span>
+                  <span>{formatRelativeTime(spbu.latestNote.createdAt)}</span>
+                </div>
+                <p className="text-zinc-800 leading-relaxed break-words font-medium">
+                  &ldquo;{spbu.latestNote.text}&rdquo;
+                </p>
+              </div>
             </div>
           )}
 
