@@ -34,6 +34,9 @@ export async function POST(request: NextRequest) {
     if (turnstileSecret.startsWith('1x00000000000000000000')) {
       // Pastikan token ada (dihasilkan oleh widget Turnstile test key atau test-token-pass)
       isHuman = Boolean(turnstileToken);
+    } else if (process.env.NODE_ENV === 'development' && turnstileToken === 'dev-bypass-token') {
+      // Izinkan bypass khusus di mode development lokal
+      isHuman = true;
     } else if (turnstileToken) {
       try {
         const formData = new URLSearchParams();
@@ -48,6 +51,9 @@ export async function POST(request: NextRequest) {
 
         const outcome = await cfRes.json();
         isHuman = Boolean(outcome.success);
+        if (!outcome.success) {
+          console.warn('[Cloudflare Turnstile] Siteverify ditolak:', outcome['error-codes'] || outcome);
+        }
       } catch (err) {
         console.error('Error verifying Cloudflare Turnstile:', err);
         // Fail open if Cloudflare is down but log it

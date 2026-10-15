@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { SPBUItem, QueueLevel, FuelStatus, UserReportSubmission } from '@/types/spbu';
 import { SPBUService } from '@/lib/spbu-service';
 import { X, Send, Fuel, CheckCircle2, AlertCircle, Clock } from 'lucide-react';
@@ -25,6 +25,18 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
   const [turnstileToken, setTurnstileToken] = useState<string>('');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [submittedSuccess, setSubmittedSuccess] = useState<boolean>(false);
+
+  const handleTurnstileVerify = useCallback((token: string) => {
+    setTurnstileToken(token);
+  }, []);
+
+  const handleTurnstileError = useCallback(() => {
+    setTurnstileToken('');
+  }, []);
+
+  const handleTurnstileExpire = useCallback(() => {
+    setTurnstileToken('');
+  }, []);
 
   // Aksesibilitas Keyboard: Tutup modal dengan Escape (R-32)
   useEffect(() => {
@@ -282,8 +294,9 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
             {/* Turnstile Anti-Bot Verification */}
             <div className="pt-2">
               <TurnstileWidget
-                onVerify={(token) => setTurnstileToken(token)}
-                onExpire={() => setTurnstileToken('')}
+                onVerify={handleTurnstileVerify}
+                onError={handleTurnstileError}
+                onExpire={handleTurnstileExpire}
                 className="mb-3"
               />
 
@@ -294,11 +307,19 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
 
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full min-h-[48px] py-3 px-4 rounded-xl bg-black hover:bg-zinc-800 text-white font-bold flex items-center justify-center gap-2 shadow-sm transition-all disabled:opacity-50 focus-visible:ring-2 focus-visible:ring-black cursor-pointer"
+                disabled={!turnstileToken || isSubmitting}
+                className={`w-full min-h-[48px] py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all focus-visible:ring-2 focus-visible:ring-black ${
+                  !turnstileToken || isSubmitting
+                    ? 'bg-zinc-100 text-zinc-400 border border-zinc-200 cursor-not-allowed shadow-none'
+                    : 'bg-black hover:bg-zinc-800 text-white shadow-sm cursor-pointer'
+                }`}
               >
                 <Send className="w-4 h-4" />
-                {isSubmitting ? 'Mengirim Laporan...' : 'Kirim Laporan Sekarang'}
+                {isSubmitting
+                  ? 'Mengirim Laporan...'
+                  : !turnstileToken
+                  ? 'Selesaikan Verifikasi di Atas'
+                  : 'Kirim Laporan Sekarang'}
               </button>
             </div>
           </form>
