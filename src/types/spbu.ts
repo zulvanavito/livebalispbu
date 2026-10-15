@@ -14,8 +14,9 @@ export interface CCTVInfo {
   hasCCTV: boolean;
   sourceName?: string; // e.g. "ATCS Dishub Denpasar", "ATCS Badung"
   locationName?: string; // e.g. "Simpang Teuku Umar Barat"
-  snapshotUrl?: string; // image frame URL or proxy endpoint
+  snapshotUrl?: string; // Deprecated: static snapshots replaced by citizen photos
   streamUrl?: string; // HLS or web link
+  distanceMeters?: number; // Distance in meters from SPBU to CCTV camera
   lastUpdated?: string;
   notes?: string;
 }

@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useMemo, useCallback } from 'react';
 import L from 'leaflet';
 import Supercluster from 'supercluster';
 import { SPBUItem, MapBounds } from '@/types/spbu';
+import { isWithin24Hours } from '@/lib/spbu-service';
 
 export interface SPBUMapProps {
   spbus: SPBUItem[];
@@ -198,9 +199,11 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
       label = 'Habis';
     }
 
+    const hasRecentPhoto = (spbu.latestPhoto && isWithin24Hours(spbu.latestPhoto.createdAt)) || (spbu.recentPhotos && spbu.recentPhotos.some((p) => isWithin24Hours(p.createdAt)));
+
     const cctvBadge = spbu.cctv.hasCCTV
       ? `<span class="cctv-click-trigger" data-spbu-id="${spbu.id}" style="background:#dc2626; color:white; font-size:9px; padding:2px 5px; border-radius:4px; font-weight:800; margin-left:3px; display:inline-flex; align-items:center; box-shadow:0 1px 3px rgba(0,0,0,0.4); cursor:pointer;" title="Buka pantauan CCTV">CCTV</span>`
-      : spbu.latestPhoto
+      : hasRecentPhoto
       ? `<span class="cctv-click-trigger" data-spbu-id="${spbu.id}" style="background:#047857; color:white; font-size:9px; padding:2px 5px; border-radius:4px; font-weight:800; margin-left:3px; display:inline-flex; align-items:center; box-shadow:0 1px 3px rgba(0,0,0,0.4); cursor:pointer;" title="Lihat foto antrean warga">FOTO</span>`
       : '';
 
@@ -348,14 +351,16 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
         </span>`
       : '';
 
+    const hasRecentPhoto = (spbu.latestPhoto && isWithin24Hours(spbu.latestPhoto.createdAt)) || (spbu.recentPhotos && spbu.recentPhotos.some((p) => isWithin24Hours(p.createdAt)));
+
     const cctvButton = spbu.cctv.hasCCTV
-      ? `<button type="button" class="spbu-popup-cctv-btn" data-spbu-id="${spbu.id}" title="Lihat siaran CCTV ${spbu.name}" style="
-          flex:1; min-height:38px; padding:6px 10px; border-radius:10px; background:#dc2626; color:#ffffff; font-size:11px; font-weight:700; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:5px; box-shadow:0 1px 2px rgba(0,0,0,0.1); transition:opacity 0.15s;
+      ? `<button type="button" class="spbu-popup-cctv-btn" data-spbu-id="${spbu.id}" title="Lihat siaran CCTV ${spbu.name} (${spbu.cctv.locationName || 'ATCS Dishub'})" style="
+          flex:1; min-height:38px; padding:6px 8px; border-radius:10px; background:#dc2626; color:#ffffff; font-size:11px; font-weight:700; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.1); transition:opacity 0.15s;
         ">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-          Lihat CCTV
+          ${spbu.cctv.distanceMeters !== undefined ? `CCTV (~${spbu.cctv.distanceMeters}m)` : 'Lihat CCTV'}
         </button>`
-      : spbu.latestPhoto
+      : hasRecentPhoto
       ? `<button type="button" class="spbu-popup-cctv-btn" data-spbu-id="${spbu.id}" title="Lihat foto antrean ${spbu.name}" style="
           flex:1; min-height:38px; padding:6px 10px; border-radius:10px; background:#047857; color:#ffffff; font-size:11px; font-weight:700; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:5px; box-shadow:0 1px 2px rgba(0,0,0,0.1); transition:opacity 0.15s;
         ">
@@ -366,7 +371,7 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
           flex:1; min-height:38px; padding:6px 8px; border-radius:10px; background:#f4f4f5; color:#3f3f46; font-size:11px; font-weight:600; border:1px solid #e4e4e7; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px; transition:opacity 0.15s;
         ">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          Foto Antrean
+          Pantau Visual
         </button>`;
 
     return `

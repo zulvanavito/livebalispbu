@@ -22,4 +22,9 @@ export const r2Client = isR2Configured
   : null;
 
 export const R2_BUCKET = process.env.CLOUDFLARE_R2_BUCKET_NAME || 'livespbu-photos';
-export const R2_PUBLIC_URL = (process.env.CLOUDFLARE_R2_PUBLIC_URL || 'https://pub-8b4995e4147f470ba5e2de6d97e31544.r2.dev').replace(/\/$/, '');
+
+export const R2_PUBLIC_URL = (
+  process.env.CLOUDFLARE_R2_PUBLIC_URL && !process.env.CLOUDFLARE_R2_PUBLIC_URL.includes('.r2.dev')
+    ? process.env.CLOUDFLARE_R2_PUBLIC_URL
+    : 'https://livebali.my.id'
+).replace(/\/$/, '');

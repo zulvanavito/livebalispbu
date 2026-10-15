@@ -1,6 +1,7 @@
 import { SPBUItem } from '@/types/spbu';
 
-export const INITIAL_SPBU_DATA: SPBUItem[] = [
+export const INITIAL_SPBU_DATA: SPBUItem[] = 
+[
   {
     "id": "spbu-sunset-road-1",
     "code": "54.803.19",
@@ -46,12 +47,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "solar": "out_of_stock"
     },
     "cctv": {
-      "hasCCTV": true,
-      "sourceName": "ATCS Dishub Bali",
-      "locationName": "Simpang Utama Kerobokan - Canggu",
-      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A003GUNUNGSALAKPTZ/",
-      "snapshotUrl": "/api/cctv-proxy?cam=canggu-main",
-      "lastUpdated": "2026-10-15T04:30:00.000Z"
+      "hasCCTV": false
     },
     "reportCount": 31,
     "upvotes": 68,
@@ -194,8 +190,8 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     "regency": "Denpasar",
     "district": "Denpasar Barat",
     "coordinates": {
-      "lat": -8.68028,
-      "lng": 115.1912
+      "lat": -8.68189,
+      "lng": 115.19138
     },
     "queueLevel": "congested",
     "estimatedWaitMinutes": 40,
@@ -208,10 +204,11 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     "cctv": {
       "hasCCTV": true,
       "sourceName": "ATCS Dishub Denpasar",
-      "locationName": "Simpang Teuku Umar - Imam Bonjol",
-      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A004TEUKUUMARPTZ1/",
-      "snapshotUrl": "/api/cctv-proxy?cam=marlboro-mahendradatta",
-      "lastUpdated": "2026-10-15T04:30:00.000Z"
+      "locationName": "Simpang Teuku Umar Barat - Pura Demak",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A100PURADEMAKPTZ/index.m3u8",
+      "distanceMeters": 153,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS TEUKU UMAR BARAT - PURA DEMAK (153m dari SPBU)"
     },
     "reportCount": 37,
     "upvotes": 84,
@@ -265,10 +262,11 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     "cctv": {
       "hasCCTV": true,
       "sourceName": "ATCS Dishub Denpasar",
-      "locationName": "Simpang Gatsu - Kapten Sujana",
-      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A002KAPTENSUJANAPTZ/",
-      "snapshotUrl": "/api/cctv-proxy?cam=gatsu-tohpati",
-      "lastUpdated": "2026-10-15T04:30:00.000Z"
+      "locationName": "Simpang Gatot Subroto - Trenggana",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A036TRENGGULIPTZ/index.m3u8",
+      "distanceMeters": 14,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG TRENGGULI (14m dari SPBU)"
     },
     "reportCount": 29,
     "upvotes": 62,
@@ -296,10 +294,11 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     "cctv": {
       "hasCCTV": true,
       "sourceName": "ATCS Dishub Denpasar",
-      "locationName": "Simpang Gatsu - Gunung Agung",
-      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A001GUNUNGAGUNGPTZ/",
-      "snapshotUrl": "/api/cctv-proxy?cam=gatsu-cokroaminoto",
-      "lastUpdated": "2026-10-15T04:30:00.000Z"
+      "locationName": "Simpang Gatot Subroto - Kebo Iwa",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A039KEBOIWAPTZ/index.m3u8",
+      "distanceMeters": 210,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG KEBO IWA (210m dari SPBU)"
     },
     "reportCount": 16,
     "upvotes": 38,
@@ -324,12 +323,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "solar": "out_of_stock"
     },
     "cctv": {
-      "hasCCTV": true,
-      "sourceName": "ATCS Dishub Denpasar",
-      "locationName": "Simpang Batanta - Teuku Umar",
-      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A005BATANTAPTZ/",
-      "snapshotUrl": "/api/cctv-proxy?cam=simpang-enam",
-      "lastUpdated": "2026-10-15T04:30:00.000Z"
+      "hasCCTV": false
     },
     "reportCount": 20,
     "upvotes": 45,
@@ -355,7 +349,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang PB Sudirman - Serma Mendra",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A019FEUNUDPTZ/index.m3u8",
+      "distanceMeters": 139,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG FE UNUD (139m dari SPBU)"
     },
     "reportCount": 11,
     "upvotes": 27,
@@ -381,7 +381,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Diponegoro - Sidakarya",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A013SIDAKARYAPTZ/index.m3u8",
+      "distanceMeters": 101,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG SIDAKARYA (101m dari SPBU)"
     },
     "reportCount": 34,
     "upvotes": 75,
@@ -409,10 +415,11 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
     "cctv": {
       "hasCCTV": true,
       "sourceName": "ATCS Dishub Denpasar",
-      "locationName": "Simpang Imam Bonjol - Soputan",
-      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A006SOPUTANPTZ/",
-      "snapshotUrl": "/api/cctv-proxy?cam=imambonjol-sunset",
-      "lastUpdated": "2026-10-15T04:30:00.000Z"
+      "locationName": "Simpang Imam Bonjol - Pulau Galang",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A028PULAUGALANGPTZ/index.m3u8",
+      "distanceMeters": 40,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG PULAU GALANG (40m dari SPBU)"
     },
     "reportCount": 26,
     "upvotes": 58,
@@ -1030,7 +1037,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Raya Puputan - Tantular",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A089RAYAPUPUTAN-LETDATANTULARPTZ/index.m3u8",
+      "distanceMeters": 221,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS RAYA PUPUTAN - TANTULAR (221m dari SPBU)"
     },
     "reportCount": 35,
     "upvotes": 80,
@@ -1056,7 +1069,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Gatot Subroto - WR Supratman",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A038TOHPATIPTZ/index.m3u8",
+      "distanceMeters": 337,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG TOHPATI (337m dari SPBU)"
     },
     "reportCount": 31,
     "upvotes": 70,
@@ -1134,7 +1153,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Patung Titi Banda",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A070TITIBANDAPTZ/index.m3u8",
+      "distanceMeters": 277,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS PATUNG TITI BANDA (277m dari SPBU)"
     },
     "reportCount": 18,
     "upvotes": 39,
@@ -1159,7 +1184,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "solar": "out_of_stock"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Hayam Wuruk - Kapten Japa",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A014KAPTENJAPAPTZ/index.m3u8",
+      "distanceMeters": 39,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG KAPTEN JAPA (39m dari SPBU)"
     },
     "reportCount": 17,
     "upvotes": 36,
@@ -1210,7 +1241,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Hang Tuah - Sedap Malam",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A042SEDAPMALAMPTZ/index.m3u8",
+      "distanceMeters": 226,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG SEDAP MALAM (226m dari SPBU)"
     },
     "reportCount": 24,
     "upvotes": 53,
@@ -1236,7 +1273,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Tukad Pakerisan - Tukad Barito",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A120TUKADPAKERISANPTZ/index.m3u8",
+      "distanceMeters": 190,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS TUKAD PAKERISAN (190m dari SPBU)"
     },
     "reportCount": 29,
     "upvotes": 66,
@@ -1390,7 +1433,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Mahendradata - Soputan",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A051MAHENDRADATTA-SOPUTANPTZ/index.m3u8",
+      "distanceMeters": 34,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS MAHENDRADATA - SOPUTAN (34m dari SPBU)"
     },
     "reportCount": 27,
     "upvotes": 65,
@@ -1416,7 +1465,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Western Ring Road - Buana Raya",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A009PERUMNASPTZ/index.m3u8",
+      "distanceMeters": 235,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG PERUMNAS (235m dari SPBU)"
     },
     "reportCount": 22,
     "upvotes": 49,
@@ -1467,7 +1522,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Western Ring Road - Buana Raya",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A009PERUMNASPTZ/index.m3u8",
+      "distanceMeters": 339,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG PERUMNAS (339m dari SPBU)"
     },
     "reportCount": 14,
     "upvotes": 30,
@@ -1492,7 +1553,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "solar": "out_of_stock"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang 6 Teuku Umar",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A053SIMPANG6TEUKUUMARPTZ/index.m3u8",
+      "distanceMeters": 59,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG 6 TEUKU UMAR (59m dari SPBU)"
     },
     "reportCount": 19,
     "upvotes": 41,
@@ -1622,7 +1689,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Cokroaminoto - Maruti",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A007BALUNPTZ/index.m3u8",
+      "distanceMeters": 37,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG BALUN (37m dari SPBU)"
     },
     "reportCount": 27,
     "upvotes": 61,
@@ -2506,7 +2579,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Gatot Subroto - Cokroaminoto",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A022UBUNGPTZ1/index.m3u8",
+      "distanceMeters": 172,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG UBUNG 1 (172m dari SPBU)"
     },
     "reportCount": 23,
     "upvotes": 30,
@@ -2558,7 +2637,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Gatot Subroto - Noja",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A035NOJAPTZ/index.m3u8",
+      "distanceMeters": 263,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG NOJA (263m dari SPBU)"
     },
     "reportCount": 14,
     "upvotes": 47,
@@ -2584,7 +2669,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Gatot Subroto - WR Supratman",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A038TOHPATIPTZ/index.m3u8",
+      "distanceMeters": 357,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG TOHPATI (357m dari SPBU)"
     },
     "reportCount": 15,
     "upvotes": 25,
@@ -2662,7 +2753,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Gatot Subroto - Pidada",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A031PIDADAPTZ/index.m3u8",
+      "distanceMeters": 158,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG PIDADA (158m dari SPBU)"
     },
     "reportCount": 11,
     "upvotes": 37,
@@ -2714,7 +2811,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Gatot Subroto - Cargo",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A030CARGOPTZ/index.m3u8",
+      "distanceMeters": 217,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS SIMPANG CARGO (217m dari SPBU)"
     },
     "reportCount": 15,
     "upvotes": 32,
@@ -2870,7 +2973,13 @@ export const INITIAL_SPBU_DATA: SPBUItem[] = [
       "dexlite": "available"
     },
     "cctv": {
-      "hasCCTV": false
+      "hasCCTV": true,
+      "sourceName": "ATCS Dishub Denpasar",
+      "locationName": "Simpang Setiabudi - Wibisana",
+      "streamUrl": "https://atcs.denpasarkota.go.id/stream/A078WIBISANA-SETIABUDIPTZ/index.m3u8",
+      "distanceMeters": 33,
+      "lastUpdated": "2026-10-15T20:51:56.135Z",
+      "notes": "Kamera ATCS WIBISANA - SETIABUDI (33m dari SPBU)"
     },
     "reportCount": 26,
     "upvotes": 38,
