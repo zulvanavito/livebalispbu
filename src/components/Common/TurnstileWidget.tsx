@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Script from 'next/script';
-import { ShieldCheck, Loader2, AlertTriangle, RefreshCw } from 'lucide-react';
+import { ShieldCheck, Loader2, AlertCircle, RefreshCw } from 'lucide-react';
 
 interface TurnstileWidgetProps {
   onVerify: (token: string) => void;
@@ -39,11 +39,23 @@ export const TurnstileWidget: React.FC<TurnstileWidgetProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
+  const hasRenderedRef = useRef<boolean>(false);
   const [scriptLoaded, setScriptLoaded] = useState<boolean>(false);
   const [isVerifying, setIsVerifying] = useState<boolean>(true);
   const [isVerified, setIsVerified] = useState<boolean>(false);
-  const [hasError, setHasError] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isLocalhost, setIsLocalhost] = useState<boolean>(false);
+
+  // Store callbacks in refs to guarantee parent re-renders NEVER recreate or destroy the widget!
+  const onVerifyRef = useRef(onVerify);
+  const onErrorRef = useRef(onError);
+  const onExpireRef = useRef(onExpire);
+
+  useEffect(() => {
+    onVerifyRef.current = onVerify;
+    onErrorRef.current = onError;
+    onExpireRef.current = onExpire;
+  });
 
   // Cloudflare site key
   const siteKey =
@@ -64,17 +76,19 @@ export const TurnstileWidget: React.FC<TurnstileWidgetProps> = ({
   const renderWidget = useCallback(() => {
     if (!containerRef.current || !window.turnstile) return;
 
+    // Clean up any existing widget before re-rendering (e.g. on manual retry)
     if (widgetIdRef.current) {
       try {
         window.turnstile.remove(widgetIdRef.current);
       } catch {
         // ignore
       }
+      widgetIdRef.current = null;
     }
 
     try {
       setIsVerifying(true);
-      setHasError(false);
+      setErrorMessage(null);
 
       const id = window.turnstile.render(containerRef.current, {
         sitekey: siteKey,
@@ -83,49 +97,66 @@ export const TurnstileWidget: React.FC<TurnstileWidgetProps> = ({
         callback: (token: string) => {
           setIsVerifying(false);
           setIsVerified(true);
-          setHasError(false);
-          onVerify(token);
+          setErrorMessage(null);
+          onVerifyRef.current?.(token);
         },
         'error-callback': () => {
           setIsVerifying(false);
           setIsVerified(false);
-          setHasError(true);
-          if (onError) onError();
+          setErrorMessage(
+            isLocalhost
+              ? 'Domain "localhost" belum didaftarkan di widget Turnstile.'
+              : 'Verifikasi anti-bot gagal. Silakan klik Coba Lagi.'
+          );
+          onErrorRef.current?.();
         },
         'expired-callback': () => {
           setIsVerified(false);
-          if (onExpire) onExpire();
+          setErrorMessage('Verifikasi kedaluwarsa. Silakan verifikasi ulang.');
+          onExpireRef.current?.();
         },
       });
+
       widgetIdRef.current = id;
+      hasRenderedRef.current = true;
     } catch (e) {
       console.warn('Turnstile render warning:', e);
       setIsVerifying(false);
-      setHasError(true);
+      setErrorMessage('Gagal memuat widget keamanan.');
+      onErrorRef.current?.();
     }
-  }, [siteKey, onVerify, onError, onExpire]);
+  }, [siteKey, isLocalhost]);
 
   useEffect(() => {
     if (!scriptLoaded) return;
+    // Guard: Only render ONCE when script and container are ready!
+    if (hasRenderedRef.current) return;
+
     renderWidget();
 
     return () => {
       if (widgetIdRef.current && window.turnstile) {
         try {
           window.turnstile.remove(widgetIdRef.current);
-          widgetIdRef.current = null;
         } catch {
           // ignore
         }
+        widgetIdRef.current = null;
+        hasRenderedRef.current = false;
       }
     };
   }, [scriptLoaded, renderWidget]);
 
+  const handleRetry = () => {
+    hasRenderedRef.current = false;
+    renderWidget();
+  };
+
   const handleDevBypass = () => {
     setIsVerifying(false);
     setIsVerified(true);
-    setHasError(false);
-    onVerify('dev-bypass-token');
+    setErrorMessage(null);
+    onVerifyRef.current?.('dev-bypass-token');
   };
 
   return (
@@ -141,7 +172,7 @@ export const TurnstileWidget: React.FC<TurnstileWidgetProps> = ({
           <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
           Verifikasi Keamanan Turnstile
         </span>
-        {isVerifying && !isVerified && !hasError && (
+        {isVerifying && !isVerified && !errorMessage && (
           <span className="flex items-center gap-1 text-[10px] text-zinc-400">
             <Loader2 className="w-3 h-3 animate-spin text-zinc-500" />
             Memeriksa...
@@ -158,37 +189,35 @@ export const TurnstileWidget: React.FC<TurnstileWidgetProps> = ({
       <div ref={containerRef} className="w-full flex justify-center min-h-[42px]" />
 
       {/* Error state & Dev Bypass fallback */}
-      {hasError && (
-        <div className="mt-2 p-2.5 rounded-lg bg-amber-50/80 border border-amber-200/80 text-[11px] text-amber-900 flex flex-col gap-1.5">
-          <div className="flex items-start gap-1.5 font-medium">
-            <AlertTriangle className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
-            <span>
-              {isLocalhost
-                ? 'Domain "localhost" belum didaftarkan di widget Cloudflare Turnstile.'
-                : 'Verifikasi anti-bot gagal dimuat. Silakan periksa koneksi internet.'}
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2 mt-1">
+      {errorMessage && (
+        <div className="mt-2 p-2.5 rounded-lg bg-rose-50 border border-rose-200 text-rose-800 text-[11px] flex flex-col gap-1.5">
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-1.5 font-medium">
+              <AlertCircle className="w-3.5 h-3.5 text-rose-600 shrink-0" />
+              <span>{errorMessage}</span>
+            </div>
             <button
               type="button"
-              onClick={renderWidget}
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-white border border-amber-300 text-amber-800 hover:bg-amber-100 font-semibold text-[10px] cursor-pointer transition-colors"
+              onClick={handleRetry}
+              className="px-2 py-0.5 rounded bg-white border border-rose-300 text-rose-700 font-semibold hover:bg-rose-50 flex items-center gap-1 cursor-pointer transition-colors shrink-0"
             >
               <RefreshCw className="w-3 h-3" />
               Coba Lagi
             </button>
+          </div>
 
-            {isLocalhost && (
+          {isLocalhost && (
+            <div className="pt-1.5 border-t border-rose-200/60 flex items-center justify-between">
+              <span className="text-[10px] text-rose-700">Testing di localhost?</span>
               <button
                 type="button"
                 onClick={handleDevBypass}
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-zinc-900 text-white hover:bg-black font-bold text-[10px] cursor-pointer transition-colors shadow-xs"
+                className="px-2 py-0.5 rounded bg-zinc-900 text-white font-bold hover:bg-black text-[10px] cursor-pointer transition-colors shadow-xs"
               >
                 Bypass untuk Testing Lokal
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       )}
     </div>
