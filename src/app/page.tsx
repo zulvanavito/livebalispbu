@@ -1,69 +1,319 @@
-import Image from "next/image";
+'use client';
+
+import React, { useState, useEffect, useMemo } from 'react';
+import dynamic from 'next/dynamic';
+import { SPBUItem } from '@/types/spbu';
+import { INITIAL_SPBU_DATA } from '@/data/spbu-denpasar-badung';
+import { SPBUService } from '@/lib/spbu-service';
+import { Navbar } from '@/components/Layout/Navbar';
+import { FilterBar } from '@/components/Layout/FilterBar';
+import { SPBUCard } from '@/components/SPBU/SPBUCard';
+import { CCTVPreviewModal } from '@/components/CCTV/CCTVPreviewModal';
+import { QuickReportModal } from '@/components/Report/QuickReportModal';
+import { PWAInstallBanner } from '@/components/Common/PWAInstallBanner';
+import { Fuel } from 'lucide-react';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
+
+// Dynamic import Leaflet map with SSR disabled
+const DynamicSPBUMap = dynamic(
+  () => import('@/components/Map/SPBUMap').then((mod) => mod.SPBUMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full min-h-[420px] bg-zinc-100 flex flex-col items-center justify-center text-zinc-600 gap-3">
+        <div className="w-8 h-8 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
+        <p className="text-sm font-medium">Memuat Peta Interaktif Denpasar &amp; Badung...</p>
+      </div>
+    ),
+  }
+);
 
 export default function Home() {
+  const [spbus, setSpbus] = useState<SPBUItem[]>(INITIAL_SPBU_DATA);
+  const [selectedSpbu, setSelectedSpbu] = useState<SPBUItem | null>(null);
+  const [cctvModalSpbu, setCctvModalSpbu] = useState<SPBUItem | null>(null);
+  const [reportModalSpbu, setReportModalSpbu] = useState<SPBUItem | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedRegency, setSelectedRegency] = useState<'all' | 'Denpasar' | 'Badung'>('all');
+  const [onlyWithCCTV, setOnlyWithCCTV] = useState<boolean>(false);
+  const [onlyPertaliteAvailable, setOnlyPertaliteAvailable] = useState<boolean>(false);
+  const [viewMode, setViewMode] = useState<'map' | 'list'>('map');
+  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
+  const [isLocating, setIsLocating] = useState<boolean>(false);
+  const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
+
+  // Load SPBU data
+  const loadData = async () => {
+    setIsRefreshing(true);
+    const data = await SPBUService.getSPBUs();
+    setSpbus(data);
+    setTimeout(() => setIsRefreshing(false), 500);
+  };
+
+  useEffect(() => {
+    loadData();
+
+    // 1. Supabase Realtime Subscription for instant crowd updates
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let channel: any = null;
+    if (isSupabaseConfigured && supabase) {
+      channel = supabase
+        .channel('spbus-realtime')
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: 'spbus' },
+          () => {
+            loadData();
+          }
+        )
+        .subscribe();
+    }
+
+    // 2. Listen to local update events
+    const handleUpdate = (e: Event) => {
+      const customEvent = e as CustomEvent<SPBUItem[]>;
+      if (customEvent.detail) {
+        setSpbus(customEvent.detail);
+      }
+    };
+
+    window.addEventListener('spbu_updated', handleUpdate);
+    return () => {
+      window.removeEventListener('spbu_updated', handleUpdate);
+      if (channel && supabase) {
+        supabase.removeChannel(channel);
+      }
+    };
+  }, []);
+
+  // Filtered SPBUs
+  const filteredSPBUs = useMemo(() => {
+    return spbus.filter((item) => {
+      // Regency
+      if (selectedRegency !== 'all' && item.regency !== selectedRegency) {
+        return false;
+      }
+
+      // CCTV filter
+      if (onlyWithCCTV && !item.cctv.hasCCTV) {
+        return false;
+      }
+
+      // Pertalite available
+      if (onlyPertaliteAvailable && item.fuelStock.pertalite !== 'available') {
+        return false;
+      }
+
+      // Search query
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        const matchName = item.name.toLowerCase().includes(q);
+        const matchAddr = item.address.toLowerCase().includes(q);
+        const matchDistrict = item.district.toLowerCase().includes(q);
+        const matchCode = item.code.toLowerCase().includes(q);
+        if (!matchName && !matchAddr && !matchDistrict && !matchCode) {
+          return false;
+        }
+      }
+
+      return true;
+    });
+  }, [spbus, selectedRegency, onlyWithCCTV, onlyPertaliteAvailable, searchQuery]);
+
+  // Statistics
+  const stats = useMemo(() => {
+    const total = spbus.length;
+    const congested = spbus.filter((s) => s.queueLevel === 'congested').length;
+    const smooth = spbus.filter((s) => s.queueLevel === 'smooth').length;
+    const pertaliteOut = spbus.filter((s) => s.fuelStock.pertalite === 'out_of_stock').length;
+    const withCCTV = spbus.filter((s) => s.cctv.hasCCTV).length;
+    return { total, congested, smooth, pertaliteOut, withCCTV };
+  }, [spbus]);
+
+  // GPS User location
+  const handleLocateUser = () => {
+    if (!navigator.geolocation) {
+      alert('Browser kamu tidak mendukung akses lokasi GPS.');
+      return;
+    }
+
+    setIsLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const coords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        setUserLocation(coords);
+        setIsLocating(false);
+
+        // Find nearest SPBU
+        let nearest: SPBUItem | null = null;
+        let minDist = Infinity;
+
+        spbus.forEach((spbu) => {
+          const d = Math.hypot(spbu.coordinates.lat - coords.lat, spbu.coordinates.lng - coords.lng);
+          if (d < minDist) {
+            minDist = d;
+            nearest = spbu;
+          }
+        });
+
+        if (nearest) {
+          setSelectedSpbu(nearest);
+        }
+      },
+      (err) => {
+        setIsLocating(false);
+        alert('Gagal mendeteksi lokasi GPS. Pastikan izin lokasi telah diaktifkan di browsermu.');
+        console.warn(err);
+      },
+      { timeout: 10000, enableHighAccuracy: true }
+    );
+  };
+
+  const handleUpvote = async (spbuId: string) => {
+    try {
+      await SPBUService.upvoteSPBU(spbuId);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        alert(err.message);
+      }
+    }
+  };
+
+  const handleResetData = () => {
+    if (confirm('Kembalikan semua data ke kondisi default awal?')) {
+      const reset = SPBUService.resetToDefault();
+      setSpbus(reset);
+      setSelectedSpbu(null);
+    }
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col h-screen w-screen overflow-hidden bg-white text-zinc-900">
+      {/* 1. Unified Header Navbar with live crisis stats */}
+      <Navbar
+        onLocateUser={handleLocateUser}
+        isLocating={isLocating}
+        onRefreshData={loadData}
+        isRefreshing={isRefreshing}
+        totalSPBU={stats.total}
+        smoothCount={stats.smooth}
+        congestedCount={stats.congested}
+        onResetData={handleResetData}
+      />
+
+      {/* 2. Streamlined Filter and Search Bar */}
+      <FilterBar
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        selectedRegency={selectedRegency}
+        onRegencyChange={setSelectedRegency}
+        onlyWithCCTV={onlyWithCCTV}
+        onToggleCCTV={() => setOnlyWithCCTV(!onlyWithCCTV)}
+        onlyPertaliteAvailable={onlyPertaliteAvailable}
+        onTogglePertalite={() => setOnlyPertaliteAvailable(!onlyPertaliteAvailable)}
+        viewMode={viewMode}
+        onViewModeChange={setViewMode}
+        totalFiltered={filteredSPBUs.length}
+        cctvCount={stats.withCCTV}
+      />
+
+      {/* 4. Main Body: Split Desktop (Map + Sidebar) or Mobile Tab */}
+      <main className="flex-1 relative flex flex-col md:flex-row overflow-hidden">
+        {/* Map View */}
+        <div
+          className={`flex-1 h-full w-full relative ${
+            viewMode === 'list' ? 'hidden md:block' : 'block'
+          }`}
+        >
+          <DynamicSPBUMap
+            spbus={filteredSPBUs}
+            selectedSpbu={selectedSpbu}
+            onSelectSpbu={setSelectedSpbu}
+            onOpenCCTV={(spbu) => setCctvModalSpbu(spbu)}
+            onOpenReport={(spbu) => setReportModalSpbu(spbu)}
+            userLocation={userLocation}
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        {/* List / Sidebar View */}
+        <aside
+          className={`w-full md:w-[420px] lg:w-[460px] h-full bg-zinc-50 border-l border-zinc-200 flex flex-col shrink-0 ${
+            viewMode === 'map' ? 'hidden md:flex' : 'flex'
+          }`}
+        >
+          {/* Sidebar Header */}
+          <div className="p-4 border-b border-zinc-200 flex items-center justify-between bg-white">
+            <h2 className="font-bold text-sm text-black">
+              Daftar SPBU Denpasar &amp; Badung ({filteredSPBUs.length})
+            </h2>
+            <span className="text-xs text-zinc-500">
+              {onlyWithCCTV ? 'Filter: CCTV Aktif' : 'Semua Kondisi'}
+            </span>
+          </div>
+
+          {/* Scrollable list */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-3">
+            {filteredSPBUs.length === 0 ? (
+              <div className="py-12 text-center text-zinc-500 space-y-2">
+                <Fuel className="w-10 h-10 mx-auto text-zinc-400" />
+                <p className="font-medium text-sm">Tidak ada SPBU yang cocok dengan filter.</p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearchQuery('');
+                    setSelectedRegency('all');
+                    setOnlyWithCCTV(false);
+                    setOnlyPertaliteAvailable(false);
+                  }}
+                  className="text-xs text-black underline hover:text-zinc-700 font-semibold focus-visible:ring-2 focus-visible:ring-black p-1"
+                >
+                  Reset semua filter
+                </button>
+              </div>
+            ) : (
+              filteredSPBUs.map((spbu) => (
+                <SPBUCard
+                  key={spbu.id}
+                  spbu={spbu}
+                  isSelected={selectedSpbu?.id === spbu.id}
+                  onSelect={(item) => setSelectedSpbu(item)}
+                  onOpenCCTV={(item) => setCctvModalSpbu(item)}
+                  onOpenReport={(item) => setReportModalSpbu(item)}
+                  onUpvote={handleUpvote}
+                  userLocation={userLocation}
+                />
+              ))
+            )}
+          </div>
+        </aside>
       </main>
+
+      {/* 5. CCTV Preview Modal */}
+      {cctvModalSpbu && (
+        <CCTVPreviewModal
+          spbu={cctvModalSpbu}
+          onClose={() => setCctvModalSpbu(null)}
+        />
+      )}
+
+      {/* 6. Quick Crowdsource Report Modal */}
+      {reportModalSpbu && (
+        <QuickReportModal
+          spbu={reportModalSpbu}
+          onClose={() => setReportModalSpbu(null)}
+          onReportSuccess={(updated) => {
+            setSpbus((prev) =>
+              prev.map((item) => (item.id === updated.id ? updated : item))
+            );
+            if (selectedSpbu?.id === updated.id) {
+              setSelectedSpbu(updated);
+            }
+          }}
+        />
+      )}
+
+      {/* 7. PWA Mobile Home-Screen Install Prompt */}
+      <PWAInstallBanner />
     </div>
   );
 }
