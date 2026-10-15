@@ -1,0 +1,1904 @@
+{
+  "gianyar": [
+    {
+      "id": "spbu-gianyar-01",
+      "code": "54.805.01",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Made Lebah, Kec. Ubud, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Ubud",
+      "coordinates": {
+        "lat": -8.524192,
+        "lng": 115.263715
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 30,
+      "fuelStock": {
+        "pertalite": "out_of_stock",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 8,
+      "upvotes": 15,
+      "lastReportedAt": "2026-10-15T09:59:55.088Z"
+    },
+    {
+      "id": "spbu-gianyar-02",
+      "code": "54.805.02",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Raya Tebongkang, Kec. Ubud, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Ubud",
+      "coordinates": {
+        "lat": -8.52774,
+        "lng": 115.243778
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 11,
+      "upvotes": 20,
+      "lastReportedAt": "2026-10-15T09:47:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-03",
+      "code": "54.805.03",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Raya Bedulu, Kec. Ubud, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Ubud",
+      "coordinates": {
+        "lat": -8.526281,
+        "lng": 115.295061
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 14,
+      "upvotes": 25,
+      "lastReportedAt": "2026-10-15T09:35:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-04",
+      "code": "54.805.04",
+      "name": "SPBU Pertamina 54.805.20",
+      "address": "Jalan Raya Andong, Kec. Ubud, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Ubud",
+      "coordinates": {
+        "lat": -8.505226,
+        "lng": 115.271692
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 17,
+      "upvotes": 30,
+      "lastReportedAt": "2026-10-15T09:23:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-05",
+      "code": "54.805.05",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Bukit Jati, Kec. Gianyar, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Gianyar",
+      "coordinates": {
+        "lat": -8.536636,
+        "lng": 115.333427
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 30,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 20,
+      "upvotes": 35,
+      "lastReportedAt": "2026-10-15T09:11:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-06",
+      "code": "54.805.06",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Dharma Giri, Kec. Blahbatuh, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Blahbatuh",
+      "coordinates": {
+        "lat": -8.548329,
+        "lng": 115.308416
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "low",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 23,
+      "upvotes": 40,
+      "lastReportedAt": "2026-10-15T08:59:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-07",
+      "code": "54.805.07",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Dharma Giri, Kec. Gianyar, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Gianyar",
+      "coordinates": {
+        "lat": -8.541351,
+        "lng": 115.321092
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 26,
+      "upvotes": 45,
+      "lastReportedAt": "2026-10-15T08:47:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-08",
+      "code": "54.805.08",
+      "name": "SPBU Pertamina Jalan Raya Celuk (Sukawati)",
+      "address": "Jalan Raya Celuk, Kec. Sukawati, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Sukawati",
+      "coordinates": {
+        "lat": -8.602308,
+        "lng": 115.260847
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "out_of_stock",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 29,
+      "upvotes": 50,
+      "lastReportedAt": "2026-10-15T08:35:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-09",
+      "code": "54.805.09",
+      "name": "SPBU Pertamina 54.805.12",
+      "address": "Gang Gandenlangu, Kec. Ubud, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Ubud",
+      "coordinates": {
+        "lat": -8.52316,
+        "lng": 115.275941
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 30,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 32,
+      "upvotes": 55,
+      "lastReportedAt": "2026-10-15T08:23:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-10",
+      "code": "54.805.10",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Raya Semebaung, Kec. Blahbatuh, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Blahbatuh",
+      "coordinates": {
+        "lat": -8.534999,
+        "lng": 115.306609
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 10,
+      "upvotes": 15,
+      "lastReportedAt": "2026-10-15T08:11:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-11",
+      "code": "54.805.11",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Raya Sukawati, Kec. Sukawati, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Sukawati",
+      "coordinates": {
+        "lat": -8.574886,
+        "lng": 115.276241
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "low",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 13,
+      "upvotes": 20,
+      "lastReportedAt": "2026-10-15T07:59:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-12",
+      "code": "54.805.12",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Raya Sukawati, Kec. Sukawati, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Sukawati",
+      "coordinates": {
+        "lat": -8.566876,
+        "lng": 115.27476
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 16,
+      "upvotes": 25,
+      "lastReportedAt": "2026-10-15T07:47:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-13",
+      "code": "54.805.13",
+      "name": "SPBU Pertamina",
+      "address": "Profesor Ida Bagus Mantra Bypass, Kec. Blahbatuh, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Blahbatuh",
+      "coordinates": {
+        "lat": -8.601805,
+        "lng": 115.324792
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 30,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 19,
+      "upvotes": 30,
+      "lastReportedAt": "2026-10-15T07:35:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-14",
+      "code": "54.805.14",
+      "name": "SPBU Pertamina",
+      "address": "Profesor Ida Bagus Mantra Bypass, Kec. Gianyar, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Gianyar",
+      "coordinates": {
+        "lat": -8.581006,
+        "lng": 115.352618
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 22,
+      "upvotes": 35,
+      "lastReportedAt": "2026-10-15T07:23:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-15",
+      "code": "54.805.15",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Raya Singapadu, Kec. Sukawati, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Sukawati",
+      "coordinates": {
+        "lat": -8.553811,
+        "lng": 115.251501
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "out_of_stock",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 25,
+      "upvotes": 40,
+      "lastReportedAt": "2026-10-15T07:11:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-16",
+      "code": "54.805.16",
+      "name": "SPBU Pertamina",
+      "address": "4, Kec. Tegallalang, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Tegallalang",
+      "coordinates": {
+        "lat": -8.462737,
+        "lng": 115.297603
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "low",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 28,
+      "upvotes": 45,
+      "lastReportedAt": "2026-10-15T06:59:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-17",
+      "code": "54.805.17",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Raya Kemenuh, Kec. Sukawati, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Sukawati",
+      "coordinates": {
+        "lat": -8.565517,
+        "lng": 115.288008
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 30,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 31,
+      "upvotes": 50,
+      "lastReportedAt": "2026-10-15T06:47:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-18",
+      "code": "54.805.18",
+      "name": "SPBU Pom bensin blahbatuh",
+      "address": "Jalan Desa Pering, Kec. Blahbatuh, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Blahbatuh",
+      "coordinates": {
+        "lat": -8.56625,
+        "lng": 115.304977
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 9,
+      "upvotes": 55,
+      "lastReportedAt": "2026-10-15T06:35:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-19",
+      "code": "54.805.19",
+      "name": "SPBU Pertamina Jalan Cok Rai Pudak (Ubud)",
+      "address": "Jalan Cok Rai Pudak, Kec. Ubud, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Ubud",
+      "coordinates": {
+        "lat": -8.528795,
+        "lng": 115.271714
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 12,
+      "upvotes": 15,
+      "lastReportedAt": "2026-10-15T06:23:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-20",
+      "code": "54.805.20",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Profesor Ida Bagus Mantra, Kec. Blahbatuh, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Blahbatuh",
+      "coordinates": {
+        "lat": -8.612157,
+        "lng": 115.309289
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 15,
+      "upvotes": 20,
+      "lastReportedAt": "2026-10-15T06:11:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-21",
+      "code": "54.805.21",
+      "name": "SPBU Pertamina Jalan Raya Payangan (Payangan)",
+      "address": "Jalan Raya Payangan, Kec. Payangan, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Payangan",
+      "coordinates": {
+        "lat": -8.40877,
+        "lng": 115.244896
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 30,
+      "fuelStock": {
+        "pertalite": "low",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 18,
+      "upvotes": 25,
+      "lastReportedAt": "2026-10-15T05:59:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-22",
+      "code": "54.805.22",
+      "name": "SPBU Pertamina Jalan Raya Mawang (Sukawati)",
+      "address": "Jalan Raya Mawang, Kec. Sukawati, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Sukawati",
+      "coordinates": {
+        "lat": -8.563332,
+        "lng": 115.261646
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "out_of_stock",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 21,
+      "upvotes": 30,
+      "lastReportedAt": "2026-10-15T05:47:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-23",
+      "code": "54.805.23",
+      "name": "SPBU Pertamina Gang Dahlia (Tegallalang)",
+      "address": "Gang Dahlia, Kec. Tegallalang, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Tegallalang",
+      "coordinates": {
+        "lat": -8.451204,
+        "lng": 115.318491
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 24,
+      "upvotes": 35,
+      "lastReportedAt": "2026-10-15T05:35:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-24",
+      "code": "54.805.24",
+      "name": "SPBU Pertamina Jalan I Wayan Lunga (Tegallalang)",
+      "address": "Jalan I Wayan Lunga, Kec. Tegallalang, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Tegallalang",
+      "coordinates": {
+        "lat": -8.447857,
+        "lng": 115.280572
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 27,
+      "upvotes": 40,
+      "lastReportedAt": "2026-10-15T05:23:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-25",
+      "code": "54.805.25",
+      "name": "SPBU Pertamina Jalan I Wayan Lunga (Tegallalang)",
+      "address": "Jalan I Wayan Lunga, Kec. Tegallalang, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Tegallalang",
+      "coordinates": {
+        "lat": -8.452356,
+        "lng": 115.279707
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 30,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 30,
+      "upvotes": 45,
+      "lastReportedAt": "2026-10-15T05:11:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-26",
+      "code": "54.805.26",
+      "name": "SPBU Pertamina",
+      "address": "4, Kec. Tegallalang, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Tegallalang",
+      "coordinates": {
+        "lat": -8.439641,
+        "lng": 115.308113
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "low",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 8,
+      "upvotes": 50,
+      "lastReportedAt": "2026-10-15T04:59:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-27",
+      "code": "54.805.27",
+      "name": "SPBU Pertamina",
+      "address": "Jalan I Wayan Lunga, Kec. Tegallalang, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Tegallalang",
+      "coordinates": {
+        "lat": -8.415452,
+        "lng": 115.280741
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 11,
+      "upvotes": 55,
+      "lastReportedAt": "2026-10-15T04:47:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-28",
+      "code": "54.805.28",
+      "name": "SPBU Pertamina",
+      "address": "Jala Raya Desa Kenderan, Kec. Tegallalang, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Tegallalang",
+      "coordinates": {
+        "lat": -8.418534,
+        "lng": 115.298365
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 14,
+      "upvotes": 15,
+      "lastReportedAt": "2026-10-15T04:35:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-29",
+      "code": "54.805.29",
+      "name": "SPBU Pertamina Jalan Raya Payangan (Payangan)",
+      "address": "Jalan Raya Payangan, Kec. Payangan, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Payangan",
+      "coordinates": {
+        "lat": -8.423973,
+        "lng": 115.246273
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 30,
+      "fuelStock": {
+        "pertalite": "out_of_stock",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 17,
+      "upvotes": 20,
+      "lastReportedAt": "2026-10-15T04:23:55.089Z"
+    },
+    {
+      "id": "spbu-gianyar-30",
+      "code": "54.805.30",
+      "name": "SPBU Pertamina",
+      "address": "Jalan I Wayan Lunga, Kec. Tegallalang, Kabupaten Gianyar",
+      "regency": "Gianyar",
+      "district": "Tegallalang",
+      "coordinates": {
+        "lat": -8.329493,
+        "lng": 115.325653
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 20,
+      "upvotes": 25,
+      "lastReportedAt": "2026-10-15T04:11:55.089Z"
+    }
+  ],
+  "buleleng": [
+    {
+      "id": "spbu-buleleng-01",
+      "code": "54.811.01",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Raya Singaraja - Amlapura, Kec. Kubutambahan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Kubutambahan",
+      "coordinates": {
+        "lat": -8.102465,
+        "lng": 115.283632
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 35,
+      "fuelStock": {
+        "pertalite": "out_of_stock",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 6,
+      "upvotes": 12,
+      "lastReportedAt": "2026-10-15T10:01:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-02",
+      "code": "54.811.02",
+      "name": "SPBU Pertamina Jalan Raya Seririt-Pupuan (Seririt)",
+      "address": "Jalan Raya Seririt-Pupuan, Kec. Seririt, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Seririt",
+      "coordinates": {
+        "lat": -8.215186,
+        "lng": 114.940167
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 8,
+      "upvotes": 16,
+      "lastReportedAt": "2026-10-15T09:46:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-03",
+      "code": "54.811.03",
+      "name": "SPBU Pertamina 1 (Seririt)",
+      "address": "1, Kec. Seririt, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Seririt",
+      "coordinates": {
+        "lat": -8.193308,
+        "lng": 114.922258
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 10,
+      "upvotes": 20,
+      "lastReportedAt": "2026-10-15T09:31:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-04",
+      "code": "54.811.04",
+      "name": "SPBU Pertamina Jalan Raya Seririt-Pupuan (Seririt)",
+      "address": "Jalan Raya Seririt-Pupuan, Kec. Seririt, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Seririt",
+      "coordinates": {
+        "lat": -8.22624,
+        "lng": 114.944835
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 12,
+      "upvotes": 24,
+      "lastReportedAt": "2026-10-15T09:16:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-05",
+      "code": "54.811.05",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Gajah Mada, Kec. Buleleng, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Buleleng",
+      "coordinates": {
+        "lat": -8.13529,
+        "lng": 115.101378
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "low",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 14,
+      "upvotes": 28,
+      "lastReportedAt": "2026-10-15T09:01:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-06",
+      "code": "54.811.06",
+      "name": "SPBU Pertamina Jalan Seririt-Gilimanuk (Gerokgak)",
+      "address": "Jalan Seririt-Gilimanuk, Kec. Gerokgak, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Gerokgak",
+      "coordinates": {
+        "lat": -8.148952,
+        "lng": 114.632387
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 35,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 16,
+      "upvotes": 32,
+      "lastReportedAt": "2026-10-15T08:46:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-07",
+      "code": "54.811.07",
+      "name": "SPBU Pertamina Jalan Seririt-Singaraja (Seririt)",
+      "address": "Jalan Seririt-Singaraja, Kec. Seririt, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Seririt",
+      "coordinates": {
+        "lat": -8.186316,
+        "lng": 114.977471
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 18,
+      "upvotes": 36,
+      "lastReportedAt": "2026-10-15T08:31:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-08",
+      "code": "54.811.08",
+      "name": "SPBU Pertamina 1 (Seririt)",
+      "address": "1, Kec. Seririt, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Seririt",
+      "coordinates": {
+        "lat": -8.191093,
+        "lng": 114.932671
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 20,
+      "upvotes": 40,
+      "lastReportedAt": "2026-10-15T08:16:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-09",
+      "code": "54.811.09",
+      "name": "SPBU Pertamina Giri Emas Gas Station",
+      "address": "Jalan Raya Amlapura-Singaraja, Kec. Sawan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sawan",
+      "coordinates": {
+        "lat": -8.082481,
+        "lng": 115.143243
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "out_of_stock",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 22,
+      "upvotes": 44,
+      "lastReportedAt": "2026-10-15T08:01:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-10",
+      "code": "54.811.10",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Seririt-Singaraja, Kec. Banjar, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Banjar",
+      "coordinates": {
+        "lat": -8.145012,
+        "lng": 115.049947
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 24,
+      "upvotes": 48,
+      "lastReportedAt": "2026-10-15T07:46:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-11",
+      "code": "54.811.11",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Sudirman, Kec. Buleleng, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Buleleng",
+      "coordinates": {
+        "lat": -8.115274,
+        "lng": 115.079728
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 35,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 26,
+      "upvotes": 12,
+      "lastReportedAt": "2026-10-15T07:31:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-12",
+      "code": "54.811.12",
+      "name": "SPBU Pertamina Jalan Pura Puseh (Sukasada)",
+      "address": "Jalan Pura Puseh, Kec. Sukasada, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sukasada",
+      "coordinates": {
+        "lat": -8.264603,
+        "lng": 115.051295
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 6,
+      "upvotes": 16,
+      "lastReportedAt": "2026-10-15T07:16:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-13",
+      "code": "54.811.13",
+      "name": "SPBU Petrolimex",
+      "address": "1, Kec. Seririt, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Seririt",
+      "coordinates": {
+        "lat": -8.177288,
+        "lng": 114.750065
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "low",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 8,
+      "upvotes": 20,
+      "lastReportedAt": "2026-10-15T07:01:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-14",
+      "code": "54.811.14",
+      "name": "SPBU Pertamina Jalan Seririt-Gilmanuk (Seririt)",
+      "address": "Jalan Seririt-Gilmanuk, Kec. Seririt, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Seririt",
+      "coordinates": {
+        "lat": -8.203879,
+        "lng": 114.884047
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 10,
+      "upvotes": 24,
+      "lastReportedAt": "2026-10-15T06:46:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-15",
+      "code": "54.811.15",
+      "name": "SPBU Pertamina Jalan Seririt-Singaraja (Seririt)",
+      "address": "Jalan Seririt-Singaraja, Kec. Seririt, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Seririt",
+      "coordinates": {
+        "lat": -8.191811,
+        "lng": 114.950056
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 12,
+      "upvotes": 28,
+      "lastReportedAt": "2026-10-15T06:31:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-16",
+      "code": "54.811.16",
+      "name": "SPBU Pertamina Jalan Seririt-Singaraja (Banjar)",
+      "address": "Jalan Seririt-Singaraja, Kec. Banjar, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Banjar",
+      "coordinates": {
+        "lat": -8.164735,
+        "lng": 115.021313
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 35,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 14,
+      "upvotes": 32,
+      "lastReportedAt": "2026-10-15T06:16:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-17",
+      "code": "54.811.17",
+      "name": "SPBU Pertamina Jalan Raya Seririt-Pupuan (Busungbiu)",
+      "address": "Jalan Raya Seririt-Pupuan, Kec. Busungbiu, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Busungbiu",
+      "coordinates": {
+        "lat": -8.285962,
+        "lng": 114.976811
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "out_of_stock",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 16,
+      "upvotes": 36,
+      "lastReportedAt": "2026-10-15T06:01:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-18",
+      "code": "54.811.18",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Seririt-Gilmanuk, Kec. Seririt, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Seririt",
+      "coordinates": {
+        "lat": -8.200698,
+        "lng": 114.832143
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 18,
+      "upvotes": 40,
+      "lastReportedAt": "2026-10-15T05:46:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-19",
+      "code": "54.811.19",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Pura Puseh, Kec. Sukasada, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sukasada",
+      "coordinates": {
+        "lat": -8.266461,
+        "lng": 115.054715
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 20,
+      "upvotes": 44,
+      "lastReportedAt": "2026-10-15T05:31:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-20",
+      "code": "54.811.20",
+      "name": "SPBU Pertamina Jalan Surapati (Buleleng)",
+      "address": "Jalan Surapati, Kec. Buleleng, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Buleleng",
+      "coordinates": {
+        "lat": -8.095278,
+        "lng": 115.111762
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 22,
+      "upvotes": 48,
+      "lastReportedAt": "2026-10-15T05:16:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-21",
+      "code": "54.811.21",
+      "name": "SPBU Pompa Bensin",
+      "address": "Jalan Laksamana, Kec. Buleleng, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Buleleng",
+      "coordinates": {
+        "lat": -8.12721,
+        "lng": 115.079297
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 35,
+      "fuelStock": {
+        "pertalite": "low",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 24,
+      "upvotes": 12,
+      "lastReportedAt": "2026-10-15T05:01:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-22",
+      "code": "54.811.22",
+      "name": "SPBU Pertamina",
+      "address": "Jalan A. Yani, Kec. Buleleng, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Buleleng",
+      "coordinates": {
+        "lat": -8.11315,
+        "lng": 115.082669
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 26,
+      "upvotes": 16,
+      "lastReportedAt": "2026-10-15T04:46:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-23",
+      "code": "54.811.23",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Raya Penelokan, Kec. Sawan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sawan",
+      "coordinates": {
+        "lat": -8.085333,
+        "lng": 115.175149
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 6,
+      "upvotes": 20,
+      "lastReportedAt": "2026-10-15T04:31:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-24",
+      "code": "54.811.24",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Raya Pelaga, Kec. Kubutambahan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Kubutambahan",
+      "coordinates": {
+        "lat": -8.327054,
+        "lng": 115.222665
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 8,
+      "upvotes": 24,
+      "lastReportedAt": "2026-10-15T04:16:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-25",
+      "code": "54.811.25",
+      "name": "SPBU Pertamina Jalan Wanagiri (Sukasada)",
+      "address": "Jalan Wanagiri, Kec. Sukasada, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sukasada",
+      "coordinates": {
+        "lat": -8.237011,
+        "lng": 115.138592
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "out_of_stock",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 10,
+      "upvotes": 28,
+      "lastReportedAt": "2026-10-15T04:01:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-26",
+      "code": "54.811.26",
+      "name": "SPBU Pertamina Jalan Seririt-Singaraja (Banjar)",
+      "address": "Jalan Seririt-Singaraja, Kec. Banjar, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Banjar",
+      "coordinates": {
+        "lat": -8.175895,
+        "lng": 115.003635
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 35,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 12,
+      "upvotes": 32,
+      "lastReportedAt": "2026-10-15T03:46:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-27",
+      "code": "54.811.27",
+      "name": "SPBU Pertamina Jalan Raya Penelokan (Sawan)",
+      "address": "Jalan Raya Penelokan, Kec. Sawan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sawan",
+      "coordinates": {
+        "lat": -8.140935,
+        "lng": 115.20028
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 14,
+      "upvotes": 36,
+      "lastReportedAt": "2026-10-15T03:31:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-28",
+      "code": "54.811.28",
+      "name": "SPBU Pertamina Jalan Raya Penelokan (Sawan)",
+      "address": "Jalan Raya Penelokan, Kec. Sawan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sawan",
+      "coordinates": {
+        "lat": -8.118493,
+        "lng": 115.187277
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 16,
+      "upvotes": 40,
+      "lastReportedAt": "2026-10-15T03:16:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-29",
+      "code": "54.811.29",
+      "name": "SPBU Pertamina Jalan Raya Penelokan (Sawan)",
+      "address": "Jalan Raya Penelokan, Kec. Sawan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sawan",
+      "coordinates": {
+        "lat": -8.139014,
+        "lng": 115.21382
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "low",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 18,
+      "upvotes": 44,
+      "lastReportedAt": "2026-10-15T03:01:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-30",
+      "code": "54.811.30",
+      "name": "SPBU Pertamina Jalan Raya Penelokan (Sawan)",
+      "address": "Jalan Raya Penelokan, Kec. Sawan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sawan",
+      "coordinates": {
+        "lat": -8.126387,
+        "lng": 115.216751
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 20,
+      "upvotes": 48,
+      "lastReportedAt": "2026-10-15T02:46:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-31",
+      "code": "54.811.31",
+      "name": "SPBU Pertamina Jalan Raya Penelokan (Sawan)",
+      "address": "Jalan Raya Penelokan, Kec. Sawan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sawan",
+      "coordinates": {
+        "lat": -8.091758,
+        "lng": 115.175892
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 35,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 22,
+      "upvotes": 12,
+      "lastReportedAt": "2026-10-15T02:31:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-32",
+      "code": "54.811.32",
+      "name": "SPBU Pertamina Jalan Raya Penelokan (Sawan)",
+      "address": "Jalan Raya Penelokan, Kec. Sawan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sawan",
+      "coordinates": {
+        "lat": -8.131258,
+        "lng": 115.21034
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 24,
+      "upvotes": 16,
+      "lastReportedAt": "2026-10-15T02:16:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-33",
+      "code": "54.811.33",
+      "name": "SPBU PetraMINA",
+      "address": "Jalan Buleleng 1, Kec. Buleleng, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Buleleng",
+      "coordinates": {
+        "lat": -8.149882,
+        "lng": 115.057153
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "out_of_stock",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 26,
+      "upvotes": 20,
+      "lastReportedAt": "2026-10-15T02:01:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-34",
+      "code": "54.811.34",
+      "name": "SPBU Pertamina Jalan Pura Puseh (Sukasada)",
+      "address": "Jalan Pura Puseh, Kec. Sukasada, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sukasada",
+      "coordinates": {
+        "lat": -8.270318,
+        "lng": 115.061553
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 6,
+      "upvotes": 24,
+      "lastReportedAt": "2026-10-15T01:46:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-35",
+      "code": "54.811.35",
+      "name": "SPBU Pertamina Jalan Pura Puseh (Sukasada)",
+      "address": "Jalan Pura Puseh, Kec. Sukasada, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sukasada",
+      "coordinates": {
+        "lat": -8.272811,
+        "lng": 115.057375
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 8,
+      "upvotes": 28,
+      "lastReportedAt": "2026-10-15T01:31:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-36",
+      "code": "54.811.36",
+      "name": "SPBU Pertamina Gang Srikandi (Sawan)",
+      "address": "Gang Srikandi, Kec. Sawan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Sawan",
+      "coordinates": {
+        "lat": -8.114026,
+        "lng": 115.135098
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 35,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 10,
+      "upvotes": 32,
+      "lastReportedAt": "2026-10-15T01:16:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-37",
+      "code": "54.811.37",
+      "name": "SPBU Pertamina",
+      "address": "Jalan Raya Penelokan, Kec. Kubutambahan, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Kubutambahan",
+      "coordinates": {
+        "lat": -8.146571,
+        "lng": 115.247281
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "low",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 12,
+      "upvotes": 36,
+      "lastReportedAt": "2026-10-15T01:01:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-38",
+      "code": "54.811.38",
+      "name": "SPBU Fuel Station",
+      "address": "Gang Durian, Kec. Banjar, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Banjar",
+      "coordinates": {
+        "lat": -8.259961,
+        "lng": 115.027704
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 14,
+      "upvotes": 40,
+      "lastReportedAt": "2026-10-15T00:46:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-39",
+      "code": "54.811.39",
+      "name": "SPBU Pertamina Jalan Raya Seririt-Pupuan (Busungbiu)",
+      "address": "Jalan Raya Seririt-Pupuan, Kec. Busungbiu, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Busungbiu",
+      "coordinates": {
+        "lat": -8.252911,
+        "lng": 114.981214
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 16,
+      "upvotes": 44,
+      "lastReportedAt": "2026-10-15T00:31:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-40",
+      "code": "54.811.40",
+      "name": "SPBU Fuel Station",
+      "address": "Jalan Raya Seririt-Pupuan, Kec. Busungbiu, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Busungbiu",
+      "coordinates": {
+        "lat": -8.27667,
+        "lng": 114.970826
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 18,
+      "upvotes": 48,
+      "lastReportedAt": "2026-10-15T00:16:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-41",
+      "code": "54.811.41",
+      "name": "SPBU Fuel Station",
+      "address": "Jalan Raya Seririt-Pupuan, Kec. Busungbiu, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Busungbiu",
+      "coordinates": {
+        "lat": -8.266138,
+        "lng": 114.969646
+      },
+      "queueLevel": "congested",
+      "estimatedWaitMinutes": 35,
+      "fuelStock": {
+        "pertalite": "out_of_stock",
+        "pertamax": "available",
+        "solar": "out_of_stock",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 20,
+      "upvotes": 12,
+      "lastReportedAt": "2026-10-15T00:01:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-42",
+      "code": "54.811.42",
+      "name": "SPBU Pertamina 1 (Gerokgak)",
+      "address": "1, Kec. Gerokgak, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Gerokgak",
+      "coordinates": {
+        "lat": -8.166539,
+        "lng": 114.50705
+      },
+      "queueLevel": "smooth",
+      "estimatedWaitMinutes": 5,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 22,
+      "upvotes": 16,
+      "lastReportedAt": "2026-10-14T23:46:55.089Z"
+    },
+    {
+      "id": "spbu-buleleng-43",
+      "code": "54.811.43",
+      "name": "SPBU Pertamina 1 (Gerokgak)",
+      "address": "1, Kec. Gerokgak, Kabupaten Buleleng",
+      "regency": "Buleleng",
+      "district": "Gerokgak",
+      "coordinates": {
+        "lat": -8.144232,
+        "lng": 114.595474
+      },
+      "queueLevel": "moderate",
+      "estimatedWaitMinutes": 15,
+      "fuelStock": {
+        "pertalite": "available",
+        "pertamax": "available",
+        "solar": "available",
+        "dexlite": "available"
+      },
+      "cctv": {
+        "hasCCTV": false
+      },
+      "reportCount": 24,
+      "upvotes": 20,
+      "lastReportedAt": "2026-10-14T23:31:55.089Z"
+    }
+  ]
+}

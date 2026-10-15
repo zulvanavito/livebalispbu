@@ -20,12 +20,30 @@ export interface CCTVInfo {
   notes?: string;
 }
 
+export interface MapBounds {
+  north: number;
+  south: number;
+  east: number;
+  west: number;
+}
+
+export type BaliRegency = 
+  | 'Denpasar' 
+  | 'Badung' 
+  | 'Gianyar' 
+  | 'Tabanan' 
+  | 'Buleleng' 
+  | 'Bangli' 
+  | 'Klungkung' 
+  | 'Karangasem' 
+  | 'Jembrana';
+
 export interface SPBUItem {
   id: string;
   code: string; // e.g. "54.801.06"
   name: string; // e.g. "SPBU Pertamina Sunset Road"
   address: string;
-  regency: 'Denpasar' | 'Badung';
+  regency: BaliRegency;
   district: string; // e.g. "Kuta", "Denpasar Barat", "Canggu"
   coordinates: {
     lat: number;
@@ -39,6 +57,11 @@ export interface SPBUItem {
     text: string;
     createdAt: string;
   };
+  latestPhoto?: {
+    url: string;
+    createdAt: string;
+    caption?: string;
+  };
   reportCount: number;
   upvotes: number;
   lastReportedAt: string; // ISO string
@@ -51,5 +74,6 @@ export interface UserReportSubmission {
   pertamax: FuelStatus;
   solar: FuelStatus;
   note?: string;
+  photoUrl?: string;
   turnstileToken?: string;
 }

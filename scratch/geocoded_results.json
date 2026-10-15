@@ -1,0 +1,2753 @@
+{
+  "274813078": {
+    "id": 274813078,
+    "coord": {
+      "lat": -8.3247965,
+      "lng": 114.5409782
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Denpasar-Gilimanuk, Taman, Tuwed, Melaya, Jembrana, Bali, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Denpasar-Gilimanuk",
+        "hamlet": "Taman",
+        "village": "Tuwed",
+        "town": "Melaya",
+        "region": "Jembrana",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "274853846": {
+    "id": 274853846,
+    "coord": {
+      "lat": -8.3398013,
+      "lng": 115.0320289
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "compressed_air": "yes"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Antosari-Pupuan, Pujungan, Batungsel, Pupuan, Tabanan, Bali, 82163, Indonesia",
+      "address": {
+        "road": "Jalan Raya Antosari-Pupuan",
+        "village": "Pujungan",
+        "town": "Pupuan",
+        "region": "Tabanan",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "82163",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "475757306": {
+    "id": 475757306,
+    "coord": {
+      "lat": -8.2578546,
+      "lng": 115.1617255
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "yes",
+      "compressed_air": "yes",
+      "layer": "1",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, 2, Giriloka, Candikuning, Baturiti, Tabanan, Bali, 81162, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "2",
+        "hamlet": "Giriloka",
+        "village": "Candikuning",
+        "town": "Baturiti",
+        "region": "Tabanan",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81162",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "509984088": {
+    "id": 509984088,
+    "coord": {
+      "lat": -8.1024654,
+      "lng": 115.2836325
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "building:part": "roof",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Singaraja - Amlapura, Sembiran, Tejakula, Buleleng, Bali, 81173, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Singaraja - Amlapura",
+        "village": "Sembiran",
+        "town": "Tejakula",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81173",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "512355161": {
+    "id": 512355161,
+    "coord": {
+      "lat": -8.5241915,
+      "lng": 115.2637147
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "building": "roof",
+      "building:levels": "1",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Made Lebah, Mas, Ubud, Gianyar, Bali, 80571, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Made Lebah",
+        "village": "Mas",
+        "town": "Ubud",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80571",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "514001663": {
+    "id": 514001663,
+    "coord": {
+      "lat": -8.5277397,
+      "lng": 115.2437777
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "building": "yes",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Tebongkang, Tebongkan, Singakerta, Ubud, Gianyar, Bali, 80571, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Tebongkang",
+        "hamlet": "Tebongkan",
+        "village": "Singakerta",
+        "town": "Ubud",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80571",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "514011012": {
+    "id": 514011012,
+    "coord": {
+      "lat": -8.5262808,
+      "lng": 115.2950609
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "compressed_air": "yes",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Bedulu, Bedulu, Blahbatuh, Gianyar, Bali, 80581, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Bedulu",
+        "village": "Bedulu",
+        "town": "Blahbatuh",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80581",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "545825031": {
+    "id": 545825031,
+    "coord": {
+      "lat": -8.5052259,
+      "lng": 115.2716923
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "building": "roof",
+      "name": "Pertamina 54.805.20"
+    },
+    "geo": {
+      "displayName": "Pertamina 54.805.20, Jalan Raya Andong, Kutuh, Peliatan, Ubud, Gianyar, Bali, 80571, Indonesia",
+      "address": {
+        "amenity": "Pertamina 54.805.20",
+        "road": "Jalan Raya Andong",
+        "neighbourhood": "Kutuh",
+        "village": "Peliatan",
+        "town": "Ubud",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80571",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "559976070": {
+    "id": 559976070,
+    "coord": {
+      "lat": -8.2151865,
+      "lng": 114.9401671
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "SPBU"
+    },
+    "geo": {
+      "displayName": "SPBU, Jalan Raya Seririt-Pupuan, Kertanadi, Bubunan, Seririt, Buleleng, Bali, 81153, Indonesia",
+      "address": {
+        "amenity": "SPBU",
+        "road": "Jalan Raya Seririt-Pupuan",
+        "hamlet": "Kertanadi",
+        "village": "Bubunan",
+        "town": "Seririt",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81153",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "560893611": {
+    "id": 560893611,
+    "coord": {
+      "lat": -8.1933082,
+      "lng": 114.9222581
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "yes",
+      "name": "SPBU"
+    },
+    "geo": {
+      "displayName": "SPBU, 1, Pawitra, Lokapaksa, Seririt, Buleleng, Bali, 81153, Indonesia",
+      "address": {
+        "amenity": "SPBU",
+        "road": "1",
+        "hamlet": "Pawitra",
+        "village": "Lokapaksa",
+        "town": "Seririt",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81153",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "1087957090": {
+    "id": 1087957090,
+    "coord": {
+      "lat": -8.5366361,
+      "lng": 115.3334269
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Bukit Jati, Samplangan, Gianyar, Bali, 80512, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Bukit Jati",
+        "suburb": "Samplangan",
+        "town": "Gianyar",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80512",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "1111172220": {
+    "id": 1111172220,
+    "coord": {
+      "lat": -8.5501132,
+      "lng": 115.375018
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "compressed_air": "no"
+    },
+    "geo": {
+      "displayName": "6, Banjarangkan, Klungkung, Bali, 80716, Indonesia",
+      "address": {
+        "road": "6",
+        "village": "Banjarangkan",
+        "town": "Banjarangkan",
+        "region": "Klungkung",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80716",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "1121908173": {
+    "id": 1121908173,
+    "coord": {
+      "lat": -8.22624,
+      "lng": 114.9448347
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Seririt-Pupuan, Kertanadi, Ringdikit, Seririt, Buleleng, Bali, 81153, Indonesia",
+      "address": {
+        "road": "Jalan Raya Seririt-Pupuan",
+        "hamlet": "Kertanadi",
+        "village": "Ringdikit",
+        "town": "Seririt",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81153",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "1150185346": {
+    "id": 1150185346,
+    "coord": {
+      "lat": -8.2509341,
+      "lng": 114.4788746
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Denpasar-Gilimanuk, Sumbersari, Melaya, Jembrana, Bali, Indonesia",
+      "address": {
+        "road": "Jalan Raya Denpasar-Gilimanuk",
+        "neighbourhood": "Sumbersari",
+        "village": "Melaya",
+        "town": "Melaya",
+        "region": "Jembrana",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "1181397892": {
+    "id": 1181397892,
+    "coord": {
+      "lat": -8.2235019,
+      "lng": 115.2543113
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Pelaga, Mungsengan, Catur, Kintamani, Bangli, Bali, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Pelaga",
+        "hamlet": "Mungsengan",
+        "village": "Catur",
+        "town": "Kintamani",
+        "region": "Bangli",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "1184213626": {
+    "id": 1184213626,
+    "coord": {
+      "lat": -8.1352895,
+      "lng": 115.1013777
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Jalan Gajah Mada, Sukasada, Ambengan, Sukasada, Buleleng, Bali, 81118, Indonesia",
+      "address": {
+        "road": "Jalan Gajah Mada",
+        "suburb": "Sukasada",
+        "village": "Ambengan",
+        "town": "Sukasada",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81118",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "1447743524": {
+    "id": 1447743524,
+    "coord": {
+      "lat": -8.1489524,
+      "lng": 114.6323875
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "compressed_air": "yes"
+    },
+    "geo": {
+      "displayName": "Jalan Seririt-Gilimanuk, Yehpanas, Pemuteran, Gerokgak, Buleleng, Bali, 81155, Indonesia",
+      "address": {
+        "road": "Jalan Seririt-Gilimanuk",
+        "hamlet": "Yehpanas",
+        "village": "Pemuteran",
+        "town": "Gerokgak",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81155",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "1489545694": {
+    "id": 1489545694,
+    "coord": {
+      "lat": -8.5483293,
+      "lng": 115.3084164
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "layer": "1",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Dharma Giri, Buruan, Blahbatuh, Gianyar, Bali, 80581, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Dharma Giri",
+        "village": "Buruan",
+        "town": "Blahbatuh",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80581",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "1532743149": {
+    "id": 1532743149,
+    "coord": {
+      "lat": -8.5413513,
+      "lng": 115.3210918
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "layer": "1",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Dharma Giri, Gianyar, Bali, 80515, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Dharma Giri",
+        "suburb": "Gianyar",
+        "town": "Gianyar",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80515",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "1963471597": {
+    "id": 1963471597,
+    "coord": {
+      "lat": -8.6023075,
+      "lng": 115.2608468
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "compressed_air": "yes"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Celuk, Singapadu, Sukawati, Gianyar, Bali, 80582, Indonesia",
+      "address": {
+        "road": "Jalan Raya Celuk",
+        "village": "Singapadu",
+        "town": "Sukawati",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80582",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "2487421443": {
+    "id": 2487421443,
+    "coord": {
+      "lat": -8.3337155,
+      "lng": 115.1866722
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Denpasar - Singaraja, Poyan, Baturiti, Tabanan, Bali, 82191, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Denpasar - Singaraja",
+        "hamlet": "Poyan",
+        "village": "Baturiti",
+        "town": "Baturiti",
+        "region": "Tabanan",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "82191",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "2847473231": {
+    "id": 2847473231,
+    "coord": {
+      "lat": -8.1863162,
+      "lng": 114.9774711
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "yes",
+      "name": "SPBU"
+    },
+    "geo": {
+      "displayName": "Jalan Seririt-Singaraja, Bajangan, Dencarik, Banjar, Buleleng, Bali, 81152, Indonesia",
+      "address": {
+        "road": "Jalan Seririt-Singaraja",
+        "hamlet": "Bajangan",
+        "village": "Dencarik",
+        "town": "Banjar",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81152",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "3299570661": {
+    "id": 3299570661,
+    "coord": {
+      "lat": -8.1910932,
+      "lng": 114.9326709
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "SPBU"
+    },
+    "geo": {
+      "displayName": "SPBU, 1, Danginpeken, Seririt, Buleleng, Bali, 81153, Indonesia",
+      "address": {
+        "amenity": "SPBU",
+        "road": "1",
+        "hamlet": "Danginpeken",
+        "suburb": "Seririt",
+        "town": "Seririt",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81153",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "3530974108": {
+    "id": 3530974108,
+    "coord": {
+      "lat": -8.5231597,
+      "lng": 115.2759405
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "compressed_air": "yes",
+      "name": "Pertamina 54.805.12",
+      "opening_hours": "Mo-Su 05:00-22:00"
+    },
+    "geo": {
+      "displayName": "Pertamina 54.805.12, Gang Gandenlangu, Peliatan, Ubud, Gianyar, Bali, 80515, Indonesia",
+      "address": {
+        "amenity": "Pertamina 54.805.12",
+        "road": "Gang Gandenlangu",
+        "village": "Peliatan",
+        "town": "Ubud",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80515",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "3754488727": {
+    "id": 3754488727,
+    "coord": {
+      "lat": -8.0824813,
+      "lng": 115.1432434
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "addr:place": "Pertamina Giri Emas Gas Station",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "building": "yes",
+      "name": "Pertamina Giri Emas Gas Station",
+      "shop": "gas"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Amlapura-Singaraja, Giri Emas, Sawan, Buleleng, Bali, 81151, Indonesia",
+      "address": {
+        "road": "Jalan Raya Amlapura-Singaraja",
+        "village": "Giri Emas",
+        "town": "Sawan",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81151",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "3754488728": {
+    "id": 3754488728,
+    "coord": {
+      "lat": -8.1450122,
+      "lng": 115.0499465
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "fuel:diesel": "yes",
+      "fuel:octane_88": "yes",
+      "fuel:octane_92": "yes",
+      "fuel:octane_95": "yes",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Seririt-Singaraja, Tukadmungga, Buleleng, Bali, 81119, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Seririt-Singaraja",
+        "village": "Tukadmungga",
+        "town": "Buleleng",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81119",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "3754491925": {
+    "id": 3754491925,
+    "coord": {
+      "lat": -8.1152738,
+      "lng": 115.0797277
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "fuel:octane_88": "yes",
+      "fuel:octane_92": "yes",
+      "fuel:octane_95": "yes",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Sudirman, Banyuasri, Buleleng, Bali, 81116, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Sudirman",
+        "suburb": "Banyuasri",
+        "town": "Buleleng",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81116",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "3791297306": {
+    "id": 3791297306,
+    "coord": {
+      "lat": -8.5349986,
+      "lng": 115.306609
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "addr:street": "Jalan Raya Semebaung",
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "compressed_air": "yes",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Semebaung, Bedulu, Blahbatuh, Gianyar, Bali, 80581, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Semebaung",
+        "village": "Bedulu",
+        "town": "Blahbatuh",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80581",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4198773706": {
+    "id": 4198773706,
+    "coord": {
+      "lat": -8.5748859,
+      "lng": 115.2762409
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "fuel:diesel": "yes",
+      "fuel:octane_88": "yes",
+      "fuel:octane_92": "yes",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Sukawati, Batuan Kaler, Sukawati, Gianyar, Bali, 80582, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Sukawati",
+        "village": "Batuan Kaler",
+        "town": "Sukawati",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80582",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4198773752": {
+    "id": 4198773752,
+    "coord": {
+      "lat": -8.5668758,
+      "lng": 115.2747603
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Sukawati, Batuan Kaler, Sukawati, Gianyar, Bali, 80582, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Sukawati",
+        "village": "Batuan Kaler",
+        "town": "Sukawati",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80582",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4362250290": {
+    "id": 4362250290,
+    "coord": {
+      "lat": -8.4669679,
+      "lng": 115.3524859
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "layer": "1",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Jalan Brigadir Jenderal Ngurah Rai, Bebalang, Bangli, Bali, 80614, Indonesia",
+      "address": {
+        "road": "Jalan Brigadir Jenderal Ngurah Rai",
+        "suburb": "Bebalang",
+        "town": "Bangli",
+        "region": "Bangli",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80614",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4446960858": {
+    "id": 4446960858,
+    "coord": {
+      "lat": -8.6018053,
+      "lng": 115.3247915
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Profesor Ida Bagus Mantra Bypass, Pering, Blahbatuh, Gianyar, Bali, 80511, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Profesor Ida Bagus Mantra Bypass",
+        "village": "Pering",
+        "town": "Blahbatuh",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80511",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4446961398": {
+    "id": 4446961398,
+    "coord": {
+      "lat": -8.581006,
+      "lng": 115.3526184
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Profesor Ida Bagus Mantra Bypass, Lebih, Gianyar, Bali, 80515, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Profesor Ida Bagus Mantra Bypass",
+        "village": "Lebih",
+        "town": "Gianyar",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80515",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4467737446": {
+    "id": 4467737446,
+    "coord": {
+      "lat": -8.5538112,
+      "lng": 115.2515009
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Singapadu, Singapadu Kaler, Sukawati, Gianyar, Bali, 80582, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Singapadu",
+        "village": "Singapadu Kaler",
+        "town": "Sukawati",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80582",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4467738292": {
+    "id": 4467738292,
+    "coord": {
+      "lat": -8.4627372,
+      "lng": 115.2976035
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "compressed_air": "yes",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, 4, Sanding, Tampaksiring, Gianyar, Bali, 80561, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "4",
+        "village": "Sanding",
+        "town": "Tampaksiring",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80561",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4593501492": {
+    "id": 4593501492,
+    "coord": {
+      "lat": -8.5655166,
+      "lng": 115.2880082
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "name": "Pertamina",
+      "name:en": "Pompa bensin kemenuh"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Kemenuh, Kemenuh, Sukawati, Gianyar, Bali, 80582, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Kemenuh",
+        "village": "Kemenuh",
+        "town": "Sukawati",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80582",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4593501496": {
+    "id": 4593501496,
+    "coord": {
+      "lat": -8.5662499,
+      "lng": 115.3049769
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "Pom bensin blahbatuh"
+    },
+    "geo": {
+      "displayName": "Pom bensin blahbatuh, Jalan Desa Pering, Blahbatuh, Gianyar, Bali, 80581, Indonesia",
+      "address": {
+        "amenity": "Pom bensin blahbatuh",
+        "road": "Jalan Desa Pering",
+        "village": "Blahbatuh",
+        "town": "Blahbatuh",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80581",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4593535189": {
+    "id": 4593535189,
+    "coord": {
+      "lat": -8.5287952,
+      "lng": 115.2717137
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pelumas Pertamina 54.805.09",
+      "opening_hours": "Mo-Su 05:00-21:30"
+    },
+    "geo": {
+      "displayName": "Pelumas Pertamina 54.805.09, Jalan Cok Rai Pudak, Peliatan, Ubud, Gianyar, Bali, 80571, Indonesia",
+      "address": {
+        "amenity": "Pelumas Pertamina 54.805.09",
+        "road": "Jalan Cok Rai Pudak",
+        "village": "Peliatan",
+        "town": "Ubud",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80571",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4593932704": {
+    "id": 4593932704,
+    "coord": {
+      "lat": -8.6121569,
+      "lng": 115.3092889
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "description": "Pompa bensin purnama",
+      "name": "Pertamina",
+      "name:en": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Profesor Ida Bagus Mantra, Sukawati, Gianyar, Bali, 80513, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Profesor Ida Bagus Mantra",
+        "village": "Sukawati",
+        "town": "Sukawati",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80513",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4707866590": {
+    "id": 4707866590,
+    "coord": {
+      "lat": -8.40877,
+      "lng": 115.2448962
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Payangan, Ponggang, Puhu, Payangan, Gianyar, Bali, 80572, Indonesia",
+      "address": {
+        "road": "Jalan Raya Payangan",
+        "hamlet": "Ponggang",
+        "village": "Puhu",
+        "town": "Payangan",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80572",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "5017453423": {
+    "id": 5017453423,
+    "coord": {
+      "lat": -8.563332,
+      "lng": 115.261646
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Mawang, Lodtunduh, Ubud, Gianyar, Bali, 80612, Indonesia",
+      "address": {
+        "road": "Jalan Raya Mawang",
+        "village": "Lodtunduh",
+        "town": "Ubud",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80612",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "6229193250": {
+    "id": 6229193250,
+    "coord": {
+      "lat": -8.5684765,
+      "lng": 115.3746249
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Profesor Ida Bagus Mantra Bypass, Tegal Besar, Negari, Banjarangkan, Klungkung, Bali, 80752, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Profesor Ida Bagus Mantra Bypass",
+        "hamlet": "Tegal Besar",
+        "village": "Negari",
+        "town": "Banjarangkan",
+        "region": "Klungkung",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80752",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "6286590885": {
+    "id": 6286590885,
+    "coord": {
+      "lat": -8.451204,
+      "lng": 115.3184907
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Gang Dahlia, Mantring, Petak Kaja, Gianyar, Bali, 80515, Indonesia",
+      "address": {
+        "road": "Gang Dahlia",
+        "hamlet": "Mantring",
+        "village": "Petak Kaja",
+        "town": "Gianyar",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80515",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "6355894185": {
+    "id": 6355894185,
+    "coord": {
+      "lat": -8.447857,
+      "lng": 115.2805724
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan I Wayan Lunga, Apuh, Tegallalang, Gianyar, Bali, 80572, Indonesia",
+      "address": {
+        "road": "Jalan I Wayan Lunga",
+        "hamlet": "Apuh",
+        "village": "Tegallalang",
+        "town": "Tegallalang",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80572",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "6355907290": {
+    "id": 6355907290,
+    "coord": {
+      "lat": -8.4523559,
+      "lng": 115.279707
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan I Wayan Lunga, Pejengaji, Tegallalang, Gianyar, Bali, 80561, Indonesia",
+      "address": {
+        "road": "Jalan I Wayan Lunga",
+        "hamlet": "Pejengaji",
+        "village": "Tegallalang",
+        "town": "Tegallalang",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80561",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "6712210032": {
+    "id": 6712210032,
+    "coord": {
+      "lat": -8.4396411,
+      "lng": 115.3081128
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "compressed_air": "no",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, 4, Tampaksiring, Gianyar, Bali, 80552, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "4",
+        "village": "Tampaksiring",
+        "town": "Tampaksiring",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80552",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "6721922709": {
+    "id": 6721922709,
+    "coord": {
+      "lat": -8.4446637,
+      "lng": 115.3627892
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Erlangga, Br. Pande, Cempaga, Bangli, Bali, 80614, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Erlangga",
+        "suburb": "Br. Pande",
+        "town": "Bangli",
+        "region": "Bangli",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80614",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "6721922710": {
+    "id": 6721922710,
+    "coord": {
+      "lat": -8.5133706,
+      "lng": 115.345469
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "name": "SPBU Bunutin"
+    },
+    "geo": {
+      "displayName": "SPBU Bunutin, Jalan Merdeka, Bunutin, Bangli, Bali, 80614, Indonesia",
+      "address": {
+        "amenity": "SPBU Bunutin",
+        "road": "Jalan Merdeka",
+        "village": "Bunutin",
+        "town": "Bangli",
+        "region": "Bangli",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80614",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "9274481126": {
+    "id": 9274481126,
+    "coord": {
+      "lat": -8.4154523,
+      "lng": 115.2807412
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan I Wayan Lunga, Apuh, Sebatu, Tegallalang, Gianyar, Bali, 80561, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan I Wayan Lunga",
+        "hamlet": "Apuh",
+        "village": "Sebatu",
+        "town": "Tegallalang",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80561",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "9464806554": {
+    "id": 9464806554,
+    "coord": {
+      "lat": -8.4185343,
+      "lng": 115.2983646
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "compressed_air": "yes",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jala Raya Desa Kenderan, Pande, Kedisan, Tegallalang, Gianyar, Bali, 80561, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jala Raya Desa Kenderan",
+        "hamlet": "Pande",
+        "village": "Kedisan",
+        "town": "Tegallalang",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80561",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11033884336": {
+    "id": 11033884336,
+    "coord": {
+      "lat": -8.4239732,
+      "lng": 115.2462734
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Payangan, Ponggang, Melinggih, Payangan, Gianyar, Bali, 80572, Indonesia",
+      "address": {
+        "road": "Jalan Raya Payangan",
+        "hamlet": "Ponggang",
+        "village": "Melinggih",
+        "town": "Payangan",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80572",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11203013135": {
+    "id": 11203013135,
+    "coord": {
+      "lat": -8.522743,
+      "lng": 115.3651598
+    },
+    "targetRegency": "Gianyar",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Gatot Kaca, Bakas, Banjarangkan, Klungkung, Bali, 80752, Indonesia",
+      "address": {
+        "road": "Jalan Gatot Kaca",
+        "village": "Bakas",
+        "town": "Banjarangkan",
+        "region": "Klungkung",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80752",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4368999206": {
+    "id": 4368999206,
+    "coord": {
+      "lat": -8.2646029,
+      "lng": 115.0512955
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Pura Puseh, Munduk, Banjar, Buleleng, Bali, 81152, Indonesia",
+      "address": {
+        "road": "Jalan Pura Puseh",
+        "village": "Munduk",
+        "town": "Banjar",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81152",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4420365789": {
+    "id": 4420365789,
+    "coord": {
+      "lat": -8.3485679,
+      "lng": 114.8958367
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Pekutatan, Temukus, Asahduren, Pekutatan, Jembrana, Bali, 82262, Indonesia",
+      "address": {
+        "road": "Jalan Pekutatan",
+        "hamlet": "Temukus",
+        "village": "Asahduren",
+        "town": "Pekutatan",
+        "region": "Jembrana",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "82262",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4467738625": {
+    "id": 4467738625,
+    "coord": {
+      "lat": -8.1772879,
+      "lng": 114.7500647
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Petrolimex",
+      "brand:wikidata": "Q10831598",
+      "name": "Petrolimex"
+    },
+    "geo": {
+      "displayName": "Pertamina, 1, Segaramukti, Musi, Gerokgak, Buleleng, Bali, 81155, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "1",
+        "hamlet": "Segaramukti",
+        "village": "Musi",
+        "town": "Gerokgak",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81155",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4467739093": {
+    "id": 4467739093,
+    "coord": {
+      "lat": -8.2038795,
+      "lng": 114.8840471
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "Cửa hàng Xăng dầu",
+      "building": "roof",
+      "name:en": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Seririt-Gilmanuk, Delodrurung, Banjarasem, Seririt, Buleleng, Bali, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Seririt-Gilmanuk",
+        "hamlet": "Delodrurung",
+        "village": "Banjarasem",
+        "town": "Seririt",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "4704509289": {
+    "id": 4704509289,
+    "coord": {
+      "lat": -8.1918108,
+      "lng": 114.9500563
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "SPBU",
+      "building": "yes"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Seririt-Singaraja, Tegalsari, Tangguwisia, Seririt, Buleleng, Bali, 81153, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Seririt-Singaraja",
+        "hamlet": "Tegalsari",
+        "village": "Tangguwisia",
+        "town": "Seririt",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81153",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "5052517732": {
+    "id": 5052517732,
+    "coord": {
+      "lat": -8.1647348,
+      "lng": 115.0213127
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Seririt-Singaraja, Bunutpanggang, Kaliasem, Banjar, Buleleng, Bali, 81119, Indonesia",
+      "address": {
+        "road": "Jalan Seririt-Singaraja",
+        "hamlet": "Bunutpanggang",
+        "village": "Kaliasem",
+        "town": "Banjar",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81119",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "5419297521": {
+    "id": 5419297521,
+    "coord": {
+      "lat": -8.2859623,
+      "lng": 114.9768109
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Seririt-Pupuan, Subuk, Busungbiu, Buleleng, Bali, 81154, Indonesia",
+      "address": {
+        "road": "Jalan Raya Seririt-Pupuan",
+        "village": "Subuk",
+        "town": "Busungbiu",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81154",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "5651550475": {
+    "id": 5651550475,
+    "coord": {
+      "lat": -8.2006978,
+      "lng": 114.8321428
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Seririt-Gilmanuk, Pungkukan, Pengulon, Gerokgak, Buleleng, Bali, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Seririt-Gilmanuk",
+        "hamlet": "Pungkukan",
+        "village": "Pengulon",
+        "town": "Gerokgak",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "5755867921": {
+    "id": 5755867921,
+    "coord": {
+      "lat": -8.2664614,
+      "lng": 115.0547153
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "Pertamina",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044"
+    },
+    "geo": {
+      "displayName": "Jalan Pura Puseh, Munduk, Banjar, Buleleng, Bali, 81152, Indonesia",
+      "address": {
+        "road": "Jalan Pura Puseh",
+        "village": "Munduk",
+        "town": "Banjar",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81152",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "6178072124": {
+    "id": 6178072124,
+    "coord": {
+      "lat": -8.0952781,
+      "lng": 115.1117625
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Surapati, Penarukan, Buleleng, Bali, 81119, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Surapati",
+        "suburb": "Penarukan",
+        "town": "Buleleng",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81119",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "6611231166": {
+    "id": 6611231166,
+    "coord": {
+      "lat": -8.1272096,
+      "lng": 115.0792969
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "Pompa Bensin"
+    },
+    "geo": {
+      "displayName": "Pompa Bensin, Jalan Laksamana, Galiran, Baktiseraga, Buleleng, Bali, 81116, Indonesia",
+      "address": {
+        "amenity": "Pompa Bensin",
+        "road": "Jalan Laksamana",
+        "hamlet": "Galiran",
+        "village": "Baktiseraga",
+        "town": "Buleleng",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81116",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "6611231167": {
+    "id": 6611231167,
+    "coord": {
+      "lat": -8.1131501,
+      "lng": 115.082669
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "Pertamina",
+      "addr:street": "Jl. A Yani"
+    },
+    "geo": {
+      "displayName": "Pompa Bensin, Jalan A. Yani, Kaliuntu, Buleleng, Bali, 81116, Indonesia",
+      "address": {
+        "amenity": "Pompa Bensin",
+        "road": "Jalan A. Yani",
+        "suburb": "Kaliuntu",
+        "town": "Buleleng",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81116",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "6712210047": {
+    "id": 6712210047,
+    "coord": {
+      "lat": -8.3181975,
+      "lng": 115.3467146
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Penelokan, Linjong, Sekardadi, Kintamani, Bangli, Bali, 80661, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Linjong",
+        "village": "Sekardadi",
+        "town": "Kintamani",
+        "region": "Bangli",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80661",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "7105955685": {
+    "id": 7105955685,
+    "coord": {
+      "lat": -8.0853331,
+      "lng": 115.1751487
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Penelokan, Pudeh, Kubutambahan, Buleleng, Bali, 81172, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Pudeh",
+        "village": "Kubutambahan",
+        "town": "Kubutambahan",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81172",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "7622285885": {
+    "id": 7622285885,
+    "coord": {
+      "lat": -8.3270538,
+      "lng": 115.2226649
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Pelaga, Nungnunganyar, Pelaga, Petang, Badung, Bali, 80353, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Pelaga",
+        "hamlet": "Nungnunganyar",
+        "village": "Pelaga",
+        "town": "Petang",
+        "region": "Badung",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80353",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "9498002342": {
+    "id": 9498002342,
+    "coord": {
+      "lat": -8.3294926,
+      "lng": 115.3256533
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan I Wayan Lunga, Apuh, Sebatu, Tegallalang, Gianyar, Bali, 80561, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan I Wayan Lunga",
+        "hamlet": "Apuh",
+        "village": "Sebatu",
+        "town": "Tegallalang",
+        "region": "Gianyar",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80561",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "10779010555": {
+    "id": 10779010555,
+    "coord": {
+      "lat": -8.348416,
+      "lng": 114.5785813
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Denpasar-Gilimanuk, Banyubiru Kauh, Banyu Biru, Negara, Jembrana, Bali, 82218, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Denpasar-Gilimanuk",
+        "hamlet": "Banyubiru Kauh",
+        "village": "Banyu Biru",
+        "town": "Negara",
+        "region": "Jembrana",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "82218",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "10798201666": {
+    "id": 10798201666,
+    "coord": {
+      "lat": -8.2370115,
+      "lng": 115.1385918
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Wanagiri, Peken, Wanagiri, Sukasada, Buleleng, Bali, 81162, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Wanagiri",
+        "hamlet": "Peken",
+        "village": "Wanagiri",
+        "town": "Sukasada",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81162",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "10799072563": {
+    "id": 10799072563,
+    "coord": {
+      "lat": -8.1758946,
+      "lng": 115.0036354
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "building": "roof",
+      "name": "Cửa hàng Xăng dầu",
+      "name:en": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Seririt-Singaraja, Enjungsagiang, Temukus, Banjar, Buleleng, Bali, 81152, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Seririt-Singaraja",
+        "hamlet": "Enjungsagiang",
+        "village": "Temukus",
+        "town": "Banjar",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81152",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "10800799512": {
+    "id": 10800799512,
+    "coord": {
+      "lat": -8.3292799,
+      "lng": 115.1719401
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Denpasar - Singaraja, Poyan, Luwus, Baturiti, Tabanan, Bali, 82191, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Denpasar - Singaraja",
+        "hamlet": "Poyan",
+        "village": "Luwus",
+        "town": "Baturiti",
+        "region": "Tabanan",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "82191",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11012490777": {
+    "id": 11012490777,
+    "coord": {
+      "lat": -8.2682332,
+      "lng": 115.3422879
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Penelokan, Telemba, Batur Selatan, Kintamani, Bangli, Bali, 80652, Indonesia",
+      "address": {
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Telemba",
+        "village": "Batur Selatan",
+        "town": "Kintamani",
+        "region": "Bangli",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80652",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11012490778": {
+    "id": 11012490778,
+    "coord": {
+      "lat": -8.1409354,
+      "lng": 115.2002801
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Penelokan, Pudeh, Tajun, Kubutambahan, Buleleng, Bali, 81172, Indonesia",
+      "address": {
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Pudeh",
+        "village": "Tajun",
+        "town": "Kubutambahan",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81172",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11012490783": {
+    "id": 11012490783,
+    "coord": {
+      "lat": -8.2791538,
+      "lng": 115.378028
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "6, Kedisan, Kintamani, Bangli, Bali, 80652, Indonesia",
+      "address": {
+        "road": "6",
+        "village": "Kedisan",
+        "town": "Kintamani",
+        "region": "Bangli",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80652",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11012542529": {
+    "id": 11012542529,
+    "coord": {
+      "lat": -8.1184926,
+      "lng": 115.1872771
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Penelokan, Pudeh, Bila, Kubutambahan, Buleleng, Bali, 81172, Indonesia",
+      "address": {
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Pudeh",
+        "village": "Bila",
+        "town": "Kubutambahan",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81172",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11012542530": {
+    "id": 11012542530,
+    "coord": {
+      "lat": -8.1390142,
+      "lng": 115.2138198
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Penelokan, Pudeh, Tajun, Kubutambahan, Buleleng, Bali, 81172, Indonesia",
+      "address": {
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Pudeh",
+        "village": "Tajun",
+        "town": "Kubutambahan",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81172",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11033884332": {
+    "id": 11033884332,
+    "coord": {
+      "lat": -8.2129688,
+      "lng": 115.3237738
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Penelokan, Pudeh, Sukawana, Kintamani, Bangli, Bali, 81172, Indonesia",
+      "address": {
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Pudeh",
+        "village": "Sukawana",
+        "town": "Kintamani",
+        "region": "Bangli",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81172",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11033884333": {
+    "id": 11033884333,
+    "coord": {
+      "lat": -8.1263869,
+      "lng": 115.2167509
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Penelokan, Pudeh, Tamblang, Kubutambahan, Buleleng, Bali, 81172, Indonesia",
+      "address": {
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Pudeh",
+        "village": "Tamblang",
+        "town": "Kubutambahan",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81172",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11033884335": {
+    "id": 11033884335,
+    "coord": {
+      "lat": -8.2871827,
+      "lng": 115.3195361
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Payangan, Kintamani, Bangli, Bali, 80256, Indonesia",
+      "address": {
+        "road": "Jalan Raya Payangan",
+        "village": "Kintamani",
+        "town": "Kintamani",
+        "region": "Bangli",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "80256",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11033884337": {
+    "id": 11033884337,
+    "coord": {
+      "lat": -8.1945373,
+      "lng": 115.2906849
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Penelokan, Pudeh, Dausa, Kintamani, Bangli, Bali, 81172, Indonesia",
+      "address": {
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Pudeh",
+        "village": "Dausa",
+        "town": "Kintamani",
+        "region": "Bangli",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81172",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11033915359": {
+    "id": 11033915359,
+    "coord": {
+      "lat": -8.0917582,
+      "lng": 115.1758923
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Penelokan, Pudeh, Bila, Kubutambahan, Buleleng, Bali, 81172, Indonesia",
+      "address": {
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Pudeh",
+        "village": "Bila",
+        "town": "Kubutambahan",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81172",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11033915360": {
+    "id": 11033915360,
+    "coord": {
+      "lat": -8.1312581,
+      "lng": 115.2103401
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Raya Penelokan, Pudeh, Tamblang, Kubutambahan, Buleleng, Bali, 81172, Indonesia",
+      "address": {
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Pudeh",
+        "village": "Tamblang",
+        "town": "Kubutambahan",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81172",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11048153450": {
+    "id": 11048153450,
+    "coord": {
+      "lat": -8.1498823,
+      "lng": 115.057153
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "fuel:octane_92": "yes",
+      "name": "PetraMINA"
+    },
+    "geo": {
+      "displayName": "PetraMINA, Jalan Buleleng 1, Labak, Tukadmungga, Buleleng, Bali, 81119, Indonesia",
+      "address": {
+        "amenity": "PetraMINA",
+        "road": "Jalan Buleleng 1",
+        "hamlet": "Labak",
+        "village": "Tukadmungga",
+        "town": "Buleleng",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81119",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11954796697": {
+    "id": 11954796697,
+    "coord": {
+      "lat": -8.2703177,
+      "lng": 115.0615534
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Pura Puseh, Munduk, Banjar, Buleleng, Bali, 81152, Indonesia",
+      "address": {
+        "road": "Jalan Pura Puseh",
+        "village": "Munduk",
+        "town": "Banjar",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81152",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "11954796698": {
+    "id": 11954796698,
+    "coord": {
+      "lat": -8.2728105,
+      "lng": 115.0573748
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel"
+    },
+    "geo": {
+      "displayName": "Jalan Pura Puseh, Munduk, Banjar, Buleleng, Bali, 81152, Indonesia",
+      "address": {
+        "road": "Jalan Pura Puseh",
+        "village": "Munduk",
+        "town": "Banjar",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81152",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "12252323023": {
+    "id": 12252323023,
+    "coord": {
+      "lat": -8.1140255,
+      "lng": 115.1350984
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Cửa hàng Xăng dầu",
+      "name:en": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "Cửa hàng Xăng dầu, Gang Srikandi, Sinabun, Sawan, Buleleng, Bali, 81151, Indonesia",
+      "address": {
+        "amenity": "Cửa hàng Xăng dầu",
+        "road": "Gang Srikandi",
+        "village": "Sinabun",
+        "town": "Sawan",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81151",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "12277185797": {
+    "id": 12277185797,
+    "coord": {
+      "lat": -8.3092894,
+      "lng": 115.3968365
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "Fuel Station, 6, Peselatan, Suter, Kintamani, Bangli, Bali, Indonesia",
+      "address": {
+        "amenity": "Fuel Station",
+        "road": "6",
+        "hamlet": "Peselatan",
+        "village": "Suter",
+        "town": "Kintamani",
+        "region": "Bangli",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "12277190271": {
+    "id": 12277190271,
+    "coord": {
+      "lat": -8.1465707,
+      "lng": 115.2472815
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Pertamina"
+    },
+    "geo": {
+      "displayName": "Pertamina, Jalan Raya Penelokan, Pudeh, Tajun, Kubutambahan, Buleleng, Bali, 81172, Indonesia",
+      "address": {
+        "amenity": "Pertamina",
+        "road": "Jalan Raya Penelokan",
+        "hamlet": "Pudeh",
+        "village": "Tajun",
+        "town": "Kubutambahan",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81172",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "12287921053": {
+    "id": 12287921053,
+    "coord": {
+      "lat": -8.2599613,
+      "lng": 115.0277035
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "Fuel Station, Gang Durian, Umejero, Busungbiu, Buleleng, Bali, 81152, Indonesia",
+      "address": {
+        "amenity": "Fuel Station",
+        "road": "Gang Durian",
+        "village": "Umejero",
+        "town": "Busungbiu",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81152",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "12287937936": {
+    "id": 12287937936,
+    "coord": {
+      "lat": -8.2952994,
+      "lng": 115.1740283
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "Fuel Station, Jalan Raya Denpasar - Singaraja, Poyan, Batunya, Baturiti, Tabanan, Bali, 82191, Indonesia",
+      "address": {
+        "amenity": "Fuel Station",
+        "road": "Jalan Raya Denpasar - Singaraja",
+        "hamlet": "Poyan",
+        "village": "Batunya",
+        "town": "Baturiti",
+        "region": "Tabanan",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "82191",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "12290095501": {
+    "id": 12290095501,
+    "coord": {
+      "lat": -8.2529113,
+      "lng": 114.981214
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Cửa hàng Xăng dầu",
+      "name:en": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "Cửa hàng Xăng dầu, Jalan Raya Seririt-Pupuan, Busungbiu, Keberan, Busungbiu, Buleleng, Bali, 81154, Indonesia",
+      "address": {
+        "amenity": "Cửa hàng Xăng dầu",
+        "road": "Jalan Raya Seririt-Pupuan",
+        "residential": "Busungbiu",
+        "village": "Keberan",
+        "town": "Busungbiu",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81154",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "12291632313": {
+    "id": 12291632313,
+    "coord": {
+      "lat": -8.2766697,
+      "lng": 114.9708258
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "Fuel Station, Jalan Raya Seririt-Pupuan, Subuk, Busungbiu, Buleleng, Bali, 81154, Indonesia",
+      "address": {
+        "amenity": "Fuel Station",
+        "road": "Jalan Raya Seririt-Pupuan",
+        "village": "Subuk",
+        "town": "Busungbiu",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81154",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "12293398519": {
+    "id": 12293398519,
+    "coord": {
+      "lat": -8.2661384,
+      "lng": 114.9696464
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "compressed_air": "yes",
+      "name": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "Fuel Station, Jalan Raya Seririt-Pupuan, Busungbiu, Keberan, Kekeran, Busungbiu, Buleleng, Bali, 81154, Indonesia",
+      "address": {
+        "amenity": "Fuel Station",
+        "road": "Jalan Raya Seririt-Pupuan",
+        "residential": "Busungbiu",
+        "village": "Keberan",
+        "town": "Busungbiu",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "81154",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "12293398520": {
+    "id": 12293398520,
+    "coord": {
+      "lat": -8.1665389,
+      "lng": 114.5070504
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Cửa hàng Xăng dầu",
+      "name:en": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "Cửa hàng Xăng dầu, 1, Labuhanlalang, Sumberklampok, Gerokgak, Buleleng, Bali, Indonesia",
+      "address": {
+        "amenity": "Cửa hàng Xăng dầu",
+        "road": "1",
+        "hamlet": "Labuhanlalang",
+        "village": "Sumberklampok",
+        "town": "Gerokgak",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "12293406734": {
+    "id": 12293406734,
+    "coord": {
+      "lat": -8.1442322,
+      "lng": 114.5954745
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "compressed_air": "no",
+      "name": "Cửa hàng Xăng dầu",
+      "name:en": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "Cửa hàng Xăng dầu, 1, Labuhanlalang, Pejarakan, Gerokgak, Buleleng, Bali, Indonesia",
+      "address": {
+        "amenity": "Cửa hàng Xăng dầu",
+        "road": "1",
+        "hamlet": "Labuhanlalang",
+        "village": "Pejarakan",
+        "town": "Gerokgak",
+        "region": "Buleleng",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  },
+  "12293410046": {
+    "id": 12293410046,
+    "coord": {
+      "lat": -8.3024075,
+      "lng": 114.5160832
+    },
+    "targetRegency": "Buleleng",
+    "osmTags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "SPBU",
+      "name:en": "Fuel Station"
+    },
+    "geo": {
+      "displayName": "SPBU, Jalan Raya Denpasar-Gilimanuk, Taman, Candikusuma, Melaya, Jembrana, Bali, 82252, Indonesia",
+      "address": {
+        "amenity": "SPBU",
+        "road": "Jalan Raya Denpasar-Gilimanuk",
+        "hamlet": "Taman",
+        "village": "Candikusuma",
+        "town": "Melaya",
+        "region": "Jembrana",
+        "state": "Bali",
+        "ISO3166-2-lvl4": "ID-BA",
+        "postcode": "82252",
+        "country": "Indonesia",
+        "country_code": "id"
+      }
+    }
+  }
+}

@@ -1,0 +1,508 @@
+[
+  {
+    "id": 274750656,
+    "type": "node",
+    "lat": -8.3525551,
+    "lng": 114.6039488,
+    "regency": "Jembrana",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 274813078,
+    "type": "node",
+    "lat": -8.3247965,
+    "lng": 114.5409782,
+    "regency": "Jembrana",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 274853846,
+    "type": "node",
+    "lat": -8.3398013,
+    "lng": 115.0320289,
+    "regency": "Tabanan",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "compressed_air": "yes"
+    }
+  },
+  {
+    "id": 1963414951,
+    "type": "node",
+    "lat": -8.384301,
+    "lng": 115.1954396,
+    "regency": "Tabanan",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "compressed_air": "yes",
+      "name": "Pertamina",
+      "opening_hours": "Mo-Su,PH 06:00-22:00",
+      "wheelchair": "limited"
+    }
+  },
+  {
+    "id": 2487421443,
+    "type": "node",
+    "lat": -8.3337155,
+    "lng": 115.1866722,
+    "regency": "Tabanan",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 3788508644,
+    "type": "node",
+    "lat": -8.3621622,
+    "lng": 115.1910254,
+    "regency": "Tabanan",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 3800945890,
+    "type": "node",
+    "lat": -8.4989099,
+    "lng": 115.034218,
+    "regency": "Tabanan",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "compressed_air": "yes"
+    }
+  },
+  {
+    "id": 4420365789,
+    "type": "node",
+    "lat": -8.3485679,
+    "lng": 114.8958367,
+    "regency": "Jembrana",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 4965837975,
+    "type": "node",
+    "lat": -8.1824446,
+    "lng": 114.4387078,
+    "regency": "Jembrana",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 10779010555,
+    "type": "node",
+    "lat": -8.348416,
+    "lng": 114.5785813,
+    "regency": "Jembrana",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    }
+  },
+  {
+    "id": 10779013748,
+    "type": "node",
+    "lat": -8.3575859,
+    "lng": 114.6245958,
+    "regency": "Jembrana",
+    "name": "SPBU Pertamina 54.822.16",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "name": "SPBU Pertamina 54.822.16"
+    }
+  },
+  {
+    "id": 10779027615,
+    "type": "node",
+    "lat": -8.366457,
+    "lng": 114.661583,
+    "regency": "Jembrana",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 10779073221,
+    "type": "node",
+    "lat": -8.4013944,
+    "lng": 114.7790503,
+    "regency": "Jembrana",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    }
+  },
+  {
+    "id": 10779078991,
+    "type": "node",
+    "lat": -8.4417838,
+    "lng": 114.8711291,
+    "regency": "Jembrana",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    }
+  },
+  {
+    "id": 10779108513,
+    "type": "node",
+    "lat": -8.495693,
+    "lng": 115.0492298,
+    "regency": "Tabanan",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    }
+  },
+  {
+    "id": 10800799512,
+    "type": "node",
+    "lat": -8.3292799,
+    "lng": 115.1719401,
+    "regency": "Tabanan",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    }
+  },
+  {
+    "id": 10801074996,
+    "type": "node",
+    "lat": -8.4690241,
+    "lng": 115.1372242,
+    "regency": "Tabanan",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    }
+  },
+  {
+    "id": 10801074998,
+    "type": "node",
+    "lat": -8.4544855,
+    "lng": 115.1385149,
+    "regency": "Tabanan",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    }
+  },
+  {
+    "id": 12287937936,
+    "type": "node",
+    "lat": -8.2952994,
+    "lng": 115.1740283,
+    "regency": "Tabanan",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    }
+  },
+  {
+    "id": 12293396265,
+    "type": "node",
+    "lat": -8.3711837,
+    "lng": 114.6256044,
+    "regency": "Jembrana",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    }
+  },
+  {
+    "id": 12293406735,
+    "type": "node",
+    "lat": -8.3824644,
+    "lng": 114.5975123,
+    "regency": "Jembrana",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    }
+  },
+  {
+    "id": 12293410046,
+    "type": "node",
+    "lat": -8.3024075,
+    "lng": 114.5160832,
+    "regency": "Jembrana",
+    "name": "SPBU",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "SPBU",
+      "name:en": "Fuel Station"
+    }
+  },
+  {
+    "id": 12293422755,
+    "type": "node",
+    "lat": -8.3608242,
+    "lng": 114.5718077,
+    "regency": "Jembrana",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    }
+  },
+  {
+    "id": 12313863793,
+    "type": "node",
+    "lat": -8.552535,
+    "lng": 115.0764661,
+    "regency": "Tabanan",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station",
+      "name:vi": "Cửa hàng Xăng dầu"
+    }
+  },
+  {
+    "id": 12313877251,
+    "type": "node",
+    "lat": -8.492523,
+    "lng": 114.9584518,
+    "regency": "Tabanan",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station",
+      "name:vi": "Cửa hàng Xăng dầu"
+    }
+  },
+  {
+    "id": 12313882736,
+    "type": "node",
+    "lat": -8.5085467,
+    "lng": 115.0778761,
+    "regency": "Tabanan",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station",
+      "name:vi": "Cửa hàng Xăng dầu"
+    }
+  },
+  {
+    "id": 12313908583,
+    "type": "node",
+    "lat": -8.4378104,
+    "lng": 114.8638291,
+    "regency": "Jembrana",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station",
+      "name:vi": "Cửa hàng Xăng dầu"
+    }
+  },
+  {
+    "id": 225177250,
+    "type": "way",
+    "lat": -8.4375237,
+    "lng": 115.1962745,
+    "regency": "Tabanan",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "building": "yes",
+      "check_date": "2025-03-16",
+      "name": "Pertamina",
+      "source": "Bing, Local knowledge"
+    }
+  },
+  {
+    "id": 475757306,
+    "type": "way",
+    "lat": -8.2578546,
+    "lng": 115.1617255,
+    "regency": "Tabanan",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "building": "yes",
+      "compressed_air": "yes",
+      "layer": "1",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 600380264,
+    "type": "way",
+    "lat": -8.528148,
+    "lng": 115.0012811,
+    "regency": "Tabanan",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "building": "yes",
+      "layer": "-1"
+    }
+  },
+  {
+    "id": 603638421,
+    "type": "way",
+    "lat": -8.4826317,
+    "lng": 115.098058,
+    "regency": "Tabanan",
+    "name": "Padma Sari (P. Bayu)",
+    "tags": {
+      "amenity": "fuel",
+      "building": "yes",
+      "name": "Padma Sari (P. Bayu)"
+    }
+  },
+  {
+    "id": 603638557,
+    "type": "way",
+    "lat": -8.4869695,
+    "lng": 115.0945631,
+    "regency": "Tabanan",
+    "name": "PERTASHOP TIMPAG (CV Restu Mahitala)",
+    "tags": {
+      "amenity": "fuel",
+      "building": "yes",
+      "name": "PERTASHOP TIMPAG (CV Restu Mahitala)"
+    }
+  },
+  {
+    "id": 1119410373,
+    "type": "way",
+    "lat": -8.4747415,
+    "lng": 114.9326444,
+    "regency": "Tabanan",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina"
+    }
+  },
+  {
+    "id": 1150185346,
+    "type": "way",
+    "lat": -8.2509341,
+    "lng": 114.4788746,
+    "regency": "Jembrana",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 1185103949,
+    "type": "way",
+    "lat": -8.4201946,
+    "lng": 114.8086824,
+    "regency": "Jembrana",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 1190145498,
+    "type": "way",
+    "lat": -8.3568614,
+    "lng": 114.630782,
+    "regency": "Jembrana",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 1192654164,
+    "type": "way",
+    "lat": -8.4269492,
+    "lng": 114.8347783,
+    "regency": "Jembrana",
+    "name": "Pertamina",
+    "brand": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "fuel:pertalite": "yes",
+      "fuel:pertamax_92": "yes",
+      "name": "Pertamina"
+    }
+  }
+]

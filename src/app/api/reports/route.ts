@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 1. Validasi Cloudflare Turnstile Token
+    // Turnstile token verification
     const clientIp =
       request.headers.get('cf-connecting-ip') ||
       request.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 2. Eksekusi Stored Procedure di Supabase
+    // Stored procedure execution
     if (supabaseServer) {
       const { data, error } = await supabaseServer.rpc('submit_spbu_report', {
         p_spbu_id: spbuId,

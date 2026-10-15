@@ -1,4 +1,4 @@
-import { SPBUItem, UserReportSubmission } from '../types/spbu';
+import { SPBUItem, UserReportSubmission, BaliRegency } from '../types/spbu';
 import { INITIAL_SPBU_DATA } from '../data/spbu-denpasar-badung';
 import { supabase, isSupabaseConfigured } from './supabase';
 
@@ -10,7 +10,7 @@ interface SPBURow {
   code: string;
   name: string;
   address: string;
-  regency: 'Denpasar' | 'Badung';
+  regency: BaliRegency;
   district: string;
   lat: number;
   lng: number;
@@ -58,22 +58,23 @@ export const SPBUService = {
       if (stored) {
         const parsed: SPBUItem[] = JSON.parse(stored);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          // Merge authoritative metadata (coordinates, code, address, regency, district, and cctv) from INITIAL_SPBU_DATA
-          return parsed.map((item) => {
-            const initial = INITIAL_SPBU_DATA.find((i) => i.id === item.id);
-            if (initial) {
+          // Return all initial SPBUs, overlaying cached user reports where present
+          return INITIAL_SPBU_DATA.map((initial) => {
+            const cached = parsed.find((p) => p.id === initial.id);
+            if (cached) {
               return {
-                ...item,
-                code: initial.code,
-                name: initial.name,
-                address: initial.address,
-                regency: initial.regency,
-                district: initial.district,
-                coordinates: initial.coordinates,
-                cctv: initial.cctv,
+                ...initial,
+                queueLevel: cached.queueLevel ?? initial.queueLevel,
+                estimatedWaitMinutes: cached.estimatedWaitMinutes ?? initial.estimatedWaitMinutes,
+                fuelStock: cached.fuelStock ?? initial.fuelStock,
+                reportCount: cached.reportCount ?? initial.reportCount,
+                upvotes: cached.upvotes ?? initial.upvotes,
+                lastReportedAt: cached.lastReportedAt ?? initial.lastReportedAt,
+                latestNote: cached.latestNote ?? initial.latestNote,
+                latestPhoto: cached.latestPhoto ?? initial.latestPhoto,
               };
             }
-            return item;
+            return initial;
           });
         }
       }
@@ -86,22 +87,22 @@ export const SPBUService = {
       try {
         const { data, error } = await supabase.from('spbus').select('*');
         if (!error && data && data.length > 0) {
-          return (data as unknown as SPBURow[]).map((row) => {
-            const item = mapRowToSPBUItem(row);
-            const initial = INITIAL_SPBU_DATA.find((i) => i.id === item.id);
-            if (initial) {
+          const remoteRows = data as unknown as SPBURow[];
+          return INITIAL_SPBU_DATA.map((initial) => {
+            const row = remoteRows.find((r) => r.id === initial.id);
+            if (row) {
+              const item = mapRowToSPBUItem(row);
               return {
-                ...item,
-                code: initial.code,
-                name: initial.name,
-                address: initial.address,
-                regency: initial.regency,
-                district: initial.district,
-                coordinates: initial.coordinates,
-                cctv: initial.cctv,
+                ...initial,
+                queueLevel: item.queueLevel,
+                estimatedWaitMinutes: item.estimatedWaitMinutes,
+                fuelStock: item.fuelStock,
+                reportCount: item.reportCount,
+                upvotes: item.upvotes,
+                lastReportedAt: item.lastReportedAt,
               };
             }
-            return item;
+            return initial;
           });
         }
       } catch (err) {
@@ -155,6 +156,12 @@ export const SPBUService = {
             createdAt: new Date().toISOString(),
           }
         : current.latestNote,
+      latestPhoto: submission.photoUrl
+        ? {
+            url: submission.photoUrl,
+            createdAt: new Date().toISOString(),
+          }
+        : current.latestPhoto,
       reportCount: (current.reportCount || 0) + 1,
       lastReportedAt: new Date().toISOString(),
     };
@@ -170,7 +177,7 @@ export const SPBUService = {
       }
     }
 
-    // 1. Submit through secure server endpoint (Cloudflare Turnstile verified)
+    // Server endpoint submission with Turnstile validation
     try {
       const response = await fetch('/api/reports', {
         method: 'POST',
@@ -189,6 +196,9 @@ export const SPBUService = {
         if (updatedItem.latestNote) {
           mapped.latestNote = updatedItem.latestNote;
         }
+        if (updatedItem.latestPhoto) {
+          mapped.latestPhoto = updatedItem.latestPhoto;
+        }
         list[index] = mapped;
         if (typeof window !== 'undefined') {
           localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(list));
@@ -205,7 +215,7 @@ export const SPBUService = {
       console.warn('POST /api/reports failed, trying client-side fallback:', apiErr);
     }
 
-    // 2. Client-side fallback if server endpoint is unreachable
+    // Direct client-side RPC fallback
     if (isSupabaseConfigured && supabase) {
       try {
         const { error: rpcError } = await supabase.rpc('submit_spbu_report', {

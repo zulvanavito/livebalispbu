@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { SPBUItem } from '@/types/spbu';
-import { Video, Clock, MapPin, ThumbsUp, Edit3, Navigation } from 'lucide-react';
+import { Video, Clock, MapPin, ThumbsUp, Edit3, Navigation, Camera } from 'lucide-react';
 
 interface SPBUCardProps {
   spbu: SPBUItem;
@@ -138,11 +138,11 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
           className={`text-[10px] whitespace-nowrap flex items-center gap-1 shrink-0 px-1.5 py-0.5 rounded ${
             isStale
               ? 'bg-amber-50 text-amber-700 border border-amber-200 font-medium'
-              : 'text-zinc-400'
+              : 'text-zinc-600'
           }`}
           title={isStale ? 'Laporan lebih dari 1 jam lalu. Kondisi mungkin sudah berubah.' : undefined}
         >
-          <Clock className={`w-3 h-3 ${isStale ? 'text-amber-600' : 'text-zinc-400'}`} />
+          <Clock className={`w-3 h-3 ${isStale ? 'text-amber-600' : 'text-zinc-500'}`} />
           {relativeTime}
           {isStale && <span className="font-semibold text-[9px] hidden sm:inline">(Perlu update)</span>}
         </span>
@@ -155,7 +155,7 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
             {spbu.name}
           </h4>
           <p className="text-xs text-zinc-500 flex items-center gap-1 mt-0.5 truncate">
-            <MapPin className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+            <MapPin className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
             {spbu.address}
           </p>
         </div>
@@ -247,13 +247,39 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
               }}
               title={`Lihat siaran CCTV ${spbu.name}`}
               aria-label={`Lihat siaran CCTV ${spbu.name}`}
-              className="min-h-[38px] px-2.5 py-1.5 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 text-xs font-semibold flex items-center gap-1.5 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer whitespace-nowrap shadow-xs"
+              className="min-h-[44px] px-3 py-2 rounded-xl bg-red-50 hover:bg-red-100 text-red-700 border border-red-200 text-xs font-semibold flex items-center gap-1.5 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer whitespace-nowrap shadow-xs"
             >
               <Video className="w-3.5 h-3.5 text-red-600 shrink-0" />
               <span>Lihat CCTV</span>
             </button>
+          ) : spbu.latestPhoto ? (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenCCTV(spbu);
+              }}
+              title={`Lihat foto antrean ${spbu.name}`}
+              aria-label={`Lihat foto antrean ${spbu.name}`}
+              className="min-h-[44px] px-3 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold flex items-center gap-1.5 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer whitespace-nowrap shadow-xs"
+            >
+              <Camera className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
+              <span>Foto Antrean</span>
+            </button>
           ) : (
-            <span className="text-[10px] text-zinc-400 italic py-1 px-1">Tanpa CCTV</span>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenCCTV(spbu);
+              }}
+              title={`Pantau antrean visual ${spbu.name}`}
+              aria-label={`Pantau antrean visual ${spbu.name}`}
+              className="min-h-[44px] px-2.5 py-2 rounded-xl bg-zinc-50 hover:bg-zinc-100 text-zinc-600 border border-zinc-200 text-xs font-medium flex items-center gap-1 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer whitespace-nowrap"
+            >
+              <Camera className="w-3.5 h-3.5 text-zinc-500 shrink-0" />
+              <span>Pantau Visual</span>
+            </button>
           )}
 
           <a
@@ -262,7 +288,7 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
             title={`Buka rute navigasi ke ${spbu.name}`}
-            className="min-h-[38px] px-2.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-semibold flex items-center gap-1 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer whitespace-nowrap"
+            className="min-h-[44px] px-3 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-semibold flex items-center gap-1 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer whitespace-nowrap"
           >
             <Navigation className="w-3.5 h-3.5 text-blue-600" />
             <span>Rute</span>
@@ -274,7 +300,7 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
               e.stopPropagation();
               onOpenReport(spbu);
             }}
-            className="min-h-[38px] px-3 py-1.5 rounded-xl bg-black hover:bg-zinc-800 text-white text-xs font-bold flex items-center gap-1.5 transition-all focus-visible:ring-2 focus-visible:ring-black cursor-pointer shadow-xs ml-auto whitespace-nowrap"
+            className="min-h-[44px] px-3.5 py-2 rounded-xl bg-black hover:bg-zinc-800 text-white text-xs font-bold flex items-center gap-1.5 transition-all focus-visible:ring-2 focus-visible:ring-black cursor-pointer shadow-xs ml-auto whitespace-nowrap"
           >
             <Edit3 className="w-3.5 h-3.5" />
             <span>Lapor</span>
@@ -289,7 +315,7 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
           }}
           title="Konfirmasi data ini akurat"
           aria-label="Konfirmasi data SPBU ini akurat"
-          className="min-h-[38px] min-w-[38px] px-2 py-1 flex items-center justify-center gap-1 text-zinc-500 hover:text-emerald-700 hover:bg-zinc-100 border border-transparent hover:border-zinc-200 transition-colors focus-visible:ring-2 focus-visible:ring-black rounded-xl cursor-pointer shrink-0"
+          className="min-h-[44px] min-w-[44px] px-2.5 py-1.5 flex items-center justify-center gap-1 text-zinc-600 hover:text-emerald-700 hover:bg-zinc-100 border border-transparent hover:border-zinc-200 transition-colors focus-visible:ring-2 focus-visible:ring-black rounded-xl cursor-pointer shrink-0"
         >
           <ThumbsUp className="w-3.5 h-3.5" />
           <span className="text-xs font-semibold">{spbu.upvotes || 0}</span>

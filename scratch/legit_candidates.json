@@ -1,0 +1,1290 @@
+{
+  "legitGianyar": [
+    {
+      "id": 1963471597,
+      "coord": {
+        "lat": -8.6023075,
+        "lng": 115.2608468
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "compressed_air": "yes"
+      }
+    },
+    {
+      "id": 3530974108,
+      "coord": {
+        "lat": -8.5231597,
+        "lng": 115.2759405
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "compressed_air": "yes",
+        "name": "Pertamina 54.805.12",
+        "opening_hours": "Mo-Su 05:00-22:00"
+      }
+    },
+    {
+      "id": 3791297306,
+      "coord": {
+        "lat": -8.5349986,
+        "lng": 115.306609
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "addr:street": "Jalan Raya Semebaung",
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "compressed_air": "yes",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 4198773706,
+      "coord": {
+        "lat": -8.5748859,
+        "lng": 115.2762409
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "fuel:diesel": "yes",
+        "fuel:octane_88": "yes",
+        "fuel:octane_92": "yes",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 4198773752,
+      "coord": {
+        "lat": -8.5668758,
+        "lng": 115.2747603
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 4362250290,
+      "coord": {
+        "lat": -8.4669679,
+        "lng": 115.3524859
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "layer": "1",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 4446960858,
+      "coord": {
+        "lat": -8.6018053,
+        "lng": 115.3247915
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 4446961398,
+      "coord": {
+        "lat": -8.581006,
+        "lng": 115.3526184
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 4467737446,
+      "coord": {
+        "lat": -8.5538112,
+        "lng": 115.2515009
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 4467738292,
+      "coord": {
+        "lat": -8.4627372,
+        "lng": 115.2976035
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "compressed_air": "yes",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 4593501492,
+      "coord": {
+        "lat": -8.5655166,
+        "lng": 115.2880082
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "name": "Pertamina",
+        "name:en": "Pompa bensin kemenuh"
+      }
+    },
+    {
+      "id": 4593501496,
+      "coord": {
+        "lat": -8.5662499,
+        "lng": 115.3049769
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "name": "Pom bensin blahbatuh"
+      }
+    },
+    {
+      "id": 4593535189,
+      "coord": {
+        "lat": -8.5287952,
+        "lng": 115.2717137
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pelumas Pertamina 54.805.09",
+        "opening_hours": "Mo-Su 05:00-21:30"
+      }
+    },
+    {
+      "id": 4593932704,
+      "coord": {
+        "lat": -8.6121569,
+        "lng": 115.3092889
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "description": "Pompa bensin purnama",
+        "name": "Pertamina",
+        "name:en": "Pertamina"
+      }
+    },
+    {
+      "id": 4707866590,
+      "coord": {
+        "lat": -8.40877,
+        "lng": 115.2448962
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 5017453423,
+      "coord": {
+        "lat": -8.563332,
+        "lng": 115.261646
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 6229193250,
+      "coord": {
+        "lat": -8.5684765,
+        "lng": 115.3746249
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 6286590885,
+      "coord": {
+        "lat": -8.451204,
+        "lng": 115.3184907
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 6355894185,
+      "coord": {
+        "lat": -8.447857,
+        "lng": 115.2805724
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 6355907290,
+      "coord": {
+        "lat": -8.4523559,
+        "lng": 115.279707
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 6712210032,
+      "coord": {
+        "lat": -8.4396411,
+        "lng": 115.3081128
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "compressed_air": "no",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 6721922709,
+      "coord": {
+        "lat": -8.4446637,
+        "lng": 115.3627892
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina"
+      }
+    },
+    {
+      "id": 6721922710,
+      "coord": {
+        "lat": -8.5133706,
+        "lng": 115.345469
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "name": "SPBU Bunutin"
+      }
+    },
+    {
+      "id": 9274481126,
+      "coord": {
+        "lat": -8.4154523,
+        "lng": 115.2807412
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 9464806554,
+      "coord": {
+        "lat": -8.4185343,
+        "lng": 115.2983646
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "compressed_air": "yes",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 11033884336,
+      "coord": {
+        "lat": -8.4239732,
+        "lng": 115.2462734
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11203013135,
+      "coord": {
+        "lat": -8.522743,
+        "lng": 115.3651598
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 512355161,
+      "coord": {
+        "lat": -8.5241915,
+        "lng": 115.2637147
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "building": "roof",
+        "building:levels": "1",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 514001663,
+      "coord": {
+        "lat": -8.5277397,
+        "lng": 115.2437777
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "building": "yes",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 514011012,
+      "coord": {
+        "lat": -8.5262808,
+        "lng": 115.2950609
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "compressed_air": "yes",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 545825031,
+      "coord": {
+        "lat": -8.5052259,
+        "lng": 115.2716923
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "building": "roof",
+        "name": "Pertamina 54.805.20"
+      }
+    },
+    {
+      "id": 1087957090,
+      "coord": {
+        "lat": -8.5366361,
+        "lng": 115.3334269
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 1111172220,
+      "coord": {
+        "lat": -8.5501132,
+        "lng": 115.375018
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "compressed_air": "no"
+      }
+    },
+    {
+      "id": 1489545694,
+      "coord": {
+        "lat": -8.5483293,
+        "lng": 115.3084164
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "layer": "1",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 1532743149,
+      "coord": {
+        "lat": -8.5413513,
+        "lng": 115.3210918
+      },
+      "regency": "Gianyar",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "layer": "1",
+        "name": "Pertamina"
+      }
+    }
+  ],
+  "legitBuleleng": [
+    {
+      "id": 274813078,
+      "coord": {
+        "lat": -8.3247965,
+        "lng": 114.5409782
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 274853846,
+      "coord": {
+        "lat": -8.3398013,
+        "lng": 115.0320289
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "compressed_air": "yes"
+      }
+    },
+    {
+      "id": 2487421443,
+      "coord": {
+        "lat": -8.3337155,
+        "lng": 115.1866722
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 2847473231,
+      "coord": {
+        "lat": -8.1863162,
+        "lng": 114.9774711
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "yes",
+        "name": "SPBU"
+      }
+    },
+    {
+      "id": 3299570661,
+      "coord": {
+        "lat": -8.1910932,
+        "lng": 114.9326709
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "name": "SPBU"
+      }
+    },
+    {
+      "id": 3754488727,
+      "coord": {
+        "lat": -8.0824813,
+        "lng": 115.1432434
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "addr:place": "Pertamina Giri Emas Gas Station",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "building": "yes",
+        "name": "Pertamina Giri Emas Gas Station",
+        "shop": "gas"
+      }
+    },
+    {
+      "id": 3754488728,
+      "coord": {
+        "lat": -8.1450122,
+        "lng": 115.0499465
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "fuel:diesel": "yes",
+        "fuel:octane_88": "yes",
+        "fuel:octane_92": "yes",
+        "fuel:octane_95": "yes",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 3754491925,
+      "coord": {
+        "lat": -8.1152738,
+        "lng": 115.0797277
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "fuel:octane_88": "yes",
+        "fuel:octane_92": "yes",
+        "fuel:octane_95": "yes",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 4368999206,
+      "coord": {
+        "lat": -8.2646029,
+        "lng": 115.0512955
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 4420365789,
+      "coord": {
+        "lat": -8.3485679,
+        "lng": 114.8958367
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 4467738625,
+      "coord": {
+        "lat": -8.1772879,
+        "lng": 114.7500647
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Petrolimex",
+        "brand:wikidata": "Q10831598",
+        "name": "Petrolimex"
+      }
+    },
+    {
+      "id": 4467739093,
+      "coord": {
+        "lat": -8.2038795,
+        "lng": 114.8840471
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "name": "Cửa hàng Xăng dầu",
+        "building": "roof",
+        "name:en": "Fuel Station"
+      }
+    },
+    {
+      "id": 4704509289,
+      "coord": {
+        "lat": -8.1918108,
+        "lng": 114.9500563
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "name": "SPBU",
+        "building": "yes"
+      }
+    },
+    {
+      "id": 5052517732,
+      "coord": {
+        "lat": -8.1647348,
+        "lng": 115.0213127
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 5419297521,
+      "coord": {
+        "lat": -8.2859623,
+        "lng": 114.9768109
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 5651550475,
+      "coord": {
+        "lat": -8.2006978,
+        "lng": 114.8321428
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 5755867921,
+      "coord": {
+        "lat": -8.2664614,
+        "lng": 115.0547153
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "name": "Pertamina",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044"
+      }
+    },
+    {
+      "id": 6178072124,
+      "coord": {
+        "lat": -8.0952781,
+        "lng": 115.1117625
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 6611231166,
+      "coord": {
+        "lat": -8.1272096,
+        "lng": 115.0792969
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "name": "Pompa Bensin"
+      }
+    },
+    {
+      "id": 6611231167,
+      "coord": {
+        "lat": -8.1131501,
+        "lng": 115.082669
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "name": "Pertamina",
+        "addr:street": "Jl. A Yani"
+      }
+    },
+    {
+      "id": 6712210047,
+      "coord": {
+        "lat": -8.3181975,
+        "lng": 115.3467146
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 7105955685,
+      "coord": {
+        "lat": -8.0853331,
+        "lng": 115.1751487
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 7622285885,
+      "coord": {
+        "lat": -8.3270538,
+        "lng": 115.2226649
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 9498002342,
+      "coord": {
+        "lat": -8.3294926,
+        "lng": 115.3256533
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 10779010555,
+      "coord": {
+        "lat": -8.348416,
+        "lng": 114.5785813
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina"
+      }
+    },
+    {
+      "id": 10798201666,
+      "coord": {
+        "lat": -8.2370115,
+        "lng": 115.1385918
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina"
+      }
+    },
+    {
+      "id": 10799072563,
+      "coord": {
+        "lat": -8.1758946,
+        "lng": 115.0036354
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "building": "roof",
+        "name": "Cửa hàng Xăng dầu",
+        "name:en": "Fuel Station"
+      }
+    },
+    {
+      "id": 10800799512,
+      "coord": {
+        "lat": -8.3292799,
+        "lng": 115.1719401
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina"
+      }
+    },
+    {
+      "id": 11012490777,
+      "coord": {
+        "lat": -8.2682332,
+        "lng": 115.3422879
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 11012490778,
+      "coord": {
+        "lat": -8.1409354,
+        "lng": 115.2002801
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11012490783,
+      "coord": {
+        "lat": -8.2791538,
+        "lng": 115.378028
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11012542529,
+      "coord": {
+        "lat": -8.1184926,
+        "lng": 115.1872771
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11012542530,
+      "coord": {
+        "lat": -8.1390142,
+        "lng": 115.2138198
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11033884332,
+      "coord": {
+        "lat": -8.2129688,
+        "lng": 115.3237738
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11033884333,
+      "coord": {
+        "lat": -8.1263869,
+        "lng": 115.2167509
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11033884335,
+      "coord": {
+        "lat": -8.2871827,
+        "lng": 115.3195361
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11033884337,
+      "coord": {
+        "lat": -8.1945373,
+        "lng": 115.2906849
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11033915359,
+      "coord": {
+        "lat": -8.0917582,
+        "lng": 115.1758923
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11033915360,
+      "coord": {
+        "lat": -8.1312581,
+        "lng": 115.2103401
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11048153450,
+      "coord": {
+        "lat": -8.1498823,
+        "lng": 115.057153
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "fuel:octane_92": "yes",
+        "name": "PetraMINA"
+      }
+    },
+    {
+      "id": 11954796697,
+      "coord": {
+        "lat": -8.2703177,
+        "lng": 115.0615534
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 11954796698,
+      "coord": {
+        "lat": -8.2728105,
+        "lng": 115.0573748
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 12252323023,
+      "coord": {
+        "lat": -8.1140255,
+        "lng": 115.1350984
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Cửa hàng Xăng dầu",
+        "name:en": "Fuel Station"
+      }
+    },
+    {
+      "id": 12277185797,
+      "coord": {
+        "lat": -8.3092894,
+        "lng": 115.3968365
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Fuel Station"
+      }
+    },
+    {
+      "id": 12277190271,
+      "coord": {
+        "lat": -8.1465707,
+        "lng": 115.2472815
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 12287921053,
+      "coord": {
+        "lat": -8.2599613,
+        "lng": 115.0277035
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Fuel Station"
+      }
+    },
+    {
+      "id": 12287937936,
+      "coord": {
+        "lat": -8.2952994,
+        "lng": 115.1740283
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Fuel Station"
+      }
+    },
+    {
+      "id": 12290095501,
+      "coord": {
+        "lat": -8.2529113,
+        "lng": 114.981214
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Cửa hàng Xăng dầu",
+        "name:en": "Fuel Station"
+      }
+    },
+    {
+      "id": 12291632313,
+      "coord": {
+        "lat": -8.2766697,
+        "lng": 114.9708258
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Fuel Station"
+      }
+    },
+    {
+      "id": 12293398519,
+      "coord": {
+        "lat": -8.2661384,
+        "lng": 114.9696464
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "compressed_air": "yes",
+        "name": "Fuel Station"
+      }
+    },
+    {
+      "id": 12293398520,
+      "coord": {
+        "lat": -8.1665389,
+        "lng": 114.5070504
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Cửa hàng Xăng dầu",
+        "name:en": "Fuel Station"
+      }
+    },
+    {
+      "id": 12293406734,
+      "coord": {
+        "lat": -8.1442322,
+        "lng": 114.5954745
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "compressed_air": "no",
+        "name": "Cửa hàng Xăng dầu",
+        "name:en": "Fuel Station"
+      }
+    },
+    {
+      "id": 12293410046,
+      "coord": {
+        "lat": -8.3024075,
+        "lng": 114.5160832
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "SPBU",
+        "name:en": "Fuel Station"
+      }
+    },
+    {
+      "id": 475757306,
+      "coord": {
+        "lat": -8.2578546,
+        "lng": 115.1617255
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "yes",
+        "compressed_air": "yes",
+        "layer": "1",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 509984088,
+      "coord": {
+        "lat": -8.1024654,
+        "lng": 115.2836325
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "building:part": "roof",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 559976070,
+      "coord": {
+        "lat": -8.2151865,
+        "lng": 114.9401671
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "SPBU"
+      }
+    },
+    {
+      "id": 560893611,
+      "coord": {
+        "lat": -8.1933082,
+        "lng": 114.9222581
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "yes",
+        "name": "SPBU"
+      }
+    },
+    {
+      "id": 1121908173,
+      "coord": {
+        "lat": -8.22624,
+        "lng": 114.9448347
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "building": "roof"
+      }
+    },
+    {
+      "id": 1150185346,
+      "coord": {
+        "lat": -8.2509341,
+        "lng": 114.4788746
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel"
+      }
+    },
+    {
+      "id": 1181397892,
+      "coord": {
+        "lat": -8.2235019,
+        "lng": 115.2543113
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 1184213626,
+      "coord": {
+        "lat": -8.1352895,
+        "lng": 115.1013777
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pertamina"
+      }
+    },
+    {
+      "id": 1447743524,
+      "coord": {
+        "lat": -8.1489524,
+        "lng": 114.6323875
+      },
+      "regency": "Buleleng",
+      "tags": {
+        "amenity": "fuel",
+        "compressed_air": "yes"
+      }
+    }
+  ]
+}

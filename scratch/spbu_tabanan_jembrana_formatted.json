@@ -1,0 +1,964 @@
+[
+  {
+    "id": "spbu-tabanan-01",
+    "code": "54.821.01",
+    "name": "SPBU Pertamina Raya Pupuan",
+    "address": "Jl. Raya Seririt - Pupuan, Kec. Pupuan, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Pupuan",
+    "coordinates": {
+      "lat": -8.339801,
+      "lng": 115.032029
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 12,
+    "upvotes": 25,
+    "lastReportedAt": "2026-10-15T16:43:22.140Z"
+  },
+  {
+    "id": "spbu-tabanan-02",
+    "code": "54.821.02",
+    "name": "SPBU Pertamina Kediri Tabanan",
+    "address": "Jl. Raya Denpasar - Tabanan, Abiantuwung, Kec. Kediri, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Kediri",
+    "coordinates": {
+      "lat": -8.384301,
+      "lng": 115.19544
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 14,
+    "upvotes": 28,
+    "lastReportedAt": "2026-10-15T16:26:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-03",
+    "code": "54.821.03",
+    "name": "SPBU Pertamina Baturiti (Bedugul 3)",
+    "address": "Jl. Raya Denpasar - Singaraja, Baturiti, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Baturiti",
+    "coordinates": {
+      "lat": -8.333716,
+      "lng": 115.186672
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 16,
+    "upvotes": 31,
+    "lastReportedAt": "2026-10-15T16:09:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-04",
+    "code": "54.821.04",
+    "name": "SPBU Pertamina Baturiti (Bedugul 4)",
+    "address": "Jl. Raya Denpasar - Singaraja, Baturiti, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Baturiti",
+    "coordinates": {
+      "lat": -8.362162,
+      "lng": 115.191025
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 18,
+    "upvotes": 34,
+    "lastReportedAt": "2026-10-15T15:52:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-05",
+    "code": "54.821.05",
+    "name": "SPBU Pertamina Raya Pupuan",
+    "address": "Jl. Raya Seririt - Pupuan, Kec. Pupuan, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Pupuan",
+    "coordinates": {
+      "lat": -8.49891,
+      "lng": 115.034218
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 20,
+    "upvotes": 37,
+    "lastReportedAt": "2026-10-15T15:35:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-06",
+    "code": "54.821.06",
+    "name": "SPBU Pertamina Raya Pupuan",
+    "address": "Jl. Raya Seririt - Pupuan, Kec. Pupuan, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Pupuan",
+    "coordinates": {
+      "lat": -8.495693,
+      "lng": 115.04923
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 22,
+    "upvotes": 40,
+    "lastReportedAt": "2026-10-15T15:18:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-07",
+    "code": "54.821.07",
+    "name": "SPBU Pertamina Baturiti (Bedugul 7)",
+    "address": "Jl. Raya Denpasar - Singaraja, Baturiti, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Baturiti",
+    "coordinates": {
+      "lat": -8.32928,
+      "lng": 115.17194
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 24,
+    "upvotes": 43,
+    "lastReportedAt": "2026-10-15T15:01:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-08",
+    "code": "54.821.08",
+    "name": "SPBU Pertamina Marga Tabanan",
+    "address": "Jl. Raya Marga - Apuan, Kec. Marga, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Marga",
+    "coordinates": {
+      "lat": -8.469024,
+      "lng": 115.137224
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 26,
+    "upvotes": 46,
+    "lastReportedAt": "2026-10-15T14:44:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-09",
+    "code": "54.821.09",
+    "name": "SPBU Pertamina Marga Tabanan",
+    "address": "Jl. Raya Marga - Apuan, Kec. Marga, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Marga",
+    "coordinates": {
+      "lat": -8.454486,
+      "lng": 115.138515
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 28,
+    "upvotes": 49,
+    "lastReportedAt": "2026-10-15T14:27:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-10",
+    "code": "54.821.10",
+    "name": "SPBU Pertamina Baturiti (Bedugul 10)",
+    "address": "Jl. Raya Denpasar - Singaraja, Baturiti, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Baturiti",
+    "coordinates": {
+      "lat": -8.295299,
+      "lng": 115.174028
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 30,
+    "upvotes": 52,
+    "lastReportedAt": "2026-10-15T14:10:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-11",
+    "code": "54.821.11",
+    "name": "SPBU Pertamina Kerambitan",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Kec. Kerambitan, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Kerambitan",
+    "coordinates": {
+      "lat": -8.552535,
+      "lng": 115.076466
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 12,
+    "upvotes": 55,
+    "lastReportedAt": "2026-10-15T13:53:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-12",
+    "code": "54.821.12",
+    "name": "SPBU Pertamina Raya Pupuan",
+    "address": "Jl. Raya Seririt - Pupuan, Kec. Pupuan, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Pupuan",
+    "coordinates": {
+      "lat": -8.492523,
+      "lng": 114.958452
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 14,
+    "upvotes": 58,
+    "lastReportedAt": "2026-10-15T13:36:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-13",
+    "code": "54.821.13",
+    "name": "SPBU Pertamina Kerambitan",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Kec. Kerambitan, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Kerambitan",
+    "coordinates": {
+      "lat": -8.508547,
+      "lng": 115.077876
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 16,
+    "upvotes": 26,
+    "lastReportedAt": "2026-10-15T13:19:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-14",
+    "code": "54.821.14",
+    "name": "SPBU Pertamina Marga Tabanan",
+    "address": "Jl. Raya Marga - Apuan, Kec. Marga, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Marga",
+    "coordinates": {
+      "lat": -8.437524,
+      "lng": 115.196275
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 18,
+    "upvotes": 29,
+    "lastReportedAt": "2026-10-15T13:02:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-15",
+    "code": "54.821.15",
+    "name": "SPBU Pertamina Baturiti (Bedugul 15)",
+    "address": "Jl. Raya Denpasar - Singaraja, Baturiti, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Baturiti",
+    "coordinates": {
+      "lat": -8.257855,
+      "lng": 115.161726
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 20,
+    "upvotes": 32,
+    "lastReportedAt": "2026-10-15T12:45:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-16",
+    "code": "54.821.16",
+    "name": "SPBU Pertamina Raya Pupuan",
+    "address": "Jl. Raya Seririt - Pupuan, Kec. Pupuan, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Pupuan",
+    "coordinates": {
+      "lat": -8.528148,
+      "lng": 115.001281
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 22,
+    "upvotes": 35,
+    "lastReportedAt": "2026-10-15T12:28:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-17",
+    "code": "54.821.17",
+    "name": "SPBU Padma Sari (P. Bayu)",
+    "address": "Jl. Raya Denpasar - Tabanan, Abiantuwung, Kec. Kediri, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Kediri",
+    "coordinates": {
+      "lat": -8.482632,
+      "lng": 115.098058
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 24,
+    "upvotes": 38,
+    "lastReportedAt": "2026-10-15T12:11:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-18",
+    "code": "54.821.18",
+    "name": "SPBU PERTASHOP TIMPAG (CV Restu Mahitala)",
+    "address": "Jl. Raya Denpasar - Tabanan, Abiantuwung, Kec. Kediri, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Kediri",
+    "coordinates": {
+      "lat": -8.48697,
+      "lng": 115.094563
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 26,
+    "upvotes": 41,
+    "lastReportedAt": "2026-10-15T11:54:22.141Z"
+  },
+  {
+    "id": "spbu-tabanan-19",
+    "code": "54.821.19",
+    "name": "SPBU Pertamina Raya Pupuan",
+    "address": "Jl. Raya Seririt - Pupuan, Kec. Pupuan, Kabupaten Tabanan",
+    "regency": "Tabanan",
+    "district": "Pupuan",
+    "coordinates": {
+      "lat": -8.474742,
+      "lng": 114.932644
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 28,
+    "upvotes": 44,
+    "lastReportedAt": "2026-10-15T11:37:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-01",
+    "code": "54.822.01",
+    "name": "SPBU Pertamina Kota Negara",
+    "address": "Jl. Jenderal Sudirman / Ngurah Rai, Dauhwaru, Kec. Negara, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Negara",
+    "coordinates": {
+      "lat": -8.352555,
+      "lng": 114.603949
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 15,
+    "upvotes": 30,
+    "lastReportedAt": "2026-10-15T16:43:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-02",
+    "code": "54.822.02",
+    "name": "SPBU Pertamina Melaya Jembrana",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Kec. Melaya, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Melaya",
+    "coordinates": {
+      "lat": -8.324796,
+      "lng": 114.540978
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 17,
+    "upvotes": 34,
+    "lastReportedAt": "2026-10-15T16:29:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-03",
+    "code": "54.822.03",
+    "name": "SPBU Pertamina Pekutatan (Medewi)",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Medewi / Pulukan, Kec. Pekutatan, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Pekutatan",
+    "coordinates": {
+      "lat": -8.348568,
+      "lng": 114.895837
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 19,
+    "upvotes": 38,
+    "lastReportedAt": "2026-10-15T16:15:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-04",
+    "code": "54.822.04",
+    "name": "SPBU Pertamina Melaya Jembrana",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Kec. Melaya, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Melaya",
+    "coordinates": {
+      "lat": -8.182445,
+      "lng": 114.438708
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 21,
+    "upvotes": 42,
+    "lastReportedAt": "2026-10-15T16:01:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-05",
+    "code": "54.822.05",
+    "name": "SPBU Pertamina Kota Negara",
+    "address": "Jl. Jenderal Sudirman / Ngurah Rai, Dauhwaru, Kec. Negara, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Negara",
+    "coordinates": {
+      "lat": -8.348416,
+      "lng": 114.578581
+    },
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 40,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 23,
+    "upvotes": 46,
+    "lastReportedAt": "2026-10-15T15:47:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-06",
+    "code": "54.822.06",
+    "name": "SPBU Pertamina",
+    "address": "Jl. Jenderal Sudirman / Ngurah Rai, Dauhwaru, Kec. Negara, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Negara",
+    "coordinates": {
+      "lat": -8.357586,
+      "lng": 114.624596
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 25,
+    "upvotes": 50,
+    "lastReportedAt": "2026-10-15T15:33:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-07",
+    "code": "54.822.07",
+    "name": "SPBU Pertamina Dangintukadaya (Jembrana)",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Kec. Jembrana, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Jembrana",
+    "coordinates": {
+      "lat": -8.366457,
+      "lng": 114.661583
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 27,
+    "upvotes": 54,
+    "lastReportedAt": "2026-10-15T15:19:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-08",
+    "code": "54.822.08",
+    "name": "SPBU Pertamina Mendoyo (Penyaringan)",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Penyaringan, Kec. Mendoyo, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Mendoyo",
+    "coordinates": {
+      "lat": -8.401394,
+      "lng": 114.77905
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 29,
+    "upvotes": 58,
+    "lastReportedAt": "2026-10-15T15:05:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-09",
+    "code": "54.822.09",
+    "name": "SPBU Pertamina Pekutatan (Medewi)",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Medewi / Pulukan, Kec. Pekutatan, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Pekutatan",
+    "coordinates": {
+      "lat": -8.441784,
+      "lng": 114.871129
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 31,
+    "upvotes": 62,
+    "lastReportedAt": "2026-10-15T14:51:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-10",
+    "code": "54.822.10",
+    "name": "SPBU Pertamina Kota Negara",
+    "address": "Jl. Jenderal Sudirman / Ngurah Rai, Dauhwaru, Kec. Negara, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Negara",
+    "coordinates": {
+      "lat": -8.371184,
+      "lng": 114.625604
+    },
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 40,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 33,
+    "upvotes": 66,
+    "lastReportedAt": "2026-10-15T14:37:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-11",
+    "code": "54.822.11",
+    "name": "SPBU Pertamina Kota Negara",
+    "address": "Jl. Jenderal Sudirman / Ngurah Rai, Dauhwaru, Kec. Negara, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Negara",
+    "coordinates": {
+      "lat": -8.382464,
+      "lng": 114.597512
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 35,
+    "upvotes": 30,
+    "lastReportedAt": "2026-10-15T14:23:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-12",
+    "code": "54.822.12",
+    "name": "SPBU Pertamina Melaya Jembrana",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Kec. Melaya, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Melaya",
+    "coordinates": {
+      "lat": -8.302407,
+      "lng": 114.516083
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 37,
+    "upvotes": 34,
+    "lastReportedAt": "2026-10-15T14:09:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-13",
+    "code": "54.822.13",
+    "name": "SPBU Pertamina Kota Negara",
+    "address": "Jl. Jenderal Sudirman / Ngurah Rai, Dauhwaru, Kec. Negara, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Negara",
+    "coordinates": {
+      "lat": -8.360824,
+      "lng": 114.571808
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 39,
+    "upvotes": 38,
+    "lastReportedAt": "2026-10-15T13:55:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-14",
+    "code": "54.822.14",
+    "name": "SPBU Pertamina Pekutatan (Medewi)",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Medewi / Pulukan, Kec. Pekutatan, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Pekutatan",
+    "coordinates": {
+      "lat": -8.43781,
+      "lng": 114.863829
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 16,
+    "upvotes": 42,
+    "lastReportedAt": "2026-10-15T13:41:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-15",
+    "code": "54.822.15",
+    "name": "SPBU Pertamina Melaya Jembrana",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Kec. Melaya, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Melaya",
+    "coordinates": {
+      "lat": -8.250934,
+      "lng": 114.478875
+    },
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 40,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 18,
+    "upvotes": 46,
+    "lastReportedAt": "2026-10-15T13:27:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-16",
+    "code": "54.822.16",
+    "name": "SPBU Pertamina Mendoyo (Penyaringan)",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Penyaringan, Kec. Mendoyo, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Mendoyo",
+    "coordinates": {
+      "lat": -8.420195,
+      "lng": 114.808682
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 20,
+    "upvotes": 50,
+    "lastReportedAt": "2026-10-15T13:13:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-17",
+    "code": "54.822.17",
+    "name": "SPBU Pertamina Dangintukadaya (Jembrana)",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Kec. Jembrana, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Jembrana",
+    "coordinates": {
+      "lat": -8.356861,
+      "lng": 114.630782
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 22,
+    "upvotes": 54,
+    "lastReportedAt": "2026-10-15T12:59:22.141Z"
+  },
+  {
+    "id": "spbu-jembrana-18",
+    "code": "54.822.18",
+    "name": "SPBU Pertamina Pekutatan (Medewi)",
+    "address": "Jl. Raya Denpasar - Gilimanuk, Medewi / Pulukan, Kec. Pekutatan, Kabupaten Jembrana",
+    "regency": "Jembrana",
+    "district": "Pekutatan",
+    "coordinates": {
+      "lat": -8.426949,
+      "lng": 114.834778
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 24,
+    "upvotes": 58,
+    "lastReportedAt": "2026-10-15T12:45:22.141Z"
+  }
+]

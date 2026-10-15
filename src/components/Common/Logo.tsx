@@ -24,59 +24,32 @@ export const Logo: React.FC<LogoProps> = ({
 
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
-      {/* Balinese Candi Bentar + Fuel Droplet Icon */}
       <div
-        className={`${currentSize.box} rounded-xl bg-zinc-950 p-1 border border-zinc-800 shadow-xs flex items-center justify-center shrink-0 relative overflow-hidden group`}
+        className={`${currentSize.box} rounded-xl bg-zinc-950 p-1.5 border border-zinc-800 shadow-xs flex items-center justify-center shrink-0 relative overflow-hidden group`}
       >
         <svg
-          viewBox="0 0 512 512"
+          viewBox="0 0 32 32"
           className="w-full h-full transition-transform duration-300 group-hover:scale-105"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            <linearGradient id="navBaliGold" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#fbbf24" />
-              <stop offset="100%" stopColor="#d97706" />
-            </linearGradient>
-            <linearGradient id="navFuelEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#34d399" />
+            <linearGradient id="navFuelPinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#10b981" />
               <stop offset="100%" stopColor="#059669" />
             </linearGradient>
           </defs>
 
-          {/* Radar circle */}
-          <circle cx="256" cy="112" r="54" stroke="#10b981" strokeWidth="6" strokeOpacity="0.4" strokeDasharray="14 10" />
-
-          {/* Left Candi Bentar */}
-          <g fill="url(#navBaliGold)">
-            <path d="M 80 348 L 210 348 L 210 334 L 92 334 Z" />
-            <path d="M 96 334 L 206 334 L 206 320 L 108 320 Z" />
-            <path d="M 112 320 L 202 320 L 202 264 L 118 264 Z" />
-            <path d="M 122 264 L 202 264 L 202 212 L 132 212 Z" />
-            <path d="M 136 212 L 202 212 L 202 168 L 146 168 Z" />
-            <path d="M 150 168 L 202 168 L 202 124 L 176 124 L 202 96 L 202 82 L 168 124 Z" />
-          </g>
-
-          {/* Right Candi Bentar */}
-          <g fill="url(#navBaliGold)">
-            <path d="M 432 348 L 302 348 L 302 334 L 420 334 Z" />
-            <path d="M 416 334 L 306 334 L 306 320 L 404 320 Z" />
-            <path d="M 400 320 L 310 320 L 310 264 L 394 264 Z" />
-            <path d="M 390 264 L 310 264 L 310 212 L 380 212 Z" />
-            <path d="M 376 212 L 310 212 L 310 168 L 366 168 Z" />
-            <path d="M 362 168 L 310 168 L 310 124 L 336 124 L 310 96 L 310 82 L 344 124 Z" />
-          </g>
-
-          {/* Center Nozzle & Glowing Droplet */}
-          <path d="M 240 254 L 274 218 L 288 232 L 254 268 Z" fill="url(#navFuelEmerald)" />
-          <path d="M 282 208 L 274 164 L 260 148" stroke="#f4f4f5" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
-          
-          {/* Droplet */}
+          {/* Fuel Location Pin compound path: outer pin + inner droplet cutout */}
           <path
-            d="M 256 94 C 242 116, 238 128, 238 136 C 238 148, 246 156, 256 156 C 266 156, 274 148, 274 136 C 274 128, 270 116, 256 94 Z"
-            fill="url(#navFuelEmerald)"
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M16 2.5C10.2 2.5 5.5 7.2 5.5 13C5.5 19.8 14.1 28.2 15.3 29.3C15.7 29.7 16.3 29.7 16.7 29.3C17.9 28.2 26.5 19.8 26.5 13C26.5 7.2 21.8 2.5 16 2.5ZM16 7.5C16 7.5 11 13 11 15.8C11 18.6 13.2 20.8 16 20.8C18.8 20.8 21 18.6 21 15.8C21 13 16 7.5 16 7.5Z"
+            fill="url(#navFuelPinGrad)"
           />
+
+          {/* Realtime Telemetry Beacon Core */}
+          <circle cx="16" cy="16.2" r="2.2" fill="#34d399" />
         </svg>
 
         {/* Live indicator dot */}
@@ -97,7 +70,7 @@ export const Logo: React.FC<LogoProps> = ({
               livebali.my.id
             </span>
           </div>
-          <p className={`${currentSize.subtext} text-zinc-500 font-medium hidden sm:block mt-0.5`}>
+          <p className={`${currentSize.subtext} text-zinc-600 font-medium hidden sm:block mt-0.5`}>
             Pantau antrean BBM &amp; CCTV ATCS lalu lintas secara realtime
           </p>
         </div>
