@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
     }
 
     const cleanSpbuId = spbuId.replace(/[^a-zA-Z0-9_-]/g, '');
-    const key = `queue_${cleanSpbuId}_${Date.now()}.${detectedType.extension}`;
+    const key = `spbus/${cleanSpbuId}/${Date.now()}.${detectedType.extension}`;
 
     // If Cloudflare R2 is configured, upload to R2 bucket
     if (isR2Configured && r2Client) {
