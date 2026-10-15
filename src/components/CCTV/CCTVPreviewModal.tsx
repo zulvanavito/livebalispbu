@@ -166,10 +166,10 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({ spbu, onClos
             <div className="min-w-0">
               <h3 id="cctv-modal-title" className="font-bold text-zinc-900 text-sm sm:text-base flex items-center gap-1.5 truncate">
                 <Video className="w-4 h-4 text-red-500 shrink-0" />
-                Live CCTV Persimpangan SPBU
+                Live CCTV — {spbu.name}
               </h3>
               <p className="text-xs text-zinc-500 truncate">
-                {spbu.cctv.locationName}
+                {spbu.cctv.locationName} • {spbu.cctv.sourceName}
               </p>
             </div>
           </div>

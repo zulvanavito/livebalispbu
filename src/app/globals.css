@@ -29,8 +29,8 @@ body {
 .leaflet-popup-content-wrapper {
   background: #ffffff !important;
   color: #09090b !important;
-  border-radius: 12px !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.15), 0 4px 10px -2px rgba(0, 0, 0, 0.05) !important;
   border: 1px solid #e4e4e7 !important;
   padding: 0 !important;
 }
@@ -40,8 +40,36 @@ body {
   line-height: 1.4 !important;
 }
 
+.leaflet-popup-tip-container {
+  overflow: visible !important;
+}
+
 .leaflet-popup-tip {
   background: #ffffff !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.leaflet-popup-close-button {
+  top: 10px !important;
+  right: 10px !important;
+  width: 26px !important;
+  height: 26px !important;
+  color: #71717a !important;
+  font-size: 16px !important;
+  line-height: 26px !important;
+  text-align: center !important;
+  padding: 0 !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #f4f4f5 !important;
+  transition: all 0.15s ease !important;
+}
+
+.leaflet-popup-close-button:hover {
+  background: #e4e4e7 !important;
+  color: #09090b !important;
 }
 
 /* Custom SPBU Pin click reliability */

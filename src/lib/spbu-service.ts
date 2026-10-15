@@ -58,11 +58,11 @@ export const SPBUService = {
       if (stored) {
         const parsed: SPBUItem[] = JSON.parse(stored);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          // Merge latest cctv stream metadata from INITIAL_SPBU_DATA
+          // Merge authoritative cctv stream metadata from INITIAL_SPBU_DATA
           return parsed.map((item) => {
             const initial = INITIAL_SPBU_DATA.find((i) => i.id === item.id);
-            if (initial && initial.cctv.hasCCTV) {
-              return { ...item, cctv: { ...item.cctv, ...initial.cctv } };
+            if (initial) {
+              return { ...item, cctv: initial.cctv };
             }
             return item;
           });
@@ -77,7 +77,14 @@ export const SPBUService = {
       try {
         const { data, error } = await supabase.from('spbus').select('*');
         if (!error && data && data.length > 0) {
-          return (data as unknown as SPBURow[]).map(mapRowToSPBUItem);
+          return (data as unknown as SPBURow[]).map((row) => {
+            const item = mapRowToSPBUItem(row);
+            const initial = INITIAL_SPBU_DATA.find((i) => i.id === item.id);
+            if (initial) {
+              return { ...item, cctv: initial.cctv };
+            }
+            return item;
+          });
         }
       } catch (err) {
         console.warn('Supabase fetch failed, falling back to local dataset:', err);

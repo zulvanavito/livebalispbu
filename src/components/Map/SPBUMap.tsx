@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useMemo } from 'react';
 import L from 'leaflet';
 import { SPBUItem } from '@/types/spbu';
-import { Video, Edit3, X, Clock, MapPin, Navigation } from 'lucide-react';
 
 interface SPBUMapProps {
   spbus: SPBUItem[];
@@ -27,9 +26,39 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
   const markersRef = useRef<Map<string, L.Marker>>(new Map());
   const userMarkerRef = useRef<L.Marker | null>(null);
 
+  // Keep callback refs fresh
+  const selectedSpbuRef = useRef(selectedSpbu);
+  const onSelectSpbuRef = useRef(onSelectSpbu);
+  const onOpenCCTVRef = useRef(onOpenCCTV);
+  const onOpenReportRef = useRef(onOpenReport);
+
+  useEffect(() => {
+    selectedSpbuRef.current = selectedSpbu;
+    onSelectSpbuRef.current = onSelectSpbu;
+    onOpenCCTVRef.current = onOpenCCTV;
+    onOpenReportRef.current = onOpenReport;
+  });
+
   // Center of Denpasar / Badung
   const DEFAULT_CENTER: [number, number] = [-8.685, 115.205];
   const DEFAULT_ZOOM = 13;
+
+  // Calculate distance string
+  const getDistanceStr = (spbu: SPBUItem) => {
+    if (!userLocation) return null;
+    const R = 6371; // km
+    const dLat = ((spbu.coordinates.lat - userLocation.lat) * Math.PI) / 180;
+    const dLng = ((spbu.coordinates.lng - userLocation.lng) * Math.PI) / 180;
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos((userLocation.lat * Math.PI) / 180) *
+        Math.cos((spbu.coordinates.lat * Math.PI) / 180) *
+        Math.sin(dLng / 2) *
+        Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const dist = R * c;
+    return dist < 1 ? `${Math.round(dist * 1000)} m` : `${dist.toFixed(1)} km`;
+  };
 
   // Generate dynamic DivIcon for map pin
   const createMarkerIcon = (spbu: SPBUItem, isSelected: boolean) => {
@@ -126,6 +155,132 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     });
   };
 
+  // Generate modern HTML for Leaflet Popup (anchored right above the pin!)
+  const createPopupHtml = (spbu: SPBUItem, distanceStr: string | null): string => {
+    let queueBadgeBg = '#ecfdf5';
+    let queueBadgeColor = '#065f46';
+    let queueLabel = 'Lancar';
+
+    if (spbu.queueLevel === 'congested') {
+      queueBadgeBg = '#fef2f2';
+      queueBadgeColor = '#991b1b';
+      queueLabel = 'Macet Mengular';
+    } else if (spbu.queueLevel === 'moderate') {
+      queueBadgeBg = '#fffbeb';
+      queueBadgeColor = '#92400e';
+      queueLabel = 'Ramai Sedang';
+    } else if (spbu.queueLevel === 'empty') {
+      queueBadgeBg = '#f1f5f9';
+      queueBadgeColor = '#334155';
+      queueLabel = 'Kosong / Tutup';
+    }
+
+    const getStockColor = (status?: string) => {
+      if (status === 'available') return '#047857';
+      if (status === 'low') return '#b45309';
+      return '#b91c1c';
+    };
+
+    const getStockLabel = (status?: string) => {
+      if (status === 'available') return 'Ada';
+      if (status === 'low') return 'Menipis';
+      return 'Habis';
+    };
+
+    const distanceBadge = distanceStr
+      ? `<span style="padding:2px 7px; border-radius:9999px; font-size:10px; font-weight:700; background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; display:inline-flex; align-items:center; gap:2px;">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          ${distanceStr}
+        </span>`
+      : '';
+
+    const cctvButton = spbu.cctv.hasCCTV
+      ? `<button type="button" class="spbu-popup-cctv-btn" data-spbu-id="${spbu.id}" style="
+          flex:1; min-height:38px; padding:6px 10px; border-radius:10px; background:#dc2626; color:#ffffff; font-size:11px; font-weight:700; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:5px; box-shadow:0 1px 2px rgba(0,0,0,0.1); transition:opacity 0.15s;
+        ">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          CCTV
+        </button>`
+      : '';
+
+    return `
+      <div style="font-family: inherit; width: 280px; max-width: 86vw; padding: 14px 14px 12px 14px; color: #09090b; box-sizing: border-box;">
+        <!-- Header meta -->
+        <div style="display:flex; align-items:center; gap:5px; margin-bottom:6px; flex-wrap:wrap;">
+          <span style="padding:2px 5px; border-radius:4px; font-size:10px; font-family:monospace; background:#f4f4f5; color:#3f3f46; border:1px solid #e4e4e7;">
+            ${spbu.code}
+          </span>
+          <span style="padding:2px 6px; border-radius:9999px; font-size:10px; font-weight:600; background:#f4f4f5; color:#52525b; border:1px solid #e4e4e7;">
+            ${spbu.regency} • ${spbu.district}
+          </span>
+          ${distanceBadge}
+        </div>
+
+        <!-- Title & address -->
+        <h4 style="margin:0 0 4px 0; font-size:13px; font-weight:800; line-height:1.3; color:#09090b;">
+          ${spbu.name}
+        </h4>
+        <p style="margin:0 0 10px 0; font-size:11px; color:#71717a; line-height:1.3; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">
+          ${spbu.address}
+        </p>
+
+        <!-- Queue status banner -->
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:6px 10px; border-radius:10px; background:#f4f4f5; border:1px solid #e4e4e7; margin-bottom:10px; font-size:11px;">
+          <span style="color:#71717a; display:inline-flex; align-items:center; gap:4px;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#71717a" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Antrean:
+          </span>
+          <span style="font-weight:700; padding:2px 6px; border-radius:6px; background:${queueBadgeBg}; color:${queueBadgeColor};">
+            ${queueLabel} (~${spbu.estimatedWaitMinutes} mnt)
+          </span>
+        </div>
+
+        <!-- Fuel Stock Grid -->
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:6px; text-align:center; margin-bottom:12px;">
+          <div style="padding:5px 4px; border-radius:8px; background:#fafafa; border:1px solid #f4f4f5;">
+            <span style="display:block; font-size:9px; color:#71717a; margin-bottom:2px;">Pertalite</span>
+            <span style="font-size:11px; font-weight:700; color:${getStockColor(spbu.fuelStock.pertalite)};">
+              ${getStockLabel(spbu.fuelStock.pertalite)}
+            </span>
+          </div>
+          <div style="padding:5px 4px; border-radius:8px; background:#fafafa; border:1px solid #f4f4f5;">
+            <span style="display:block; font-size:9px; color:#71717a; margin-bottom:2px;">Pertamax</span>
+            <span style="font-size:11px; font-weight:700; color:${getStockColor(spbu.fuelStock.pertamax)};">
+              ${getStockLabel(spbu.fuelStock.pertamax)}
+            </span>
+          </div>
+          <div style="padding:5px 4px; border-radius:8px; background:#fafafa; border:1px solid #f4f4f5;">
+            <span style="display:block; font-size:9px; color:#71717a; margin-bottom:2px;">Bio Solar</span>
+            <span style="font-size:11px; font-weight:700; color:${getStockColor(spbu.fuelStock.solar)};">
+              ${getStockLabel(spbu.fuelStock.solar)}
+            </span>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div style="display:flex; gap:6px; align-items:center; padding-top:4px; border-top:1px solid #f4f4f5;">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=${spbu.coordinates.lat},${spbu.coordinates.lng}" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             title="Buka rute navigasi Google Maps"
+             style="
+              min-height:38px; padding:6px 10px; border-radius:10px; background:#eff6ff; color:#1d4ed8; font-size:11px; font-weight:700; border:1px solid #bfdbfe; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:4px; box-sizing:border-box; transition:background 0.15s;
+             ">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Rute
+          </a>
+          ${cctvButton}
+          <button type="button" class="spbu-popup-report-btn" data-spbu-id="${spbu.id}" style="
+            flex:1; min-height:38px; padding:6px 10px; border-radius:10px; background:#09090b; color:#ffffff; font-size:11px; font-weight:700; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px; box-shadow:0 1px 2px rgba(0,0,0,0.1); transition:opacity 0.15s;
+          ">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Lapor
+          </button>
+        </div>
+      </div>
+    `;
+  };
+
   // User current location marker
   const createUserLocationIcon = () => {
     const html = `
@@ -183,11 +338,49 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
 
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-    // Clicking anywhere on empty map deselects active card
+    // Clicking anywhere on empty map deselects active SPBU
     map.on('click', (e) => {
       const target = e.originalEvent.target as HTMLElement;
-      if (!target.closest('.custom-spbu-marker') && !target.closest('.map-floating-card')) {
-        onSelectSpbu(null);
+      if (!target.closest('.custom-spbu-marker') && !target.closest('.leaflet-popup')) {
+        onSelectSpbuRef.current(null);
+      }
+    });
+
+    // Delegate click events inside Leaflet popup
+    map.on('popupopen', (e) => {
+      const container = e.popup.getElement();
+      if (!container) return;
+
+      // Handle close button click inside popup
+      const closeBtn = container.querySelector('.leaflet-popup-close-button') as HTMLElement;
+      if (closeBtn) {
+        closeBtn.onclick = () => {
+          onSelectSpbuRef.current(null);
+        };
+      }
+
+      const cctvBtn = container.querySelector('.spbu-popup-cctv-btn') as HTMLElement;
+      if (cctvBtn) {
+        cctvBtn.onclick = (ev) => {
+          ev.stopPropagation();
+          const spbuId = cctvBtn.getAttribute('data-spbu-id');
+          const targetSpbu = spbus.find((s) => s.id === spbuId);
+          if (targetSpbu) {
+            onOpenCCTVRef.current(targetSpbu);
+          }
+        };
+      }
+
+      const reportBtn = container.querySelector('.spbu-popup-report-btn') as HTMLElement;
+      if (reportBtn) {
+        reportBtn.onclick = (ev) => {
+          ev.stopPropagation();
+          const spbuId = reportBtn.getAttribute('data-spbu-id');
+          const targetSpbu = spbus.find((s) => s.id === spbuId);
+          if (targetSpbu) {
+            onOpenReportRef.current(targetSpbu);
+          }
+        };
       }
     });
 
@@ -199,12 +392,12 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     };
   }, []);
 
-  // 2. Render Markers ONLY when spbus data changes (independent of selectedSpbu)
+  // 2. Render Markers and bind Popups directly on coordinates
   useEffect(() => {
     const map = mapInstanceRef.current;
     if (!map) return;
 
-    // Clear removed markers
+    // Clear previous markers
     markersRef.current.forEach((marker) => marker.remove());
     markersRef.current.clear();
 
@@ -217,24 +410,38 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
         zIndexOffset: isSelected ? 1000 : 100,
       }).addTo(map);
 
-      // Handle click: check if user clicked directly on the CCTV badge or the pin
+      // Create Leaflet Popup anchored directly above the marker pin
+      const popup = L.popup({
+        offset: [0, -60],
+        className: 'custom-spbu-popup',
+        closeButton: true,
+        autoPan: true,
+        autoPanPaddingTopLeft: [24, 24],
+        autoPanPaddingBottomRight: [24, 24],
+        maxWidth: 320,
+        minWidth: 280,
+      }).setContent(createPopupHtml(spbu, getDistanceStr(spbu)));
+
+      marker.bindPopup(popup);
+
+      // Handle marker click: check if user clicked CCTV badge or the pin
       marker.on('click', (e) => {
         L.DomEvent.stopPropagation(e);
         const nativeEvent = e.originalEvent as MouseEvent;
         const target = nativeEvent.target as HTMLElement;
 
         if (target && target.closest('.cctv-click-trigger') && spbu.cctv.hasCCTV) {
-          onOpenCCTV(spbu);
+          onOpenCCTVRef.current(spbu);
         } else {
-          onSelectSpbu(spbu);
+          onSelectSpbuRef.current(spbu);
         }
       });
 
       markersRef.current.set(spbu.id, marker);
     });
-  }, [spbus]);
+  }, [spbus, userLocation]);
 
-  // 3. React to selectedSpbu changes (update icon styling and pan smoothly without recreating markers)
+  // 3. React to selectedSpbu changes (update icon styling, pan smoothly, and open popup on the marker)
   useEffect(() => {
     const map = mapInstanceRef.current;
     if (!map) return;
@@ -250,9 +457,18 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     });
 
     if (selectedSpbu) {
-      map.flyTo([selectedSpbu.coordinates.lat, selectedSpbu.coordinates.lng], 15, {
-        duration: 0.6,
-      });
+      const marker = markersRef.current.get(selectedSpbu.id);
+      if (marker) {
+        map.flyTo([selectedSpbu.coordinates.lat, selectedSpbu.coordinates.lng], 15, {
+          duration: 0.6,
+        });
+
+        // Update popup content with latest distance and data
+        marker.getPopup()?.setContent(createPopupHtml(selectedSpbu, getDistanceStr(selectedSpbu)));
+        marker.openPopup();
+      }
+    } else {
+      map.closePopup();
     }
   }, [selectedSpbu]);
 
@@ -273,187 +489,10 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     }
   }, [userLocation]);
 
-  // Calculate Haversine distance for selected SPBU
-  const selectedDistanceKm = useMemo(() => {
-    if (!userLocation || !selectedSpbu) return null;
-    const R = 6371; // km
-    const dLat = ((selectedSpbu.coordinates.lat - userLocation.lat) * Math.PI) / 180;
-    const dLng = ((selectedSpbu.coordinates.lng - userLocation.lng) * Math.PI) / 180;
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos((userLocation.lat * Math.PI) / 180) *
-        Math.cos((selectedSpbu.coordinates.lat * Math.PI) / 180) *
-        Math.sin(dLng / 2) *
-        Math.sin(dLng / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    const dist = R * c;
-    return dist < 1 ? `${Math.round(dist * 1000)} m` : `${dist.toFixed(1)} km`;
-  }, [userLocation, selectedSpbu]);
-
   return (
     <div className="relative w-full h-full min-h-[420px] bg-zinc-100 overflow-hidden">
       {/* Map canvas */}
       <div ref={mapContainerRef} className="w-full h-full" />
-
-      {/* Modern React Floating Overlay Card when an SPBU is selected on the map */}
-      {selectedSpbu && (
-        <div className="map-floating-card absolute top-4 left-4 right-4 sm:left-auto sm:right-4 sm:w-96 z-[900] animate-in fade-in slide-in-from-top-3 duration-200">
-          <div className="bg-white/95 backdrop-blur-md border border-zinc-200 rounded-2xl p-4 shadow-xl text-zinc-900">
-            {/* Top row */}
-            <div className="flex items-start justify-between gap-2">
-              <div>
-                <div className="flex items-center gap-1.5 mb-1">
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-mono bg-zinc-100 text-zinc-700 border border-zinc-200">
-                    {selectedSpbu.code}
-                  </span>
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-zinc-100 text-zinc-700 border border-zinc-200">
-                    {selectedSpbu.regency} • {selectedSpbu.district}
-                  </span>
-                  {selectedDistanceKm && (
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200 flex items-center gap-1">
-                      <Navigation className="w-2.5 h-2.5" />
-                      {selectedDistanceKm}
-                    </span>
-                  )}
-                </div>
-                <h4 className="font-bold text-black text-sm sm:text-base leading-snug">
-                  {selectedSpbu.name}
-                </h4>
-                <p className="text-xs text-zinc-500 flex items-center gap-1 mt-0.5">
-                  <MapPin className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
-                  <span className="truncate">{selectedSpbu.address}</span>
-                </p>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => onSelectSpbu(null)}
-                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-zinc-400 hover:text-black hover:bg-zinc-100 transition-colors shrink-0 focus-visible:ring-2 focus-visible:ring-black cursor-pointer"
-                title="Tutup info"
-                aria-label="Tutup info SPBU"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Status bar */}
-            <div className="mt-3 p-2.5 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-between text-xs">
-              <span className="text-zinc-500 flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5 text-zinc-400" />
-                Antrean Saat Ini:
-              </span>
-              <span
-                className={`font-bold px-2 py-0.5 rounded-md ${
-                  selectedSpbu.queueLevel === 'congested'
-                    ? 'bg-rose-50 text-rose-800'
-                    : selectedSpbu.queueLevel === 'moderate'
-                    ? 'bg-amber-50 text-amber-800'
-                    : 'bg-emerald-50 text-emerald-800'
-                }`}
-              >
-                {selectedSpbu.queueLevel === 'congested'
-                  ? 'Macet Mengular'
-                  : selectedSpbu.queueLevel === 'moderate'
-                  ? 'Ramai Sedang'
-                  : 'Lancar'}{' '}
-                (~{selectedSpbu.estimatedWaitMinutes} mnt)
-              </span>
-            </div>
-
-            {/* Fuel stock quick summary */}
-            <div className="mt-2.5 grid grid-cols-3 gap-1.5 text-center text-[11px]">
-              <div className="p-1.5 rounded-lg bg-zinc-50 border border-zinc-200">
-                <span className="text-zinc-500 block text-[10px]">Pertalite</span>
-                <span
-                  className={`font-semibold ${
-                    selectedSpbu.fuelStock.pertalite === 'available'
-                      ? 'text-emerald-700'
-                      : selectedSpbu.fuelStock.pertalite === 'low'
-                      ? 'text-amber-700'
-                      : 'text-rose-700'
-                  }`}
-                >
-                  {selectedSpbu.fuelStock.pertalite === 'available'
-                    ? 'Ada'
-                    : selectedSpbu.fuelStock.pertalite === 'low'
-                    ? 'Menipis'
-                    : 'Habis'}
-                </span>
-              </div>
-              <div className="p-1.5 rounded-lg bg-zinc-50 border border-zinc-200">
-                <span className="text-zinc-500 block text-[10px]">Pertamax</span>
-                <span
-                  className={`font-semibold ${
-                    selectedSpbu.fuelStock.pertamax === 'available'
-                      ? 'text-zinc-900'
-                      : selectedSpbu.fuelStock.pertamax === 'low'
-                      ? 'text-amber-700'
-                      : 'text-rose-700'
-                  }`}
-                >
-                  {selectedSpbu.fuelStock.pertamax === 'available'
-                    ? 'Ada'
-                    : selectedSpbu.fuelStock.pertamax === 'low'
-                    ? 'Menipis'
-                    : 'Habis'}
-                </span>
-              </div>
-              <div className="p-1.5 rounded-lg bg-zinc-50 border border-zinc-200">
-                <span className="text-zinc-500 block text-[10px]">Bio Solar</span>
-                <span
-                  className={`font-semibold ${
-                    selectedSpbu.fuelStock.solar === 'available'
-                      ? 'text-emerald-700'
-                      : selectedSpbu.fuelStock.solar === 'low'
-                      ? 'text-amber-700'
-                      : 'text-rose-700'
-                  }`}
-                >
-                  {selectedSpbu.fuelStock.solar === 'available'
-                    ? 'Ada'
-                    : selectedSpbu.fuelStock.solar === 'low'
-                    ? 'Menipis'
-                    : 'Habis'}
-                </span>
-              </div>
-            </div>
-
-            {/* Action buttons (Direct React handlers) */}
-            <div className="mt-3 pt-2.5 border-t border-zinc-200 flex gap-2">
-              <a
-                href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${selectedSpbu.name}, ${selectedSpbu.address}`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={`Buka rute navigasi ke ${selectedSpbu.name}`}
-                className="min-h-[44px] px-3.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 font-bold text-xs flex items-center justify-center gap-1.5 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer"
-              >
-                <Navigation className="w-4 h-4 text-blue-600" />
-                Rute
-              </a>
-
-              {selectedSpbu.cctv.hasCCTV && (
-                <button
-                  type="button"
-                  onClick={() => onOpenCCTV(selectedSpbu)}
-                  className="flex-1 min-h-[44px] py-2 px-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer"
-                >
-                  <Video className="w-4 h-4" />
-                  Pantau CCTV
-                </button>
-              )}
-
-              <button
-                type="button"
-                onClick={() => onOpenReport(selectedSpbu)}
-                className="flex-1 min-h-[44px] py-2 px-3 rounded-xl bg-black hover:bg-zinc-800 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer"
-              >
-                <Edit3 className="w-4 h-4" />
-                Lapor
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
