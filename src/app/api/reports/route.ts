@@ -79,6 +79,7 @@ export async function POST(request: NextRequest) {
 
     // Stored procedure execution
     if (supabaseServer) {
+      const matching = INITIAL_SPBU_DATA.find((s) => s.id === spbuId);
       let { data, error } = await supabaseServer.rpc('submit_spbu_report', {
         p_spbu_id: spbuId,
         p_queue_level: queueLevel,
@@ -87,6 +88,8 @@ export async function POST(request: NextRequest) {
         p_solar: solar || 'available',
         p_note: note || null,
         p_ip_hash: clientIp ? Buffer.from(clientIp).toString('base64').slice(0, 16) : null,
+        p_spbu_name: matching?.name || null,
+        p_regency: matching?.regency || null,
       });
 
       // If foreign key constraint failed (e.g. SPBU not yet present in remote table)

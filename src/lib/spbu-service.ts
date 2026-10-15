@@ -45,6 +45,18 @@ function mapRowToSPBUItem(row: SPBURow): SPBUItem {
   };
 }
 
+export function normalizePhotoUrl(url?: string): string {
+  if (!url) return '';
+  return url.replace(/https:\/\/pub-[a-zA-Z0-9]+\.r2\.dev/g, 'https://livebali.my.id');
+}
+
+export function isWithin24Hours(dateString?: string): boolean {
+  if (!dateString) return false;
+  const time = new Date(dateString).getTime();
+  if (isNaN(time)) return false;
+  return Date.now() - time <= 24 * 60 * 60 * 1000;
+}
+
 export const SPBUService = {
   // Fetch initial list of SPBUs (Supabase or Local Fallback)
   async getSPBUs(): Promise<SPBUItem[]> {
@@ -100,9 +112,12 @@ export const SPBUService = {
         lastReportedAt: remote
           ? remote.last_reported_at
           : (cached?.lastReportedAt ?? initial.lastReportedAt),
-        latestNote: cached?.latestNote ?? initial.latestNote,
-        latestPhoto: cached?.latestPhoto ?? initial.latestPhoto,
-        recentPhotos: cached?.recentPhotos ?? (cached?.latestPhoto ? [cached.latestPhoto] : undefined),
+        latestPhoto: cached?.latestPhoto 
+          ? { ...cached.latestPhoto, url: normalizePhotoUrl(cached.latestPhoto.url) }
+          : (initial.latestPhoto ? { ...initial.latestPhoto, url: normalizePhotoUrl(initial.latestPhoto.url) } : undefined),
+        recentPhotos: cached?.recentPhotos 
+          ? cached.recentPhotos.map(p => ({ ...p, url: normalizePhotoUrl(p.url) }))
+          : (cached?.latestPhoto ? [{ ...cached.latestPhoto, url: normalizePhotoUrl(cached.latestPhoto.url) }] : undefined),
       };
 
       return baseItem;
@@ -234,6 +249,8 @@ export const SPBUService = {
           p_pertamax: submission.pertamax,
           p_solar: submission.solar,
           p_note: submission.note || null,
+          p_spbu_name: updatedItem.name,
+          p_regency: updatedItem.regency,
         });
 
         if (rpcError) {
@@ -309,7 +326,7 @@ export const SPBUService = {
       const json = await res.json();
       if (json.success && Array.isArray(json.photos)) {
         return json.photos.map((p: any) => ({
-          url: p.url,
+          url: normalizePhotoUrl(p.url),
           createdAt: p.createdAt,
           key: p.key,
         }));
@@ -318,6 +335,26 @@ export const SPBUService = {
     } catch (err) {
       console.warn('Failed to fetch live photos from R2:', err);
       return [];
+    }
+  },
+
+  // Fetch summary of all SPBUs that have citizen photos within the last 24 hours
+  async fetchVisualSummary(): Promise<{ recentSpbuIds: string[]; summary: Record<string, { url: string; createdAt: string }> }> {
+    if (typeof window === 'undefined') return { recentSpbuIds: [], summary: {} };
+    try {
+      const res = await fetch('/api/spbu-photos?summary=true');
+      if (!res.ok) return { recentSpbuIds: [], summary: {} };
+      const json = await res.json();
+      if (json.success) {
+        return {
+          recentSpbuIds: json.recentSpbuIds || [],
+          summary: json.summary || {},
+        };
+      }
+      return { recentSpbuIds: [], summary: {} };
+    } catch (err) {
+      console.warn('Failed to fetch visual summary from R2:', err);
+      return { recentSpbuIds: [], summary: {} };
     }
   },
 

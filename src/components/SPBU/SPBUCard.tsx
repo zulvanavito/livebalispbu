@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { SPBUItem } from '@/types/spbu';
 import { Video, Clock, MapPin, ThumbsUp, Edit3, Navigation, Camera } from 'lucide-react';
+import { isWithin24Hours } from '@/lib/spbu-service';
 
 interface SPBUCardProps {
   spbu: SPBUItem;
@@ -257,7 +258,7 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
               <Video className="w-3.5 h-3.5 text-red-600 shrink-0" />
               <span>Lihat CCTV</span>
             </button>
-          ) : spbu.latestPhoto ? (
+          ) : ((spbu.latestPhoto && isWithin24Hours(spbu.latestPhoto.createdAt)) || (spbu.recentPhotos && spbu.recentPhotos.some(p => isWithin24Hours(p.createdAt)))) ? (
             <button
               type="button"
               onClick={(e) => {

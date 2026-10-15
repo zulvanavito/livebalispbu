@@ -4,7 +4,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import { SPBUItem, MapBounds } from '@/types/spbu';
 import { INITIAL_SPBU_DATA } from '@/data/spbu-denpasar-badung';
-import { SPBUService } from '@/lib/spbu-service';
+import { SPBUService, isWithin24Hours } from '@/lib/spbu-service';
 import { Navbar } from '@/components/Layout/Navbar';
 import { FilterBar, RegencyFilterOption } from '@/components/Layout/FilterBar';
 import { SPBUCard } from '@/components/SPBU/SPBUCard';
@@ -38,7 +38,8 @@ function LiveSPBUApp() {
   const [reportModalSpbu, setReportModalSpbu] = useState<SPBUItem | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedRegency, setSelectedRegency] = useState<RegencyFilterOption>('all');
-  const [onlyWithCCTV, setOnlyWithCCTV] = useState<boolean>(false);
+  const [onlyVisual, setOnlyVisual] = useState<boolean>(false);
+  const [visualSpbuIds, setVisualSpbuIds] = useState<Set<string>>(new Set());
   const [onlyPertaliteAvailable, setOnlyPertaliteAvailable] = useState<boolean>(false);
   const [viewMode, setViewMode] = useState<'map' | 'list'>('map');
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
@@ -48,12 +49,39 @@ function LiveSPBUApp() {
   const [mapBounds, setMapBounds] = useState<MapBounds | null>(null);
   const [filterByBounds, setFilterByBounds] = useState<boolean>(true);
 
-  // Load SPBU data
+  // Load SPBU data & Visual Monitoring summary (CCTV + Citizen Photos <= 24h)
   const loadData = async () => {
     setIsRefreshing(true);
-    const data = await SPBUService.getSPBUs();
-    setSpbus(data);
-    setTimeout(() => setIsRefreshing(false), 500);
+    try {
+      const [data, visualSummary] = await Promise.all([
+        SPBUService.getSPBUs(),
+        SPBUService.fetchVisualSummary(),
+      ]);
+
+      const visualSet = new Set<string>();
+      for (const item of data) {
+        if (item.cctv.hasCCTV) {
+          visualSet.add(item.id);
+        } else if (item.latestPhoto && isWithin24Hours(item.latestPhoto.createdAt)) {
+          visualSet.add(item.id);
+        } else if (item.recentPhotos && item.recentPhotos.some((p) => isWithin24Hours(p.createdAt))) {
+          visualSet.add(item.id);
+        }
+      }
+
+      if (visualSummary && visualSummary.recentSpbuIds) {
+        for (const id of visualSummary.recentSpbuIds) {
+          visualSet.add(id);
+        }
+      }
+
+      setSpbus(data);
+      setVisualSpbuIds(visualSet);
+    } catch (err) {
+      console.warn('Error loading SPBU data with visual summary:', err);
+    } finally {
+      setTimeout(() => setIsRefreshing(false), 500);
+    }
   };
 
   useEffect(() => {
@@ -68,8 +96,29 @@ function LiveSPBUApp() {
         .on(
           'postgres_changes',
           { event: '*', schema: 'public', table: 'spbus' },
-          () => {
-            loadData();
+          (payload) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const updatedRow = payload.new as any;
+            if (updatedRow && updatedRow.id) {
+              setSpbus((prev) =>
+                prev.map((item) => {
+                  if (item.id === updatedRow.id) {
+                    return {
+                      ...item,
+                      queueLevel: updatedRow.queue_level ?? item.queueLevel,
+                      estimatedWaitMinutes: updatedRow.estimated_wait_minutes ?? item.estimatedWaitMinutes,
+                      fuelStock: updatedRow.fuel_stock ?? item.fuelStock,
+                      reportCount: updatedRow.report_count ?? item.reportCount,
+                      upvotes: updatedRow.upvotes ?? item.upvotes,
+                      lastReportedAt: updatedRow.last_reported_at ?? item.lastReportedAt,
+                    };
+                  }
+                  return item;
+                })
+              );
+            } else {
+              loadData();
+            }
           }
         )
         .subscribe();
@@ -100,8 +149,8 @@ function LiveSPBUApp() {
         return false;
       }
 
-      // CCTV filter
-      if (onlyWithCCTV && !item.cctv.hasCCTV) {
+      // Pantau Visual filter (CCTV or Citizen photo within 24 hours)
+      if (onlyVisual && !visualSpbuIds.has(item.id)) {
         return false;
       }
 
@@ -124,7 +173,7 @@ function LiveSPBUApp() {
 
       return true;
     });
-  }, [spbus, selectedRegency, onlyWithCCTV, onlyPertaliteAvailable, searchQuery]);
+  }, [spbus, selectedRegency, onlyVisual, visualSpbuIds, onlyPertaliteAvailable, searchQuery]);
 
   // SPBUs visible in current map viewport (if filterByBounds is active)
   const visibleListSPBUs = useMemo(() => {
@@ -148,7 +197,7 @@ function LiveSPBUApp() {
   // Reset pagination count when filter criteria change or bounds mode toggles
   useEffect(() => {
     setVisibleCount(15);
-  }, [selectedRegency, onlyWithCCTV, onlyPertaliteAvailable, searchQuery, filterByBounds]);
+  }, [selectedRegency, onlyVisual, onlyPertaliteAvailable, searchQuery, filterByBounds]);
 
   // Ensure selected SPBU is within visible slice when selected from map
   useEffect(() => {
@@ -172,9 +221,17 @@ function LiveSPBUApp() {
     const congested = spbus.filter((s) => s.queueLevel === 'congested').length;
     const smooth = spbus.filter((s) => s.queueLevel === 'smooth').length;
     const pertaliteOut = spbus.filter((s) => s.fuelStock.pertalite === 'out_of_stock').length;
-    const withCCTV = spbus.filter((s) => s.cctv.hasCCTV).length;
-    return { total, congested, smooth, pertaliteOut, withCCTV };
-  }, [spbus]);
+    
+    // Dynamic visual count for currently selected regency
+    const visualCount = spbus.filter((s) => {
+      if (selectedRegency !== 'all' && s.regency !== selectedRegency) {
+        return false;
+      }
+      return visualSpbuIds.has(s.id);
+    }).length;
+
+    return { total, congested, smooth, pertaliteOut, visualCount };
+  }, [spbus, selectedRegency, visualSpbuIds]);
 
   // GPS User location
   const handleLocateUser = () => {
@@ -249,14 +306,14 @@ function LiveSPBUApp() {
         onSearchChange={setSearchQuery}
         selectedRegency={selectedRegency}
         onRegencyChange={setSelectedRegency}
-        onlyWithCCTV={onlyWithCCTV}
-        onToggleCCTV={() => setOnlyWithCCTV(!onlyWithCCTV)}
+        onlyVisual={onlyVisual}
+        onToggleVisual={() => setOnlyVisual(!onlyVisual)}
         onlyPertaliteAvailable={onlyPertaliteAvailable}
         onTogglePertalite={() => setOnlyPertaliteAvailable(!onlyPertaliteAvailable)}
         viewMode={viewMode}
         onViewModeChange={setViewMode}
         totalFiltered={filteredSPBUs.length}
-        cctvCount={stats.withCCTV}
+        visualCount={stats.visualCount}
       />
 
       {/* Main Body: Split Desktop or Mobile View */}
@@ -352,7 +409,7 @@ function LiveSPBUApp() {
                     onClick={() => {
                       setSearchQuery('');
                       setSelectedRegency('all');
-                      setOnlyWithCCTV(false);
+                      setOnlyVisual(false);
                       setOnlyPertaliteAvailable(false);
                     }}
                     className="inline-flex items-center justify-center text-xs text-black font-semibold underline hover:text-zinc-700 p-2 min-h-[44px] cursor-pointer"
@@ -427,6 +484,9 @@ function LiveSPBUApp() {
             setSpbus((prev) =>
               prev.map((item) => (item.id === updated.id ? updated : item))
             );
+            if (updated.latestPhoto && isWithin24Hours(updated.latestPhoto.createdAt)) {
+              setVisualSpbuIds((prev) => new Set([...prev, updated.id]));
+            }
             if (selectedSpbu?.id === updated.id) {
               setSelectedSpbu(updated);
             }

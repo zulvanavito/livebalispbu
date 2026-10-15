@@ -26,6 +26,8 @@
 .playwright-mcp/
 /*.png
 !public/icons/*.png
+/scripts/
+*.mjs
 
 # debug
 npm-debug.log*

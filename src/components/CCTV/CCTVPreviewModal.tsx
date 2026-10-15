@@ -19,11 +19,13 @@ import {
   Clock,
   ExternalLink,
   PlusCircle,
-  Cloud,
   ChevronLeft,
   ChevronRight,
-  Layers
+  Layers,
+  Loader2,
+  ImageOff
 } from 'lucide-react';
+import { normalizePhotoUrl } from '@/lib/spbu-service';
 
 interface CCTVPreviewModalProps {
   spbu: SPBUItem | null;
@@ -52,7 +54,6 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
   const [activeTab, setActiveTab] = useState<ModalTab>(
     spbu?.cctv.hasCCTV ? 'atcs' : 'citizen_photo'
   );
-  const [viewMode, setViewMode] = useState<'stream' | 'snapshot'>('stream');
   const [refreshKey, setRefreshKey] = useState<number>(0);
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -65,6 +66,16 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
   const [photoIndex, setPhotoIndex] = useState<number>(0);
   const [photosList, setPhotosList] = useState<CitizenPhotoItem[]>([]);
   const [isLoadingPhotos, setIsLoadingPhotos] = useState<boolean>(false);
+  const [isPhotoLoading, setIsPhotoLoading] = useState<boolean>(true);
+  const [photoLoadError, setPhotoLoadError] = useState<boolean>(false);
+  const [useProxyFallback, setUseProxyFallback] = useState<boolean>(false);
+
+  // Reset photo loading/error state when photoIndex or refreshKey changes
+  useEffect(() => {
+    setIsPhotoLoading(true);
+    setPhotoLoadError(false);
+    setUseProxyFallback(false);
+  }, [photoIndex, refreshKey, spbu?.id]);
 
   // Sync tab when target SPBU changes
   useEffect(() => {
@@ -126,11 +137,15 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
 
   // Setup HLS.js streaming directly on native HTML5 <video> with deep buffer cushion
   useEffect(() => {
-    if (!spbuId || activeTab !== 'atcs' || viewMode !== 'stream' || !streamUrl || !videoRef.current) return;
+    if (!spbuId || activeTab !== 'atcs' || !streamUrl || !videoRef.current) return;
 
     const video = videoRef.current;
     const streamBase = streamUrl;
-    const m3u8Url = streamBase.endsWith('/') ? `${streamBase}index.m3u8` : `${streamBase}/index.m3u8`;
+    const m3u8Url = streamBase.endsWith('.m3u8')
+      ? streamBase
+      : streamBase.endsWith('/')
+      ? `${streamBase}index.m3u8`
+      : `${streamBase}/index.m3u8`;
 
     setStreamError(false);
 
@@ -177,7 +192,6 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
           retryCount++;
           if (retryCount >= 2) {
             setStreamError(true);
-            setViewMode('snapshot');
             return;
           }
 
@@ -211,22 +225,18 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
       video.src = m3u8Url;
       video.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
     }
-  }, [activeTab, viewMode, spbuId, streamUrl, refreshKey]);
+  }, [activeTab, spbuId, streamUrl, refreshKey]);
 
   if (!spbu) return null;
 
   const handleRefresh = () => {
     setIsRefreshing(true);
+    setStreamError(false);
     setRefreshKey(Date.now());
     setTimeout(() => {
       setIsRefreshing(false);
     }, 600);
   };
-
-  const rawSnapshotUrl = spbu.cctv.snapshotUrl || '/api/cctv-proxy';
-  const snapshotSrc = refreshKey > 0
-    ? (rawSnapshotUrl.includes('?') ? `${rawSnapshotUrl}&t=${refreshKey}` : `${rawSnapshotUrl}?t=${refreshKey}`)
-    : rawSnapshotUrl;
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -247,7 +257,15 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
     }
   };
 
-  const currentPhoto = photosList[photoIndex] || photosList[0] || spbu.latestPhoto;
+  const rawPhoto = photosList[photoIndex] || photosList[0] || spbu.latestPhoto;
+  const currentPhoto = rawPhoto
+    ? { ...rawPhoto, url: normalizePhotoUrl(rawPhoto.url) }
+    : null;
+  const activePhotoSrc = currentPhoto
+    ? useProxyFallback
+      ? `/api/photo-proxy?key=${encodeURIComponent(currentPhoto.key || currentPhoto.url)}`
+      : currentPhoto.url
+    : '';
 
   return (
     <div 
@@ -351,36 +369,6 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
               </span>
             )}
           </button>
-
-          {/* Sub-toggle for ATCS Stream vs Snapshot */}
-          {activeTab === 'atcs' && hasLiveStream && (
-            <div className="ml-auto hidden sm:flex bg-zinc-200/80 p-0.5 rounded-lg border border-zinc-300/80 mb-1.5">
-              <button
-                type="button"
-                onClick={() => setViewMode('stream')}
-                className={`px-2.5 py-1 text-xs rounded-md font-bold flex items-center gap-1 transition-colors ${
-                  viewMode === 'stream'
-                    ? 'bg-red-600 text-white shadow-xs'
-                    : 'text-zinc-600 hover:text-black'
-                }`}
-              >
-                <Video className="w-3 h-3" />
-                Video
-              </button>
-              <button
-                type="button"
-                onClick={() => setViewMode('snapshot')}
-                className={`px-2.5 py-1 text-xs rounded-md font-bold flex items-center gap-1 transition-colors ${
-                  viewMode === 'snapshot'
-                    ? 'bg-black text-white shadow-xs'
-                    : 'text-zinc-600 hover:text-black'
-                }`}
-              >
-                <Camera className="w-3 h-3" />
-                Snapshot
-              </button>
-            </div>
-          )}
         </div>
 
         {/* Viewport Content */}
@@ -388,7 +376,7 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
           {activeTab === 'atcs' ? (
             /* ATCS DISHUB CCTV TAB */
             <>
-              {viewMode === 'stream' && hasLiveStream && !streamError ? (
+              {hasLiveStream && !streamError ? (
                 <>
                   <video
                     ref={videoRef}
@@ -403,6 +391,7 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
 
                   {!isPlaying && (
                     <button
+                      type="button"
                       onClick={handleManualPlay}
                       className="absolute inset-0 flex flex-col items-center justify-center bg-black/70 text-white gap-2 transition-opacity cursor-pointer"
                     >
@@ -412,34 +401,57 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
                       <span className="text-xs font-semibold tracking-wide">Klik untuk Putar Live Video</span>
                     </button>
                   )}
+
+                  {/* Floating live indicator badge */}
+                  <div className="absolute top-3 left-3 bg-zinc-950/90 px-2.5 py-1 rounded-lg text-xs font-mono text-zinc-100 border border-zinc-700 flex items-center gap-1.5 pointer-events-none shadow-md">
+                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span>
+                      ATCS DISHUB: {spbu.cctv.locationName || 'Simpang Jalan'}
+                      {spbu.cctv.distanceMeters !== undefined ? ` (~${spbu.cctv.distanceMeters}m)` : ''}
+                    </span>
+                  </div>
+
+                  {/* Volume toggle */}
+                  <button
+                    type="button"
+                    onClick={toggleMute}
+                    className="absolute bottom-12 right-4 p-2 rounded-full bg-zinc-900/80 hover:bg-zinc-900 text-white opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                    title={isMuted ? 'Nyalakan Audio' : 'Bisukan'}
+                  >
+                    {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                  </button>
                 </>
               ) : (
-                /* Snapshot mode fallback */
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
-                  key={`img-${refreshKey}`}
-                  src={snapshotSrc}
-                  alt={`CCTV ${spbu.name}`}
-                  className="w-full h-full object-cover"
-                />
-              )}
-
-              {/* Floating live indicator badge */}
-              <div className="absolute top-3 left-3 bg-zinc-950/90 px-2.5 py-1 rounded-lg text-xs font-mono text-zinc-100 border border-zinc-700 flex items-center gap-1.5 pointer-events-none shadow-md">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                <span>ATCS DISHUB: {spbu.cctv.locationName || 'Simpang Jalan'}</span>
-              </div>
-
-              {/* Volume toggle */}
-              {viewMode === 'stream' && hasLiveStream && (
-                <button
-                  type="button"
-                  onClick={toggleMute}
-                  className="absolute bottom-12 right-4 p-2 rounded-full bg-zinc-900/80 hover:bg-zinc-900 text-white opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
-                  title={isMuted ? 'Nyalakan Audio' : 'Bisukan'}
-                >
-                  {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-                </button>
+                /* Offline Status Card */
+                <div className="flex flex-col items-center justify-center p-6 text-center text-zinc-300 max-w-sm z-10">
+                  <div className="w-14 h-14 rounded-full bg-rose-950/60 border border-rose-800/80 flex items-center justify-center mb-3">
+                    <AlertTriangle className="w-7 h-7 text-rose-400" />
+                  </div>
+                  <h4 className="text-white font-bold text-sm sm:text-base mb-1">
+                    Siaran Langsung Sedang Tidak Tersedia
+                  </h4>
+                  <p className="text-xs text-zinc-400 leading-relaxed mb-4">
+                    Kamera pengawas persimpangan jalan sedang offline atau dalam pemeliharaan berkala.
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={handleRefresh}
+                      className="min-h-[44px] px-3.5 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer border border-zinc-600"
+                    >
+                      <RefreshCw className="w-3.5 h-3.5" />
+                      <span>Coba Hubungkan Ulang</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab('citizen_photo')}
+                      className="min-h-[44px] px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+                    >
+                      <Camera className="w-3.5 h-3.5" />
+                      <span>Lihat Foto Warga</span>
+                    </button>
+                  </div>
+                </div>
               )}
             </>
           ) : (
@@ -447,18 +459,77 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
             <>
               {currentPhoto?.url ? (
                 <>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    key={`photo-${currentPhoto.url}-${refreshKey}`}
-                    src={currentPhoto.url}
-                    alt={`Foto Antrean ${spbu.name}`}
-                    className="w-full h-full object-contain bg-zinc-950 transition-opacity duration-200"
-                  />
+                  {/* Loading spinner overlay */}
+                  {isPhotoLoading && !photoLoadError && (
+                    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-zinc-950/70 gap-2 pointer-events-none">
+                      <Loader2 className="w-8 h-8 text-emerald-400 animate-spin" />
+                      <span className="text-xs text-zinc-300 font-medium">Memuat foto antrean...</span>
+                    </div>
+                  )}
 
-                  {/* Top-left R2 badge */}
+                  {/* Photo load error fallback */}
+                  {photoLoadError ? (
+                    <div className="flex flex-col items-center justify-center p-6 text-center text-zinc-300 max-w-sm z-10">
+                      <div className="w-14 h-14 rounded-full bg-amber-950/60 border border-amber-800/80 flex items-center justify-center mb-3">
+                        <ImageOff className="w-7 h-7 text-amber-400" />
+                      </div>
+                      <h4 className="text-white font-bold text-sm mb-1">
+                        Foto Tidak Dapat Ditampilkan
+                      </h4>
+                      <p className="text-xs text-zinc-400 leading-relaxed mb-4">
+                        Koneksi gambar terhambat atau format belum terbaca di peramban ini. Anda dapat mencoba memuat ulang atau membuka tautan langsung.
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setPhotoLoadError(false);
+                            setIsPhotoLoading(true);
+                            setRefreshKey(Date.now());
+                          }}
+                          className="min-h-[44px] px-3.5 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer border border-zinc-600"
+                        >
+                          <RefreshCw className="w-3.5 h-3.5" />
+                          <span>Coba Lagi</span>
+                        </button>
+                        <a
+                          href={currentPhoto.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="min-h-[44px] px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          <span>Buka Tautan</span>
+                        </a>
+                      </div>
+                    </div>
+                  ) : (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      key={`photo-${activePhotoSrc}-${refreshKey}`}
+                      src={activePhotoSrc}
+                      alt={`Foto Antrean ${spbu.name}`}
+                      onLoad={() => {
+                        setIsPhotoLoading(false);
+                        setPhotoLoadError(false);
+                      }}
+                      onError={() => {
+                        if (!useProxyFallback && (currentPhoto.key || currentPhoto.url)) {
+                          setUseProxyFallback(true);
+                          setIsPhotoLoading(true);
+                        } else {
+                          setIsPhotoLoading(false);
+                          setPhotoLoadError(true);
+                        }
+                      }}
+                      className="w-full h-full object-contain bg-zinc-950 transition-opacity duration-200"
+                    />
+                  )}
+
+                  {/* Top-left Foto Warga badge */}
                   <div className="absolute top-3 left-3 bg-zinc-950/90 px-2.5 py-1.5 rounded-lg text-xs font-medium text-white border border-zinc-700 flex items-center gap-1.5 shadow-md">
-                    <Cloud className="w-3.5 h-3.5 text-sky-400" />
-                    <span>Foto Warga (Cloudflare R2)</span>
+                    <Camera className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Foto Warga</span>
                   </div>
 
                   {/* Top-right timestamp badge */}
@@ -567,7 +638,7 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
                   title={`Tampilkan foto ke-${idx + 1} (${formatRelativeTime(item.createdAt)})`}
                 >
                   <img
-                    src={item.url}
+                    src={normalizePhotoUrl(item.url)}
                     alt={`Thumbnail ${idx + 1}`}
                     className="w-10 h-7 object-cover rounded-md bg-black shrink-0"
                   />
@@ -581,37 +652,6 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
                   </div>
                 </button>
               ))}
-            </div>
-          </div>
-        )}
-
-        {/* Mobile Sub-toggle for ATCS Stream vs Snapshot */}
-        {activeTab === 'atcs' && hasLiveStream && (
-          <div className="sm:hidden flex bg-zinc-50 px-4 py-2 border-b border-zinc-200 justify-between items-center text-xs">
-            <span className="text-zinc-600 font-medium">Mode Tayang:</span>
-            <div className="flex gap-1.5">
-              <button
-                type="button"
-                onClick={() => setViewMode('stream')}
-                className={`min-h-[40px] px-3 py-1.5 rounded-lg text-xs font-bold ${
-                  viewMode === 'stream'
-                    ? 'bg-red-600 text-white'
-                    : 'bg-zinc-100 text-zinc-700'
-                }`}
-              >
-                Live Video
-              </button>
-              <button
-                type="button"
-                onClick={() => setViewMode('snapshot')}
-                className={`min-h-[40px] px-3 py-1.5 rounded-lg text-xs font-bold ${
-                  viewMode === 'snapshot'
-                    ? 'bg-black text-white'
-                    : 'bg-zinc-100 text-zinc-700'
-                }`}
-              >
-                Snapshot
-              </button>
             </div>
           </div>
         )}
@@ -669,8 +709,8 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
               <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
               <span>
                 {activeTab === 'atcs'
-                  ? 'Kamera ATCS Dishub Bali'
-                  : 'Penyimpanan Foto Terdistribusi Cloudflare R2'}
+                  ? `Kamera ATCS Dishub Denpasar${spbu.cctv.distanceMeters !== undefined ? ` • ${spbu.cctv.distanceMeters}m dari SPBU` : ''}`
+                  : 'Foto Kontribusi Warga'}
               </span>
             </span>
 

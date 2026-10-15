@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Search, Video, CheckCircle, X, Map, List, MapPin, ChevronDown } from 'lucide-react';
+import { Search, Video, Camera, CheckCircle, X, Map, List, MapPin, ChevronDown } from 'lucide-react';
 import { BaliRegency } from '@/types/spbu';
 
 export type RegencyFilterOption = 'all' | BaliRegency;
@@ -24,14 +24,17 @@ interface FilterBarProps {
   onSearchChange: (q: string) => void;
   selectedRegency: RegencyFilterOption;
   onRegencyChange: (reg: RegencyFilterOption) => void;
-  onlyWithCCTV: boolean;
-  onToggleCCTV: () => void;
+  onlyWithCCTV?: boolean;
+  onToggleCCTV?: () => void;
+  onlyVisual?: boolean;
+  onToggleVisual?: () => void;
   onlyPertaliteAvailable: boolean;
   onTogglePertalite: () => void;
   viewMode: 'map' | 'list';
   onViewModeChange: (mode: 'map' | 'list') => void;
   totalFiltered: number;
   cctvCount?: number;
+  visualCount?: number;
 }
 
 export const FilterBar: React.FC<FilterBarProps> = ({
@@ -39,16 +42,22 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   onSearchChange,
   selectedRegency,
   onRegencyChange,
-  onlyWithCCTV,
+  onlyWithCCTV = false,
   onToggleCCTV,
+  onlyVisual,
+  onToggleVisual,
   onlyPertaliteAvailable,
   onTogglePertalite,
   viewMode,
   onViewModeChange,
   totalFiltered,
   cctvCount,
+  visualCount,
 }) => {
   const isRegencyActive = selectedRegency !== 'all';
+  const activeOnlyVisual = onlyVisual !== undefined ? onlyVisual : onlyWithCCTV;
+  const activeOnToggleVisual = onToggleVisual || onToggleCCTV || (() => {});
+  const activeVisualCount = visualCount !== undefined ? visualCount : cctvCount;
 
   return (
     <div className="bg-white border-b border-zinc-200 px-4 py-2.5 sm:px-6">
@@ -137,20 +146,20 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             </div>
           </div>
 
-          {/* CCTV toggle */}
+          {/* Pantau Visual toggle */}
           <button
             type="button"
-            onClick={onToggleCCTV}
-            aria-pressed={onlyWithCCTV}
-            title="Filter hanya SPBU yang terpantau kamera CCTV"
+            onClick={activeOnToggleVisual}
+            aria-pressed={activeOnlyVisual}
+            title="Filter hanya SPBU yang memiliki pantauan visual (kamera ATCS atau foto antrean warga)"
             className={`min-h-[44px] px-3.5 py-2 rounded-xl text-xs font-semibold border flex items-center gap-1.5 shrink-0 transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer ${
-              onlyWithCCTV
+              activeOnlyVisual
                 ? 'bg-red-50 border-red-300 text-red-700 font-bold'
                 : 'bg-zinc-50 hover:bg-zinc-100 border-zinc-200 text-zinc-700 hover:text-black'
             }`}
           >
-            <Video className="w-3.5 h-3.5 text-red-600" />
-            <span>CCTV {cctvCount !== undefined ? `(${cctvCount})` : ''}</span>
+            <Camera className="w-3.5 h-3.5 text-red-600" />
+            <span>Pantau Visual {activeVisualCount !== undefined ? `(${activeVisualCount})` : ''}</span>
           </button>
 
           {/* Pertalite toggle */}

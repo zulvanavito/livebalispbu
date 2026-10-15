@@ -11,7 +11,109 @@ export interface R2PhotoItem {
 
 export async function GET(request: NextRequest) {
   try {
-    const spbuId = request.nextUrl.searchParams.get('spbuId');
+    const searchParams = request.nextUrl.searchParams;
+    const isSummary = searchParams.get('summary') === 'true';
+
+    if (isSummary) {
+      if (!isR2Configured || !r2Client) {
+        return NextResponse.json({
+          success: true,
+          recentSpbuIds: [],
+          summary: {},
+          message: 'Cloudflare R2 belum dikonfigurasi.',
+        });
+      }
+
+      const TWENTY_FOUR_HOURS_MS = 24 * 60 * 60 * 1000;
+      const now = Date.now();
+      const recentSpbuIdsSet = new Set<string>();
+      const summary: Record<string, { url: string; createdAt: string }> = {};
+
+      // 1. Scan organized folder prefix: spbus/
+      try {
+        const folderRes = await r2Client.send(
+          new ListObjectsV2Command({
+            Bucket: R2_BUCKET,
+            Prefix: 'spbus/',
+            MaxKeys: 1000,
+          })
+        );
+
+        if (folderRes.Contents) {
+          for (const obj of folderRes.Contents) {
+            if (obj.Key && obj.LastModified && obj.Size && obj.Size > 0) {
+              const age = now - obj.LastModified.getTime();
+              if (age <= TWENTY_FOUR_HOURS_MS) {
+                // Key format: spbus/{spbuId}/{filename}
+                const parts = obj.Key.split('/');
+                if (parts.length >= 3 && parts[1]) {
+                  const spbuId = parts[1];
+                  recentSpbuIdsSet.add(spbuId);
+                  if (!summary[spbuId] || new Date(summary[spbuId].createdAt).getTime() < obj.LastModified.getTime()) {
+                    summary[spbuId] = {
+                      url: `${R2_PUBLIC_URL}/${obj.Key}`,
+                      createdAt: obj.LastModified.toISOString(),
+                    };
+                  }
+                }
+              }
+            }
+          }
+        }
+      } catch (scanErr) {
+        console.warn('Error scanning R2 spbus/ prefix:', scanErr);
+      }
+
+      // 2. Scan legacy root queue_ objects for backward compatibility
+      try {
+        const legacyRes = await r2Client.send(
+          new ListObjectsV2Command({
+            Bucket: R2_BUCKET,
+            Prefix: 'queue_',
+            MaxKeys: 200,
+          })
+        );
+
+        if (legacyRes.Contents) {
+          for (const obj of legacyRes.Contents) {
+            if (obj.Key && obj.LastModified && obj.Size && obj.Size > 0) {
+              const age = now - obj.LastModified.getTime();
+              if (age <= TWENTY_FOUR_HOURS_MS) {
+                // Key format: queue_{spbuId}_{timestamp}_{random}.jpg
+                const match = obj.Key.match(/^queue_(.+?)_\d+_[a-zA-Z0-9_-]+\.[a-zA-Z0-9]+$/);
+                if (match && match[1]) {
+                  const spbuId = match[1];
+                  recentSpbuIdsSet.add(spbuId);
+                  if (!summary[spbuId] || new Date(summary[spbuId].createdAt).getTime() < obj.LastModified.getTime()) {
+                    summary[spbuId] = {
+                      url: `${R2_PUBLIC_URL}/${obj.Key}`,
+                      createdAt: obj.LastModified.toISOString(),
+                    };
+                  }
+                }
+              }
+            }
+          }
+        }
+      } catch (legacyErr) {
+        console.warn('Error scanning legacy R2 queue_ prefix:', legacyErr);
+      }
+
+      return NextResponse.json(
+        {
+          success: true,
+          recentSpbuIds: Array.from(recentSpbuIdsSet),
+          summary,
+        },
+        {
+          headers: {
+            'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120',
+          },
+        }
+      );
+    }
+
+    const spbuId = searchParams.get('spbuId');
 
     if (!spbuId) {
       return NextResponse.json(
