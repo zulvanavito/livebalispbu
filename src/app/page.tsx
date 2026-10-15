@@ -11,6 +11,8 @@ import { SPBUCard } from '@/components/SPBU/SPBUCard';
 import { CCTVPreviewModal } from '@/components/CCTV/CCTVPreviewModal';
 import { QuickReportModal } from '@/components/Report/QuickReportModal';
 import { PWAInstallBanner } from '@/components/Common/PWAInstallBanner';
+import { DataTransparencyModal } from '@/components/Common/DataTransparencyModal';
+import { ShareModal } from '@/components/Common/ShareModal';
 import { Fuel, Map, List, Compass } from 'lucide-react';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { ToastProvider, useToast } from '@/components/Common/Toast';
@@ -24,7 +26,7 @@ const DynamicSPBUMap = dynamic(
     loading: () => (
       <div className="w-full h-full min-h-[420px] bg-zinc-100 flex flex-col items-center justify-center text-zinc-600 gap-3">
         <div className="w-8 h-8 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
-        <p className="text-sm font-medium">Memuat Peta Interaktif Denpasar &amp; Badung...</p>
+        <p className="text-sm font-medium">Memuat Peta Interaktif SPBU Bali (281 Titik Se-Bali)...</p>
       </div>
     ),
   }
@@ -36,6 +38,8 @@ function LiveSPBUApp() {
   const [selectedSpbu, setSelectedSpbu] = useState<SPBUItem | null>(null);
   const [cctvModalSpbu, setCctvModalSpbu] = useState<SPBUItem | null>(null);
   const [reportModalSpbu, setReportModalSpbu] = useState<SPBUItem | null>(null);
+  const [isTransparencyModalOpen, setIsTransparencyModalOpen] = useState<boolean>(false);
+  const [isShareModalOpen, setIsShareModalOpen] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedRegency, setSelectedRegency] = useState<RegencyFilterOption>('all');
   const [onlyVisual, setOnlyVisual] = useState<boolean>(false);
@@ -144,9 +148,14 @@ function LiveSPBUApp() {
   // Filtered SPBUs
   const filteredSPBUs = useMemo(() => {
     return spbus.filter((item) => {
-      // Regency
-      if (selectedRegency !== 'all' && item.regency !== selectedRegency) {
-        return false;
+      // Regency & Regional Grouping (Sarbagita)
+      if (selectedRegency !== 'all') {
+        if (selectedRegency === 'sarbagita') {
+          const isSarbagita = ['Denpasar', 'Badung', 'Gianyar', 'Tabanan'].includes(item.regency);
+          if (!isSarbagita) return false;
+        } else if (item.regency !== selectedRegency) {
+          return false;
+        }
       }
 
       // Pantau Visual filter (CCTV or Citizen photo within 24 hours)
@@ -230,7 +239,9 @@ function LiveSPBUApp() {
       return visualSpbuIds.has(s.id);
     }).length;
 
-    return { total, congested, smooth, pertaliteOut, visualCount };
+    const cctvCount = spbus.filter((s) => s.cctv.hasCCTV).length;
+
+    return { total, congested, smooth, pertaliteOut, visualCount, cctvCount };
   }, [spbus, selectedRegency, visualSpbuIds]);
 
   // GPS User location
@@ -298,6 +309,8 @@ function LiveSPBUApp() {
         totalSPBU={stats.total}
         smoothCount={stats.smooth}
         congestedCount={stats.congested}
+        onOpenTransparency={() => setIsTransparencyModalOpen(true)}
+        onOpenShare={() => setIsShareModalOpen(true)}
       />
 
       {/* Filter and Search Bar */}
@@ -493,6 +506,22 @@ function LiveSPBUApp() {
           }}
         />
       )}
+
+      {/* Data Transparency & Verification Modal */}
+      <DataTransparencyModal
+        isOpen={isTransparencyModalOpen}
+        onClose={() => setIsTransparencyModalOpen(false)}
+        totalSPBU={spbus.length}
+        cctvCount={stats.cctvCount}
+      />
+
+      {/* Share Modal (Story, Post, Message) */}
+      <ShareModal
+        isOpen={isShareModalOpen}
+        onClose={() => setIsShareModalOpen(false)}
+        spbus={spbus}
+        onShowToast={showToast}
+      />
 
       {/* PWA Mobile Home-Screen Install Prompt */}
       <PWAInstallBanner />

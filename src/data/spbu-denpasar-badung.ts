@@ -1,7 +1,6 @@
 import { SPBUItem } from '@/types/spbu';
 
-export const INITIAL_SPBU_DATA: SPBUItem[] = 
-[
+export const INITIAL_SPBU_DATA: SPBUItem[] = [
   {
     "id": "spbu-sunset-road-1",
     "code": "54.803.19",
@@ -13,20 +12,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.68902,
       "lng": 115.17178
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 45,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "low",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertalite": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 18,
+    "reportCount": 65,
     "upvotes": 42,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:53:14.868Z"
   },
   {
     "id": "spbu-canggu-batubolong",
@@ -39,19 +38,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.64567,
       "lng": 115.16048
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 50,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "out_of_stock",
-      "pertamax": "available",
-      "solar": "out_of_stock"
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 31,
+    "reportCount": 92,
     "upvotes": 68,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:44:14.868Z"
   },
   {
     "id": "spbu-dewaruci-kuta",
@@ -64,10 +63,10 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.71295,
       "lng": 115.18591
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 20,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
+      "pertalite": "low",
       "pertamax": "available",
       "solar": "low",
       "dexlite": "available"
@@ -75,9 +74,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 24,
+    "reportCount": 67,
     "upvotes": 55,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T19:16:14.868Z"
   },
   {
     "id": "spbu-jimbaran-bypass",
@@ -94,16 +93,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 9,
+    "reportCount": 120,
     "upvotes": 19,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T22:07:14.868Z"
   },
   {
     "id": "spbu-kerobokan-raya",
@@ -116,19 +115,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.67365,
       "lng": 115.17781
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
-      "solar": "low"
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 48,
     "upvotes": 28,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T15:42:14.868Z"
   },
   {
     "id": "spbu-nusa-dua-bypass",
@@ -142,19 +141,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.21523
     },
     "queueLevel": "smooth",
-    "estimatedWaitMinutes": 8,
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 12,
+    "reportCount": 92,
     "upvotes": 31,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T19:23:14.868Z"
   },
   {
     "id": "spbu-mengwi-terminal",
@@ -193,12 +192,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.68189,
       "lng": 115.19138
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 40,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "low",
       "pertamax": "available",
-      "solar": "out_of_stock",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
@@ -210,9 +209,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS TEUKU UMAR BARAT - PURA DEMAK (153m dari SPBU)"
     },
-    "reportCount": 37,
+    "reportCount": 60,
     "upvotes": 84,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:57:14.868Z"
   },
   {
     "id": "spbu-sanur-bypass",
@@ -225,20 +224,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.6961,
       "lng": 115.2532
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 20,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 22,
+    "reportCount": 80,
     "upvotes": 49,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:49:14.868Z"
   },
   {
     "id": "spbu-gatot-subroto-timur",
@@ -251,12 +250,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.63597,
       "lng": 115.24149
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "out_of_stock",
-      "pertamax": "available",
-      "solar": "low",
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
@@ -268,9 +267,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG TRENGGULI (14m dari SPBU)"
     },
-    "reportCount": 29,
+    "reportCount": 64,
     "upvotes": 62,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T19:15:14.868Z"
   },
   {
     "id": "spbu-gatot-subroto-barat",
@@ -284,10 +283,10 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.18528
     },
     "queueLevel": "smooth",
-    "estimatedWaitMinutes": 10,
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
@@ -300,9 +299,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG KEBO IWA (210m dari SPBU)"
     },
-    "reportCount": 16,
+    "reportCount": 95,
     "upvotes": 38,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:14:14.868Z"
   },
   {
     "id": "spbu-diponegoro-denpasar",
@@ -316,18 +315,18 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.2157
     },
     "queueLevel": "moderate",
-    "estimatedWaitMinutes": 25,
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "low",
+      "pertalite": "available",
       "pertamax": "available",
-      "solar": "out_of_stock"
+      "solar": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 20,
+    "reportCount": 49,
     "upvotes": 45,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:56:14.868Z"
   },
   {
     "id": "spbu-sudirman-denpasar",
@@ -341,10 +340,10 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.2191
     },
     "queueLevel": "smooth",
-    "estimatedWaitMinutes": 7,
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
@@ -357,9 +356,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG FE UNUD (139m dari SPBU)"
     },
-    "reportCount": 11,
+    "reportCount": 45,
     "upvotes": 27,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:32:14.868Z"
   },
   {
     "id": "spbu-sesetan-raya",
@@ -372,12 +371,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.69964,
       "lng": 115.21948
     },
-    "queueLevel": "empty",
-    "estimatedWaitMinutes": 0,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "out_of_stock",
-      "pertamax": "out_of_stock",
-      "solar": "out_of_stock",
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
@@ -389,9 +388,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG SIDAKARYA (101m dari SPBU)"
     },
-    "reportCount": 34,
+    "reportCount": 111,
     "upvotes": 75,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T22:01:14.868Z"
   },
   {
     "id": "spbu-imam-bonjol-denpasar",
@@ -404,11 +403,11 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.69587,
       "lng": 115.18712
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 45,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "low",
-      "pertamax": "available",
+      "pertalite": "available",
+      "pertamax": "low",
       "solar": "low",
       "dexlite": "available"
     },
@@ -421,9 +420,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG PULAU GALANG (40m dari SPBU)"
     },
-    "reportCount": 26,
+    "reportCount": 42,
     "upvotes": 58,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:55:14.868Z"
   },
   {
     "id": "spbu-hayampen-wuruk",
@@ -436,19 +435,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.6664,
       "lng": 115.24154
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
-      "solar": "out_of_stock"
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 15,
+    "reportCount": 70,
     "upvotes": 30,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T14:33:14.868Z"
   },
   {
     "id": "spbu-dewi-sri-kuta",
@@ -461,20 +460,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.70261,
       "lng": 115.17571
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 20,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 62,
     "upvotes": 35,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:15:14.868Z"
   },
   {
     "id": "spbu-sunset-road-legian",
@@ -488,19 +487,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.17805
     },
     "queueLevel": "smooth",
-    "estimatedWaitMinutes": 10,
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 12,
+    "reportCount": 41,
     "upvotes": 24,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T18:28:14.868Z"
   },
   {
     "id": "spbu-raya-kuta",
@@ -513,20 +512,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.72085,
       "lng": 115.18019
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "low",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertalite": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 22,
+    "reportCount": 67,
     "upvotes": 51,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:34:14.868Z"
   },
   {
     "id": "spbu-tuban-bandara",
@@ -539,8 +538,8 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.73898,
       "lng": 115.17984
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 8,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
@@ -550,9 +549,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 95,
     "upvotes": 29,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T22:07:14.868Z"
   },
   {
     "id": "spbu-kedonganan-bypass",
@@ -576,9 +575,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 11,
+    "reportCount": 104,
     "upvotes": 20,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:38:14.868Z"
   },
   {
     "id": "spbu-uluwatu-jimbaran",
@@ -591,20 +590,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.78198,
       "lng": 115.17485
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 40,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "out_of_stock",
-      "pertamax": "available",
-      "solar": "low",
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 28,
+    "reportCount": 31,
     "upvotes": 62,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T15:37:14.868Z"
   },
   {
     "id": "spbu-ungasan-gwk",
@@ -694,20 +693,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.80641,
       "lng": 115.2011
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 15,
+    "reportCount": 78,
     "upvotes": 33,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:57:14.868Z"
   },
   {
     "id": "spbu-pratama-tanjungbenoa",
@@ -723,16 +722,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 8,
+    "reportCount": 31,
     "upvotes": 15,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T14:40:14.868Z"
   },
   {
     "id": "spbu-toyaning-ungasan",
@@ -745,19 +744,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.82574,
       "lng": 115.15108
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 12,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 9,
+    "reportCount": 43,
     "upvotes": 21,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:15:14.868Z"
   },
   {
     "id": "spbu-dalung-permai",
@@ -796,20 +795,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.67298,
       "lng": 115.16518
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 30,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
+      "pertamax": "low",
       "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 25,
+    "reportCount": 71,
     "upvotes": 56,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:23:14.868Z"
   },
   {
     "id": "spbu-pantai-berawa",
@@ -899,20 +898,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.56027,
       "lng": 115.15397
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "low",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 23,
+    "reportCount": 81,
     "upvotes": 50,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:02:14.868Z"
   },
   {
     "id": "spbu-sempidi-puspem",
@@ -925,20 +924,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.57212,
       "lng": 115.13915
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 71,
     "upvotes": 31,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:11:14.868Z"
   },
   {
     "id": "spbu-mambal-abiansemal",
@@ -952,9 +951,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.23857
     },
     "queueLevel": "smooth",
-    "estimatedWaitMinutes": 10,
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
+      "pertalite": "low",
       "pertamax": "available",
       "solar": "low",
       "dexlite": "available"
@@ -962,9 +961,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 11,
+    "reportCount": 48,
     "upvotes": 22,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:57:14.868Z"
   },
   {
     "id": "spbu-blahkiuh-sangeh",
@@ -1002,20 +1001,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.58958,
       "lng": 115.2157
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 18,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 13,
+    "reportCount": 79,
     "upvotes": 29,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:12:14.868Z"
   },
   {
     "id": "spbu-renon-puputan",
@@ -1060,11 +1059,11 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.64139,
       "lng": 115.2518
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 45,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "out_of_stock",
-      "pertamax": "available",
+      "pertalite": "available",
+      "pertamax": "low",
       "solar": "low",
       "dexlite": "available"
     },
@@ -1077,9 +1076,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG TOHPATI (337m dari SPBU)"
     },
-    "reportCount": 31,
+    "reportCount": 90,
     "upvotes": 70,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:14:14.868Z"
   },
   {
     "id": "spbu-cok-agung-tresna",
@@ -1093,9 +1092,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.2321
     },
     "queueLevel": "moderate",
-    "estimatedWaitMinutes": 20,
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "available",
+      "pertalite": "low",
       "pertamax": "available",
       "solar": "low",
       "dexlite": "available"
@@ -1103,9 +1102,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 20,
+    "reportCount": 64,
     "upvotes": 45,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:04:14.868Z"
   },
   {
     "id": "spbu-padang-galak-sanur",
@@ -1119,19 +1118,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.2588
     },
     "queueLevel": "smooth",
-    "estimatedWaitMinutes": 10,
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
+      "pertalite": "low",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 15,
+    "reportCount": 73,
     "upvotes": 32,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T19:01:14.868Z"
   },
   {
     "id": "spbu-kesiman-bypass",
@@ -1144,11 +1143,11 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.65164,
       "lng": 115.25418
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
@@ -1161,9 +1160,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS PATUNG TITI BANDA (277m dari SPBU)"
     },
-    "reportCount": 18,
+    "reportCount": 53,
     "upvotes": 39,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T14:29:14.868Z"
   },
   {
     "id": "spbu-kamboja-kreneng",
@@ -1176,12 +1175,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.65666,
       "lng": 115.22508
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 20,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "out_of_stock"
+      "solar": "available"
     },
     "cctv": {
       "hasCCTV": true,
@@ -1192,9 +1191,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG KAPTEN JAPA (39m dari SPBU)"
     },
-    "reportCount": 17,
+    "reportCount": 61,
     "upvotes": 36,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T17:05:14.868Z"
   },
   {
     "id": "spbu-trenggana-penatih",
@@ -1207,19 +1206,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.62418,
       "lng": 115.25712
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "available",
+      "pertalite": "low",
       "pertamax": "available",
-      "solar": "available"
+      "solar": "low"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 11,
+    "reportCount": 127,
     "upvotes": 21,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T19:26:14.868Z"
   },
   {
     "id": "spbu-hang-tuah-sanur",
@@ -1232,12 +1231,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.67429,
       "lng": 115.25422
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 30,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
@@ -1249,9 +1248,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG SEDAP MALAM (226m dari SPBU)"
     },
-    "reportCount": 24,
+    "reportCount": 53,
     "upvotes": 53,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T15:39:14.868Z"
   },
   {
     "id": "spbu-tukad-pakerisan",
@@ -1264,12 +1263,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.68622,
       "lng": 115.22638
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "low",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
@@ -1281,9 +1280,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS TUKAD PAKERISAN (190m dari SPBU)"
     },
-    "reportCount": 29,
+    "reportCount": 98,
     "upvotes": 66,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:56:14.868Z"
   },
   {
     "id": "spbu-pelabuhan-benoa",
@@ -1323,19 +1322,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.20221
     },
     "queueLevel": "moderate",
-    "estimatedWaitMinutes": 20,
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 21,
+    "reportCount": 52,
     "upvotes": 48,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:54:14.868Z"
   },
   {
     "id": "spbu-suwung-batan-kendal",
@@ -1349,18 +1348,18 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.22349
     },
     "queueLevel": "smooth",
-    "estimatedWaitMinutes": 8,
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 10,
+    "reportCount": 48,
     "upvotes": 19,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:39:14.868Z"
   },
   {
     "id": "spbu-tukad-yeh-aya",
@@ -1399,19 +1398,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.71371,
       "lng": 115.22316
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
-      "solar": "low"
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 46,
     "upvotes": 34,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:07:14.868Z"
   },
   {
     "id": "spbu-gunung-soputan",
@@ -1457,7 +1456,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.19096
     },
     "queueLevel": "moderate",
-    "estimatedWaitMinutes": 20,
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
@@ -1473,9 +1472,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG PERUMNAS (235m dari SPBU)"
     },
-    "reportCount": 22,
+    "reportCount": 60,
     "upvotes": 49,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:05:14.868Z"
   },
   {
     "id": "spbu-gunung-batukaru",
@@ -1488,19 +1487,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.65971,
       "lng": 115.20316
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "low",
-      "pertamax": "available",
+      "pertalite": "available",
+      "pertamax": "low",
       "solar": "low"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 25,
+    "reportCount": 63,
     "upvotes": 58,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:33:14.868Z"
   },
   {
     "id": "spbu-buana-raya",
@@ -1513,12 +1512,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.66712,
       "lng": 115.18772
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 10,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
@@ -1530,9 +1529,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG PERUMNAS (339m dari SPBU)"
     },
-    "reportCount": 14,
+    "reportCount": 51,
     "upvotes": 30,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:27:14.868Z"
   },
   {
     "id": "spbu-pulau-kawe",
@@ -1545,12 +1544,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.67676,
       "lng": 115.2071
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 18,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "out_of_stock"
+      "pertamax": "low",
+      "solar": "low"
     },
     "cctv": {
       "hasCCTV": true,
@@ -1561,9 +1560,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG 6 TEUKU UMAR (59m dari SPBU)"
     },
-    "reportCount": 19,
+    "reportCount": 64,
     "upvotes": 41,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T15:30:14.868Z"
   },
   {
     "id": "spbu-imam-bonjol-utara",
@@ -1576,20 +1575,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.6752,
       "lng": 115.20234
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 20,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
-      "solar": "low",
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 20,
+    "reportCount": 60,
     "upvotes": 46,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:34:14.868Z"
   },
   {
     "id": "spbu-cargo-permai-ubung",
@@ -1602,20 +1601,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.63721,
       "lng": 115.17697
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 40,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
-      "solar": "low",
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 26,
+    "reportCount": 51,
     "upvotes": 60,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T17:52:14.868Z"
   },
   {
     "id": "spbu-buluh-indah",
@@ -1631,17 +1630,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "moderate",
     "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 18,
+    "reportCount": 75,
     "upvotes": 39,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T19:00:14.868Z"
   },
   {
     "id": "spbu-ahmad-yani-utara",
@@ -1655,19 +1654,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.18312
     },
     "queueLevel": "smooth",
-    "estimatedWaitMinutes": 8,
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 43,
     "upvotes": 32,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T15:21:14.868Z"
   },
   {
     "id": "spbu-cokroaminoto-ubung",
@@ -1680,12 +1679,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.64476,
       "lng": 115.20958
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "low",
+      "pertalite": "available",
       "pertamax": "available",
-      "solar": "out_of_stock",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
@@ -1697,9 +1696,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG BALUN (37m dari SPBU)"
     },
-    "reportCount": 27,
+    "reportCount": 44,
     "upvotes": 61,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:38:14.868Z"
   },
   {
     "id": "spbu-gunung-sanghyang",
@@ -1713,19 +1712,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.18638
     },
     "queueLevel": "smooth",
-    "estimatedWaitMinutes": 10,
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 15,
+    "reportCount": 63,
     "upvotes": 33,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:24:14.868Z"
   },
   {
     "id": "spbu-mengwi-25",
@@ -1738,8 +1737,8 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.50249,
       "lng": 115.13503
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
@@ -1749,9 +1748,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 26,
+    "reportCount": 68,
     "upvotes": 29,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:35:14.868Z"
   },
   {
     "id": "spbu-abiansemal-450",
@@ -1768,16 +1767,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 22,
+    "reportCount": 98,
     "upvotes": 52,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:19:14.868Z"
   },
   {
     "id": "spbu-mengwi-436",
@@ -1868,20 +1867,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.82016,
       "lng": 115.14985
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 10,
+    "reportCount": 83,
     "upvotes": 47,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:49:14.868Z"
   },
   {
     "id": "spbu-abiansemal-232",
@@ -1983,9 +1982,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 26,
+    "reportCount": 57,
     "upvotes": 44,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T16:17:14.868Z"
   },
   {
     "id": "spbu-abiansemal-655",
@@ -2131,17 +2130,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "moderate",
     "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 21,
+    "reportCount": 54,
     "upvotes": 29,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T14:58:14.868Z"
   },
   {
     "id": "spbu-kuta-selatan-691",
@@ -2235,17 +2234,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 64,
     "upvotes": 22,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T13:54:14.868Z"
   },
   {
     "id": "spbu-abiansemal-220",
@@ -2284,20 +2283,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.52419,
       "lng": 115.26371
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
+      "pertalite": "low",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 23,
+    "reportCount": 89,
     "upvotes": 19,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T15:02:14.868Z"
   },
   {
     "id": "spbu-abiansemal-277",
@@ -2314,16 +2313,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 26,
+    "reportCount": 91,
     "upvotes": 52,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T22:05:14.868Z"
   },
   {
     "id": "spbu-abiansemal-263",
@@ -2443,17 +2442,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 27,
+    "reportCount": 162,
     "upvotes": 42,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T22:05:14.868Z"
   },
   {
     "id": "spbu-denpasar-timur-731",
@@ -2466,20 +2465,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.67308,
       "lng": 115.24012
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 72,
     "upvotes": 49,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:08:14.868Z"
   },
   {
     "id": "spbu-denpasar-timur-668",
@@ -2492,20 +2491,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.66681,
       "lng": 115.23152
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 11,
+    "reportCount": 83,
     "upvotes": 51,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T22:04:14.868Z"
   },
   {
     "id": "spbu-jalan-hayam-wuruk-604",
@@ -2518,20 +2517,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.66037,
       "lng": 115.2394
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 8,
+    "reportCount": 69,
     "upvotes": 18,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T16:09:14.868Z"
   },
   {
     "id": "spbu-jalan-raya-sesetan-790",
@@ -2629,11 +2628,11 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.23773
     },
     "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "low",
+      "pertalite": "available",
       "pertamax": "available",
-      "solar": "out_of_stock",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
@@ -2645,9 +2644,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG NOJA (263m dari SPBU)"
     },
-    "reportCount": 14,
+    "reportCount": 82,
     "upvotes": 47,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:54:14.868Z"
   },
   {
     "id": "spbu-denpasar-timur-364",
@@ -2663,8 +2662,8 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
@@ -2677,9 +2676,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS SIMPANG TOHPATI (357m dari SPBU)"
     },
-    "reportCount": 15,
+    "reportCount": 65,
     "upvotes": 25,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T19:38:14.868Z"
   },
   {
     "id": "spbu-denpasar-timur-415",
@@ -2718,20 +2717,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.60607,
       "lng": 115.23607
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "low",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 62,
     "upvotes": 44,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:17:14.868Z"
   },
   {
     "id": "spbu-jalan-bypass-gatot-subroto-389",
@@ -2776,20 +2775,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.63578,
       "lng": 115.28722
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 24,
+    "reportCount": 80,
     "upvotes": 33,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:23:14.868Z"
   },
   {
     "id": "spbu-jalan-bypass-gatot-subroto-365",
@@ -2837,17 +2836,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "moderate",
     "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 98,
     "upvotes": 53,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:47:14.868Z"
   },
   {
     "id": "spbu-denpasar-selatan-954",
@@ -2886,20 +2885,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.61213,
       "lng": 115.19249
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 10,
+    "reportCount": 58,
     "upvotes": 26,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T22:01:14.868Z"
   },
   {
     "id": "spbu-denpasar-utara-246",
@@ -2915,17 +2914,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 9,
+    "reportCount": 71,
     "upvotes": 39,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T16:55:14.868Z"
   },
   {
     "id": "spbu-denpasar-selatan-109",
@@ -2949,9 +2948,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 63,
     "upvotes": 54,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T20:11:14.868Z"
   },
   {
     "id": "spbu-denpasar-barat-505",
@@ -2964,12 +2963,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.65045,
       "lng": 115.20905
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "available",
+      "pertalite": "low",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
@@ -2981,9 +2980,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lastUpdated": "2026-10-15T20:51:56.135Z",
       "notes": "Kamera ATCS WIBISANA - SETIABUDI (33m dari SPBU)"
     },
-    "reportCount": 26,
+    "reportCount": 159,
     "upvotes": 38,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T22:06:14.868Z"
   },
   {
     "id": "spbu-denpasar-selatan-66",
@@ -3022,20 +3021,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.67777,
       "lng": 115.21162
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "low",
+      "pertalite": "available",
       "pertamax": "available",
-      "solar": "out_of_stock",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 27,
+    "reportCount": 67,
     "upvotes": 51,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T15:40:14.868Z"
   },
   {
     "id": "spbu-denpasar-utara-29",
@@ -3052,16 +3051,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 27,
+    "reportCount": 178,
     "upvotes": 54,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:43:14.868Z"
   },
   {
     "id": "spbu-denpasar-timur-232",
@@ -3074,20 +3073,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.62322,
       "lng": 115.23637
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 144,
     "upvotes": 43,
-    "lastReportedAt": "2026-10-15T04:30:00.000Z"
+    "lastReportedAt": "2026-10-15T22:07:14.868Z"
   },
   {
     "id": "spbu-gianyar-01",
@@ -3100,20 +3099,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.524192,
       "lng": 115.263715
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 30,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "out_of_stock",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 8,
+    "reportCount": 67,
     "upvotes": 15,
-    "lastReportedAt": "2026-10-15T09:59:55.088Z"
+    "lastReportedAt": "2026-10-15T18:44:14.868Z"
   },
   {
     "id": "spbu-gianyar-02",
@@ -3178,20 +3177,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.505226,
       "lng": 115.271692
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 17,
+    "reportCount": 60,
     "upvotes": 30,
-    "lastReportedAt": "2026-10-15T09:23:55.089Z"
+    "lastReportedAt": "2026-10-15T18:12:14.868Z"
   },
   {
     "id": "spbu-gianyar-05",
@@ -3256,20 +3255,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.541351,
       "lng": 115.321092
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 26,
+    "reportCount": 109,
     "upvotes": 45,
-    "lastReportedAt": "2026-10-15T08:47:55.089Z"
+    "lastReportedAt": "2026-10-15T22:05:14.868Z"
   },
   {
     "id": "spbu-gianyar-08",
@@ -3308,20 +3307,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.52316,
       "lng": 115.275941
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 30,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 32,
+    "reportCount": 83,
     "upvotes": 55,
-    "lastReportedAt": "2026-10-15T08:23:55.089Z"
+    "lastReportedAt": "2026-10-15T19:22:14.868Z"
   },
   {
     "id": "spbu-gianyar-10",
@@ -3386,20 +3385,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.566876,
       "lng": 115.27476
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 78,
     "upvotes": 25,
-    "lastReportedAt": "2026-10-15T07:47:55.089Z"
+    "lastReportedAt": "2026-10-15T18:20:14.868Z"
   },
   {
     "id": "spbu-gianyar-13",
@@ -3441,17 +3440,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 22,
+    "reportCount": 83,
     "upvotes": 35,
-    "lastReportedAt": "2026-10-15T07:23:55.089Z"
+    "lastReportedAt": "2026-10-15T17:53:14.868Z"
   },
   {
     "id": "spbu-gianyar-15",
@@ -3490,20 +3489,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.462737,
       "lng": 115.297603
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "low",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 28,
+    "reportCount": 66,
     "upvotes": 45,
-    "lastReportedAt": "2026-10-15T06:59:55.089Z"
+    "lastReportedAt": "2026-10-15T18:45:14.868Z"
   },
   {
     "id": "spbu-gianyar-17",
@@ -3517,19 +3516,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.288008
     },
     "queueLevel": "congested",
-    "estimatedWaitMinutes": 30,
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 31,
+    "reportCount": 58,
     "upvotes": 50,
-    "lastReportedAt": "2026-10-15T06:47:55.089Z"
+    "lastReportedAt": "2026-10-15T22:02:14.868Z"
   },
   {
     "id": "spbu-gianyar-18",
@@ -3553,9 +3552,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 9,
+    "reportCount": 79,
     "upvotes": 55,
-    "lastReportedAt": "2026-10-15T06:35:55.089Z"
+    "lastReportedAt": "2026-10-15T15:27:14.868Z"
   },
   {
     "id": "spbu-gianyar-19",
@@ -3568,20 +3567,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.528795,
       "lng": 115.271714
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "out_of_stock",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 12,
+    "reportCount": 62,
     "upvotes": 15,
-    "lastReportedAt": "2026-10-15T06:23:55.089Z"
+    "lastReportedAt": "2026-10-15T14:56:14.868Z"
   },
   {
     "id": "spbu-gianyar-20",
@@ -3594,20 +3593,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.612157,
       "lng": 115.309289
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 15,
+    "reportCount": 106,
     "upvotes": 20,
-    "lastReportedAt": "2026-10-15T06:11:55.089Z"
+    "lastReportedAt": "2026-10-15T16:16:14.868Z"
   },
   {
     "id": "spbu-gianyar-21",
@@ -3620,20 +3619,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.40877,
       "lng": 115.244896
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 30,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "low",
-      "pertamax": "available",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 18,
+    "reportCount": 38,
     "upvotes": 25,
-    "lastReportedAt": "2026-10-15T05:59:55.089Z"
+    "lastReportedAt": "2026-10-15T22:03:14.868Z"
   },
   {
     "id": "spbu-gianyar-22",
@@ -3646,10 +3645,10 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.563332,
       "lng": 115.261646
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "out_of_stock",
+      "pertalite": "available",
       "pertamax": "available",
       "solar": "available",
       "dexlite": "available"
@@ -3657,9 +3656,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 21,
+    "reportCount": 58,
     "upvotes": 30,
-    "lastReportedAt": "2026-10-15T05:47:55.089Z"
+    "lastReportedAt": "2026-10-15T16:57:14.868Z"
   },
   {
     "id": "spbu-gianyar-23",
@@ -3701,17 +3700,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 27,
+    "reportCount": 78,
     "upvotes": 40,
-    "lastReportedAt": "2026-10-15T05:23:55.089Z"
+    "lastReportedAt": "2026-10-15T21:26:14.868Z"
   },
   {
     "id": "spbu-gianyar-25",
@@ -3725,19 +3724,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.279707
     },
     "queueLevel": "congested",
-    "estimatedWaitMinutes": 30,
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 30,
+    "reportCount": 90,
     "upvotes": 45,
-    "lastReportedAt": "2026-10-15T05:11:55.089Z"
+    "lastReportedAt": "2026-10-15T22:07:14.868Z"
   },
   {
     "id": "spbu-gianyar-26",
@@ -3754,16 +3753,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "low",
-      "pertamax": "available",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 8,
+    "reportCount": 75,
     "upvotes": 50,
-    "lastReportedAt": "2026-10-15T04:59:55.089Z"
+    "lastReportedAt": "2026-10-15T20:59:14.868Z"
   },
   {
     "id": "spbu-gianyar-27",
@@ -3779,17 +3778,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 11,
+    "reportCount": 93,
     "upvotes": 55,
-    "lastReportedAt": "2026-10-15T04:47:55.089Z"
+    "lastReportedAt": "2026-10-15T20:25:14.868Z"
   },
   {
     "id": "spbu-gianyar-28",
@@ -3829,19 +3828,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.246273
     },
     "queueLevel": "congested",
-    "estimatedWaitMinutes": 30,
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "out_of_stock",
+      "pertalite": "available",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 17,
+    "reportCount": 60,
     "upvotes": 20,
-    "lastReportedAt": "2026-10-15T04:23:55.089Z"
+    "lastReportedAt": "2026-10-15T20:11:14.868Z"
   },
   {
     "id": "spbu-gianyar-30",
@@ -3881,19 +3880,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 115.283632
     },
     "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "out_of_stock",
+      "pertalite": "available",
       "pertamax": "available",
-      "solar": "out_of_stock",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 6,
+    "reportCount": 82,
     "upvotes": 12,
-    "lastReportedAt": "2026-10-15T10:01:55.089Z"
+    "lastReportedAt": "2026-10-15T21:59:14.868Z"
   },
   {
     "id": "spbu-buleleng-02",
@@ -3906,20 +3905,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.215186,
       "lng": 114.940167
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 8,
+    "reportCount": 22,
     "upvotes": 16,
-    "lastReportedAt": "2026-10-15T09:46:55.089Z"
+    "lastReportedAt": "2026-10-15T21:31:14.868Z"
   },
   {
     "id": "spbu-buleleng-03",
@@ -3932,20 +3931,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.193308,
       "lng": 114.922258
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 10,
+    "reportCount": 11,
     "upvotes": 20,
-    "lastReportedAt": "2026-10-15T09:31:55.089Z"
+    "lastReportedAt": "2026-10-15T15:27:14.868Z"
   },
   {
     "id": "spbu-buleleng-04",
@@ -3961,17 +3960,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 12,
+    "reportCount": 50,
     "upvotes": 24,
-    "lastReportedAt": "2026-10-15T09:16:55.089Z"
+    "lastReportedAt": "2026-10-15T21:09:14.868Z"
   },
   {
     "id": "spbu-buleleng-05",
@@ -3988,16 +3987,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "low",
-      "pertamax": "available",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 62,
     "upvotes": 28,
-    "lastReportedAt": "2026-10-15T09:01:55.089Z"
+    "lastReportedAt": "2026-10-15T20:52:14.868Z"
   },
   {
     "id": "spbu-buleleng-06",
@@ -4011,19 +4010,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 114.632387
     },
     "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 46,
     "upvotes": 32,
-    "lastReportedAt": "2026-10-15T08:46:55.089Z"
+    "lastReportedAt": "2026-10-15T20:48:14.868Z"
   },
   {
     "id": "spbu-buleleng-07",
@@ -4036,20 +4035,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.186316,
       "lng": 114.977471
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 18,
+    "reportCount": 8,
     "upvotes": 36,
-    "lastReportedAt": "2026-10-15T08:31:55.089Z"
+    "lastReportedAt": "2026-10-15T19:09:14.868Z"
   },
   {
     "id": "spbu-buleleng-08",
@@ -4067,15 +4066,15 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 20,
+    "reportCount": 23,
     "upvotes": 40,
-    "lastReportedAt": "2026-10-15T08:16:55.089Z"
+    "lastReportedAt": "2026-10-15T16:54:14.868Z"
   },
   {
     "id": "spbu-buleleng-09",
@@ -4088,10 +4087,10 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.082481,
       "lng": 115.143243
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "out_of_stock",
+      "pertalite": "available",
       "pertamax": "available",
       "solar": "available",
       "dexlite": "available"
@@ -4099,9 +4098,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 22,
+    "reportCount": 39,
     "upvotes": 44,
-    "lastReportedAt": "2026-10-15T08:01:55.089Z"
+    "lastReportedAt": "2026-10-15T15:28:14.868Z"
   },
   {
     "id": "spbu-buleleng-10",
@@ -4192,12 +4191,12 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.177288,
       "lng": 114.750065
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "low",
-      "pertamax": "available",
-      "solar": "available",
+      "pertalite": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
@@ -4205,7 +4204,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     },
     "reportCount": 8,
     "upvotes": 20,
-    "lastReportedAt": "2026-10-15T07:01:55.089Z"
+    "lastReportedAt": "2026-10-15T11:04:14.868Z"
   },
   {
     "id": "spbu-buleleng-14",
@@ -4221,17 +4220,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
+      "pertalite": "low",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 10,
+    "reportCount": 12,
     "upvotes": 24,
-    "lastReportedAt": "2026-10-15T06:46:55.089Z"
+    "lastReportedAt": "2026-10-15T12:50:14.868Z"
   },
   {
     "id": "spbu-buleleng-15",
@@ -4244,20 +4243,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.191811,
       "lng": 114.950056
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 12,
+    "reportCount": 67,
     "upvotes": 28,
-    "lastReportedAt": "2026-10-15T06:31:55.089Z"
+    "lastReportedAt": "2026-10-15T16:47:14.868Z"
   },
   {
     "id": "spbu-buleleng-16",
@@ -4270,20 +4269,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.164735,
       "lng": 115.021313
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 35,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "out_of_stock",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 28,
     "upvotes": 32,
-    "lastReportedAt": "2026-10-15T06:16:55.089Z"
+    "lastReportedAt": "2026-10-15T21:53:14.868Z"
   },
   {
     "id": "spbu-buleleng-17",
@@ -4296,20 +4295,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.285962,
       "lng": 114.976811
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "out_of_stock",
-      "pertamax": "available",
-      "solar": "available",
+      "pertalite": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 41,
     "upvotes": 36,
-    "lastReportedAt": "2026-10-15T06:01:55.089Z"
+    "lastReportedAt": "2026-10-15T14:46:14.868Z"
   },
   {
     "id": "spbu-buleleng-18",
@@ -4326,16 +4325,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 18,
+    "reportCount": 34,
     "upvotes": 40,
-    "lastReportedAt": "2026-10-15T05:46:55.089Z"
+    "lastReportedAt": "2026-10-15T15:40:14.868Z"
   },
   {
     "id": "spbu-buleleng-19",
@@ -4482,16 +4481,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 8,
+    "reportCount": 46,
     "upvotes": 24,
-    "lastReportedAt": "2026-10-15T04:16:55.089Z"
+    "lastReportedAt": "2026-10-15T21:12:14.868Z"
   },
   {
     "id": "spbu-buleleng-25",
@@ -5001,17 +5000,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
+      "pertalite": "low",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 107,
     "upvotes": 28,
-    "lastReportedAt": "2026-10-15T10:15:00.000Z"
+    "lastReportedAt": "2026-10-15T20:28:14.868Z"
   },
   {
     "id": "spbu-bangli-02",
@@ -5024,8 +5023,8 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.26823,
       "lng": 115.34229
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
@@ -5035,9 +5034,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 10,
+    "reportCount": 60,
     "upvotes": 22,
-    "lastReportedAt": "2026-10-15T09:45:00.000Z"
+    "lastReportedAt": "2026-10-15T15:52:14.868Z"
   },
   {
     "id": "spbu-bangli-03",
@@ -5053,17 +5052,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 73,
     "upvotes": 31,
-    "lastReportedAt": "2026-10-15T09:20:00.000Z"
+    "lastReportedAt": "2026-10-15T19:11:14.868Z"
   },
   {
     "id": "spbu-bangli-04",
@@ -5106,16 +5105,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 12,
+    "reportCount": 56,
     "upvotes": 25,
-    "lastReportedAt": "2026-10-15T08:30:00.000Z"
+    "lastReportedAt": "2026-10-15T21:42:14.868Z"
   },
   {
     "id": "spbu-bangli-06",
@@ -5132,16 +5131,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 18,
+    "reportCount": 55,
     "upvotes": 36,
-    "lastReportedAt": "2026-10-15T08:10:00.000Z"
+    "lastReportedAt": "2026-10-15T18:28:14.868Z"
   },
   {
     "id": "spbu-bangli-07",
@@ -5154,8 +5153,8 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.44466,
       "lng": 115.36279
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
@@ -5165,9 +5164,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 20,
+    "reportCount": 82,
     "upvotes": 42,
-    "lastReportedAt": "2026-10-15T07:45:00.000Z"
+    "lastReportedAt": "2026-10-15T20:58:14.868Z"
   },
   {
     "id": "spbu-bangli-08",
@@ -5243,9 +5242,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 5,
+    "reportCount": 26,
     "upvotes": 9,
-    "lastReportedAt": "2026-10-15T06:20:00.000Z"
+    "lastReportedAt": "2026-10-15T19:47:14.868Z"
   },
   {
     "id": "spbu-bangli-11",
@@ -5310,20 +5309,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.339801,
       "lng": 115.032029
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 12,
+    "reportCount": 32,
     "upvotes": 25,
-    "lastReportedAt": "2026-10-15T16:43:22.140Z"
+    "lastReportedAt": "2026-10-15T13:47:14.868Z"
   },
   {
     "id": "spbu-tabanan-02",
@@ -5336,20 +5335,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.384301,
       "lng": 115.19544
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 85,
     "upvotes": 28,
-    "lastReportedAt": "2026-10-15T16:26:22.141Z"
+    "lastReportedAt": "2026-10-15T21:50:14.868Z"
   },
   {
     "id": "spbu-tabanan-03",
@@ -5362,20 +5361,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.333716,
       "lng": 115.186672
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 52,
     "upvotes": 31,
-    "lastReportedAt": "2026-10-15T16:09:22.141Z"
+    "lastReportedAt": "2026-10-15T21:34:14.868Z"
   },
   {
     "id": "spbu-tabanan-04",
@@ -5388,20 +5387,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.362162,
       "lng": 115.191025
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "low",
-      "pertamax": "available",
-      "solar": "available",
+      "pertalite": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 18,
+    "reportCount": 101,
     "upvotes": 34,
-    "lastReportedAt": "2026-10-15T15:52:22.141Z"
+    "lastReportedAt": "2026-10-15T21:11:14.868Z"
   },
   {
     "id": "spbu-tabanan-05",
@@ -5418,16 +5417,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 20,
+    "reportCount": 74,
     "upvotes": 37,
-    "lastReportedAt": "2026-10-15T15:35:22.141Z"
+    "lastReportedAt": "2026-10-15T21:23:14.868Z"
   },
   {
     "id": "spbu-tabanan-06",
@@ -5443,17 +5442,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 22,
+    "reportCount": 34,
     "upvotes": 40,
-    "lastReportedAt": "2026-10-15T15:18:22.141Z"
+    "lastReportedAt": "2026-10-15T12:42:14.868Z"
   },
   {
     "id": "spbu-tabanan-07",
@@ -5466,20 +5465,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.32928,
       "lng": 115.17194
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 24,
+    "reportCount": 53,
     "upvotes": 43,
-    "lastReportedAt": "2026-10-15T15:01:22.141Z"
+    "lastReportedAt": "2026-10-15T18:15:14.868Z"
   },
   {
     "id": "spbu-tabanan-08",
@@ -5492,20 +5491,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.469024,
       "lng": 115.137224
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 26,
+    "reportCount": 68,
     "upvotes": 46,
-    "lastReportedAt": "2026-10-15T14:44:22.141Z"
+    "lastReportedAt": "2026-10-15T22:02:14.868Z"
   },
   {
     "id": "spbu-tabanan-09",
@@ -5522,16 +5521,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 28,
+    "reportCount": 29,
     "upvotes": 49,
-    "lastReportedAt": "2026-10-15T14:27:22.141Z"
+    "lastReportedAt": "2026-10-15T13:39:14.868Z"
   },
   {
     "id": "spbu-tabanan-10",
@@ -5544,20 +5543,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.295299,
       "lng": 115.174028
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "low",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 30,
+    "reportCount": 78,
     "upvotes": 52,
-    "lastReportedAt": "2026-10-15T14:10:22.141Z"
+    "lastReportedAt": "2026-10-15T18:08:14.868Z"
   },
   {
     "id": "spbu-tabanan-11",
@@ -5573,17 +5572,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 12,
+    "reportCount": 25,
     "upvotes": 55,
-    "lastReportedAt": "2026-10-15T13:53:22.141Z"
+    "lastReportedAt": "2026-10-15T11:42:14.868Z"
   },
   {
     "id": "spbu-tabanan-12",
@@ -5622,20 +5621,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.508547,
       "lng": 115.077876
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 34,
     "upvotes": 26,
-    "lastReportedAt": "2026-10-15T13:19:22.141Z"
+    "lastReportedAt": "2026-10-15T21:01:14.868Z"
   },
   {
     "id": "spbu-tabanan-14",
@@ -5674,20 +5673,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.257855,
       "lng": 115.161726
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "out_of_stock",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 20,
+    "reportCount": 18,
     "upvotes": 32,
-    "lastReportedAt": "2026-10-15T12:45:22.141Z"
+    "lastReportedAt": "2026-10-15T15:15:14.868Z"
   },
   {
     "id": "spbu-tabanan-16",
@@ -5703,17 +5702,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "low",
-      "pertamax": "available",
-      "solar": "available",
+      "pertalite": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 22,
+    "reportCount": 134,
     "upvotes": 35,
-    "lastReportedAt": "2026-10-15T12:28:22.141Z"
+    "lastReportedAt": "2026-10-15T22:01:14.868Z"
   },
   {
     "id": "spbu-tabanan-17",
@@ -5726,20 +5725,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.482632,
       "lng": 115.098058
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 24,
+    "reportCount": 80,
     "upvotes": 38,
-    "lastReportedAt": "2026-10-15T12:11:22.141Z"
+    "lastReportedAt": "2026-10-15T20:37:14.868Z"
   },
   {
     "id": "spbu-tabanan-18",
@@ -5752,20 +5751,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.48697,
       "lng": 115.094563
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 26,
+    "reportCount": 54,
     "upvotes": 41,
-    "lastReportedAt": "2026-10-15T11:54:22.141Z"
+    "lastReportedAt": "2026-10-15T19:49:14.868Z"
   },
   {
     "id": "spbu-tabanan-19",
@@ -5804,20 +5803,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.352555,
       "lng": 114.603949
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 15,
+    "reportCount": 28,
     "upvotes": 30,
-    "lastReportedAt": "2026-10-15T16:43:22.141Z"
+    "lastReportedAt": "2026-10-15T20:51:14.868Z"
   },
   {
     "id": "spbu-jembrana-02",
@@ -5834,16 +5833,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 17,
+    "reportCount": 28,
     "upvotes": 34,
-    "lastReportedAt": "2026-10-15T16:29:22.141Z"
+    "lastReportedAt": "2026-10-15T14:29:14.868Z"
   },
   {
     "id": "spbu-jembrana-03",
@@ -5856,20 +5855,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.348568,
       "lng": 114.895837
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "low",
-      "pertamax": "available",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 19,
+    "reportCount": 36,
     "upvotes": 38,
-    "lastReportedAt": "2026-10-15T16:15:22.141Z"
+    "lastReportedAt": "2026-10-15T19:41:14.868Z"
   },
   {
     "id": "spbu-jembrana-04",
@@ -5882,20 +5881,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.182445,
       "lng": 114.438708
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 21,
+    "reportCount": 19,
     "upvotes": 42,
-    "lastReportedAt": "2026-10-15T16:01:22.141Z"
+    "lastReportedAt": "2026-10-15T15:01:14.868Z"
   },
   {
     "id": "spbu-jembrana-05",
@@ -5908,20 +5907,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.348416,
       "lng": 114.578581
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 40,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 23,
+    "reportCount": 35,
     "upvotes": 46,
-    "lastReportedAt": "2026-10-15T15:47:22.141Z"
+    "lastReportedAt": "2026-10-15T19:28:14.868Z"
   },
   {
     "id": "spbu-jembrana-06",
@@ -5934,20 +5933,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.357586,
       "lng": 114.624596
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 25,
+    "reportCount": 21,
     "upvotes": 50,
-    "lastReportedAt": "2026-10-15T15:33:22.141Z"
+    "lastReportedAt": "2026-10-15T17:00:14.868Z"
   },
   {
     "id": "spbu-jembrana-07",
@@ -6012,8 +6011,8 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.441784,
       "lng": 114.871129
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
@@ -6023,9 +6022,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 31,
+    "reportCount": 30,
     "upvotes": 62,
-    "lastReportedAt": "2026-10-15T14:51:22.141Z"
+    "lastReportedAt": "2026-10-15T20:33:14.868Z"
   },
   {
     "id": "spbu-jembrana-10",
@@ -6090,20 +6089,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.302407,
       "lng": 114.516083
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 37,
+    "reportCount": 10,
     "upvotes": 34,
-    "lastReportedAt": "2026-10-15T14:09:22.141Z"
+    "lastReportedAt": "2026-10-15T13:07:14.868Z"
   },
   {
     "id": "spbu-jembrana-13",
@@ -6119,17 +6118,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "low",
-      "pertamax": "available",
-      "solar": "available",
+      "pertalite": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 39,
+    "reportCount": 31,
     "upvotes": 38,
-    "lastReportedAt": "2026-10-15T13:55:22.141Z"
+    "lastReportedAt": "2026-10-15T21:16:14.868Z"
   },
   {
     "id": "spbu-jembrana-14",
@@ -6142,20 +6141,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.43781,
       "lng": 114.863829
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "out_of_stock",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 13,
     "upvotes": 42,
-    "lastReportedAt": "2026-10-15T13:41:22.141Z"
+    "lastReportedAt": "2026-10-15T14:30:14.868Z"
   },
   {
     "id": "spbu-jembrana-15",
@@ -6169,19 +6168,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lng": 114.478875
     },
     "queueLevel": "congested",
-    "estimatedWaitMinutes": 40,
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 18,
+    "reportCount": 33,
     "upvotes": 46,
-    "lastReportedAt": "2026-10-15T13:27:22.141Z"
+    "lastReportedAt": "2026-10-15T16:19:14.868Z"
   },
   {
     "id": "spbu-jembrana-16",
@@ -6194,20 +6193,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.420195,
       "lng": 114.808682
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 20,
+    "reportCount": 61,
     "upvotes": 50,
-    "lastReportedAt": "2026-10-15T13:13:22.141Z"
+    "lastReportedAt": "2026-10-15T19:09:14.868Z"
   },
   {
     "id": "spbu-jembrana-17",
@@ -6283,9 +6282,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 14,
+    "reportCount": 62,
     "upvotes": 28,
-    "lastReportedAt": "2026-10-15T16:53:47.126Z"
+    "lastReportedAt": "2026-10-15T14:36:14.868Z"
   },
   {
     "id": "spbu-klungkung-02",
@@ -6298,20 +6297,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.677887,
       "lng": 115.571781
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 17,
+    "reportCount": 1,
     "upvotes": 32,
-    "lastReportedAt": "2026-10-15T16:38:47.127Z"
+    "lastReportedAt": "2026-10-15T03:42:14.868Z"
   },
   {
     "id": "spbu-klungkung-03",
@@ -6327,7 +6326,7 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "low",
+      "pertalite": "available",
       "pertamax": "available",
       "solar": "available",
       "dexlite": "available"
@@ -6335,9 +6334,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 20,
+    "reportCount": 6,
     "upvotes": 36,
-    "lastReportedAt": "2026-10-15T16:23:47.127Z"
+    "lastReportedAt": "2026-10-15T14:50:14.868Z"
   },
   {
     "id": "spbu-klungkung-04",
@@ -6353,17 +6352,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 23,
+    "reportCount": 1,
     "upvotes": 40,
-    "lastReportedAt": "2026-10-15T16:08:47.127Z"
+    "lastReportedAt": "2026-10-15T03:02:14.868Z"
   },
   {
     "id": "spbu-klungkung-05",
@@ -6376,8 +6375,8 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.718341,
       "lng": 115.52295
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
@@ -6387,9 +6386,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 26,
+    "reportCount": 49,
     "upvotes": 44,
-    "lastReportedAt": "2026-10-15T15:53:47.127Z"
+    "lastReportedAt": "2026-10-15T22:07:14.868Z"
   },
   {
     "id": "spbu-klungkung-06",
@@ -6413,9 +6412,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 29,
+    "reportCount": 51,
     "upvotes": 48,
-    "lastReportedAt": "2026-10-15T15:38:47.127Z"
+    "lastReportedAt": "2026-10-15T16:09:14.868Z"
   },
   {
     "id": "spbu-klungkung-07",
@@ -6506,20 +6505,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.696092,
       "lng": 115.451926
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 21,
+    "reportCount": 67,
     "upvotes": 29,
-    "lastReportedAt": "2026-10-15T14:38:47.127Z"
+    "lastReportedAt": "2026-10-15T20:02:14.868Z"
   },
   {
     "id": "spbu-klungkung-11",
@@ -6584,20 +6583,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.56466,
       "lng": 115.416579
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 30,
+    "reportCount": 38,
     "upvotes": 41,
-    "lastReportedAt": "2026-10-15T13:53:47.127Z"
+    "lastReportedAt": "2026-10-15T20:45:14.868Z"
   },
   {
     "id": "spbu-klungkung-14",
@@ -6636,20 +6635,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.550113,
       "lng": 115.375018
     },
-    "queueLevel": "moderate",
-    "estimatedWaitMinutes": 15,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "low",
-      "pertamax": "available",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 44,
     "upvotes": 49,
-    "lastReportedAt": "2026-10-15T13:23:47.127Z"
+    "lastReportedAt": "2026-10-15T22:00:14.868Z"
   },
   {
     "id": "spbu-karangasem-01",
@@ -6666,16 +6665,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "available",
-      "pertamax": "available",
-      "solar": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 16,
+    "reportCount": 29,
     "upvotes": 32,
-    "lastReportedAt": "2026-10-15T16:53:47.127Z"
+    "lastReportedAt": "2026-10-15T22:01:14.868Z"
   },
   {
     "id": "spbu-karangasem-02",
@@ -6743,17 +6742,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 22,
+    "reportCount": 31,
     "upvotes": 41,
-    "lastReportedAt": "2026-10-15T16:14:47.127Z"
+    "lastReportedAt": "2026-10-15T18:29:14.868Z"
   },
   {
     "id": "spbu-karangasem-05",
@@ -6792,20 +6791,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.503463,
       "lng": 115.558339
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
-      "solar": "available",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 26,
+    "reportCount": 41,
     "upvotes": 47,
-    "lastReportedAt": "2026-10-15T15:48:47.127Z"
+    "lastReportedAt": "2026-10-15T22:07:14.868Z"
   },
   {
     "id": "spbu-karangasem-07",
@@ -6818,20 +6817,20 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.234539,
       "lng": 115.55207
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 45,
     "fuelStock": {
-      "pertalite": "low",
+      "pertalite": "available",
       "pertamax": "available",
-      "solar": "out_of_stock",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 28,
+    "reportCount": 14,
     "upvotes": 50,
-    "lastReportedAt": "2026-10-15T15:35:47.127Z"
+    "lastReportedAt": "2026-10-15T13:44:14.868Z"
   },
   {
     "id": "spbu-karangasem-08",
@@ -6847,17 +6846,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "moderate",
     "estimatedWaitMinutes": 15,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 30,
+    "reportCount": 53,
     "upvotes": 53,
-    "lastReportedAt": "2026-10-15T15:22:47.127Z"
+    "lastReportedAt": "2026-10-15T20:45:14.868Z"
   },
   {
     "id": "spbu-karangasem-09",
@@ -6870,8 +6869,8 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.362877,
       "lng": 115.346094
     },
-    "queueLevel": "smooth",
-    "estimatedWaitMinutes": 5,
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
     "fuelStock": {
       "pertalite": "available",
       "pertamax": "available",
@@ -6881,9 +6880,9 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 32,
+    "reportCount": 100,
     "upvotes": 56,
-    "lastReportedAt": "2026-10-15T15:09:47.127Z"
+    "lastReportedAt": "2026-10-15T20:31:14.868Z"
   },
   {
     "id": "spbu-karangasem-10",
@@ -6925,17 +6924,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
-      "solar": "out_of_stock",
+      "pertalite": "low",
+      "pertamax": "low",
+      "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 36,
+    "reportCount": 5,
     "upvotes": 62,
-    "lastReportedAt": "2026-10-15T14:43:47.127Z"
+    "lastReportedAt": "2026-10-15T09:20:14.868Z"
   },
   {
     "id": "spbu-karangasem-12",
@@ -6951,17 +6950,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "low",
-      "pertamax": "available",
-      "solar": "available",
+      "pertalite": "available",
+      "pertamax": "low",
+      "solar": "low",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 38,
+    "reportCount": 53,
     "upvotes": 65,
-    "lastReportedAt": "2026-10-15T14:30:47.127Z"
+    "lastReportedAt": "2026-10-15T16:51:14.868Z"
   },
   {
     "id": "spbu-karangasem-13",
@@ -7003,17 +7002,17 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "queueLevel": "smooth",
     "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 17,
+    "reportCount": 23,
     "upvotes": 71,
-    "lastReportedAt": "2026-10-15T14:04:47.127Z"
+    "lastReportedAt": "2026-10-15T13:14:14.868Z"
   },
   {
     "id": "spbu-karangasem-15",
@@ -7212,16 +7211,16 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
     "estimatedWaitMinutes": 5,
     "fuelStock": {
       "pertalite": "low",
-      "pertamax": "available",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 33,
+    "reportCount": 4,
     "upvotes": 55,
-    "lastReportedAt": "2026-10-15T12:20:47.127Z"
+    "lastReportedAt": "2026-10-15T12:39:14.868Z"
   },
   {
     "id": "spbu-karangasem-23",
@@ -7416,19 +7415,19 @@ export const INITIAL_SPBU_DATA: SPBUItem[] =
       "lat": -8.455642,
       "lng": 115.60163
     },
-    "queueLevel": "congested",
-    "estimatedWaitMinutes": 40,
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
     "fuelStock": {
-      "pertalite": "available",
-      "pertamax": "available",
+      "pertalite": "low",
+      "pertamax": "low",
       "solar": "available",
       "dexlite": "available"
     },
     "cctv": {
       "hasCCTV": false
     },
-    "reportCount": 24,
+    "reportCount": 54,
     "upvotes": 39,
-    "lastReportedAt": "2026-10-15T10:36:47.127Z"
+    "lastReportedAt": "2026-10-15T16:17:14.868Z"
   }
 ];

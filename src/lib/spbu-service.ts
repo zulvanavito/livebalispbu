@@ -47,7 +47,10 @@ function mapRowToSPBUItem(row: SPBURow): SPBUItem {
 
 export function normalizePhotoUrl(url?: string): string {
   if (!url) return '';
-  return url.replace(/https:\/\/pub-[a-zA-Z0-9]+\.r2\.dev/g, 'https://livebali.my.id');
+  return url
+    .replace(/https:\/\/pub-[a-zA-Z0-9]+\.r2\.dev/g, 'https://cdn.livebali.my.id')
+    .replace(/https:\/\/livebali\.my\.id\/spbus\//g, 'https://cdn.livebali.my.id/spbus/')
+    .replace(/https:\/\/cdn\.live\.bali\.my\.id/g, 'https://cdn.livebali.my.id');
 }
 
 export function isWithin24Hours(dateString?: string): boolean {

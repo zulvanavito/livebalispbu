@@ -61,16 +61,16 @@ export const Logo: React.FC<LogoProps> = ({
 
       {/* Brand Typography */}
       {showText && (
-        <div>
+        <div className="shrink-0 min-w-0">
           <div className="flex items-center gap-1.5">
-            <h1 className={`font-extrabold text-zinc-950 ${currentSize.text} tracking-tight leading-none`}>
+            <h1 className={`font-extrabold text-zinc-950 ${currentSize.text} tracking-tight leading-none whitespace-nowrap`}>
               Live SPBU <span className="text-emerald-700 font-bold">Bali</span>
             </h1>
-            <span className="hidden xs:inline-flex px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+            <span className="hidden md:inline-flex px-1.5 py-0.5 rounded-md text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
               livebali.my.id
             </span>
           </div>
-          <p className={`${currentSize.subtext} text-zinc-600 font-medium hidden sm:block mt-0.5`}>
+          <p className={`${currentSize.subtext} text-zinc-600 font-medium hidden sm:block mt-0.5 whitespace-nowrap`}>
             Pantau antrean BBM &amp; CCTV ATCS lalu lintas secara realtime
           </p>
         </div>
