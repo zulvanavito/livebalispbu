@@ -100,25 +100,29 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
   const queueInfo = getQueueBadge();
 
   return (
-    <div
-      onClick={() => onSelect(spbu)}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          onSelect(spbu);
-        }
-      }}
-      tabIndex={0}
-      role="button"
-      aria-label={`SPBU ${spbu.name}, kondisi ${queueInfo.label}`}
-      className={`p-4 rounded-2xl border transition-all cursor-pointer relative focus-visible:ring-2 focus-visible:ring-black ${
+    <article
+      className={`p-4 rounded-2xl border transition-all relative ${
         isSelected
           ? 'bg-white border-black shadow-md ring-2 ring-black'
           : 'bg-white hover:bg-zinc-50 border-zinc-200 hover:border-zinc-300 shadow-xs'
       }`}
     >
-      {/* Top row: Metadata + Timestamp */}
-      <div className="flex items-center justify-between gap-1.5 mb-1.5">
+      {/* Clickable Card Body for SPBU Selection */}
+      <div
+        onClick={() => onSelect(spbu)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onSelect(spbu);
+          }
+        }}
+        tabIndex={0}
+        role="button"
+        aria-label={`Pilih SPBU ${spbu.name}, kondisi ${queueInfo.label}`}
+        className="cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black rounded-xl -m-1 p-1"
+      >
+        {/* Top row: Metadata + Timestamp */}
+        <div className="flex items-center justify-between gap-1.5 mb-1.5">
         <div className="flex items-center gap-1.5 flex-wrap">
           <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-zinc-100 text-zinc-800 border border-zinc-200">
             {spbu.code}
@@ -234,6 +238,7 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
           </span>
         </div>
       </div>
+      </div>
 
       {/* Action Buttons: CCTV, Rute, Report, Upvote */}
       <div className="mt-2.5 pt-2 flex items-center justify-between gap-1.5 border-t border-zinc-100">
@@ -321,6 +326,6 @@ export const SPBUCard: React.FC<SPBUCardProps> = ({
           <span className="text-xs font-semibold">{spbu.upvotes || 0}</span>
         </button>
       </div>
-    </div>
+    </article>
   );
 };

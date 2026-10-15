@@ -199,7 +199,9 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     }
 
     const cctvBadge = spbu.cctv.hasCCTV
-      ? `<span class="cctv-click-trigger" data-spbu-id="${spbu.id}" style="background:#dc2626; color:white; font-size:9px; padding:2px 5px; border-radius:4px; font-weight:800; margin-left:3px; display:inline-flex; align-items:center; box-shadow:0 1px 3px rgba(0,0,0,0.4);" title="Buka pantauan CCTV">CCTV</span>`
+      ? `<span class="cctv-click-trigger" data-spbu-id="${spbu.id}" style="background:#dc2626; color:white; font-size:9px; padding:2px 5px; border-radius:4px; font-weight:800; margin-left:3px; display:inline-flex; align-items:center; box-shadow:0 1px 3px rgba(0,0,0,0.4); cursor:pointer;" title="Buka pantauan CCTV">CCTV</span>`
+      : spbu.latestPhoto
+      ? `<span class="cctv-click-trigger" data-spbu-id="${spbu.id}" style="background:#047857; color:white; font-size:9px; padding:2px 5px; border-radius:4px; font-weight:800; margin-left:3px; display:inline-flex; align-items:center; box-shadow:0 1px 3px rgba(0,0,0,0.4); cursor:pointer;" title="Lihat foto antrean warga">FOTO</span>`
       : '';
 
     // If compact (zoom < 13 and not selected), render clean teardrop pin without wide pill
@@ -360,7 +362,12 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
           Foto Antrean
         </button>`
-      : '';
+      : `<button type="button" class="spbu-popup-cctv-btn" data-spbu-id="${spbu.id}" title="Pantau foto antrean ${spbu.name}" style="
+          flex:1; min-height:38px; padding:6px 8px; border-radius:10px; background:#f4f4f5; color:#3f3f46; font-size:11px; font-weight:600; border:1px solid #e4e4e7; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:4px; transition:opacity 0.15s;
+        ">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Foto Antrean
+        </button>`;
 
     return `
       <div style="font-family: inherit; width: 280px; max-width: 86vw; padding: 14px 14px 12px 14px; color: #09090b; box-sizing: border-box;">
@@ -632,6 +639,38 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     map.on('moveend zoomend', () => {
       updateMarkersRef.current();
       notifyBounds();
+    });
+
+    // Ensure direct click handling on popup action buttons (CCTV, Foto Antrean, Lapor)
+    map.on('popupopen', (e) => {
+      const popupEl = e.popup.getElement();
+      if (!popupEl) return;
+
+      const cctvBtn = popupEl.querySelector('.spbu-popup-cctv-btn') as HTMLElement | null;
+      if (cctvBtn) {
+        cctvBtn.onclick = (evt) => {
+          evt.preventDefault();
+          evt.stopPropagation();
+          const spbuId = cctvBtn.getAttribute('data-spbu-id');
+          const targetSpbu = spbusRef.current.find((s) => s.id === spbuId);
+          if (targetSpbu) {
+            onOpenCCTVRef.current(targetSpbu);
+          }
+        };
+      }
+
+      const reportBtn = popupEl.querySelector('.spbu-popup-report-btn') as HTMLElement | null;
+      if (reportBtn) {
+        reportBtn.onclick = (evt) => {
+          evt.preventDefault();
+          evt.stopPropagation();
+          const spbuId = reportBtn.getAttribute('data-spbu-id');
+          const targetSpbu = spbusRef.current.find((s) => s.id === spbuId);
+          if (targetSpbu) {
+            onOpenReportRef.current(targetSpbu);
+          }
+        };
+      }
     });
 
     mapInstanceRef.current = map;

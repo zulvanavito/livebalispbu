@@ -1,4 +1,4 @@
-import { SPBUItem, UserReportSubmission, BaliRegency } from '../types/spbu';
+import { SPBUItem, UserReportSubmission, BaliRegency, CitizenPhotoItem } from '../types/spbu';
 import { INITIAL_SPBU_DATA } from '../data/spbu-denpasar-badung';
 import { supabase, isSupabaseConfigured } from './supabase';
 
@@ -52,74 +52,70 @@ export const SPBUService = {
       return INITIAL_SPBU_DATA;
     }
 
-    // Try reading cached/updated state from localStorage
+    // 1. Read locally cached updates from localStorage
+    const cachedMap = new Map<string, Partial<SPBUItem>>();
     try {
       const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
       if (stored) {
         const parsed: SPBUItem[] = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          // Return all initial SPBUs, overlaying cached user reports where present
-          return INITIAL_SPBU_DATA.map((initial) => {
-            const cached = parsed.find((p) => p.id === initial.id);
-            if (cached) {
-              return {
-                ...initial,
-                queueLevel: cached.queueLevel ?? initial.queueLevel,
-                estimatedWaitMinutes: cached.estimatedWaitMinutes ?? initial.estimatedWaitMinutes,
-                fuelStock: cached.fuelStock ?? initial.fuelStock,
-                reportCount: cached.reportCount ?? initial.reportCount,
-                upvotes: cached.upvotes ?? initial.upvotes,
-                lastReportedAt: cached.lastReportedAt ?? initial.lastReportedAt,
-                latestNote: cached.latestNote ?? initial.latestNote,
-                latestPhoto: cached.latestPhoto ?? initial.latestPhoto,
-              };
+        if (Array.isArray(parsed)) {
+          for (const item of parsed) {
+            if (item && item.id) {
+              cachedMap.set(item.id, item);
             }
-            return initial;
-          });
+          }
         }
       }
     } catch {
       // Ignore localStorage parse errors
     }
 
-    // If Supabase is active, fetch from remote table
+    // 2. If Supabase is active, fetch from remote table
+    let remoteRows: SPBURow[] = [];
     if (isSupabaseConfigured && supabase) {
       try {
         const { data, error } = await supabase.from('spbus').select('*');
         if (!error && data && data.length > 0) {
-          const remoteRows = data as unknown as SPBURow[];
-          return INITIAL_SPBU_DATA.map((initial) => {
-            const row = remoteRows.find((r) => r.id === initial.id);
-            if (row) {
-              const item = mapRowToSPBUItem(row);
-              return {
-                ...initial,
-                queueLevel: item.queueLevel,
-                estimatedWaitMinutes: item.estimatedWaitMinutes,
-                fuelStock: item.fuelStock,
-                reportCount: item.reportCount,
-                upvotes: item.upvotes,
-                lastReportedAt: item.lastReportedAt,
-              };
-            }
-            return initial;
-          });
+          remoteRows = data as unknown as SPBURow[];
         }
       } catch (err) {
         console.warn('Supabase fetch failed, falling back to local dataset:', err);
       }
     }
 
-    // Save initial data to localStorage
-    if (typeof window !== 'undefined') {
-      try {
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(INITIAL_SPBU_DATA));
-      } catch (e) {
-        console.error(e);
-      }
+    // 3. Compose final list from INITIAL_SPBU_DATA, merging remote data and local cache
+    const mergedList = INITIAL_SPBU_DATA.map((initial) => {
+      const remote = remoteRows.find((r) => r.id === initial.id);
+      const cached = cachedMap.get(initial.id);
+
+      const baseItem: SPBUItem = {
+        ...initial,
+        queueLevel: remote ? remote.queue_level : (cached?.queueLevel ?? initial.queueLevel),
+        estimatedWaitMinutes: remote
+          ? remote.estimated_wait_minutes
+          : (cached?.estimatedWaitMinutes ?? initial.estimatedWaitMinutes),
+        fuelStock: remote ? remote.fuel_stock : (cached?.fuelStock ?? initial.fuelStock),
+        reportCount: remote ? remote.report_count : (cached?.reportCount ?? initial.reportCount),
+        upvotes: remote ? remote.upvotes : (cached?.upvotes ?? initial.upvotes),
+        lastReportedAt: remote
+          ? remote.last_reported_at
+          : (cached?.lastReportedAt ?? initial.lastReportedAt),
+        latestNote: cached?.latestNote ?? initial.latestNote,
+        latestPhoto: cached?.latestPhoto ?? initial.latestPhoto,
+        recentPhotos: cached?.recentPhotos ?? (cached?.latestPhoto ? [cached.latestPhoto] : undefined),
+      };
+
+      return baseItem;
+    });
+
+    // 4. Always ensure localStorage cache stays synchronized
+    try {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(mergedList));
+    } catch (e) {
+      console.error(e);
     }
 
-    return INITIAL_SPBU_DATA;
+    return mergedList;
   },
 
   // Submit a crowdsourced report
@@ -140,6 +136,19 @@ export const SPBUService = {
       unknown: 10,
     };
 
+    const existingPhotos = current.recentPhotos || (current.latestPhoto ? [current.latestPhoto] : []);
+    const newPhoto = submission.photoUrl
+      ? {
+          url: submission.photoUrl,
+          createdAt: new Date().toISOString(),
+          caption: submission.note && submission.note.trim() ? submission.note.trim() : undefined,
+        }
+      : null;
+
+    const updatedPhotos = newPhoto
+      ? [newPhoto, ...existingPhotos.filter((p) => p.url !== newPhoto.url)].slice(0, 5)
+      : existingPhotos;
+
     const updatedItem: SPBUItem = {
       ...current,
       queueLevel: submission.queueLevel,
@@ -156,12 +165,8 @@ export const SPBUService = {
             createdAt: new Date().toISOString(),
           }
         : current.latestNote,
-      latestPhoto: submission.photoUrl
-        ? {
-            url: submission.photoUrl,
-            createdAt: new Date().toISOString(),
-          }
-        : current.latestPhoto,
+      latestPhoto: updatedPhotos[0] || current.latestPhoto,
+      recentPhotos: updatedPhotos.length > 0 ? updatedPhotos : undefined,
       reportCount: (current.reportCount || 0) + 1,
       lastReportedAt: new Date().toISOString(),
     };
@@ -192,19 +197,23 @@ export const SPBUService = {
 
       const resJson = await response.json();
       if (resJson.data) {
-        const mapped = mapRowToSPBUItem(resJson.data);
-        if (updatedItem.latestNote) {
-          mapped.latestNote = updatedItem.latestNote;
-        }
-        if (updatedItem.latestPhoto) {
-          mapped.latestPhoto = updatedItem.latestPhoto;
-        }
-        list[index] = mapped;
+        const returned = resJson.data;
+        const merged: SPBUItem = {
+          ...updatedItem,
+          queueLevel: returned.queue_level ?? updatedItem.queueLevel,
+          estimatedWaitMinutes: returned.estimated_wait_minutes ?? updatedItem.estimatedWaitMinutes,
+          fuelStock: returned.fuel_stock ?? updatedItem.fuelStock,
+          reportCount: returned.report_count ?? updatedItem.reportCount,
+          lastReportedAt: returned.last_reported_at ?? updatedItem.lastReportedAt,
+          latestPhoto: updatedItem.latestPhoto,
+          latestNote: updatedItem.latestNote,
+        };
+        list[index] = merged;
         if (typeof window !== 'undefined') {
           localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(list));
           window.dispatchEvent(new CustomEvent('spbu_updated', { detail: list }));
         }
-        return mapped;
+        return merged;
       }
       return updatedItem;
     } catch (apiErr: unknown) {
@@ -289,6 +298,27 @@ export const SPBUService = {
     }
 
     return item.upvotes;
+  },
+
+  // Fetch live recent citizen photos from Cloudflare R2
+  async fetchSPBUPhotos(spbuId: string): Promise<CitizenPhotoItem[]> {
+    if (typeof window === 'undefined') return [];
+    try {
+      const res = await fetch(`/api/spbu-photos?spbuId=${encodeURIComponent(spbuId)}`);
+      if (!res.ok) return [];
+      const json = await res.json();
+      if (json.success && Array.isArray(json.photos)) {
+        return json.photos.map((p: any) => ({
+          url: p.url,
+          createdAt: p.createdAt,
+          key: p.key,
+        }));
+      }
+      return [];
+    } catch (err) {
+      console.warn('Failed to fetch live photos from R2:', err);
+      return [];
+    }
   },
 
   // Reset demo data back to defaults

@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Hls from 'hls.js';
-import { SPBUItem } from '@/types/spbu';
+import { SPBUItem, CitizenPhotoItem } from '@/types/spbu';
+import { SPBUService } from '@/lib/spbu-service';
 import { 
   X, 
   RefreshCw, 
@@ -18,7 +19,10 @@ import {
   Clock,
   ExternalLink,
   PlusCircle,
-  Cloud
+  Cloud,
+  ChevronLeft,
+  ChevronRight,
+  Layers
 } from 'lucide-react';
 
 interface CCTVPreviewModalProps {
@@ -57,6 +61,11 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const hlsRef = useRef<Hls | null>(null);
 
+  // Multi-Photo Carousel States (Opsi A)
+  const [photoIndex, setPhotoIndex] = useState<number>(0);
+  const [photosList, setPhotosList] = useState<CitizenPhotoItem[]>([]);
+  const [isLoadingPhotos, setIsLoadingPhotos] = useState<boolean>(false);
+
   // Sync tab when target SPBU changes
   useEffect(() => {
     if (spbu) {
@@ -64,6 +73,41 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
       setStreamError(false);
     }
   }, [spbu?.id, spbu?.cctv.hasCCTV]);
+
+  // Sync initial photos and dynamically fetch live photos from Cloudflare R2
+  useEffect(() => {
+    if (!spbu) return;
+
+    // 1. Initial cached/local photos
+    const initialPhotos = spbu.recentPhotos && spbu.recentPhotos.length > 0
+      ? spbu.recentPhotos
+      : spbu.latestPhoto
+      ? [spbu.latestPhoto]
+      : [];
+
+    setPhotosList(initialPhotos);
+    setPhotoIndex(0);
+
+    // 2. Query live photo list directly from Cloudflare R2
+    let isCancelled = false;
+    setIsLoadingPhotos(true);
+    SPBUService.fetchSPBUPhotos(spbu.id)
+      .then((livePhotos) => {
+        if (!isCancelled && livePhotos && livePhotos.length > 0) {
+          setPhotosList(livePhotos);
+        }
+      })
+      .catch((err) => {
+        console.warn('Failed to fetch live R2 photos:', err);
+      })
+      .finally(() => {
+        if (!isCancelled) setIsLoadingPhotos(false);
+      });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [spbu?.id, refreshKey]);
 
   // Aksesibilitas Keyboard: Tutup modal dengan tombol Escape (R-32)
   useEffect(() => {
@@ -203,6 +247,8 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
     }
   };
 
+  const currentPhoto = photosList[photoIndex] || photosList[0] || spbu.latestPhoto;
+
   return (
     <div 
       className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200"
@@ -291,7 +337,11 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
           >
             <Camera className="w-3.5 h-3.5 text-emerald-600" />
             <span>Foto Antrean Warga</span>
-            {spbu.latestPhoto ? (
+            {photosList.length > 0 ? (
+              <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
+                {photosList.length} Foto
+              </span>
+            ) : spbu.latestPhoto ? (
               <span className="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
                 Ada
               </span>
@@ -395,14 +445,14 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
           ) : (
             /* FOTO ANTREAN WARGA TAB (CLOUDFLARE R2) */
             <>
-              {spbu.latestPhoto?.url ? (
+              {currentPhoto?.url ? (
                 <>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    key={`photo-${refreshKey}`}
-                    src={spbu.latestPhoto.url}
+                    key={`photo-${currentPhoto.url}-${refreshKey}`}
+                    src={currentPhoto.url}
                     alt={`Foto Antrean ${spbu.name}`}
-                    className="w-full h-full object-contain bg-zinc-950"
+                    className="w-full h-full object-contain bg-zinc-950 transition-opacity duration-200"
                   />
 
                   {/* Top-left R2 badge */}
@@ -414,13 +464,52 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
                   {/* Top-right timestamp badge */}
                   <div className="absolute top-3 right-3 bg-zinc-950/90 px-2.5 py-1.5 rounded-lg text-xs text-zinc-200 border border-zinc-700 flex items-center gap-1.5 shadow-md">
                     <Clock className="w-3.5 h-3.5 text-amber-400" />
-                    <span>{formatRelativeTime(spbu.latestPhoto.createdAt)}</span>
+                    <span>{formatRelativeTime(currentPhoto.createdAt)}</span>
                   </div>
+
+                  {/* Left & Right Carousel Navigation Overlays (when photosList.length > 1) */}
+                  {photosList.length > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setPhotoIndex((prev) => (prev > 0 ? prev - 1 : photosList.length - 1));
+                        }}
+                        className="min-h-[44px] min-w-[44px] absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/75 hover:bg-black text-white flex items-center justify-center transition-all cursor-pointer shadow-xl hover:scale-105 border border-white/20 focus-visible:ring-2 focus-visible:ring-white"
+                        title="Foto Sebelumnya"
+                        aria-label="Foto Sebelumnya"
+                      >
+                        <ChevronLeft className="w-6 h-6" />
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setPhotoIndex((prev) => (prev < photosList.length - 1 ? prev + 1 : 0));
+                        }}
+                        className="min-h-[44px] min-w-[44px] absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/75 hover:bg-black text-white flex items-center justify-center transition-all cursor-pointer shadow-xl hover:scale-105 border border-white/20 focus-visible:ring-2 focus-visible:ring-white"
+                        title="Foto Selanjutnya"
+                        aria-label="Foto Selanjutnya"
+                      >
+                        <ChevronRight className="w-6 h-6" />
+                      </button>
+                    </>
+                  )}
+
+                  {/* Bottom Counter (when photosList.length > 1) */}
+                  {photosList.length > 1 && (
+                    <div className="absolute bottom-3 left-3 bg-black/80 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-white border border-white/20 flex items-center gap-1.5 shadow-md">
+                      <Layers className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Foto {photoIndex + 1} dari {photosList.length}</span>
+                    </div>
+                  )}
 
                   {/* Bottom external link action */}
                   <div className="absolute bottom-3 right-3">
                     <a
-                      href={spbu.latestPhoto.url}
+                      href={currentPhoto.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="min-h-[40px] px-3 py-1.5 rounded-lg bg-black/80 hover:bg-black text-white text-xs font-semibold flex items-center gap-1.5 backdrop-blur-xs border border-white/20 transition-all cursor-pointer shadow-lg"
@@ -456,6 +545,45 @@ export const CCTVPreviewModal: React.FC<CCTVPreviewModalProps> = ({
             </>
           )}
         </div>
+
+        {/* Filmstrip Thumbnail Bar (Opsi A: Multi-Foto Terkini) */}
+        {activeTab === 'citizen_photo' && photosList.length > 1 && (
+          <div className="bg-zinc-900 border-b border-zinc-800 px-3.5 py-2 flex items-center gap-2.5 overflow-x-auto">
+            <span className="text-[11px] font-semibold text-zinc-400 shrink-0 flex items-center gap-1">
+              <Layers className="w-3.5 h-3.5 text-emerald-400" />
+              Sudut Pandang:
+            </span>
+            <div className="flex items-center gap-2">
+              {photosList.map((item, idx) => (
+                <button
+                  key={`${item.url}-${idx}`}
+                  type="button"
+                  onClick={() => setPhotoIndex(idx)}
+                  className={`min-h-[44px] px-2 py-1 rounded-xl transition-all cursor-pointer flex items-center gap-2 border-2 ${
+                    photoIndex === idx
+                      ? 'border-emerald-500 bg-zinc-800 shadow-md ring-1 ring-emerald-500/50'
+                      : 'border-zinc-800 bg-zinc-950 opacity-70 hover:opacity-100 hover:border-zinc-700'
+                  }`}
+                  title={`Tampilkan foto ke-${idx + 1} (${formatRelativeTime(item.createdAt)})`}
+                >
+                  <img
+                    src={item.url}
+                    alt={`Thumbnail ${idx + 1}`}
+                    className="w-10 h-7 object-cover rounded-md bg-black shrink-0"
+                  />
+                  <div className="text-left pr-1 whitespace-nowrap">
+                    <span className="text-[10px] font-bold block text-white leading-tight">
+                      {idx === 0 ? 'Paling Baru' : `Foto #${idx + 1}`}
+                    </span>
+                    <span className="text-[9px] text-zinc-400 block leading-tight">
+                      {formatRelativeTime(item.createdAt)}
+                    </span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Mobile Sub-toggle for ATCS Stream vs Snapshot */}
         {activeTab === 'atcs' && hasLiveStream && (

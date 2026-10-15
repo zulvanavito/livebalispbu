@@ -38,6 +38,13 @@ export type BaliRegency =
   | 'Karangasem' 
   | 'Jembrana';
 
+export interface CitizenPhotoItem {
+  url: string;
+  createdAt: string;
+  caption?: string;
+  key?: string;
+}
+
 export interface SPBUItem {
   id: string;
   code: string; // e.g. "54.801.06"
@@ -57,11 +64,8 @@ export interface SPBUItem {
     text: string;
     createdAt: string;
   };
-  latestPhoto?: {
-    url: string;
-    createdAt: string;
-    caption?: string;
-  };
+  latestPhoto?: CitizenPhotoItem;
+  recentPhotos?: CitizenPhotoItem[];
   reportCount: number;
   upvotes: number;
   lastReportedAt: string; // ISO string
