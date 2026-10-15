@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://livebali.my.id'),
   title: 'Live SPBU Bali | Pantau Antrean & Stok BBM Realtime',
   description:
-    'Pantau kondisi antrean, stok BBM (Pertalite, Pertamax, Solar), dan CCTV ATCS lalu lintas SPBU di Denpasar & Badung, Bali.',
-  keywords: ['SPBU Bali', 'Antrean Bensin Bali', 'CCTV ATCS Denpasar', 'CCTV Badung', 'Pertalite Bali', 'livebali.my.id'],
+    'Pantau kondisi antrean, stok BBM (Pertalite, Pertamax, Solar), dan CCTV ATCS lalu lintas SPBU di seluruh Bali (Kawasan Metropolitan Sarbagita hingga 9 Kabupaten/Kota).',
+  keywords: ['SPBU Bali', 'Antrean Bensin Bali', 'SPBU Sarbagita', 'CCTV ATCS Bali', 'CCTV Denpasar', 'CCTV Badung', 'Pertalite Bali', 'livebali.my.id'],
   manifest: '/manifest.webmanifest',
   icons: {
     icon: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Live SPBU Bali | Pantau Antrean & Stok BBM Realtime',
     description:
-      'Pantau kondisi antrean, ketersediaan BBM (Pertalite, Pertamax, Solar), dan CCTV ATCS lalu lintas di Denpasar & Badung.',
+      'Pantau kondisi antrean, ketersediaan BBM (Pertalite, Pertamax, Solar), dan pantauan visual CCTV ATCS di seluruh Bali dan Kawasan Metropolitan Sarbagita.',
     url: 'https://livebali.my.id',
     siteName: 'Live SPBU Bali',
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Live SPBU Bali | Pantau Antrean & Stok BBM Realtime',
     description:
-      'Pantau kondisi antrean, ketersediaan BBM, dan CCTV ATCS lalu lintas di Denpasar & Badung.',
+      'Pantau kondisi antrean, ketersediaan BBM, dan pantauan visual CCTV ATCS di seluruh Bali dan Kawasan Metropolitan Sarbagita.',
     images: ['/og-image.png'],
   },
   appleWebApp: {

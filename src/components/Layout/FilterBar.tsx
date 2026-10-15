@@ -4,19 +4,20 @@ import React from 'react';
 import { Search, Video, Camera, CheckCircle, X, Map, List, MapPin, ChevronDown } from 'lucide-react';
 import { BaliRegency } from '@/types/spbu';
 
-export type RegencyFilterOption = 'all' | BaliRegency;
+export type RegencyFilterOption = 'all' | 'sarbagita' | BaliRegency;
 
 export const BALI_REGENCIES: { value: RegencyFilterOption; label: string }[] = [
-  { value: 'all', label: 'Semua Bali' },
-  { value: 'Denpasar', label: 'Kota Denpasar' },
-  { value: 'Badung', label: 'Kab. Badung' },
-  { value: 'Gianyar', label: 'Kab. Gianyar' },
-  { value: 'Tabanan', label: 'Kab. Tabanan' },
-  { value: 'Buleleng', label: 'Kab. Buleleng' },
-  { value: 'Bangli', label: 'Kab. Bangli' },
-  { value: 'Klungkung', label: 'Kab. Klungkung' },
-  { value: 'Karangasem', label: 'Kab. Karangasem' },
-  { value: 'Jembrana', label: 'Kab. Jembrana' },
+  { value: 'all', label: 'Semua Bali (281 SPBU)' },
+  { value: 'sarbagita', label: 'Kawasan Sarbagita (163 SPBU)' },
+  { value: 'Denpasar', label: 'Kota Denpasar (59)' },
+  { value: 'Badung', label: 'Kab. Badung (55)' },
+  { value: 'Gianyar', label: 'Kab. Gianyar (30)' },
+  { value: 'Tabanan', label: 'Kab. Tabanan (19)' },
+  { value: 'Buleleng', label: 'Kab. Buleleng (43)' },
+  { value: 'Karangasem', label: 'Kab. Karangasem (30)' },
+  { value: 'Jembrana', label: 'Kab. Jembrana (18)' },
+  { value: 'Klungkung', label: 'Kab. Klungkung (15)' },
+  { value: 'Bangli', label: 'Kab. Bangli (12)' },
 ];
 
 interface FilterBarProps {

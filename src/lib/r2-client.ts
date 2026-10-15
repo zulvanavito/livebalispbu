@@ -26,5 +26,5 @@ export const R2_BUCKET = process.env.CLOUDFLARE_R2_BUCKET_NAME || 'livespbu-phot
 export const R2_PUBLIC_URL = (
   process.env.CLOUDFLARE_R2_PUBLIC_URL && !process.env.CLOUDFLARE_R2_PUBLIC_URL.includes('.r2.dev')
     ? process.env.CLOUDFLARE_R2_PUBLIC_URL
-    : 'https://livebali.my.id'
+    : 'https://cdn.livebali.my.id'
 ).replace(/\/$/, '');

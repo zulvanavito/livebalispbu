@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Live SPBU Bali - Pantau Antrean & BBM',
     short_name: 'Live SPBU',
     description:
-      'Pantau kondisi antrean, stok BBM (Pertalite, Pertamax, Solar), dan CCTV ATCS SPBU di Denpasar & Badung secara realtime.',
+      'Pantau kondisi antrean, stok BBM (Pertalite, Pertamax, Solar), dan CCTV ATCS SPBU di seluruh Bali dan Kawasan Metropolitan Sarbagita secara realtime.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
