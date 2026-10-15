@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { SPBUItem, QueueLevel, FuelStatus, UserReportSubmission } from '@/types/spbu';
 import { SPBUService } from '@/lib/spbu-service';
-import { X, Send, Fuel, CheckCircle2, AlertCircle, Clock } from 'lucide-react';
+import { X, Send, Fuel, CheckCircle2, AlertCircle, Clock, Camera, Trash2, Loader2 } from 'lucide-react';
 import { TurnstileWidget } from '@/components/Common/TurnstileWidget';
 import { useToast } from '@/components/Common/Toast';
+import { compressQueuePhoto } from '@/lib/image-compression';
 
 interface QuickReportModalProps {
   spbu: SPBUItem | null;
@@ -24,6 +25,10 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
   const [pertamax, setPertamax] = useState<FuelStatus>(spbu?.fuelStock.pertamax || 'available');
   const [solar, setSolar] = useState<FuelStatus>(spbu?.fuelStock.solar || 'available');
   const [note, setNote] = useState<string>('');
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [isUploadingPhoto, setIsUploadingPhoto] = useState<boolean>(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [turnstileToken, setTurnstileToken] = useState<string>('');
   const [formError, setFormError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -41,6 +46,67 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
   const handleTurnstileExpire = useCallback(() => {
     setTurnstileToken('');
   }, []);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const ALLOWED_MIME_TYPES = [
+      'image/jpeg',
+      'image/jpg',
+      'image/png',
+      'image/webp',
+      'image/heic',
+      'image/heif',
+    ];
+    const ALLOWED_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp', '.heic', '.heif'];
+
+    const lowerName = file.name.toLowerCase();
+    const hasValidExt = ALLOWED_EXTENSIONS.some((ext) => lowerName.endsWith(ext));
+    const hasValidMime =
+      ALLOWED_MIME_TYPES.includes(file.type.toLowerCase()) ||
+      file.type === '';
+
+    if (!hasValidExt || (!hasValidMime && file.type)) {
+      showToast('error', 'Hanya format foto (JPG, PNG, WebP) yang diizinkan.');
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+      return;
+    }
+
+    if (file.size > 10 * 1024 * 1024) {
+      showToast('error', 'Ukuran foto terlalu besar (maks 10 MB). Silakan pilih foto lain.');
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+      return;
+    }
+
+    setSelectedFile(file);
+    const objectUrl = URL.createObjectURL(file);
+    setPreviewUrl(objectUrl);
+  };
+
+  const handleRemovePhoto = () => {
+    if (previewUrl) {
+      URL.revokeObjectURL(previewUrl);
+    }
+    setSelectedFile(null);
+    setPreviewUrl(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
+
+  // Clean up object URL on unmount
+  useEffect(() => {
+    return () => {
+      if (previewUrl) {
+        URL.revokeObjectURL(previewUrl);
+      }
+    };
+  }, [previewUrl]);
 
   // Aksesibilitas Keyboard: Tutup modal dengan Escape (R-32)
   useEffect(() => {
@@ -67,6 +133,41 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
     setIsSubmitting(true);
 
     try {
+      let uploadedPhotoUrl: string | undefined = undefined;
+
+      if (selectedFile) {
+        setIsUploadingPhoto(true);
+        try {
+          const compressed = await compressQueuePhoto(selectedFile);
+          const uploadFormData = new FormData();
+          uploadFormData.append('file', compressed);
+          uploadFormData.append('spbuId', spbu.id);
+
+          const uploadRes = await fetch('/api/upload-queue-photo', {
+            method: 'POST',
+            body: uploadFormData,
+          });
+
+          if (uploadRes.ok) {
+            const uploadData = await uploadRes.json();
+            if (uploadData.photoUrl) {
+              uploadedPhotoUrl = uploadData.photoUrl;
+            }
+          } else {
+            const errData = await uploadRes.json().catch(() => ({}));
+            const errMsg = errData.error || 'Upload foto tidak berhasil. Format tidak valid.';
+            showToast('error', errMsg);
+            console.warn('Upload foto gagal:', errMsg);
+          }
+        } catch (uploadErr) {
+          const errMsg = uploadErr instanceof Error ? uploadErr.message : 'Gagal memproses foto.';
+          showToast('error', errMsg);
+          console.warn('Gagal memproses foto:', uploadErr);
+        } finally {
+          setIsUploadingPhoto(false);
+        }
+      }
+
       const payload: UserReportSubmission = {
         spbuId: spbu.id,
         queueLevel,
@@ -74,6 +175,7 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
         pertamax,
         solar,
         note: note.trim() || undefined,
+        photoUrl: uploadedPhotoUrl,
         turnstileToken,
       };
 
@@ -303,6 +405,73 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
               />
             </div>
 
+            {/* Lampiran Foto Antrean (Opsional) */}
+            <div>
+              <label className="block text-xs font-semibold uppercase tracking-wider text-zinc-700 mb-1.5 flex items-center justify-between">
+                <span className="flex items-center gap-1.5">
+                  <Camera className="w-3.5 h-3.5 text-zinc-500" />
+                  Foto Kondisi Antrean (Opsional):
+                </span>
+                <span className="text-[10px] font-normal text-zinc-400 lowercase">
+                  kompresi otomatis webp
+                </span>
+              </label>
+
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.jpg,.jpeg,.png,.webp,.heic,.heif"
+                capture="environment"
+                onChange={handleFileChange}
+                className="hidden"
+                id="queue-photo-upload"
+              />
+
+              {!previewUrl ? (
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="w-full min-h-[52px] px-4 py-3 rounded-xl border border-dashed border-zinc-300 bg-zinc-50 hover:bg-zinc-100 hover:border-zinc-400 text-zinc-600 flex items-center justify-center gap-2.5 text-xs font-medium transition-colors cursor-pointer group focus-visible:ring-2 focus-visible:ring-black"
+                >
+                  <div className="w-8 h-8 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-500 group-hover:text-black group-hover:border-zinc-300 transition-colors">
+                    <Camera className="w-4 h-4" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-semibold text-zinc-800">Unggah Foto Antrean</p>
+                    <p className="text-[10px] text-zinc-400">Kamera HP atau Galeri (Otomatis kompresi WebP ~100 KB)</p>
+                  </div>
+                </button>
+              ) : (
+                <div className="relative rounded-xl border border-zinc-200 overflow-hidden bg-zinc-900 group">
+                  <img
+                    src={previewUrl}
+                    alt="Pratinjau antrean"
+                    className="w-full h-36 object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end justify-between p-3">
+                    <div className="text-white">
+                      <p className="text-xs font-semibold flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                        Foto Siap Diunggah
+                      </p>
+                      <p className="text-[10px] text-zinc-300">
+                        {selectedFile?.name} ({selectedFile?.size ? (selectedFile.size / 1024).toFixed(0) : 0} KB)
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleRemovePhoto}
+                      className="min-h-[44px] min-w-[44px] p-2 bg-rose-600/90 hover:bg-rose-600 text-white rounded-lg flex items-center justify-center transition-colors cursor-pointer"
+                      title="Hapus foto"
+                      aria-label="Hapus foto"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
             {/* Turnstile Anti-Bot Verification */}
             <div className="pt-2">
               <TurnstileWidget
@@ -339,12 +508,19 @@ export const QuickReportModal: React.FC<QuickReportModalProps> = ({
                     : 'bg-black hover:bg-zinc-800 text-white shadow-sm cursor-pointer'
                 }`}
               >
-                <Send className="w-4 h-4" />
-                {isSubmitting
-                  ? 'Mengirim Laporan...'
-                  : !turnstileToken
-                  ? 'Selesaikan Verifikasi di Atas'
-                  : 'Kirim Laporan Sekarang'}
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    {isUploadingPhoto ? 'Mengunggah Foto Antrean...' : 'Mengirim Laporan...'}
+                  </>
+                ) : !turnstileToken ? (
+                  'Selesaikan Verifikasi di Atas'
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" />
+                    Kirim Laporan Sekarang
+                  </>
+                )}
               </button>
             </div>
           </form>

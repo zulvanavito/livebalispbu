@@ -1,17 +1,36 @@
 'use client';
 
-import React, { useEffect, useRef, useMemo } from 'react';
+import React, { useEffect, useRef, useMemo, useCallback } from 'react';
 import L from 'leaflet';
-import { SPBUItem } from '@/types/spbu';
+import Supercluster from 'supercluster';
+import { SPBUItem, MapBounds } from '@/types/spbu';
 
-interface SPBUMapProps {
+export interface SPBUMapProps {
   spbus: SPBUItem[];
   selectedSpbu: SPBUItem | null;
   onSelectSpbu: (spbu: SPBUItem | null) => void;
   onOpenCCTV: (spbu: SPBUItem) => void;
   onOpenReport: (spbu: SPBUItem) => void;
   userLocation: { lat: number; lng: number } | null;
+  onBoundsChange?: (bounds: MapBounds) => void;
 }
+
+interface SPBUPointProps {
+  cluster?: false;
+  spbuId: string;
+  queueLevel: string;
+  hasCCTV: boolean;
+  spbu: SPBUItem;
+}
+
+interface SPBUClusterProps {
+  congestedCount: number;
+  moderateCount: number;
+  smoothCount: number;
+}
+
+const DEFAULT_CENTER: [number, number] = [-8.685, 115.205];
+const DEFAULT_ZOOM = 13;
 
 export const SPBUMap: React.FC<SPBUMapProps> = ({
   spbus,
@@ -20,6 +39,7 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
   onOpenCCTV,
   onOpenReport,
   userLocation,
+  onBoundsChange,
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
@@ -32,6 +52,7 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
   const onSelectSpbuRef = useRef(onSelectSpbu);
   const onOpenCCTVRef = useRef(onOpenCCTV);
   const onOpenReportRef = useRef(onOpenReport);
+  const onBoundsChangeRef = useRef(onBoundsChange);
 
   useEffect(() => {
     spbusRef.current = spbus;
@@ -39,14 +60,11 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     onSelectSpbuRef.current = onSelectSpbu;
     onOpenCCTVRef.current = onOpenCCTV;
     onOpenReportRef.current = onOpenReport;
+    onBoundsChangeRef.current = onBoundsChange;
   });
 
-  // Center of Denpasar / Badung
-  const DEFAULT_CENTER: [number, number] = [-8.685, 115.205];
-  const DEFAULT_ZOOM = 13;
-
   // Calculate distance string
-  const getDistanceStr = (spbu: SPBUItem) => {
+  const getDistanceStr = useCallback((spbu: SPBUItem) => {
     if (!userLocation) return null;
     const R = 6371; // km
     const dLat = ((spbu.coordinates.lat - userLocation.lat) * Math.PI) / 180;
@@ -60,10 +78,110 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const dist = R * c;
     return dist < 1 ? `${Math.round(dist * 1000)} m` : `${dist.toFixed(1)} km`;
+  }, [userLocation]);
+
+  // Spatial cluster index with status aggregation
+  const clusterIndex = useMemo(() => {
+    const index = new Supercluster<SPBUPointProps, SPBUClusterProps>({
+      radius: 50,
+      maxZoom: 14, // Points fully expand into individual pins at zoom >= 15
+      map: (props) => ({
+        congestedCount: props.queueLevel === 'congested' ? 1 : 0,
+        moderateCount: props.queueLevel === 'moderate' ? 1 : 0,
+        smoothCount: props.queueLevel === 'smooth' ? 1 : 0,
+      }),
+      reduce: (accumulated, props) => {
+        accumulated.congestedCount += props.congestedCount;
+        accumulated.moderateCount += props.moderateCount;
+        accumulated.smoothCount += props.smoothCount;
+      },
+    });
+
+    const features = spbus.map((spbu) => ({
+      type: 'Feature' as const,
+      properties: {
+        spbuId: spbu.id,
+        queueLevel: spbu.queueLevel,
+        hasCCTV: Boolean(spbu.cctv.hasCCTV),
+        spbu,
+      },
+      geometry: {
+        type: 'Point' as const,
+        coordinates: [spbu.coordinates.lng, spbu.coordinates.lat] as [number, number],
+      },
+    }));
+
+    index.load(features);
+    return index;
+  }, [spbus]);
+
+  // High-contrast modern cluster icon
+  const createClusterIcon = (
+    count: number,
+    stats?: { congestedCount?: number; moderateCount?: number; smoothCount?: number }
+  ) => {
+    let size = 36;
+    let fontSize = 12;
+    if (count >= 25) {
+      size = 46;
+      fontSize = 14;
+    } else if (count >= 10) {
+      size = 40;
+      fontSize = 13;
+    }
+
+    let statusDotColor = '#10b981';
+    let hasCongestion = false;
+    if (stats?.congestedCount && stats.congestedCount > 0) {
+      statusDotColor = '#ef4444';
+      hasCongestion = true;
+    } else if (stats?.moderateCount && stats.moderateCount > 0) {
+      statusDotColor = '#f59e0b';
+    }
+
+    const pulseRing = hasCongestion
+      ? `<span style="position:absolute; inset:-4px; border-radius:9999px; background:#ef4444; opacity:0.35; animation:marker-pulse-congested 1.8s infinite;"></span>`
+      : '';
+
+    const hitBox = Math.max(size, 44);
+
+    const html = `
+      <div style="position:relative; width:${hitBox}px; height:${hitBox}px; display:flex; align-items:center; justify-content:center; cursor:pointer;" title="${count} SPBU di area ini (klik untuk memperbesar)">
+        <div style="position:relative; width:${size}px; height:${size}px;">
+          ${pulseRing}
+          <div style="
+            width:100%;
+            height:100%;
+            border-radius:9999px;
+            background:#09090b;
+            color:#ffffff;
+            border:2px solid #ffffff;
+            box-shadow:0 6px 16px rgba(0,0,0,0.3);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:4px;
+            font-weight:800;
+            font-size:${fontSize}px;
+            user-select:none;
+          ">
+            <span style="width:6px; height:6px; border-radius:50%; background:${statusDotColor}; flex-shrink:0;"></span>
+            <span>${count}</span>
+          </div>
+        </div>
+      </div>
+    `;
+
+    return L.divIcon({
+      html,
+      className: 'custom-spbu-cluster',
+      iconSize: [hitBox, hitBox],
+      iconAnchor: [hitBox / 2, hitBox / 2],
+    });
   };
 
-  // Generate dynamic DivIcon for map pin
-  const createMarkerIcon = (spbu: SPBUItem, isSelected: boolean) => {
+  // Zoom-adaptive DivIcon for map pin (Compact dot when zoomed out, Full card when zoomed in)
+  const createMarkerIcon = (spbu: SPBUItem, isSelected: boolean, isCompact: boolean) => {
     let color = '#10b981'; // green (smooth)
     let ringClass = '';
     let label = 'Lancar';
@@ -84,7 +202,39 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
       ? `<span class="cctv-click-trigger" data-spbu-id="${spbu.id}" style="background:#dc2626; color:white; font-size:9px; padding:2px 5px; border-radius:4px; font-weight:800; margin-left:3px; display:inline-flex; align-items:center; box-shadow:0 1px 3px rgba(0,0,0,0.4);" title="Buka pantauan CCTV">CCTV</span>`
       : '';
 
-    const html = `
+    // If compact (zoom < 13 and not selected), render clean teardrop pin without wide pill
+    if (isCompact) {
+      const compactHtml = `
+        <div style="position:relative; width:0; height:0;">
+          <div class="marker-interactive-content" style="
+            position:absolute;
+            bottom:0;
+            left:0;
+            transform:translate(-50%, 0);
+            cursor:pointer;
+            pointer-events:auto !important;
+          " title="${spbu.name} - Klik untuk lihat detail">
+            <div style="position:relative; width:22px; height:28px; display:flex; justify-content:center;">
+              <div class="${ringClass}" style="position:absolute; inset:-3px; border-radius:50%; background:${color}; opacity:0.35;"></div>
+              <svg viewBox="0 0 24 30" width="22" height="28" fill="${color}" style="display:block; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3));">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 18 12 18s12-9 12-18c0-6.63-5.37-12-12-12zm0 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z" />
+              </svg>
+              <div style="position:absolute; top:5px; left:7px; width:8px; height:8px; border-radius:50%; background:#ffffff;"></div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      return L.divIcon({
+        html: compactHtml,
+        className: 'custom-spbu-marker',
+        iconSize: [0, 0],
+        iconAnchor: [0, 0],
+      });
+    }
+
+    // Full detailed pin with floating pill
+    const fullHtml = `
       <div style="position:relative; width:0; height:0;">
         <div class="marker-interactive-content" style="
           position:absolute;
@@ -150,7 +300,7 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     `;
 
     return L.divIcon({
-      html,
+      html: fullHtml,
       className: 'custom-spbu-marker',
       iconSize: [0, 0],
       iconAnchor: [0, 0],
@@ -202,6 +352,13 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
         ">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
           Lihat CCTV
+        </button>`
+      : spbu.latestPhoto
+      ? `<button type="button" class="spbu-popup-cctv-btn" data-spbu-id="${spbu.id}" title="Lihat foto antrean ${spbu.name}" style="
+          flex:1; min-height:38px; padding:6px 10px; border-radius:10px; background:#047857; color:#ffffff; font-size:11px; font-weight:700; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:5px; box-shadow:0 1px 2px rgba(0,0,0,0.1); transition:opacity 0.15s;
+        ">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Foto Antrean
         </button>`
       : '';
 
@@ -323,7 +480,126 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     });
   };
 
-  // 1. Initialize Map once
+  const isUpdatingRef = useRef(false);
+
+  // Render clusters and individual markers on the current map viewport
+  const updateMarkers = useCallback(() => {
+    const map = mapInstanceRef.current;
+    if (!map || isUpdatingRef.current) return;
+    isUpdatingRef.current = true;
+
+    try {
+      const bounds = map.getBounds();
+      const bbox: [number, number, number, number] = [
+        bounds.getWest(),
+        bounds.getSouth(),
+        bounds.getEast(),
+        bounds.getNorth(),
+      ];
+      const zoom = Math.floor(map.getZoom());
+      const clusters = clusterIndex.getClusters(bbox, zoom);
+
+      // Clear existing markers to prevent stale DOM
+      markersRef.current.forEach((marker) => marker.remove());
+      markersRef.current.clear();
+
+      clusters.forEach((item) => {
+        const [lng, lat] = item.geometry.coordinates;
+
+        if (item.properties.cluster) {
+          // Render Cluster
+          const clusterId = item.properties.cluster_id!;
+          const count = item.properties.point_count!;
+          const clusterKey = `cluster-${clusterId}`;
+
+          const stats = item.properties as unknown as SPBUClusterProps;
+          const icon = createClusterIcon(count, stats);
+
+          const marker = L.marker([lat, lng], {
+            icon,
+            zIndexOffset: 300,
+          }).addTo(map);
+
+          marker.on('click', (e) => {
+            L.DomEvent.stopPropagation(e);
+            const expansionZoom = clusterIndex.getClusterExpansionZoom(clusterId);
+            map.flyTo([lat, lng], Math.min(expansionZoom, 16), {
+              duration: 0.5,
+            });
+          });
+
+          markersRef.current.set(clusterKey, marker);
+        } else {
+          // Render Individual SPBU
+          const spbu = (item.properties as SPBUPointProps).spbu;
+          if (!spbu) return;
+
+          const spbuKey = `spbu-${spbu.id}`;
+          const isSelected = selectedSpbuRef.current?.id === spbu.id;
+          const isCompact = zoom < 13 && !isSelected;
+          const icon = createMarkerIcon(spbu, isSelected, isCompact);
+
+          const marker = L.marker([spbu.coordinates.lat, spbu.coordinates.lng], {
+            icon,
+            zIndexOffset: isSelected ? 1000 : 100,
+          }).addTo(map);
+
+          const popup = L.popup({
+            offset: isCompact ? [0, -28] : [0, -60],
+            className: 'custom-spbu-popup',
+            closeButton: true,
+            autoPan: true,
+            autoPanPaddingTopLeft: [24, 24],
+            autoPanPaddingBottomRight: [24, 24],
+            maxWidth: 320,
+            minWidth: 280,
+          }).setContent(createPopupHtml(spbu, getDistanceStr(spbu)));
+
+          marker.bindPopup(popup);
+
+          marker.on('click', (e) => {
+            L.DomEvent.stopPropagation(e);
+            const nativeEvent = e.originalEvent as MouseEvent;
+            const target = nativeEvent.target as HTMLElement;
+
+            if (target && target.closest('.cctv-click-trigger')) {
+              onOpenCCTVRef.current(spbu);
+            } else {
+              onSelectSpbuRef.current(spbu);
+            }
+          });
+
+          markersRef.current.set(spbuKey, marker);
+        }
+      });
+    } finally {
+      isUpdatingRef.current = false;
+    }
+  }, [clusterIndex, getDistanceStr]);
+
+  const updateMarkersRef = useRef(updateMarkers);
+  useEffect(() => {
+    updateMarkersRef.current = updateMarkers;
+  }, [updateMarkers]);
+
+  // Emit map bounds when viewport changes
+  const notifyBounds = useCallback(() => {
+    const map = mapInstanceRef.current;
+    if (!map || !onBoundsChangeRef.current) return;
+    try {
+      const b = map.getBounds();
+      onBoundsChangeRef.current({
+        north: b.getNorth(),
+        south: b.getSouth(),
+        east: b.getEast(),
+        west: b.getWest(),
+      });
+    } catch {
+      // Map may not be ready or detached
+    }
+  }, []);
+
+  // Map instance lifecycle
   useEffect(() => {
     if (!mapContainerRef.current || mapInstanceRef.current) return;
 
@@ -343,21 +619,52 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     // Clicking anywhere on empty map deselects active SPBU
     map.on('click', (e) => {
       const target = e.originalEvent.target as HTMLElement;
-      if (!target.closest('.custom-spbu-marker') && !target.closest('.leaflet-popup')) {
+      if (
+        !target.closest('.custom-spbu-marker') &&
+        !target.closest('.custom-spbu-cluster') &&
+        !target.closest('.leaflet-popup')
+      ) {
         onSelectSpbuRef.current(null);
       }
     });
 
+    // Re-cluster markers on zoom or pan
+    map.on('moveend zoomend', () => {
+      updateMarkersRef.current();
+      notifyBounds();
+    });
+
     mapInstanceRef.current = map;
+
+    // Initial marker render & initial bounds notification
+    updateMarkersRef.current();
+    notifyBounds();
 
     return () => {
       map.remove();
       mapInstanceRef.current = null;
     };
-  }, []);
+  }, [notifyBounds]);
 
-  // 1b. Robust event delegation on the map container (capture phase)
-  // Guarantees clicks on CCTV, Report, and Close inside popups always trigger reliably
+  // Synchronize markers and adapt viewport when spatial cluster index recalculates
+  useEffect(() => {
+    updateMarkersRef.current();
+
+    const map = mapInstanceRef.current;
+    const currentSpbus = spbusRef.current;
+    if (map && currentSpbus.length > 0 && currentSpbus.length < 100) {
+      const latLngs = currentSpbus.map(
+        (s) => [s.coordinates.lat, s.coordinates.lng] as [number, number]
+      );
+      const bounds = L.latLngBounds(latLngs);
+      if (bounds.isValid()) {
+        map.fitBounds(bounds, { padding: [48, 48], maxZoom: 14 });
+      }
+    }
+    notifyBounds();
+  }, [clusterIndex, notifyBounds]);
+
+  // Event delegation on the map container
   useEffect(() => {
     const container = mapContainerRef.current;
     if (!container) return;
@@ -366,14 +673,14 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
       const target = e.target as HTMLElement | null;
       if (!target) return;
 
-      // A. CCTV Button (either inside popup or directly on the pin badge)
+      // A. CCTV Button
       const cctvTrigger = target.closest('.spbu-popup-cctv-btn, .cctv-click-trigger') as HTMLElement | null;
       if (cctvTrigger) {
         e.preventDefault();
         e.stopPropagation();
         const spbuId = cctvTrigger.getAttribute('data-spbu-id');
         const targetSpbu = spbusRef.current.find((s) => s.id === spbuId);
-        if (targetSpbu && targetSpbu.cctv.hasCCTV) {
+        if (targetSpbu) {
           onOpenCCTVRef.current(targetSpbu);
         }
         return;
@@ -406,87 +713,55 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
     };
   }, []);
 
-  // 2. Render Markers and bind Popups directly on coordinates
+  // Highlight, flyTo, and center selected marker safely
   useEffect(() => {
     const map = mapInstanceRef.current;
     if (!map) return;
-
-    // Clear previous markers
-    markersRef.current.forEach((marker) => marker.remove());
-    markersRef.current.clear();
-
-    spbus.forEach((spbu) => {
-      const isSelected = selectedSpbu?.id === spbu.id;
-      const icon = createMarkerIcon(spbu, isSelected);
-
-      const marker = L.marker([spbu.coordinates.lat, spbu.coordinates.lng], {
-        icon,
-        zIndexOffset: isSelected ? 1000 : 100,
-      }).addTo(map);
-
-      // Create Leaflet Popup anchored directly above the marker pin
-      const popup = L.popup({
-        offset: [0, -60],
-        className: 'custom-spbu-popup',
-        closeButton: true,
-        autoPan: true,
-        autoPanPaddingTopLeft: [24, 24],
-        autoPanPaddingBottomRight: [24, 24],
-        maxWidth: 320,
-        minWidth: 280,
-      }).setContent(createPopupHtml(spbu, getDistanceStr(spbu)));
-
-      marker.bindPopup(popup);
-
-      // Handle marker click: check if user clicked CCTV badge or the pin
-      marker.on('click', (e) => {
-        L.DomEvent.stopPropagation(e);
-        const nativeEvent = e.originalEvent as MouseEvent;
-        const target = nativeEvent.target as HTMLElement;
-
-        if (target && target.closest('.cctv-click-trigger') && spbu.cctv.hasCCTV) {
-          onOpenCCTVRef.current(spbu);
-        } else {
-          onSelectSpbuRef.current(spbu);
-        }
-      });
-
-      markersRef.current.set(spbu.id, marker);
-    });
-  }, [spbus, userLocation]);
-
-  // 3. React to selectedSpbu changes (update icon styling, pan smoothly, and open popup on the marker)
-  useEffect(() => {
-    const map = mapInstanceRef.current;
-    if (!map) return;
-
-    // Update icons for all markers to highlight selected
-    spbus.forEach((spbu) => {
-      const marker = markersRef.current.get(spbu.id);
-      if (marker) {
-        const isSelected = selectedSpbu?.id === spbu.id;
-        marker.setIcon(createMarkerIcon(spbu, isSelected));
-        marker.setZIndexOffset(isSelected ? 1000 : 100);
-      }
-    });
 
     if (selectedSpbu) {
-      const marker = markersRef.current.get(selectedSpbu.id);
-      if (marker) {
-        map.flyTo([selectedSpbu.coordinates.lat, selectedSpbu.coordinates.lng], 15, {
-          duration: 0.6,
-        });
+      const openMarkerPopup = () => {
+        updateMarkersRef.current();
+        const marker = markersRef.current.get(`spbu-${selectedSpbu.id}`);
+        if (marker && map.hasLayer(marker)) {
+          try {
+            const popup = marker.getPopup();
+            if (popup) {
+              popup.setContent(createPopupHtml(selectedSpbu, getDistanceStr(selectedSpbu)));
+              marker.openPopup();
+            }
+          } catch (err) {
+            console.warn('Popup open suppressed during animation:', err);
+          }
+        }
+      };
 
-        // Update popup content with latest distance and data
-        marker.getPopup()?.setContent(createPopupHtml(selectedSpbu, getDistanceStr(selectedSpbu)));
-        marker.openPopup();
+      const targetZoom = Math.max(map.getZoom(), 15);
+      const currentCenter = map.getCenter();
+      const isAlreadyCentered =
+        Math.abs(currentCenter.lat - selectedSpbu.coordinates.lat) < 0.0001 &&
+        Math.abs(currentCenter.lng - selectedSpbu.coordinates.lng) < 0.0001 &&
+        map.getZoom() >= 15;
+
+      if (isAlreadyCentered) {
+        openMarkerPopup();
+      } else {
+        const handlePanEnd = () => {
+          map.off('moveend', handlePanEnd);
+          openMarkerPopup();
+        };
+
+        map.once('moveend', handlePanEnd);
+        map.flyTo([selectedSpbu.coordinates.lat, selectedSpbu.coordinates.lng], targetZoom, {
+          duration: 0.5,
+        });
       }
     } else {
       map.closePopup();
+      updateMarkersRef.current();
     }
-  }, [selectedSpbu]);
+  }, [selectedSpbu, getDistanceStr]);
 
-  // 4. Render user GPS location
+  // User GPS location indicator
   useEffect(() => {
     const map = mapInstanceRef.current;
     if (!map) return;
@@ -500,6 +775,7 @@ export const SPBUMap: React.FC<SPBUMapProps> = ({
       } else {
         userMarkerRef.current.setLatLng([userLocation.lat, userLocation.lng]);
       }
+      updateMarkersRef.current();
     }
   }, [userLocation]);
 

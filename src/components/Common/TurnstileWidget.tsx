@@ -178,8 +178,8 @@ export const TurnstileWidget: React.FC<TurnstileWidgetProps> = ({
           Verifikasi Keamanan Turnstile
         </span>
         {isVerifying && !isVerified && !errorMessage && (
-          <span className="flex items-center gap-1 text-[10px] text-zinc-400">
-            <Loader2 className="w-3 h-3 animate-spin text-zinc-500" />
+          <span className="flex items-center gap-1 text-[10px] text-zinc-600 font-medium">
+            <Loader2 className="w-3 h-3 animate-spin text-zinc-600" />
             Memeriksa...
           </span>
         )}

@@ -1,0 +1,1275 @@
+{
+  "gianyarList": [
+    {
+      "id": "512355161",
+      "coord": {
+        "lat": -8.5241915,
+        "lng": 115.2637147
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "building": "roof",
+        "building:levels": "1",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Made Lebah",
+      "village": "Mas",
+      "district": "Ubud",
+      "fullAddress": "Jalan Made Lebah, Mas, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "514001663",
+      "coord": {
+        "lat": -8.5277397,
+        "lng": 115.2437777
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "building": "yes",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Raya Tebongkang",
+      "village": "Singakerta",
+      "district": "Ubud",
+      "fullAddress": "Jalan Raya Tebongkang, Singakerta, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "514011012",
+      "coord": {
+        "lat": -8.5262808,
+        "lng": 115.2950609
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "compressed_air": "yes",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Raya Bedulu",
+      "village": "Bedulu",
+      "district": "Blahbatuh",
+      "fullAddress": "Jalan Raya Bedulu, Bedulu, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "545825031",
+      "coord": {
+        "lat": -8.5052259,
+        "lng": 115.2716923
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "building": "roof",
+        "name": "Pertamina 54.805.20"
+      },
+      "road": "Jalan Raya Andong",
+      "village": "Peliatan",
+      "district": "Ubud",
+      "fullAddress": "Jalan Raya Andong, Peliatan, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "1087957090",
+      "coord": {
+        "lat": -8.5366361,
+        "lng": 115.3334269
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Bukit Jati",
+      "village": "Samplangan",
+      "district": "Gianyar",
+      "fullAddress": "Jalan Bukit Jati, Samplangan, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "1489545694",
+      "coord": {
+        "lat": -8.5483293,
+        "lng": 115.3084164
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "layer": "1",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Dharma Giri",
+      "village": "Buruan",
+      "district": "Blahbatuh",
+      "fullAddress": "Jalan Dharma Giri, Buruan, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "1532743149",
+      "coord": {
+        "lat": -8.5413513,
+        "lng": 115.3210918
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "layer": "1",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Dharma Giri",
+      "village": "Gianyar",
+      "district": "Gianyar",
+      "fullAddress": "Jalan Dharma Giri, Gianyar, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "1963471597",
+      "coord": {
+        "lat": -8.6023075,
+        "lng": 115.2608468
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "compressed_air": "yes"
+      },
+      "road": "Jalan Raya Celuk",
+      "village": "Singapadu",
+      "district": "Sukawati",
+      "fullAddress": "Jalan Raya Celuk, Singapadu, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "3530974108",
+      "coord": {
+        "lat": -8.5231597,
+        "lng": 115.2759405
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "compressed_air": "yes",
+        "name": "Pertamina 54.805.12",
+        "opening_hours": "Mo-Su 05:00-22:00"
+      },
+      "road": "Gang Gandenlangu",
+      "village": "Peliatan",
+      "district": "Ubud",
+      "fullAddress": "Gang Gandenlangu, Peliatan, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "3791297306",
+      "coord": {
+        "lat": -8.5349986,
+        "lng": 115.306609
+      },
+      "osmTags": {
+        "addr:street": "Jalan Raya Semebaung",
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "compressed_air": "yes",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Raya Semebaung",
+      "village": "Bedulu",
+      "district": "Blahbatuh",
+      "fullAddress": "Jalan Raya Semebaung, Bedulu, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "4198773706",
+      "coord": {
+        "lat": -8.5748859,
+        "lng": 115.2762409
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "fuel:diesel": "yes",
+        "fuel:octane_88": "yes",
+        "fuel:octane_92": "yes",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Raya Sukawati",
+      "village": "Batuan Kaler",
+      "district": "Sukawati",
+      "fullAddress": "Jalan Raya Sukawati, Batuan Kaler, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "4198773752",
+      "coord": {
+        "lat": -8.5668758,
+        "lng": 115.2747603
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Raya Sukawati",
+      "village": "Batuan Kaler",
+      "district": "Sukawati",
+      "fullAddress": "Jalan Raya Sukawati, Batuan Kaler, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "4446960858",
+      "coord": {
+        "lat": -8.6018053,
+        "lng": 115.3247915
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pertamina"
+      },
+      "road": "Profesor Ida Bagus Mantra Bypass",
+      "village": "Pering",
+      "district": "Blahbatuh",
+      "fullAddress": "Profesor Ida Bagus Mantra Bypass, Pering, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "4446961398",
+      "coord": {
+        "lat": -8.581006,
+        "lng": 115.3526184
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "Pertamina"
+      },
+      "road": "Profesor Ida Bagus Mantra Bypass",
+      "village": "Lebih",
+      "district": "Gianyar",
+      "fullAddress": "Profesor Ida Bagus Mantra Bypass, Lebih, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "4467737446",
+      "coord": {
+        "lat": -8.5538112,
+        "lng": 115.2515009
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Raya Singapadu",
+      "village": "Singapadu Kaler",
+      "district": "Sukawati",
+      "fullAddress": "Jalan Raya Singapadu, Singapadu Kaler, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "4467738292",
+      "coord": {
+        "lat": -8.4627372,
+        "lng": 115.2976035
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "compressed_air": "yes",
+        "name": "Pertamina"
+      },
+      "road": "4",
+      "village": "Sanding",
+      "district": "Tampaksiring",
+      "fullAddress": "4, Sanding, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "4593501492",
+      "coord": {
+        "lat": -8.5655166,
+        "lng": 115.2880082
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "name": "Pertamina",
+        "name:en": "Pompa bensin kemenuh"
+      },
+      "road": "Jalan Raya Kemenuh",
+      "village": "Kemenuh",
+      "district": "Sukawati",
+      "fullAddress": "Jalan Raya Kemenuh, Kemenuh, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "4593501496",
+      "coord": {
+        "lat": -8.5662499,
+        "lng": 115.3049769
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "Pom bensin blahbatuh"
+      },
+      "road": "Jalan Desa Pering",
+      "village": "Blahbatuh",
+      "district": "Blahbatuh",
+      "fullAddress": "Jalan Desa Pering, Blahbatuh, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "4593535189",
+      "coord": {
+        "lat": -8.5287952,
+        "lng": 115.2717137
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pelumas Pertamina 54.805.09",
+        "opening_hours": "Mo-Su 05:00-21:30"
+      },
+      "road": "Jalan Cok Rai Pudak",
+      "village": "Peliatan",
+      "district": "Ubud",
+      "fullAddress": "Jalan Cok Rai Pudak, Peliatan, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "4593932704",
+      "coord": {
+        "lat": -8.6121569,
+        "lng": 115.3092889
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "description": "Pompa bensin purnama",
+        "name": "Pertamina",
+        "name:en": "Pertamina"
+      },
+      "road": "Jalan Profesor Ida Bagus Mantra",
+      "village": "Sukawati",
+      "district": "Sukawati",
+      "fullAddress": "Jalan Profesor Ida Bagus Mantra, Sukawati, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "4707866590",
+      "coord": {
+        "lat": -8.40877,
+        "lng": 115.2448962
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Raya Payangan",
+      "village": "Puhu",
+      "district": "Payangan",
+      "fullAddress": "Jalan Raya Payangan, Puhu, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "5017453423",
+      "coord": {
+        "lat": -8.563332,
+        "lng": 115.261646
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Raya Mawang",
+      "village": "Lodtunduh",
+      "district": "Ubud",
+      "fullAddress": "Jalan Raya Mawang, Lodtunduh, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "6286590885",
+      "coord": {
+        "lat": -8.451204,
+        "lng": 115.3184907
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Gang Dahlia",
+      "village": "Petak Kaja",
+      "district": "Gianyar",
+      "fullAddress": "Gang Dahlia, Petak Kaja, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "6355894185",
+      "coord": {
+        "lat": -8.447857,
+        "lng": 115.2805724
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan I Wayan Lunga",
+      "village": "Tegallalang",
+      "district": "Tegallalang",
+      "fullAddress": "Jalan I Wayan Lunga, Tegallalang, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "6355907290",
+      "coord": {
+        "lat": -8.4523559,
+        "lng": 115.279707
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan I Wayan Lunga",
+      "village": "Tegallalang",
+      "district": "Tegallalang",
+      "fullAddress": "Jalan I Wayan Lunga, Tegallalang, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "6712210032",
+      "coord": {
+        "lat": -8.4396411,
+        "lng": 115.3081128
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "compressed_air": "no",
+        "name": "Pertamina"
+      },
+      "road": "4",
+      "village": "Tampaksiring",
+      "district": "Tampaksiring",
+      "fullAddress": "4, Tampaksiring, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "9274481126",
+      "coord": {
+        "lat": -8.4154523,
+        "lng": 115.2807412
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "name": "Pertamina"
+      },
+      "road": "Jalan I Wayan Lunga",
+      "village": "Sebatu",
+      "district": "Tegallalang",
+      "fullAddress": "Jalan I Wayan Lunga, Sebatu, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "9464806554",
+      "coord": {
+        "lat": -8.4185343,
+        "lng": 115.2983646
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "compressed_air": "yes",
+        "name": "Pertamina"
+      },
+      "road": "Jala Raya Desa Kenderan",
+      "village": "Kedisan",
+      "district": "Tegallalang",
+      "fullAddress": "Jala Raya Desa Kenderan, Kedisan, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "11033884336",
+      "coord": {
+        "lat": -8.4239732,
+        "lng": 115.2462734
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Raya Payangan",
+      "village": "Melinggih",
+      "district": "Payangan",
+      "fullAddress": "Jalan Raya Payangan, Melinggih, Gianyar",
+      "region": "Gianyar"
+    },
+    {
+      "id": "9498002342",
+      "coord": {
+        "lat": -8.3294926,
+        "lng": 115.3256533
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "brand:wikipedia": "en:Pertamina",
+        "name": "Pertamina"
+      },
+      "road": "Jalan I Wayan Lunga",
+      "village": "Sebatu",
+      "district": "Tegallalang",
+      "fullAddress": "Jalan I Wayan Lunga, Sebatu, Gianyar",
+      "region": "Gianyar"
+    }
+  ],
+  "bulelengList": [
+    {
+      "id": "509984088",
+      "coord": {
+        "lat": -8.1024654,
+        "lng": 115.2836325
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "building:part": "roof",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Raya Singaraja - Amlapura",
+      "village": "Sembiran",
+      "district": "Tejakula",
+      "fullAddress": "Jalan Raya Singaraja - Amlapura, Sembiran, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "559976070",
+      "coord": {
+        "lat": -8.2151865,
+        "lng": 114.9401671
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "SPBU"
+      },
+      "road": "Jalan Raya Seririt-Pupuan",
+      "village": "Bubunan",
+      "district": "Seririt",
+      "fullAddress": "Jalan Raya Seririt-Pupuan, Bubunan, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "560893611",
+      "coord": {
+        "lat": -8.1933082,
+        "lng": 114.9222581
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "yes",
+        "name": "SPBU"
+      },
+      "road": "1",
+      "village": "Lokapaksa",
+      "district": "Seririt",
+      "fullAddress": "1, Lokapaksa, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "1121908173",
+      "coord": {
+        "lat": -8.22624,
+        "lng": 114.9448347
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof"
+      },
+      "road": "Jalan Raya Seririt-Pupuan",
+      "village": "Ringdikit",
+      "district": "Seririt",
+      "fullAddress": "Jalan Raya Seririt-Pupuan, Ringdikit, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "1184213626",
+      "coord": {
+        "lat": -8.1352895,
+        "lng": 115.1013777
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Gajah Mada",
+      "village": "Ambengan",
+      "district": "Sukasada",
+      "fullAddress": "Jalan Gajah Mada, Ambengan, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "1447743524",
+      "coord": {
+        "lat": -8.1489524,
+        "lng": 114.6323875
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "compressed_air": "yes"
+      },
+      "road": "Jalan Seririt-Gilimanuk",
+      "village": "Pemuteran",
+      "district": "Gerokgak",
+      "fullAddress": "Jalan Seririt-Gilimanuk, Pemuteran, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "2847473231",
+      "coord": {
+        "lat": -8.1863162,
+        "lng": 114.9774711
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "yes",
+        "name": "SPBU"
+      },
+      "road": "Jalan Seririt-Singaraja",
+      "village": "Dencarik",
+      "district": "Banjar",
+      "fullAddress": "Jalan Seririt-Singaraja, Dencarik, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "3299570661",
+      "coord": {
+        "lat": -8.1910932,
+        "lng": 114.9326709
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "SPBU"
+      },
+      "road": "1",
+      "village": "Seririt",
+      "district": "Seririt",
+      "fullAddress": "1, Seririt, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "3754488727",
+      "coord": {
+        "lat": -8.0824813,
+        "lng": 115.1432434
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "addr:place": "Pertamina Giri Emas Gas Station",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "building": "yes",
+        "name": "Pertamina Giri Emas Gas Station",
+        "shop": "gas"
+      },
+      "road": "Jalan Raya Amlapura-Singaraja",
+      "village": "Giri Emas",
+      "district": "Sawan",
+      "fullAddress": "Jalan Raya Amlapura-Singaraja, Giri Emas, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "3754488728",
+      "coord": {
+        "lat": -8.1450122,
+        "lng": 115.0499465
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "fuel:diesel": "yes",
+        "fuel:octane_88": "yes",
+        "fuel:octane_92": "yes",
+        "fuel:octane_95": "yes",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Seririt-Singaraja",
+      "village": "Tukadmungga",
+      "district": "Buleleng",
+      "fullAddress": "Jalan Seririt-Singaraja, Tukadmungga, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "3754491925",
+      "coord": {
+        "lat": -8.1152738,
+        "lng": 115.0797277
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044",
+        "fuel:octane_88": "yes",
+        "fuel:octane_92": "yes",
+        "fuel:octane_95": "yes",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Sudirman",
+      "village": "Banyuasri",
+      "district": "Buleleng",
+      "fullAddress": "Jalan Sudirman, Banyuasri, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "4368999206",
+      "coord": {
+        "lat": -8.2646029,
+        "lng": 115.0512955
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Pura Puseh",
+      "village": "Munduk",
+      "district": "Banjar",
+      "fullAddress": "Jalan Pura Puseh, Munduk, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "4467738625",
+      "coord": {
+        "lat": -8.1772879,
+        "lng": 114.7500647
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Petrolimex",
+        "brand:wikidata": "Q10831598",
+        "name": "Petrolimex"
+      },
+      "road": "1",
+      "village": "Musi",
+      "district": "Gerokgak",
+      "fullAddress": "1, Musi, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "4467739093",
+      "coord": {
+        "lat": -8.2038795,
+        "lng": 114.8840471
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "Cửa hàng Xăng dầu",
+        "building": "roof",
+        "name:en": "Fuel Station"
+      },
+      "road": "Jalan Seririt-Gilmanuk",
+      "village": "Banjarasem",
+      "district": "Seririt",
+      "fullAddress": "Jalan Seririt-Gilmanuk, Banjarasem, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "4704509289",
+      "coord": {
+        "lat": -8.1918108,
+        "lng": 114.9500563
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "SPBU",
+        "building": "yes"
+      },
+      "road": "Jalan Seririt-Singaraja",
+      "village": "Tangguwisia",
+      "district": "Seririt",
+      "fullAddress": "Jalan Seririt-Singaraja, Tangguwisia, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "5052517732",
+      "coord": {
+        "lat": -8.1647348,
+        "lng": 115.0213127
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Seririt-Singaraja",
+      "village": "Kaliasem",
+      "district": "Banjar",
+      "fullAddress": "Jalan Seririt-Singaraja, Kaliasem, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "5419297521",
+      "coord": {
+        "lat": -8.2859623,
+        "lng": 114.9768109
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Raya Seririt-Pupuan",
+      "village": "Subuk",
+      "district": "Busungbiu",
+      "fullAddress": "Jalan Raya Seririt-Pupuan, Subuk, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "5651550475",
+      "coord": {
+        "lat": -8.2006978,
+        "lng": 114.8321428
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Seririt-Gilmanuk",
+      "village": "Pengulon",
+      "district": "Gerokgak",
+      "fullAddress": "Jalan Seririt-Gilmanuk, Pengulon, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "5755867921",
+      "coord": {
+        "lat": -8.2664614,
+        "lng": 115.0547153
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "Pertamina",
+        "brand": "Pertamina",
+        "brand:wikidata": "Q1641044"
+      },
+      "road": "Jalan Pura Puseh",
+      "village": "Munduk",
+      "district": "Banjar",
+      "fullAddress": "Jalan Pura Puseh, Munduk, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "6178072124",
+      "coord": {
+        "lat": -8.0952781,
+        "lng": 115.1117625
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Surapati",
+      "village": "Penarukan",
+      "district": "Buleleng",
+      "fullAddress": "Jalan Surapati, Penarukan, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "6611231166",
+      "coord": {
+        "lat": -8.1272096,
+        "lng": 115.0792969
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "Pompa Bensin"
+      },
+      "road": "Jalan Laksamana",
+      "village": "Baktiseraga",
+      "district": "Buleleng",
+      "fullAddress": "Jalan Laksamana, Baktiseraga, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "6611231167",
+      "coord": {
+        "lat": -8.1131501,
+        "lng": 115.082669
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "Pertamina",
+        "addr:street": "Jl. A Yani"
+      },
+      "road": "Jalan A. Yani",
+      "village": "Kaliuntu",
+      "district": "Buleleng",
+      "fullAddress": "Jalan A. Yani, Kaliuntu, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "7105955685",
+      "coord": {
+        "lat": -8.0853331,
+        "lng": 115.1751487
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Raya Penelokan",
+      "village": "Kubutambahan",
+      "district": "Kubutambahan",
+      "fullAddress": "Jalan Raya Penelokan, Kubutambahan, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "7622285885",
+      "coord": {
+        "lat": -8.3270538,
+        "lng": 115.2226649
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Raya Pelaga",
+      "village": "Pelaga",
+      "district": "Petang",
+      "fullAddress": "Jalan Raya Pelaga, Pelaga, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "10798201666",
+      "coord": {
+        "lat": -8.2370115,
+        "lng": 115.1385918
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina"
+      },
+      "road": "Jalan Wanagiri",
+      "village": "Wanagiri",
+      "district": "Sukasada",
+      "fullAddress": "Jalan Wanagiri, Wanagiri, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "10799072563",
+      "coord": {
+        "lat": -8.1758946,
+        "lng": 115.0036354
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "brand": "Pertamina",
+        "building": "roof",
+        "name": "Cửa hàng Xăng dầu",
+        "name:en": "Fuel Station"
+      },
+      "road": "Jalan Seririt-Singaraja",
+      "village": "Temukus",
+      "district": "Banjar",
+      "fullAddress": "Jalan Seririt-Singaraja, Temukus, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "11012490778",
+      "coord": {
+        "lat": -8.1409354,
+        "lng": 115.2002801
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Raya Penelokan",
+      "village": "Tajun",
+      "district": "Kubutambahan",
+      "fullAddress": "Jalan Raya Penelokan, Tajun, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "11012542529",
+      "coord": {
+        "lat": -8.1184926,
+        "lng": 115.1872771
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Raya Penelokan",
+      "village": "Bila",
+      "district": "Kubutambahan",
+      "fullAddress": "Jalan Raya Penelokan, Bila, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "11012542530",
+      "coord": {
+        "lat": -8.1390142,
+        "lng": 115.2138198
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Raya Penelokan",
+      "village": "Tajun",
+      "district": "Kubutambahan",
+      "fullAddress": "Jalan Raya Penelokan, Tajun, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "11033884333",
+      "coord": {
+        "lat": -8.1263869,
+        "lng": 115.2167509
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Raya Penelokan",
+      "village": "Tamblang",
+      "district": "Kubutambahan",
+      "fullAddress": "Jalan Raya Penelokan, Tamblang, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "11033915359",
+      "coord": {
+        "lat": -8.0917582,
+        "lng": 115.1758923
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Raya Penelokan",
+      "village": "Bila",
+      "district": "Kubutambahan",
+      "fullAddress": "Jalan Raya Penelokan, Bila, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "11033915360",
+      "coord": {
+        "lat": -8.1312581,
+        "lng": 115.2103401
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Raya Penelokan",
+      "village": "Tamblang",
+      "district": "Kubutambahan",
+      "fullAddress": "Jalan Raya Penelokan, Tamblang, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "11048153450",
+      "coord": {
+        "lat": -8.1498823,
+        "lng": 115.057153
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "fuel:octane_92": "yes",
+        "name": "PetraMINA"
+      },
+      "road": "Jalan Buleleng 1",
+      "village": "Tukadmungga",
+      "district": "Buleleng",
+      "fullAddress": "Jalan Buleleng 1, Tukadmungga, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "11954796697",
+      "coord": {
+        "lat": -8.2703177,
+        "lng": 115.0615534
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Pura Puseh",
+      "village": "Munduk",
+      "district": "Banjar",
+      "fullAddress": "Jalan Pura Puseh, Munduk, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "11954796698",
+      "coord": {
+        "lat": -8.2728105,
+        "lng": 115.0573748
+      },
+      "osmTags": {
+        "amenity": "fuel"
+      },
+      "road": "Jalan Pura Puseh",
+      "village": "Munduk",
+      "district": "Banjar",
+      "fullAddress": "Jalan Pura Puseh, Munduk, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "12252323023",
+      "coord": {
+        "lat": -8.1140255,
+        "lng": 115.1350984
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Cửa hàng Xăng dầu",
+        "name:en": "Fuel Station"
+      },
+      "road": "Gang Srikandi",
+      "village": "Sinabun",
+      "district": "Sawan",
+      "fullAddress": "Gang Srikandi, Sinabun, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "12277190271",
+      "coord": {
+        "lat": -8.1465707,
+        "lng": 115.2472815
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Pertamina"
+      },
+      "road": "Jalan Raya Penelokan",
+      "village": "Tajun",
+      "district": "Kubutambahan",
+      "fullAddress": "Jalan Raya Penelokan, Tajun, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "12287921053",
+      "coord": {
+        "lat": -8.2599613,
+        "lng": 115.0277035
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Fuel Station"
+      },
+      "road": "Gang Durian",
+      "village": "Umejero",
+      "district": "Busungbiu",
+      "fullAddress": "Gang Durian, Umejero, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "12290095501",
+      "coord": {
+        "lat": -8.2529113,
+        "lng": 114.981214
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Cửa hàng Xăng dầu",
+        "name:en": "Fuel Station"
+      },
+      "road": "Jalan Raya Seririt-Pupuan",
+      "village": "Keberan",
+      "district": "Busungbiu",
+      "fullAddress": "Jalan Raya Seririt-Pupuan, Keberan, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "12291632313",
+      "coord": {
+        "lat": -8.2766697,
+        "lng": 114.9708258
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Fuel Station"
+      },
+      "road": "Jalan Raya Seririt-Pupuan",
+      "village": "Subuk",
+      "district": "Busungbiu",
+      "fullAddress": "Jalan Raya Seririt-Pupuan, Subuk, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "12293398519",
+      "coord": {
+        "lat": -8.2661384,
+        "lng": 114.9696464
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "compressed_air": "yes",
+        "name": "Fuel Station"
+      },
+      "road": "Jalan Raya Seririt-Pupuan",
+      "village": "Keberan",
+      "district": "Busungbiu",
+      "fullAddress": "Jalan Raya Seririt-Pupuan, Keberan, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "12293398520",
+      "coord": {
+        "lat": -8.1665389,
+        "lng": 114.5070504
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "name": "Cửa hàng Xăng dầu",
+        "name:en": "Fuel Station"
+      },
+      "road": "1",
+      "village": "Sumberklampok",
+      "district": "Gerokgak",
+      "fullAddress": "1, Sumberklampok, Buleleng",
+      "region": "Buleleng"
+    },
+    {
+      "id": "12293406734",
+      "coord": {
+        "lat": -8.1442322,
+        "lng": 114.5954745
+      },
+      "osmTags": {
+        "amenity": "fuel",
+        "building": "roof",
+        "compressed_air": "no",
+        "name": "Cửa hàng Xăng dầu",
+        "name:en": "Fuel Station"
+      },
+      "road": "1",
+      "village": "Pejarakan",
+      "district": "Gerokgak",
+      "fullAddress": "1, Pejarakan, Buleleng",
+      "region": "Buleleng"
+    }
+  ]
+}

@@ -1,0 +1,1172 @@
+[
+  {
+    "id": "spbu-klungkung-01",
+    "code": "54.807.01",
+    "name": "SPBU Pertamina Kusamba (Dawan)",
+    "address": "Jl. Raya Kusamba / Gunaksa, Kec. Dawan, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Dawan",
+    "coordinates": {
+      "lat": -8.552699,
+      "lng": 115.440282
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 14,
+    "upvotes": 28,
+    "lastReportedAt": "2026-10-15T16:53:47.126Z"
+  },
+  {
+    "id": "spbu-klungkung-02",
+    "code": "54.807.02",
+    "name": "SPBU Pertamina Toya Pakeh (Nusa Penida)",
+    "address": "Jl. Raya Toya Pakeh, Ped, Kec. Nusa Penida, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "coordinates": {
+      "lat": -8.677887,
+      "lng": 115.571781
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 17,
+    "upvotes": 32,
+    "lastReportedAt": "2026-10-15T16:38:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-03",
+    "code": "54.807.03",
+    "name": "SPBU Pertamina Batununggul (Nusa Penida)",
+    "address": "Jl. Raya Batununggul, Kec. Nusa Penida, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "coordinates": {
+      "lat": -8.677071,
+      "lng": 115.532722
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 20,
+    "upvotes": 36,
+    "lastReportedAt": "2026-10-15T16:23:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-04",
+    "code": "54.807.04",
+    "name": "SPBU Pertamina Ped (Nusa Penida)",
+    "address": "Jl. Raya Ped, Kec. Nusa Penida, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "coordinates": {
+      "lat": -8.678882,
+      "lng": 115.490079
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 23,
+    "upvotes": 40,
+    "lastReportedAt": "2026-10-15T16:08:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-05",
+    "code": "54.807.05",
+    "name": "SPBU Pertamina Jungutbatu (Nusa Lembongan)",
+    "address": "Jl. Raya Jungutbatu, Nusa Lembongan, Kec. Nusa Penida, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "coordinates": {
+      "lat": -8.718341,
+      "lng": 115.52295
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 26,
+    "upvotes": 44,
+    "lastReportedAt": "2026-10-15T15:53:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-06",
+    "code": "54.807.06",
+    "name": "SPBU Pertamina Banjarangkan (Klungkung)",
+    "address": "Jl. Raya Banjarangkan / Jl. By Pass Prof. Dr. Ida Bagus Mantra, Kec. Banjarangkan, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Banjarangkan",
+    "coordinates": {
+      "lat": -8.568476,
+      "lng": 115.374625
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 29,
+    "upvotes": 48,
+    "lastReportedAt": "2026-10-15T15:38:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-07",
+    "code": "54.807.07",
+    "name": "SPBU Pertamina Nusa Penida Unit 7",
+    "address": "Jl. Raya Nusa Penida, Kec. Nusa Penida, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "coordinates": {
+      "lat": -8.692811,
+      "lng": 115.449319
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 32,
+    "upvotes": 52,
+    "lastReportedAt": "2026-10-15T15:23:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-08",
+    "code": "54.807.08",
+    "name": "SPBU Pertamina Nusa Penida Unit 8",
+    "address": "Jl. Raya Nusa Penida, Kec. Nusa Penida, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "coordinates": {
+      "lat": -8.688291,
+      "lng": 115.437781
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 15,
+    "upvotes": 56,
+    "lastReportedAt": "2026-10-15T15:08:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-09",
+    "code": "54.807.09",
+    "name": "SPBU Pertamina Banjarangkan (Klungkung)",
+    "address": "Jl. Raya Banjarangkan / Jl. By Pass Prof. Dr. Ida Bagus Mantra, Kec. Banjarangkan, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Banjarangkan",
+    "coordinates": {
+      "lat": -8.522743,
+      "lng": 115.36516
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 18,
+    "upvotes": 60,
+    "lastReportedAt": "2026-10-15T14:53:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-10",
+    "code": "54.807.10",
+    "name": "SPBU Pertamina Nusa Penida Unit 10",
+    "address": "Jl. Raya Nusa Penida, Kec. Nusa Penida, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "coordinates": {
+      "lat": -8.696092,
+      "lng": 115.451926
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 21,
+    "upvotes": 29,
+    "lastReportedAt": "2026-10-15T14:38:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-11",
+    "code": "54.807.11",
+    "name": "SPBU Pertamina Kota Semarapura",
+    "address": "Jl. Diponegoro / Jl. Flamboyan, Semarapura, Kec. Klungkung, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Klungkung",
+    "coordinates": {
+      "lat": -8.510784,
+      "lng": 115.402047
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 24,
+    "upvotes": 33,
+    "lastReportedAt": "2026-10-15T14:23:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-12",
+    "code": "54.807.12",
+    "name": "SPBU Pertamina Kusamba (Dawan)",
+    "address": "Jl. Raya Kusamba / Gunaksa, Kec. Dawan, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Dawan",
+    "coordinates": {
+      "lat": -8.540366,
+      "lng": 115.409884
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 27,
+    "upvotes": 37,
+    "lastReportedAt": "2026-10-15T14:08:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-13",
+    "code": "54.807.13",
+    "name": "SPBU Pertamina Kusamba (Dawan)",
+    "address": "Jl. Raya Kusamba / Gunaksa, Kec. Dawan, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Dawan",
+    "coordinates": {
+      "lat": -8.56466,
+      "lng": 115.416579
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 30,
+    "upvotes": 41,
+    "lastReportedAt": "2026-10-15T13:53:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-14",
+    "code": "54.807.14",
+    "name": "SPBU Pertamina Kusamba (Dawan)",
+    "address": "Jl. Raya Kusamba / Gunaksa, Kec. Dawan, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Dawan",
+    "coordinates": {
+      "lat": -8.567236,
+      "lng": 115.391631
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 33,
+    "upvotes": 45,
+    "lastReportedAt": "2026-10-15T13:38:47.127Z"
+  },
+  {
+    "id": "spbu-klungkung-15",
+    "code": "54.807.15",
+    "name": "SPBU Pertamina Banjarangkan (Klungkung)",
+    "address": "Jl. Raya Banjarangkan / Jl. By Pass Prof. Dr. Ida Bagus Mantra, Kec. Banjarangkan, Kabupaten Klungkung",
+    "regency": "Klungkung",
+    "district": "Banjarangkan",
+    "coordinates": {
+      "lat": -8.550113,
+      "lng": 115.375018
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 16,
+    "upvotes": 49,
+    "lastReportedAt": "2026-10-15T13:23:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-01",
+    "code": "54.808.01",
+    "name": "SPBU Pertamina Raya Abang (Amed)",
+    "address": "Jl. Raya Abang - Culik, Kec. Abang, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Abang",
+    "coordinates": {
+      "lat": -8.477084,
+      "lng": 115.615759
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 16,
+    "upvotes": 32,
+    "lastReportedAt": "2026-10-15T16:53:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-02",
+    "code": "54.808.02",
+    "name": "SPBU Pertamina Kota Amlapura",
+    "address": "Jl. Veteran / Jl. Sudirman, Amlapura, Kec. Karangasem, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "coordinates": {
+      "lat": -8.437493,
+      "lng": 115.592817
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 18,
+    "upvotes": 35,
+    "lastReportedAt": "2026-10-15T16:40:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-03",
+    "code": "54.808.03",
+    "name": "SPBU Pertamina Kota Amlapura",
+    "address": "Jl. Veteran / Jl. Sudirman, Amlapura, Kec. Karangasem, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "coordinates": {
+      "lat": -8.404347,
+      "lng": 115.588417
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 20,
+    "upvotes": 38,
+    "lastReportedAt": "2026-10-15T16:27:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-04",
+    "code": "54.808.04",
+    "name": "SPBU Pertamina Candidasa (Manggis)",
+    "address": "Jl. Raya Candidasa - Sengkidu, Kec. Manggis, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Manggis",
+    "coordinates": {
+      "lat": -8.54693,
+      "lng": 115.485918
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 22,
+    "upvotes": 41,
+    "lastReportedAt": "2026-10-15T16:14:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-05",
+    "code": "54.808.05",
+    "name": "SPBU Pertamina Padangbai (Manggis)",
+    "address": "Jl. Raya Padangbai / Pelabuhan, Kec. Manggis, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Manggis",
+    "coordinates": {
+      "lat": -8.511795,
+      "lng": 115.501879
+    },
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 40,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 24,
+    "upvotes": 44,
+    "lastReportedAt": "2026-10-15T16:01:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-06",
+    "code": "54.808.06",
+    "name": "SPBU Pertamina Candidasa (Manggis)",
+    "address": "Jl. Raya Candidasa - Sengkidu, Kec. Manggis, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Manggis",
+    "coordinates": {
+      "lat": -8.503463,
+      "lng": 115.558339
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 26,
+    "upvotes": 47,
+    "lastReportedAt": "2026-10-15T15:48:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-07",
+    "code": "54.808.07",
+    "name": "SPBU Pertamina Bebandem (Karangasem)",
+    "address": "Jl. Raya Bebandem, Kec. Bebandem, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Bebandem",
+    "coordinates": {
+      "lat": -8.234539,
+      "lng": 115.55207
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 28,
+    "upvotes": 50,
+    "lastReportedAt": "2026-10-15T15:35:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-08",
+    "code": "54.808.08",
+    "name": "SPBU Pertamina Kota Amlapura",
+    "address": "Jl. Veteran / Jl. Sudirman, Amlapura, Kec. Karangasem, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "coordinates": {
+      "lat": -8.402007,
+      "lng": 115.589692
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 30,
+    "upvotes": 53,
+    "lastReportedAt": "2026-10-15T15:22:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-09",
+    "code": "54.808.09",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.362877,
+      "lng": 115.346094
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 32,
+    "upvotes": 56,
+    "lastReportedAt": "2026-10-15T15:09:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-10",
+    "code": "54.808.10",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.32279,
+      "lng": 115.61914
+    },
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 40,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 34,
+    "upvotes": 59,
+    "lastReportedAt": "2026-10-15T14:56:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-11",
+    "code": "54.808.11",
+    "name": "SPBU Pertamina Kota Amlapura",
+    "address": "Jl. Veteran / Jl. Sudirman, Amlapura, Kec. Karangasem, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "coordinates": {
+      "lat": -8.426923,
+      "lng": 115.683947
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 36,
+    "upvotes": 62,
+    "lastReportedAt": "2026-10-15T14:43:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-12",
+    "code": "54.808.12",
+    "name": "SPBU Pertamina Kota Amlapura",
+    "address": "Jl. Veteran / Jl. Sudirman, Amlapura, Kec. Karangasem, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "coordinates": {
+      "lat": -8.443711,
+      "lng": 115.578829
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 38,
+    "upvotes": 65,
+    "lastReportedAt": "2026-10-15T14:30:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-13",
+    "code": "54.808.13",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.428359,
+      "lng": 115.423317
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 40,
+    "upvotes": 68,
+    "lastReportedAt": "2026-10-15T14:17:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-14",
+    "code": "54.808.14",
+    "name": "SPBU Pertamina Rendang (Besakih)",
+    "address": "Jl. Raya Rendang - Besakih, Kec. Rendang, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Rendang",
+    "coordinates": {
+      "lat": -8.177124,
+      "lng": 115.464716
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 17,
+    "upvotes": 71,
+    "lastReportedAt": "2026-10-15T14:04:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-15",
+    "code": "54.808.15",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.437726,
+      "lng": 115.479388
+    },
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 40,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 19,
+    "upvotes": 34,
+    "lastReportedAt": "2026-10-15T13:51:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-16",
+    "code": "54.808.16",
+    "name": "SPBU Pertamina Kota Amlapura",
+    "address": "Jl. Veteran / Jl. Sudirman, Amlapura, Kec. Karangasem, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "coordinates": {
+      "lat": -8.415186,
+      "lng": 115.579307
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 21,
+    "upvotes": 37,
+    "lastReportedAt": "2026-10-15T13:38:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-17",
+    "code": "54.808.17",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.426173,
+      "lng": 115.441495
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 23,
+    "upvotes": 40,
+    "lastReportedAt": "2026-10-15T13:25:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-18",
+    "code": "54.808.18",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.403676,
+      "lng": 115.420963
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 25,
+    "upvotes": 43,
+    "lastReportedAt": "2026-10-15T13:12:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-19",
+    "code": "54.808.19",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.36758,
+      "lng": 115.700051
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 27,
+    "upvotes": 46,
+    "lastReportedAt": "2026-10-15T12:59:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-20",
+    "code": "54.808.20",
+    "name": "SPBU Pertamina Raya Abang (Amed)",
+    "address": "Jl. Raya Abang - Culik, Kec. Abang, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Abang",
+    "coordinates": {
+      "lat": -8.390673,
+      "lng": 115.597489
+    },
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 40,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 29,
+    "upvotes": 49,
+    "lastReportedAt": "2026-10-15T12:46:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-21",
+    "code": "54.808.21",
+    "name": "SPBU Pertamina Kota Amlapura",
+    "address": "Jl. Veteran / Jl. Sudirman, Amlapura, Kec. Karangasem, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "coordinates": {
+      "lat": -8.421672,
+      "lng": 115.683429
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 31,
+    "upvotes": 52,
+    "lastReportedAt": "2026-10-15T12:33:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-22",
+    "code": "54.808.22",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.340628,
+      "lng": 115.619111
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 33,
+    "upvotes": 55,
+    "lastReportedAt": "2026-10-15T12:20:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-23",
+    "code": "54.808.23",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.374161,
+      "lng": 115.705365
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 35,
+    "upvotes": 58,
+    "lastReportedAt": "2026-10-15T12:07:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-24",
+    "code": "54.808.24",
+    "name": "SPBU Pertamina Kota Amlapura",
+    "address": "Jl. Veteran / Jl. Sudirman, Amlapura, Kec. Karangasem, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "coordinates": {
+      "lat": -8.452921,
+      "lng": 115.651987
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 37,
+    "upvotes": 61,
+    "lastReportedAt": "2026-10-15T11:54:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-25",
+    "code": "54.808.25",
+    "name": "SPBU Pertamina Kota Amlapura",
+    "address": "Jl. Veteran / Jl. Sudirman, Amlapura, Kec. Karangasem, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "coordinates": {
+      "lat": -8.426412,
+      "lng": 115.680917
+    },
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 40,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 39,
+    "upvotes": 64,
+    "lastReportedAt": "2026-10-15T11:41:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-26",
+    "code": "54.808.26",
+    "name": "SPBU Pertamina Candidasa (Manggis)",
+    "address": "Jl. Raya Candidasa - Sengkidu, Kec. Manggis, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Manggis",
+    "coordinates": {
+      "lat": -8.531442,
+      "lng": 115.495927
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 16,
+    "upvotes": 67,
+    "lastReportedAt": "2026-10-15T11:28:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-27",
+    "code": "54.808.27",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.46312,
+      "lng": 115.406025
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "low",
+      "pertamax": "available",
+      "solar": "out_of_stock",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 18,
+    "upvotes": 70,
+    "lastReportedAt": "2026-10-15T11:15:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-28",
+    "code": "54.808.28",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.365274,
+      "lng": 115.419117
+    },
+    "queueLevel": "moderate",
+    "estimatedWaitMinutes": 15,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 20,
+    "upvotes": 33,
+    "lastReportedAt": "2026-10-15T11:02:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-29",
+    "code": "54.808.29",
+    "name": "SPBU Pertamina Kubu (Tulamben)",
+    "address": "Jl. Raya Kubu - Singaraja, Kec. Kubu, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "coordinates": {
+      "lat": -8.485845,
+      "lng": 115.401169
+    },
+    "queueLevel": "smooth",
+    "estimatedWaitMinutes": 5,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 22,
+    "upvotes": 36,
+    "lastReportedAt": "2026-10-15T10:49:47.127Z"
+  },
+  {
+    "id": "spbu-karangasem-30",
+    "code": "54.808.30",
+    "name": "SPBU Pertamina Kota Amlapura",
+    "address": "Jl. Veteran / Jl. Sudirman, Amlapura, Kec. Karangasem, Kabupaten Karangasem",
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "coordinates": {
+      "lat": -8.455642,
+      "lng": 115.60163
+    },
+    "queueLevel": "congested",
+    "estimatedWaitMinutes": 40,
+    "fuelStock": {
+      "pertalite": "available",
+      "pertamax": "available",
+      "solar": "available",
+      "dexlite": "available"
+    },
+    "cctv": {
+      "hasCCTV": false
+    },
+    "reportCount": 24,
+    "upvotes": 39,
+    "lastReportedAt": "2026-10-15T10:36:47.127Z"
+  }
+]

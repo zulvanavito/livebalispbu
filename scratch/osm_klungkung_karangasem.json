@@ -1,0 +1,763 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-10-15T16:48:21Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 1291386618,
+  "lat": -8.4770841,
+  "lon": 115.6157588,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 2148876485,
+  "lat": -8.4374930,
+  "lon": 115.5928175,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "fuel:GTL_diesel": "no",
+    "fuel:HGV_diesel": "no",
+    "fuel:biodiesel": "yes",
+    "fuel:biogas": "no",
+    "fuel:cng": "no",
+    "fuel:diesel": "yes",
+    "fuel:electricity": "no",
+    "fuel:lpg": "yes",
+    "fuel:octane_100": "no",
+    "fuel:octane_91": "yes",
+    "fuel:octane_95": "no",
+    "fuel:octane_98": "no",
+    "name": "Pertamina",
+    "source": "Local knowledge"
+  }
+},
+{
+  "type": "node",
+  "id": 2845852089,
+  "lat": -8.4043468,
+  "lon": 115.5884173,
+  "tags": {
+    "amenity": "fuel",
+    "fixme": "Verify exact location"
+  }
+},
+{
+  "type": "node",
+  "id": 3329762011,
+  "lat": -8.5469299,
+  "lon": 115.4859176,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "brand:wikipedia": "en:Pertamina",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 3749170052,
+  "lat": -8.5117953,
+  "lon": 115.5018786,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "name": "Pertamina",
+    "opening_hours": "Mo-Su 09:00-21:00"
+  }
+},
+{
+  "type": "node",
+  "id": 3749171670,
+  "lat": -8.5034634,
+  "lon": 115.5583389,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 3775472294,
+  "lat": -8.2345393,
+  "lon": 115.5520696,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 3785230436,
+  "lat": -8.5526988,
+  "lon": 115.4402817,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 3921459354,
+  "lat": -8.4020067,
+  "lon": 115.5896916,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 4247757589,
+  "lat": -8.3628769,
+  "lon": 115.3460944,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 4362250290,
+  "lat": -8.4669679,
+  "lon": 115.3524859,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 4446961398,
+  "lat": -8.5810060,
+  "lon": 115.3526184,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 4540413890,
+  "lat": -8.3227900,
+  "lon": 115.6191400,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "name": "Pertamina",
+    "name:de": "Pertamina",
+    "name:en": "Pertamina",
+    "operator": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 4591597595,
+  "lat": -8.2785819,
+  "lon": 115.3793364,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Small place"
+  }
+},
+{
+  "type": "node",
+  "id": 4706094090,
+  "lat": -8.6778872,
+  "lon": 115.5717814,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 4710004789,
+  "lat": -8.6770708,
+  "lon": 115.5327216,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 5257494824,
+  "lat": -8.7660829,
+  "lon": 115.5928169,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Bensin motorbike",
+    "name:ru": "Бензин для мотобайка"
+  }
+},
+{
+  "type": "node",
+  "id": 5624314821,
+  "lat": -8.6788820,
+  "lon": 115.4900787,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 5753254022,
+  "lat": -8.7183405,
+  "lon": 115.5229503,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 6040845285,
+  "lat": -8.4269234,
+  "lon": 115.6839471,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "name": "Pertamina",
+    "name:en": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 6050520885,
+  "lat": -8.4437112,
+  "lon": 115.5788285,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 6229193250,
+  "lat": -8.5684765,
+  "lon": 115.3746249,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "brand:wikipedia": "en:Pertamina",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 6332684386,
+  "lat": -8.6928105,
+  "lon": 115.4493191,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 6336822986,
+  "lat": -8.6882906,
+  "lon": 115.4377812,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 6712210047,
+  "lat": -8.3181975,
+  "lon": 115.3467146,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "brand:wikipedia": "en:Pertamina",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 6721922709,
+  "lat": -8.4446637,
+  "lon": 115.3627892,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 6721922710,
+  "lat": -8.5133706,
+  "lon": 115.3454690,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "brand:wikipedia": "en:Pertamina",
+    "name": "SPBU Bunutin"
+  }
+},
+{
+  "type": "node",
+  "id": 7192803785,
+  "lat": -8.4283591,
+  "lon": 115.4233169,
+  "tags": {
+    "amenity": "fuel",
+    "name": "pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 7660527085,
+  "lat": -8.2887138,
+  "lon": 115.4799474,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Small garage"
+  }
+},
+{
+  "type": "node",
+  "id": 11012490777,
+  "lat": -8.2682332,
+  "lon": 115.3422879,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11012490783,
+  "lat": -8.2791538,
+  "lon": 115.3780280,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11012515469,
+  "lat": -8.1771244,
+  "lon": 115.4647162,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048165238,
+  "lat": -8.4377262,
+  "lon": 115.4793876,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048165239,
+  "lat": -8.4151857,
+  "lon": 115.5793071,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048165240,
+  "lat": -8.4261734,
+  "lon": 115.4414954,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048165241,
+  "lat": -8.4036763,
+  "lon": 115.4209625,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048180310,
+  "lat": -8.3675804,
+  "lon": 115.7000512,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048180311,
+  "lat": -8.3906726,
+  "lon": 115.5974888,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048180312,
+  "lat": -8.4216715,
+  "lon": 115.6834293,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048180313,
+  "lat": -8.3406285,
+  "lon": 115.6191112,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048180314,
+  "lat": -8.3741615,
+  "lon": 115.7053647,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048190871,
+  "lat": -8.4626463,
+  "lon": 115.6258207,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "fuel:octane_92": "yes",
+    "name": "Pertashop"
+  }
+},
+{
+  "type": "node",
+  "id": 11048190872,
+  "lat": -8.4529207,
+  "lon": 115.6519867,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048190873,
+  "lat": -8.4264119,
+  "lon": 115.6809174,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048192287,
+  "lat": -8.5314421,
+  "lon": 115.4959274,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11048192289,
+  "lat": -8.5477323,
+  "lon": 115.4852266,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "brand:wikipedia": "en:Pertamina",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 11203013135,
+  "lat": -8.5227430,
+  "lon": 115.3651598,
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "node",
+  "id": 11909772240,
+  "lat": -8.3519222,
+  "lon": 115.5890976,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Pertamini"
+  }
+},
+{
+  "type": "node",
+  "id": 11909796444,
+  "lat": -8.4070469,
+  "lon": 115.4842620,
+  "tags": {
+    "amenity": "fuel",
+    "name": "Pertamini"
+  }
+},
+{
+  "type": "node",
+  "id": 11957676499,
+  "lat": -8.6960923,
+  "lon": 115.4519263,
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "node",
+  "id": 12277145587,
+  "lat": -8.4631202,
+  "lon": 115.4060252,
+  "tags": {
+    "amenity": "fuel",
+    "building": "roof",
+    "name": "Fuel Station"
+  }
+},
+{
+  "type": "node",
+  "id": 12277145588,
+  "lat": -8.5107841,
+  "lon": 115.4020469,
+  "tags": {
+    "amenity": "fuel",
+    "building": "roof",
+    "name": "Fuel Station"
+  }
+},
+{
+  "type": "node",
+  "id": 12277185797,
+  "lat": -8.3092894,
+  "lon": 115.3968365,
+  "tags": {
+    "amenity": "fuel",
+    "building": "roof",
+    "name": "Fuel Station"
+  }
+},
+{
+  "type": "node",
+  "id": 12277189747,
+  "lat": -8.3652741,
+  "lon": 115.4191175,
+  "tags": {
+    "amenity": "fuel",
+    "building": "roof",
+    "name": "Fuel Station"
+  }
+},
+{
+  "type": "node",
+  "id": 12277198682,
+  "lat": -8.4858451,
+  "lon": 115.4011688,
+  "tags": {
+    "amenity": "fuel",
+    "building": "roof",
+    "name": "Fuel Station"
+  }
+},
+{
+  "type": "way",
+  "id": 209462178,
+  "center": {
+    "lat": -8.4556416,
+    "lon": 115.6016304
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "building": "yes",
+    "fuel:1_25": "no",
+    "fuel:1_50": "no",
+    "fuel:GTL_diesel": "no",
+    "fuel:HGV_diesel": "no",
+    "fuel:biogas": "no",
+    "fuel:cng": "no",
+    "fuel:diesel": "yes",
+    "fuel:e10": "no",
+    "fuel:e85": "no",
+    "fuel:electricity": "no",
+    "fuel:lpg": "yes",
+    "fuel:octane_100": "no",
+    "fuel:octane_88": "yes",
+    "fuel:octane_92": "yes",
+    "fuel:octane_95": "no",
+    "name": "Pertamina",
+    "source": "Local knowledge"
+  }
+},
+{
+  "type": "way",
+  "id": 541037284,
+  "center": {
+    "lat": -8.5403657,
+    "lon": 115.4098836
+  },
+  "tags": {
+    "amenity": "fuel",
+    "building": "roof",
+    "layer": "1",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "way",
+  "id": 550979020,
+  "center": {
+    "lat": -8.5646602,
+    "lon": 115.4165788
+  },
+  "tags": {
+    "amenity": "fuel",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "way",
+  "id": 563856417,
+  "center": {
+    "lat": -8.2685177,
+    "lon": 115.3423606
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "way",
+  "id": 763376973,
+  "center": {
+    "lat": -8.5685688,
+    "lon": 115.3746143
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "brand:wikipedia": "en:Pertamina",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "way",
+  "id": 1087950699,
+  "center": {
+    "lat": -8.4792830,
+    "lon": 115.4469030
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "fuel:pertamax_92": "yes",
+    "name": "Pertashop Telagatawang",
+    "not:brand:wikidata": "Q1641044",
+    "opening_hours": "06:00-20:30",
+    "website": "https://www.pertamina.com/"
+  }
+},
+{
+  "type": "way",
+  "id": 1087957090,
+  "center": {
+    "lat": -8.5366361,
+    "lon": 115.3334269
+  },
+  "tags": {
+    "amenity": "fuel",
+    "brand": "Pertamina",
+    "brand:wikidata": "Q1641044",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "way",
+  "id": 1109033923,
+  "center": {
+    "lat": -8.5672355,
+    "lon": 115.3916306
+  },
+  "tags": {
+    "amenity": "fuel",
+    "name": "Pertamina"
+  }
+},
+{
+  "type": "way",
+  "id": 1111172220,
+  "center": {
+    "lat": -8.5501132,
+    "lon": 115.3750180
+  },
+  "tags": {
+    "amenity": "fuel",
+    "compressed_air": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 1175041480,
+  "center": {
+    "lat": -8.1771752,
+    "lon": 115.4647762
+  },
+  "tags": {
+    "amenity": "fuel"
+  }
+},
+{
+  "type": "way",
+  "id": 1534383090,
+  "center": {
+    "lat": -8.4668859,
+    "lon": 115.3523512
+  },
+  "tags": {
+    "amenity": "fuel",
+    "building": "roof",
+    "layer": "1",
+    "name": "Pertamina"
+  }
+}
+
+  ]
+}

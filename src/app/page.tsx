@@ -2,16 +2,16 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import dynamic from 'next/dynamic';
-import { SPBUItem } from '@/types/spbu';
+import { SPBUItem, MapBounds } from '@/types/spbu';
 import { INITIAL_SPBU_DATA } from '@/data/spbu-denpasar-badung';
 import { SPBUService } from '@/lib/spbu-service';
 import { Navbar } from '@/components/Layout/Navbar';
-import { FilterBar } from '@/components/Layout/FilterBar';
+import { FilterBar, RegencyFilterOption } from '@/components/Layout/FilterBar';
 import { SPBUCard } from '@/components/SPBU/SPBUCard';
 import { CCTVPreviewModal } from '@/components/CCTV/CCTVPreviewModal';
 import { QuickReportModal } from '@/components/Report/QuickReportModal';
 import { PWAInstallBanner } from '@/components/Common/PWAInstallBanner';
-import { Fuel, Map, List } from 'lucide-react';
+import { Fuel, Map, List, Compass } from 'lucide-react';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { ToastProvider, useToast } from '@/components/Common/Toast';
 import { ConfirmDialogProvider, useConfirmDialog } from '@/components/Common/ConfirmDialog';
@@ -37,13 +37,16 @@ function LiveSPBUApp() {
   const [cctvModalSpbu, setCctvModalSpbu] = useState<SPBUItem | null>(null);
   const [reportModalSpbu, setReportModalSpbu] = useState<SPBUItem | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [selectedRegency, setSelectedRegency] = useState<'all' | 'Denpasar' | 'Badung'>('all');
+  const [selectedRegency, setSelectedRegency] = useState<RegencyFilterOption>('all');
   const [onlyWithCCTV, setOnlyWithCCTV] = useState<boolean>(false);
   const [onlyPertaliteAvailable, setOnlyPertaliteAvailable] = useState<boolean>(false);
   const [viewMode, setViewMode] = useState<'map' | 'list'>('map');
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [isLocating, setIsLocating] = useState<boolean>(false);
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
+  const [visibleCount, setVisibleCount] = useState<number>(15);
+  const [mapBounds, setMapBounds] = useState<MapBounds | null>(null);
+  const [filterByBounds, setFilterByBounds] = useState<boolean>(true);
 
   // Load SPBU data
   const loadData = async () => {
@@ -56,7 +59,7 @@ function LiveSPBUApp() {
   useEffect(() => {
     loadData();
 
-    // 1. Supabase Realtime Subscription for instant crowd updates
+    // Supabase Realtime subscription for instant crowd updates
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let channel: any = null;
     if (isSupabaseConfigured && supabase) {
@@ -72,7 +75,7 @@ function LiveSPBUApp() {
         .subscribe();
     }
 
-    // 2. Listen to local update events
+    // Local update event listener
     const handleUpdate = (e: Event) => {
       const customEvent = e as CustomEvent<SPBUItem[]>;
       if (customEvent.detail) {
@@ -122,6 +125,46 @@ function LiveSPBUApp() {
       return true;
     });
   }, [spbus, selectedRegency, onlyWithCCTV, onlyPertaliteAvailable, searchQuery]);
+
+  // SPBUs visible in current map viewport (if filterByBounds is active)
+  const visibleListSPBUs = useMemo(() => {
+    if (!filterByBounds || !mapBounds) {
+      return filteredSPBUs;
+    }
+    return filteredSPBUs.filter((item) => {
+      // Selected SPBU always stays visible in the list
+      if (selectedSpbu?.id === item.id) return true;
+
+      const { lat, lng } = item.coordinates;
+      return (
+        lat >= mapBounds.south &&
+        lat <= mapBounds.north &&
+        lng >= mapBounds.west &&
+        lng <= mapBounds.east
+      );
+    });
+  }, [filteredSPBUs, filterByBounds, mapBounds, selectedSpbu]);
+
+  // Reset pagination count when filter criteria change or bounds mode toggles
+  useEffect(() => {
+    setVisibleCount(15);
+  }, [selectedRegency, onlyWithCCTV, onlyPertaliteAvailable, searchQuery, filterByBounds]);
+
+  // Ensure selected SPBU is within visible slice when selected from map
+  useEffect(() => {
+    if (selectedSpbu) {
+      const idx = visibleListSPBUs.findIndex((item) => item.id === selectedSpbu.id);
+      if (idx >= 0 && idx >= visibleCount) {
+        setVisibleCount(Math.ceil((idx + 1) / 15) * 15);
+      }
+    }
+  }, [selectedSpbu, visibleListSPBUs, visibleCount]);
+
+  // Paginated visible items
+  const displayedSPBUs = useMemo(
+    () => visibleListSPBUs.slice(0, visibleCount),
+    [visibleListSPBUs, visibleCount]
+  );
 
   // Statistics
   const stats = useMemo(() => {
@@ -189,7 +232,7 @@ function LiveSPBUApp() {
 
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden bg-white text-zinc-900">
-      {/* 1. Unified Header Navbar with live crisis stats */}
+      {/* Header Navbar */}
       <Navbar
         onLocateUser={handleLocateUser}
         isLocating={isLocating}
@@ -200,7 +243,7 @@ function LiveSPBUApp() {
         congestedCount={stats.congested}
       />
 
-      {/* 2. Streamlined Filter and Search Bar */}
+      {/* Filter and Search Bar */}
       <FilterBar
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
@@ -216,7 +259,7 @@ function LiveSPBUApp() {
         cctvCount={stats.withCCTV}
       />
 
-      {/* 4. Main Body: Split Desktop (Map + Sidebar) or Mobile Tab */}
+      {/* Main Body: Split Desktop or Mobile View */}
       <main className="flex-1 relative flex flex-col md:flex-row overflow-hidden">
         {/* Map View */}
         <div
@@ -231,6 +274,7 @@ function LiveSPBUApp() {
             onOpenCCTV={(spbu) => setCctvModalSpbu(spbu)}
             onOpenReport={(spbu) => setReportModalSpbu(spbu)}
             userLocation={userLocation}
+            onBoundsChange={setMapBounds}
           />
         </div>
 
@@ -241,61 +285,140 @@ function LiveSPBUApp() {
           }`}
         >
           {/* Sidebar Header */}
-          <div className="p-4 border-b border-zinc-200 flex items-center justify-between bg-white">
-            <h2 className="font-bold text-sm text-black">
-              Daftar SPBU Denpasar &amp; Badung ({filteredSPBUs.length})
-            </h2>
-            <span className="text-xs text-zinc-500">
-              {onlyWithCCTV ? 'Filter: CCTV Aktif' : 'Semua Kondisi'}
-            </span>
+          <div className="p-3.5 sm:p-4 border-b border-zinc-200 flex items-center justify-between bg-white shrink-0 gap-2">
+            <div className="min-w-0 flex-1">
+              <h2 className="font-bold text-sm text-black truncate">
+                {filterByBounds
+                  ? `SPBU di Area Peta (${visibleListSPBUs.length})`
+                  : selectedRegency === 'all'
+                  ? `Daftar Seluruh SPBU (${filteredSPBUs.length})`
+                  : `Daftar SPBU ${selectedRegency} (${filteredSPBUs.length})`}
+              </h2>
+              <p className="text-[11px] text-zinc-500 mt-0.5 truncate">
+                {filterByBounds
+                  ? `Menampilkan ${displayedSPBUs.length} SPBU yang tampak di layar`
+                  : `Menampilkan ${displayedSPBUs.length} dari ${filteredSPBUs.length} SPBU`}
+              </p>
+            </div>
+
+            {/* Toggle Area Peta */}
+            <button
+              type="button"
+              onClick={() => setFilterByBounds((prev) => !prev)}
+              title={
+                filterByBounds
+                  ? 'Sedang memfilter sesuai area peta yang tampak. Klik untuk tampilkan semua.'
+                  : 'Klik untuk membatasi daftar hanya pada area peta yang sedang tampak.'
+              }
+              className={`shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer focus-visible:ring-2 focus-visible:ring-black min-h-[38px] ${
+                filterByBounds
+                  ? 'bg-zinc-900 text-white border-zinc-900 hover:bg-zinc-800'
+                  : 'bg-white text-zinc-700 border-zinc-300 hover:bg-zinc-100 hover:text-black'
+              }`}
+            >
+              <Compass className="w-3.5 h-3.5" />
+              <span>{filterByBounds ? 'Sesuai Peta' : 'Semua Area'}</span>
+            </button>
           </div>
 
           {/* Scrollable list */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
-            {filteredSPBUs.length === 0 ? (
-              <div className="py-12 text-center text-zinc-500 space-y-2">
+            {visibleListSPBUs.length === 0 ? (
+              <div className="py-12 text-center text-zinc-500 space-y-3 px-4">
                 <Fuel className="w-10 h-10 mx-auto text-zinc-400" />
-                <p className="font-medium text-sm">Tidak ada SPBU yang cocok dengan filter.</p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSearchQuery('');
-                    setSelectedRegency('all');
-                    setOnlyWithCCTV(false);
-                    setOnlyPertaliteAvailable(false);
-                  }}
-                  className="text-xs text-black underline hover:text-zinc-700 font-semibold focus-visible:ring-2 focus-visible:ring-black p-1"
-                >
-                  Reset semua filter
-                </button>
+                <div>
+                  <p className="font-semibold text-sm text-zinc-800">
+                    {filterByBounds
+                      ? 'Tidak ada SPBU di area peta yang sedang tampak.'
+                      : 'Tidak ada SPBU yang cocok dengan filter.'}
+                  </p>
+                  <p className="text-xs text-zinc-500 mt-1">
+                    {filterByBounds
+                      ? 'Geser atau perkecil zoom peta untuk melihat SPBU di sekitarnya.'
+                      : 'Coba ubah kata kunci atau reset filter pencarian.'}
+                  </p>
+                </div>
+                {filterByBounds ? (
+                  <button
+                    type="button"
+                    onClick={() => setFilterByBounds(false)}
+                    className="inline-flex items-center justify-center text-xs text-black font-semibold underline hover:text-zinc-700 p-2 min-h-[44px] cursor-pointer"
+                  >
+                    Tampilkan semua SPBU ({filteredSPBUs.length})
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSearchQuery('');
+                      setSelectedRegency('all');
+                      setOnlyWithCCTV(false);
+                      setOnlyPertaliteAvailable(false);
+                    }}
+                    className="inline-flex items-center justify-center text-xs text-black font-semibold underline hover:text-zinc-700 p-2 min-h-[44px] cursor-pointer"
+                  >
+                    Reset semua filter
+                  </button>
+                )}
               </div>
             ) : (
-              filteredSPBUs.map((spbu) => (
-                <SPBUCard
-                  key={spbu.id}
-                  spbu={spbu}
-                  isSelected={selectedSpbu?.id === spbu.id}
-                  onSelect={(item) => setSelectedSpbu(item)}
-                  onOpenCCTV={(item) => setCctvModalSpbu(item)}
-                  onOpenReport={(item) => setReportModalSpbu(item)}
-                  onUpvote={handleUpvote}
-                  userLocation={userLocation}
-                />
-              ))
+              <>
+                {displayedSPBUs.map((spbu) => (
+                  <SPBUCard
+                    key={spbu.id}
+                    spbu={spbu}
+                    isSelected={selectedSpbu?.id === spbu.id}
+                    onSelect={(item) => setSelectedSpbu(item)}
+                    onOpenCCTV={(item) => setCctvModalSpbu(item)}
+                    onOpenReport={(item) => setReportModalSpbu(item)}
+                    onUpvote={handleUpvote}
+                    userLocation={userLocation}
+                  />
+                ))}
+
+                {/* Pagination Controls */}
+                {visibleCount < visibleListSPBUs.length && (
+                  <div className="pt-2 pb-6 flex flex-col items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setVisibleCount((prev) => prev + 15)}
+                      className="w-full min-h-[44px] py-2.5 px-4 rounded-xl bg-white hover:bg-zinc-50 text-zinc-900 border border-zinc-300 font-bold text-xs flex items-center justify-center gap-2 shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-black cursor-pointer"
+                    >
+                      <span>Muat 15 SPBU Lainnya</span>
+                      <span className="text-[11px] font-semibold text-zinc-600">
+                        (Tersisa {visibleListSPBUs.length - visibleCount})
+                      </span>
+                    </button>
+                    {visibleListSPBUs.length - visibleCount > 15 && (
+                      <button
+                        type="button"
+                        onClick={() => setVisibleCount(visibleListSPBUs.length)}
+                        className="text-xs text-zinc-600 hover:text-black underline font-medium p-1 cursor-pointer"
+                      >
+                        Tampilkan Semua ({visibleListSPBUs.length})
+                      </button>
+                    )}
+                  </div>
+                )}
+              </>
             )}
           </div>
         </aside>
       </main>
 
-      {/* 5. CCTV Preview Modal */}
+      {/* CCTV Preview Modal */}
       {cctvModalSpbu && (
         <CCTVPreviewModal
           spbu={cctvModalSpbu}
           onClose={() => setCctvModalSpbu(null)}
+          onOpenReport={(item) => {
+            setCctvModalSpbu(null);
+            setReportModalSpbu(item);
+          }}
         />
       )}
 
-      {/* 6. Quick Crowdsource Report Modal */}
+      {/* Quick Crowdsource Report Modal */}
       {reportModalSpbu && (
         <QuickReportModal
           spbu={reportModalSpbu}
@@ -311,10 +434,10 @@ function LiveSPBUApp() {
         />
       )}
 
-      {/* 7. PWA Mobile Home-Screen Install Prompt */}
+      {/* PWA Mobile Home-Screen Install Prompt */}
       <PWAInstallBanner />
 
-      {/* 8. Mobile Floating Switcher Button (Always accessible at thumb level) */}
+      {/* Mobile Floating Switcher Button */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30 md:hidden">
         <button
           type="button"

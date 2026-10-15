@@ -1,0 +1,632 @@
+[
+  {
+    "id": 1291386618,
+    "type": "node",
+    "lat": -8.4770841,
+    "lng": 115.6157588,
+    "regency": "Karangasem",
+    "district": "Abang",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 2148876485,
+    "type": "node",
+    "lat": -8.437493,
+    "lng": 115.5928175,
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "fuel:GTL_diesel": "no",
+      "fuel:HGV_diesel": "no",
+      "fuel:biodiesel": "yes",
+      "fuel:biogas": "no",
+      "fuel:cng": "no",
+      "fuel:diesel": "yes",
+      "fuel:electricity": "no",
+      "fuel:lpg": "yes",
+      "fuel:octane_100": "no",
+      "fuel:octane_91": "yes",
+      "fuel:octane_95": "no",
+      "fuel:octane_98": "no",
+      "name": "Pertamina",
+      "source": "Local knowledge"
+    }
+  },
+  {
+    "id": 2845852089,
+    "type": "node",
+    "lat": -8.4043468,
+    "lng": 115.5884173,
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "fixme": "Verify exact location"
+    }
+  },
+  {
+    "id": 3329762011,
+    "type": "node",
+    "lat": -8.5469299,
+    "lng": 115.4859176,
+    "regency": "Karangasem",
+    "district": "Manggis",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 3749170052,
+    "type": "node",
+    "lat": -8.5117953,
+    "lng": 115.5018786,
+    "regency": "Karangasem",
+    "district": "Manggis",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina",
+      "opening_hours": "Mo-Su 09:00-21:00"
+    }
+  },
+  {
+    "id": 3749171670,
+    "type": "node",
+    "lat": -8.5034634,
+    "lng": 115.5583389,
+    "regency": "Karangasem",
+    "district": "Manggis",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 3775472294,
+    "type": "node",
+    "lat": -8.2345393,
+    "lng": 115.5520696,
+    "regency": "Karangasem",
+    "district": "Bebandem",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 3785230436,
+    "type": "node",
+    "lat": -8.5526988,
+    "lng": 115.4402817,
+    "regency": "Klungkung",
+    "district": "Dawan",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 3921459354,
+    "type": "node",
+    "lat": -8.4020067,
+    "lng": 115.5896916,
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 4247757589,
+    "type": "node",
+    "lat": -8.3628769,
+    "lng": 115.3460944,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 4540413890,
+    "type": "node",
+    "lat": -8.32279,
+    "lng": 115.61914,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina",
+      "name:de": "Pertamina",
+      "name:en": "Pertamina",
+      "operator": "Pertamina"
+    }
+  },
+  {
+    "id": 4706094090,
+    "type": "node",
+    "lat": -8.6778872,
+    "lng": 115.5717814,
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 4710004789,
+    "type": "node",
+    "lat": -8.6770708,
+    "lng": 115.5327216,
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 5624314821,
+    "type": "node",
+    "lat": -8.678882,
+    "lng": 115.4900787,
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 5753254022,
+    "type": "node",
+    "lat": -8.7183405,
+    "lng": 115.5229503,
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 6040845285,
+    "type": "node",
+    "lat": -8.4269234,
+    "lng": 115.6839471,
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina",
+      "name:en": "Pertamina"
+    }
+  },
+  {
+    "id": 6050520885,
+    "type": "node",
+    "lat": -8.4437112,
+    "lng": 115.5788285,
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 6229193250,
+    "type": "node",
+    "lat": -8.5684765,
+    "lng": 115.3746249,
+    "regency": "Klungkung",
+    "district": "Banjarangkan",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "brand:wikipedia": "en:Pertamina",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 6332684386,
+    "type": "node",
+    "lat": -8.6928105,
+    "lng": 115.4493191,
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 6336822986,
+    "type": "node",
+    "lat": -8.6882906,
+    "lng": 115.4377812,
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 7192803785,
+    "type": "node",
+    "lat": -8.4283591,
+    "lng": 115.4233169,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "name": "pertamina"
+    }
+  },
+  {
+    "id": 11012515469,
+    "type": "node",
+    "lat": -8.1771244,
+    "lng": 115.4647162,
+    "regency": "Karangasem",
+    "district": "Rendang",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048165238,
+    "type": "node",
+    "lat": -8.4377262,
+    "lng": 115.4793876,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048165239,
+    "type": "node",
+    "lat": -8.4151857,
+    "lng": 115.5793071,
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048165240,
+    "type": "node",
+    "lat": -8.4261734,
+    "lng": 115.4414954,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048165241,
+    "type": "node",
+    "lat": -8.4036763,
+    "lng": 115.4209625,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048180310,
+    "type": "node",
+    "lat": -8.3675804,
+    "lng": 115.7000512,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048180311,
+    "type": "node",
+    "lat": -8.3906726,
+    "lng": 115.5974888,
+    "regency": "Karangasem",
+    "district": "Abang",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048180312,
+    "type": "node",
+    "lat": -8.4216715,
+    "lng": 115.6834293,
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048180313,
+    "type": "node",
+    "lat": -8.3406285,
+    "lng": 115.6191112,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048180314,
+    "type": "node",
+    "lat": -8.3741615,
+    "lng": 115.7053647,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048190872,
+    "type": "node",
+    "lat": -8.4529207,
+    "lng": 115.6519867,
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048190873,
+    "type": "node",
+    "lat": -8.4264119,
+    "lng": 115.6809174,
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11048192287,
+    "type": "node",
+    "lat": -8.5314421,
+    "lng": 115.4959274,
+    "regency": "Karangasem",
+    "district": "Manggis",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11203013135,
+    "type": "node",
+    "lat": -8.522743,
+    "lng": 115.3651598,
+    "regency": "Klungkung",
+    "district": "Banjarangkan",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel"
+    }
+  },
+  {
+    "id": 11957676499,
+    "type": "node",
+    "lat": -8.6960923,
+    "lng": 115.4519263,
+    "regency": "Klungkung",
+    "district": "Nusa Penida",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 12277145587,
+    "type": "node",
+    "lat": -8.4631202,
+    "lng": 115.4060252,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    }
+  },
+  {
+    "id": 12277145588,
+    "type": "node",
+    "lat": -8.5107841,
+    "lng": 115.4020469,
+    "regency": "Klungkung",
+    "district": "Klungkung",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    }
+  },
+  {
+    "id": 12277189747,
+    "type": "node",
+    "lat": -8.3652741,
+    "lng": 115.4191175,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    }
+  },
+  {
+    "id": 12277198682,
+    "type": "node",
+    "lat": -8.4858451,
+    "lng": 115.4011688,
+    "regency": "Karangasem",
+    "district": "Kubu",
+    "name": "Fuel Station",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "name": "Fuel Station"
+    }
+  },
+  {
+    "id": 209462178,
+    "type": "way",
+    "lat": -8.4556416,
+    "lng": 115.6016304,
+    "regency": "Karangasem",
+    "district": "Karangasem",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "brand": "Pertamina",
+      "brand:wikidata": "Q1641044",
+      "building": "yes",
+      "fuel:1_25": "no",
+      "fuel:1_50": "no",
+      "fuel:GTL_diesel": "no",
+      "fuel:HGV_diesel": "no",
+      "fuel:biogas": "no",
+      "fuel:cng": "no",
+      "fuel:diesel": "yes",
+      "fuel:e10": "no",
+      "fuel:e85": "no",
+      "fuel:electricity": "no",
+      "fuel:lpg": "yes",
+      "fuel:octane_100": "no",
+      "fuel:octane_88": "yes",
+      "fuel:octane_92": "yes",
+      "fuel:octane_95": "no",
+      "name": "Pertamina",
+      "source": "Local knowledge"
+    }
+  },
+  {
+    "id": 541037284,
+    "type": "way",
+    "lat": -8.5403657,
+    "lng": 115.4098836,
+    "regency": "Klungkung",
+    "district": "Dawan",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "building": "roof",
+      "layer": "1",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 550979020,
+    "type": "way",
+    "lat": -8.5646602,
+    "lng": 115.4165788,
+    "regency": "Klungkung",
+    "district": "Dawan",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 1109033923,
+    "type": "way",
+    "lat": -8.5672355,
+    "lng": 115.3916306,
+    "regency": "Klungkung",
+    "district": "Dawan",
+    "name": "Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "name": "Pertamina"
+    }
+  },
+  {
+    "id": 1111172220,
+    "type": "way",
+    "lat": -8.5501132,
+    "lng": 115.375018,
+    "regency": "Klungkung",
+    "district": "Banjarangkan",
+    "name": "SPBU Pertamina",
+    "tags": {
+      "amenity": "fuel",
+      "compressed_air": "no"
+    }
+  }
+]
